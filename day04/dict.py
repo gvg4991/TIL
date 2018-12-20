@@ -85,19 +85,54 @@ len_scores1=len(score['a'])+len(score['b'])
 avg_scores1 = total_scores1 / len_scores1
 print(avg_scores1)
 
-num=0
-total_ea_scores = 0
-for ea_scores in score.values():
-    for subject_ea_scores in ea_scores.values():
+num=0 #1+1+1+1+1+1
+#total_len = 0
+total_ea_scores = 0 #70+80+90+70+80+90
+for ea_scores in score.values(): #[{'수학':70,...},{'수학':70,...}]
+    #2번 시행됨
+    for subject_ea_scores in ea_scores.values(): #[70,80,90]
+        #3번 시행됨
         total_ea_scores += subject_ea_scores
-        #len_ea_scores += len(ea_scores.values())
-        num=num+1
+        #total_len = len(score)*len(score[score.values()]) #= 2*3
+        num=num+1 # mun+=1
 avg_ea_scores = total_ea_scores/num
-#avg_ea_scores = total_ea_scores/len_ea_scores
+#avg_ea_scores = total_ea_scores/total_len
 print(avg_ea_scores)
-#print(total_ea_scores)
 
+# 문제 3번 (도시별 최근 3일 온도이다. 도시별 최근 3일 온도 평균은?)
+city = {
+    '서울역':[-6,-10,6],
+    '대전':[-3,-6,2],
+    '광주':[-0,-2,10],
+    '구미역':[2,-2,9]
+}
 
-#    total_score1=total_score1 + subject_score
-#avg_score1 = total_score1 / len(score)
-#print(avg_score1)
+#print(city.values())
+total_temp=0
+
+for city_temp in city:
+    #print(city_temp)
+    print(city[city_temp])
+    city_sum = sum(city[city_temp])
+    day=len(city_temp)
+    avg_temp = city_sum / day
+    #print(f'{city_temp} : {avg_temp}')
+
+for key, value in city.items():
+    city_sum = sum(value)
+    day=len(city[key])
+    avg_temp = city_sum / day
+    #print(f'{key} : {avg_temp}')
+
+    #print(city[key]) value값 나옴
+    #print(key) key값 나옴
+    #print(value) value값 나옴
+
+for name, temp in city.items():
+    total_temp = 0
+    for t in temp:
+        total_temp += t
+    avg_temp = total_temp / len(temp)
+    #print(len(temp))
+
+    
