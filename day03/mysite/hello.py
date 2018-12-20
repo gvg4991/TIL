@@ -12,7 +12,7 @@ def ssafy():
 
 @app.route("/greeting/<string:name>")
 def greeting(name):
-    return f'{name}! 수고했어 오늘도'
+    return f'{name}~ 수고했어 오늘도!'
 
 @app.route("/cube.<int:num>")
 def cube(num):
