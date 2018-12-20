@@ -109,8 +109,8 @@ github--------------------------------------------------------------------------
 66line: class="mb-0">minho (이름 변경)
 67line: email 주소 변경
 ㆍ변경 사항 적용
- - git add . (내용 추가 및 변경 후)
  - git status
+ - git add . (내용 추가 및 변경 후)
  - git commit -m "change index.html(아무거나 가능)"
  - git push (변경사항 연동)
 
