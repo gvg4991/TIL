@@ -127,6 +127,12 @@ for key, value in city.items():
     #print(city[key]) value값 나옴
     #print(key) key값 나옴
     #print(value) value값 나옴
+    #print(city.keys()) #key 값이 리스트로 나옴
+    #print(city.values()) #value 값이 리스트로 나옴
+    #print(len(key)) #key별 글자 수
+    #print(len(value)) #value별 리스트 수
+#print(len(city.keys())) #key의 갯수(key값을 리스트로 만들었을 때 리스트 수) = item수
+#print(len(city.values())) #value의 갯수(value값을 리스트로 만들었을 때 리스트 수) = item수
 
 for name, temp in city.items():
     total_temp = 0
