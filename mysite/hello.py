@@ -1,3 +1,4 @@
+import os
 import random
 import requests
 from flask import Flask, render_template, request
@@ -30,3 +31,16 @@ def lotto(num): #입력받은 값(num) 넣어주기
     bonus = lotto['bnusNo'] #6
 
     return render_template('lotto.html',w=winner, b=bonus, n=num)
+
+@app.route('/write')
+def write():
+    return render_template('write.html')
+
+@app.route('/send')
+def send():
+    token = os.getenv('TELEGRAM_BOT_TOKE')
+    chat_id = os.getenv('CHAT_ID')
+
+    text=request.args['message']
+    requests.get(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={text}')
+    return render_template('send.html')

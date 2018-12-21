@@ -38,6 +38,7 @@ python--------------------------------------------------------------------------
 ㆍwebbrowser.open('http://www.')
 ㆍrequest
 ㆍ표준 입력으로 물품 가격 여러 개가 문자열 한 줄로 입력되고, 각 가격은 ;(세미콜론)으로 구분되어 있습니다. 입력된 가격을 높은 가격순으로 출력하는 프로그램
+ㆍ주석 #, 전체 주석 ctrl + /
 #input : 10;2;3
 # .split() 이용
 prices = prices.split(';') #['10','2','3']사전 순으로 나옴
@@ -118,14 +119,29 @@ github--------------------------------------------------------------------------
 
 flask-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ㆍ실행: FLASK_APP=hello.py flask run
+ㆍ터미널에서 ctrl+c로 나간후 실행: FLASK_APP=hello.py flask run
 ㆍ추가 창(.../어쩌고)
 @app.route("/ssafy")
 def ssafy():
     return "This is SSAFY:)"
 ㆍ추가창에 인풋데이터 참고<int / string : 변수이름>
-@app.route("/cube.<int:num>")
+@app.route("/cube.<int:num>")                                    #<int:num> : 입력값
 def cube(num):
     cube=num**3 # == num*num*num
     return str(cube)
     return f'{num}의 세제곱은 {cube}입니다.'
+
+telegram---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ㆍtoken: 784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA
+ㆍuser ID: 718060199
+ㆍ기능: https://core.telegram.org/bots/api#sendmessage - available methods - ...
+ㆍmaking requests: https://api.telegram.org/bot784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA/METHOD_NAME
+
+C9----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ㆍide.c9.io
+ㆍpyenv global 3.6.7로 이용 버전 설정
+ㆍ터미널 새로 설정: exec $SHELL
+ㆍFALSK 설치
+ - 설정: FLASK_APP=app.py flask run --host=$IP --port=$PORT
