@@ -38,7 +38,7 @@ def write():
 
 @app.route('/send')
 def send():
-    token = os.getenv('TELEGRAM_BOT_TOKE')
+    token = os.getenv('TELEGRAM_BOT_TOKEN')
     chat_id = os.getenv('CHAT_ID')
 
     text=request.args['message']
