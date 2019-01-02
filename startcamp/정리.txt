@@ -145,3 +145,5 @@ C9------------------------------------------------------------------------------
 ㆍ터미널 새로 설정: exec $SHELL
 ㆍFALSK 설치
  - 설정: FLASK_APP=app.py flask run --host=$IP --port=$PORT
+ㆍprintenv -> source ~/.bash_profile
+ㆍrequests.get (get은 주소창에 입력받음, post는 )
