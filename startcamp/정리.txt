@@ -46,6 +46,11 @@ prices = prices.split(';') #['10','2','3']사전 순으로 나옴
 #비어있는 리스트 생성
 int_price=[]
 
+append() 쓰기
+l=[]
+input=[10,20,30]
+l.append(input)
+
 # 1.반복을 통한 item들 int() 이용
 for i in prices: #i='10'
     int_price.append(int(i)) #i=10, i=2, i=3 -> int_price=[10,2,3]
