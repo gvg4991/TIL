@@ -130,7 +130,7 @@ flask---------------------------------------------------------------------------
 def ssafy():
     return "This is SSAFY:)"
 ㆍ추가창에 인풋데이터 참고<int / string : 변수이름>
-@app.route("/cube.<int:num>")                                    #<int:num> : 입력값
+@app.route("/cube.<int:num>")                                #<int:num> : 입력값
 def cube(num):
     cube=num**3 # == num*num*num
     return str(cube)
