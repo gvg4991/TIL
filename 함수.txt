@@ -10,6 +10,7 @@
 
 ㆍrange(시작,끝,간격)
 - ()안의 값을 시작값부터 끝값까지 간격만큼의 데이터 형성
+- range(8,-1,-1): 8부터 -1전까지(0까지) 역순으로 출력
 
 ㆍlen()
 - ()안의 값의 길이를 구함
@@ -45,6 +46,9 @@
 - print('{},{}'.format(변수1,변수2))과 동일
 - {}내에서 계산도 가능 ex) {a*2+2}
 
+ㆍprint(...[::-1])
+- 리스트나 문자열을 역순으로 출력
+
 ㆍ.count()
 - ()안의 값을 카운트 **()의 찾을 값이 있을때만 사용
 - list의 데이터 수를 카운트할 땐 a+=1 for문으로 카운트하기!
@@ -68,15 +72,14 @@ print(int(x)+int(y)) #두 수의 합
 
 ㆍ리스트.reverse()- 반대로
 
-ㆍrandom.choice
-  함수 코드를 불러옴(모듈)- import random
-  점심 메뉴 리스트- menu=[ ]
-  함수 결과 값을 저장- choice = random.choice(menu)
-  출력- print(choice)
+ㆍrandom.choice()
+- import random: 함수 코드를 불러옴(모듈)
+- a = random.choice(): ()안의 값을 랜덤으로 추출
 
 ㆍrandom.sample(..., n)
+- (...)안의 데이터를 random으로 n개 추출 
 
-ㆍappend()
+ㆍ.append()
 - 데이터에 ()값 추가
 
 

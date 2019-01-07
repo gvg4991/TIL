@@ -1,4 +1,4 @@
-blood_types={'A','B','A','O','AB','AB','O','A','B','O','B','AB'}
+blood_types=['A','B','A','O','AB','AB','O','A','B','O','B','AB']
 
 A=0
 B=0
