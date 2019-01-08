@@ -62,6 +62,7 @@
 ㆍ.count()
 - ()안의 값을 카운트 **()의 찾을 값이 있을때만 사용
 - list의 데이터 수를 카운트할 땐 a+=1 for문으로 카운트하기!
+-for i in range(list.count(target)):	list.remove(target)으로 원하는값 모두 삭제 가능
 
 ㆍdivmode(n,m)
 - (몫(//), 나머지(%))로 결과값 나옴
@@ -78,9 +79,12 @@ print(int(x)+int(y)) #두 수의 합
 - 현재 날짜와 시간을 나타내줌
 - print에서 %y, %m, %d, %a로 년,월,일,요일을 따로 표현 가능
 
-ㆍ리스트.sort()- 오름차순
+ㆍ리스트.sort()
+- 원본 list를 변형시키고, 오름차순
 
-ㆍ리스트.reverse()- 반대로
+ㆍ리스트.reverse()
+- 반대로 뒤집는다. 정렬시키는 것x
+
 
 ㆍrandom.choice()
 - import random: 함수 코드를 불러옴(모듈)
@@ -92,5 +96,25 @@ print(int(x)+int(y)) #두 수의 합
 ㆍ.append()
 - 데이터에 ()값 추가
 
+ㆍ.extend()
+- 두 list를 합침, list에 list데이터 추가
+
+ㆍ.insert(위치,문자)
+- 정해진 위치에 '문자'를 추가
+- .insert(len(list)-1,''): list 마지막 앞자리에 ''추가
+
+ㆍ.remove()
+- ()안의 값을 왼쪽에서부터 찾아서 제거
+
+ㆍ.pop()
+- ()안의 위치에 있는 값을 제거, 값이 없으면 젤 뒤에거 삭제
+- b=a.pop()처럼 변수에 제거된 데이터를 저장할 수 있음
+
+ㆍ.index()
+- ()안의 값을 찾아 위치를 알려줌, 없으면 Error
+
+ㆍenumerate(list)
+- list의 value값을 index와 함께 표기
+- for idx,val in enumerate(arr)
 
 히히히히히히히
