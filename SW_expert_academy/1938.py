@@ -8,7 +8,7 @@
 # [출력]
 # 사칙연산의 결과를 각 줄에 순서대로 출력한다.
 
-x,y=input().split()
-a=int(x)
-b=int(y)
+a,b=map(int,input().split())
+# a=int(x)
+# b=int(y)
 print(a+b,'\n',a-b,'\n',a*b,'\n',int(a/b),'\n')

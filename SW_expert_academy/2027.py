@@ -7,5 +7,10 @@ print('''
 +++#+
 ++++# ''')
 
-for a in range(0,5):
-    print('+++++'[a].replace('+','#'))
+# for a in range(5): 
+#     for b in range(5): #좌표를 통한 문제풀이
+#         if a==b:
+#             print('#',end='')
+#         else:
+#             print('+',end='')
+#     print('')
