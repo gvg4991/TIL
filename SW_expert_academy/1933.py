@@ -16,11 +16,17 @@
 #     else:
 #         b+=1
 
+# a=int(input())
+# b=1
+# while b<=a:
+#     if a%b==0:
+#         print(b,end=' ')
+#         b+=1
+#     else:
+#         b+=1
+
 a=int(input())
-b=1
-while b<=a:
+for b in range(1,a+1):
     if a%b==0:
         print(b,end=' ')
-        b+=1
-    else:
-        b+=1
+        
