@@ -28,8 +28,9 @@
 ㆍ.replace(a,b,2)
 - a를 b로 앞에서부터 2개 바꿈
 
-ㆍmap(int,input())
-- input을 모두 int 형태로 받음
+ㆍmap(함수,input())
+- input을 내장함수, def 함수값에 넣음
+- ex) map(int,[1,2,3]): input을 모두 int 형태로 받음
 
 ㆍint()
 - 숫자형 정수
@@ -86,7 +87,6 @@ print(int(x)+int(y)) #두 수의 합
 ㆍ리스트.reverse()
 - 반대로 뒤집는다. 정렬시키는 것x
 
-
 ㆍrandom.choice()
 - import random: 함수 코드를 불러옴(모듈)
 - a = random.choice(): ()안의 값을 랜덤으로 추출
@@ -99,6 +99,10 @@ print(int(x)+int(y)) #두 수의 합
 
 ㆍ.extend()
 - 두 list를 합침, list에 list데이터 추가
+
+ㆍ.update(*others)
+- 여러가지 값을 순차적으로 추가
+- 겹치는 값은 pass
 
 ㆍ.insert(위치,문자)
 - 정해진 위치에 '문자'를 추가
@@ -117,17 +121,29 @@ print(int(x)+int(y)) #두 수의 합
 - enumeratate(list)에서 활용 가능
 
 ㆍ.remove()
-- ()안의 값을 왼쪽에서부터 찾아서 제거
+- ()안의 값을 왼쪽에서부터 찾아서 제거, 없으면 Error
 
 ㆍ.pop()
 - ()안의 위치에 있는 값을 제거, 값이 없으면 젤 뒤에거 삭제
+- dict경우, .pop(key,default)로 딕셔너리 값 제거 key값이 없을경우 default값 반환
 - b=a.pop()처럼 변수에 제거된 데이터를 저장할 수 있음
+
+ㆍ.discard()
+- ()를 삭제하고 삭제할 데이터가 없어도 에러없음
 
 ㆍ.index()
 - ()안의 값을 찾아 위치를 알려줌, 없으면 Error
 
-ㆍzip()
+ㆍdict.get(key,default)
+- key값의 value를 반환, 만약 key가 없을 경우 default값 반환
 
-ㆍfilter()
+ㆍzip(복수iterables) #리스트, 스트링 다 가능
+- index가 같은것 끼리 모아서 튜플의 형식으로 반환 [('',''),('',''),('','')]
+- dict(zip()) 또는 {x,y for x,y in zip()} 으로 딕셔너리 형태에 넣을 수 있음
+- 길이가 다를 땐 짧은거에 맞춰서 앞에서 부터 입력
+
+ㆍfilter(함수,input)
+-  input의 값이 함수에서 참인 값만 반환
+
 
 히히히히히히히
