@@ -4,11 +4,13 @@ for l in my_list:
     print(l)
 
 # 위에 작성한 코드를 인덱스(index) 값과 함께 출력하는 코드로 변경하시오
+my_dict={}
 for idx,val in enumerate(my_list):
     print(idx,val)
+    my_dict[idx]=val
+print(my_dict)
 
 #  딕셔너리는 key, value로 구성되어 있습니다. 따라서, 딕셔너리 my_dict 각각의 상 황에 따라 반복문을 수행할 수 있도록 빈칸을 채우시오.
-my_dict = {'JH':27, 'JW':26, 'MH':26}
 for key in my_dict.keys():
     print(key)
 for value in my_dict.values():
@@ -20,5 +22,5 @@ for key2,value2 in my_dict.items():
 def my_func(a, b):
     c = a + b
     print(c) 
-result = my_func(1, 5)
+my_func(1, 5)
 
