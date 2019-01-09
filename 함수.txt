@@ -23,7 +23,7 @@
 
 ㆍ'!'.join()
 - ()를 '!'으로 구분함
-- 문자열, 리스트 등 이터러블 가능
+- 문자열, 리스트 등 이터러블 가능(int 값은 안됨!)
 
 ㆍ.replace(a,b,2)
 - a를 b로 앞에서부터 2개 바꿈
@@ -104,6 +104,9 @@ print(int(x)+int(y)) #두 수의 합
 - 정해진 위치에 '문자'를 추가
 - .insert(len(list)-1,''): list 마지막 앞자리에 ''추가
 
+ㆍdict.update({key:value})
+- 딕셔너리에 데이터 추가
+
 ㆍenumerate(list)
 - list의 value값을 index와 함께 표기
 - for idx,val in enumerate(arr)
@@ -123,6 +126,8 @@ print(int(x)+int(y)) #두 수의 합
 ㆍ.index()
 - ()안의 값을 찾아 위치를 알려줌, 없으면 Error
 
+ㆍzip()
 
+ㆍfilter()
 
 히히히히히히히

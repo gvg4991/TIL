@@ -11,8 +11,8 @@ d={}
 c=[]
 for x,y in enumerate(a):
     d[y]=x
-print(d)
+# print(d)
 for b in input():
-    c.append(d[b])
-f=' '.join(c)
-print(f)
+    c.append(str(d[b]+1))
+# print(c)
+print(' '.join(c))
