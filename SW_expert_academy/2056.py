@@ -12,6 +12,37 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 #  (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.) 
 
-a=str(input())
-for b in range(a):
-    x,y=map(int,input().split())
+
+for b in range(int(input())):
+    a=str(input())
+    y=a[0:4]
+    m=a[4:6]
+    d=a[6:8]
+    t=f'#{b+1} {y}/{m}/{d}'
+    f=f'#{b+1} -1'
+    if 1<=int(m)<=12:
+        if int(m) in map(int,[1,3,5,7,8,10,12]):
+            if int(d)<=31:
+                print(t)
+            else:
+                print(f)
+        elif int(m) in map(int,[4,6,9,11]):
+            if int(d)<=30:
+                print(t)
+            else:
+                print(f)
+        elif int(m) == int(2):
+            if int(d)<=28:
+                print(t)
+            else:
+                print(f)
+    else:
+        print(f)
+
+
+#print(f'{y}/{m}/{d}/')
+
+
+
+# for b in range(a):
+#     x,y=map(int,input().split())
