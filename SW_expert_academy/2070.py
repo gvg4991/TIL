@@ -10,4 +10,11 @@
 
 a=int(input())
 for b in range(1,a+1):
-    c=map(int,input().split())
+    x,y=map(int,input().split())
+    if x>y:
+        print(f'#{b} >')
+    elif x==y:
+        print(f'#{b} =')
+    else:
+        print(f'#{b} <')
+
