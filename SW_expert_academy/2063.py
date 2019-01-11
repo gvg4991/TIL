@@ -13,13 +13,17 @@
 # [출력]
 # N 개의 점수들 중, 중간값에 해당하는 점수를 정답으로 출력한다.
 
-# # a=(int(input())/2
+# a=int((int(input()))/2)
 # b=input().split()
-# # print(b[a])
-# print(b)
+# b.sort()
+# print(b[a])
 
 a=input()
-for b in range(1):
-    c=input().split()
-    d=(int(a)+1)/2
-print(d)
+b=sorted(list(map(int, input().split()))) #split 인풋값도 int로 바꿔줌
+c=int((int(a))/2)
+print(b[c])
+
+# init_num = int(input())
+# num = sorted(list(map(int, input().split())))
+# print(num)
+# print(num[int(len(num)/2)])

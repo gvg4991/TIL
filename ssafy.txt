@@ -114,14 +114,26 @@ C9------------------------------------------------------------------------------
 
 flask-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ㆍ터미널에서 ctrl+c로 나간후 실행: FLASK_APP=hello.py flask run
+ㆍintro
+- 어떻게 사용할 수 있는지 사용 형식에 대해 공부!!
+- web
+
+ㆍ실행
+- flask 처음 실행, http://flask.pocoo.org/
+- 설치: VScode 터미널에서 pip install Flask
+- 서버 종료: 터미널에서 ctrl+c로
+- 실행: FLASK_APP=hello.py flask run
+- 자동 서버 재시작 설정: FLASK_DBUG=1 FLASK_APP=hello.py flask run (서버 종료-실행 반복과정 제거)
+
 ㆍ추가 창(.../어쩌고)
 @app.route("/ssafy")
 def ssafy():
     return "This is SSAFY:)"
-ㆍ추가창에 인풋데이터 참고<int / string : 변수이름>
+
+ㆍ추가창에 인풋데이터 참고<형식 : 변수이름>
+- 형식: int, string, float, pass의 input값 형식을 지정
 @app.route("/cube.<int:num>")                                #<int:num> : 입력값
-def cube(num):
+def cube(num):   #()안에 input으로 넣는 변수이름을 꼭 넣어야됨!
     cube=num**3 # == num*num*num
     return str(cube)
     return f'{num}의 세제곱은 {cube}입니다.'
