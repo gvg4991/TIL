@@ -130,7 +130,7 @@ flask---------------------------------------------------------------------------
 - Hyper Text Markup Language(마크업 언어)
 - 처음부터 쭉 읽는 선형적인 텍스트가 아니고 키워드에 따라 이동 가능한 비선형적 텍스트
 - web 페이지를 작성하기위한 역할 언어
-- HTML:5 + tab
+- html:5 + tab
 	<!DOCTYPE html>: doc type 선언부
 	<그외 나머지 파트>: html 요소
 		head요소: 문서 제목, 문자코드와 같이 해당 문서정보를 담음(브라우저에 나타나지x)
@@ -171,13 +171,17 @@ html----------------------------------------------------------------------------
 - head영역은 브라우저에 나타나지 않음, body 영역은 직접 눈으로 보게됨
 - <title>: 탭이름 설정</title>
 - <h숫자>: 헤드 텍스트 입력, 제목 (<h1>여는 태그, </h1>닫는 태그)
-- p: 본문영역 텍스트 입력
+- <p>: 본문영역 텍스트 입력
 
 ㆍbody 태그
 - <body>부모와 <ul>, <li>...등은 자식 관계
 
 ㆍ스타일 지정
-- <style> h1 { color:blue;} </style>: 세미콜론 들어감
+- <style> h1 { color:blue;} </style>: 모든 h1에 스타일을 지정함(세미콜론 들어감!!!!!)
+- <ul style="list-style-type: circle;">: ul안의 모든 list에 적용 됨
+- <li style="list-style-type: circle;">: 스타일 지정을한 list에만 설정(하나만 지정해서 할 수 있음)
+- list-style-type에 들어갈 수 있는 속성: none / square / circle / lower-alpha / upper-alpha / upper-lower
+
 - <b>: 굵은 글씨 지정 (시맨틱 태그 <strong>을 더 선호)
 - <i>: 기울인 글씨 직정 (시맨틱 태그 <em>을 더 선호)
 - <mark>: 형광팬
@@ -203,8 +207,26 @@ html----------------------------------------------------------------------------
 - footer: 문서 젤 밑에서 전체나 섹션의 푸터
 
 ㆍ속성
-- <a href="https://google.com"/>: a태그에 속성을 지정
+- <a href="https://google.com" target="_self">절대 URL</a>: a태그에 속성을 지정
+- 절대 URL이라는 컨텐츠를 누르면 herf에 지정한 url에 target에 지정한 방식(self, blank)으로 창을 염
+- herf에 들어가는 속성: 절대 URL(구글) / 상대 URL(html) / element id / mailto:
 - id, class, style은 특정 태그 뿐만아니라 global로 속성 지정 가능
+
+ㆍ이미지
+- <img src="" alt="" width="" height="">
+- src는 이미지 파일, alt는 이미지 설명, w는 가로길이, h는 세로길이
+
+ㆍ동영상
+- <video src="video.mp4" width="300px" height="" controls></video>
+- <iframe width="560" height="315" src="https://www.youtube.com/" frameborder="" allow="</iframe>
+   (유튭에서 바로 공유-퍼가기로 복사해서 사용할 수 있다.)
+
+ㆍ테이블
+- <table>: 표를 만듬
+- tr*3+tab: <tr>이 바로 3개 생김
+- <th>, <td>
+- <td colstan='2'>: 2칸을 차지, 가로 칸 길이
+- <td rowstan='2'>: 2칸을 차지, 세로 칸 길이
 
 ㆍ참조
 # : 아이디 참조 (#id명 - 전체에서 딱 하나만 가능)

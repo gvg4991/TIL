@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,tr,td {
+            border: 1px solid darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>프로그래밍 교육</h1>
+    <a href="#python"><img src="images/yo(1).jpg" alt="파이썬" width="50px" height="50px"></a>
+    <a href="#web"><img src="images/yo(2).jpg" alt="웹" width="50px" height="50px"></a>
+    <a href="index.htm" target="_self"><img src="images/yo(3).jpg" alt="참고사이트" width="50px" height="50px"></a>
+    <hr>
+
+    <section id="python">
+        <a href="https://docs.python.org/ko/3/tutorial/index.html" target="_blank"><h2>파이썬</h2></a>
+        <h3>Number type</h3>
+        <p>파이썬에서 숫자형은 아래와 같이 있다.</p>
+        <ol>
+            <li>int</li>
+            <li>float</li>
+            <li>complex</li>
+            <li><del>str</del></li>
+        </ol>
+        <h3>Sequence</h3>
+        <p>파이썬에서 시퀀스는 아래와 같이 있다.</p>
+        <strong>시퀀스는 for문을 돌릴 수 있다!!</strong>
+        <ol>
+            <li>str</li>
+            <li>list</li>
+            <li>tuple</li>
+            <li>range</li>
+        </ol>
+    </section>
+    <hr>
+
+    <section id='web'>
+        <h2><a href=https://developer.mozilla.org/ko/ target="_self">웹</a></h2>
+        <h3>기초</h3>
+        <!-- none, square, circle, lower-alpha, upper-alpha, upper-lower -->
+        <ul style="list-style-type: circle;">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </section>
+
+    <section id='rink'>
+        <!-- a(anchor) -->
+        <a href="http://www.google.com" target="_self">절대 URL</a>
+        <a href="index.htm" target="_blank">상대 URL</a>
+        <a href="#python">파이썬으로(id python)</a>
+        <a href="mailto:alsgh4991@naver.com">메일 보내기</a> 
+    </section>
+    <hr>
+
+    <section>
+        <!-- img -->
+        <img src="images/yo.jpg" alt="yo" width="400px" height="200px"><br>
+        <video src="video.mp4" width="300px" height="" controls></video><br>
+        <!-- iframe -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tP_dt9C6MjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+    </section>
+    <br>
+
+    <section>
+        <!-- table -->
+        <table>
+            <!-- table row -->
+            <tr>
+                <!-- table head -->
+                <th></th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+            </tr>
+            <tr>
+                <!-- table data -->
+                <td>A코스</td>
+                <td rowspan="2">초밥</td>
+                <!-- clospan -->
+                <td colspan="2">스퐈게뤼</td>
+            </tr>
+            <tr>
+                <td>B코스</td>
+                <!-- <td>김치찌개</td>
+                <td>삼계탕</td> -->
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th>TIME</th>
+                <th>INDOOR</th>
+                <th colspan="2">OUTDOOR</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>소극장</td>
+                <td>잔디마당</td>
+                <td>대공연장</td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td rowspan="2">안녕하신가영</td>
+                <td></td>
+                <td>10CM</td>
+            </tr>
+            <tr>
+                <td>13:00</td>
+                <td rowspan="2">선우정아</td>
+                <td rowspan="2">참깨와 솜사탕</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td></td>
+                <!-- <td rowspan="2">선우정아</td>
+                <td rowspan="2">참깨와 솜사탕</td> -->
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td>크러쉬</td>
+                <td></td>
+                <td>폴킴</td>
+            </tr>
+        </table>
+    </section>
+    <br>
+
+    <section>
+        <!-- form -->
+        <!-- 사용자들로부터 입력값을 받음 -->
+        <form action="" method="GET">
+            <input type="text" value="ID"><br>
+            <!-- ***과 같이 표시됨 -->
+            <input type="password"><br>
+            <!-- 숫자만 입력되며 범위제한이 가능 -->
+            <input type="number" min="15" max="50" step="5">
+            <!-- value는 기본값 설정 -->
+            <input type="submit" value="login"> 
+            <div>
+            <!-- 네임을 똑같이 지정해주면 중복된 선택 불가 , checked 기본 선택-->
+                <input type="radio" name="박재형" checked>종원<br>
+                <input type="radio" name="박재형">지현<br>
+                <input type="radio" name="박재형">영현<br>    
+            </div>
+            <div>
+                <input type="checkbox" name="토핑">토마토    
+                <input type="checkbox" name="토핑">오이
+                <input type="checkbox" name="토핑">할라피뇨
+                <input type="checkbox" name="토핑">핫 칠리
+                <input type="checkbox" name="토핑">바베큐 소스
+            </div>
+            <!-- select -->
+            <select name="" id="">
+                <option>기억</option>
+                <option disabled>니은</option>
+                <option selected>디귿</option>
+            </select>
+        </form>
+    </section>
+
+</body>
+</html>

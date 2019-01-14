@@ -23,6 +23,6 @@ for b in range(a):
     else:
         B=c[1]
     if A>B:
-        print(f'#{b+1} {A}')
-    else:
         print(f'#{b+1} {B}')
+    else:
+        print(f'#{b+1} {A}')
