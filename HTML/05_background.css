@@ -8,7 +8,7 @@ div {
 .background-image {
     background-image: url(images/yo.jpg);
     background-position: center center; /* 가로,세로 초점 이동 */
-    background-size: contain; /* cover */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size: contain; /* :가로 세로 중 짧은 길이 기준, cover: 가로 세로 중 긴 길이 기준 */
+    background-repeat: no-repeat; /* 그림 반복 방식, no-repeat: 반복하지 않음 */
+    background-attachment: scroll; /* fixed: 고정된 사진, scroll: 스크롤로 사진을 볼 수 있음 */
 }

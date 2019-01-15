@@ -223,10 +223,15 @@ html----------------------------------------------------------------------------
 
 ㆍ테이블
 - <table>: 표를 만듬
-- tr*3+tab: <tr>이 바로 3개 생김
-- <th>, <td>
+- tr*3+tab: 세로 데이터 <tr>이 바로 3개 생김
+- <th>, <td>: 가로 데이터로 table head와 table data
 - <td colstan='2'>: 2칸을 차지, 가로 칸 길이
 - <td rowstan='2'>: 2칸을 차지, 세로 칸 길이
+
+ㆍform
+- 사용자들로부터 입력값을 받음 ex) <form action="" method="GET">
+- input type: text(value 기본값), password, number(min,max,step설정 가능), submit, radio(name 동일한 네임은 중복 선택 불가), checkbox(checked 기본 선택)
+- select: option 추가 후 선택 가능 (option disabled는 선택불가, selected는 초기 선택값)
 
 ㆍ참조
 # : 아이디 참조 (#id명 - 전체에서 딱 하나만 가능)
@@ -249,7 +254,7 @@ html----------------------------------------------------------------------------
   /* h1: 선택자(selector) */
   /* color: 속성(property) */ 
 	color: 색 이름, 컬러 코드, rgb(빨,초,파), rgba(빨,초,파,투명도)- 빨초파 입력값은 255까지, 투명도는 0~1사이
-	font-size: px(픽셀), rem(html에 정의된 font-size에 비례), em(자신의 상위 요소의 font-size에 비례, 10px(html)*1.2(ul)*1.2(li))
+	font-size: px(픽셀), rem(자신만 html에 정의된 font-size에 비례), em(자신의 상위 요소의 font-size에 비례, 10px(html)*1.2(ul)*1.2(li))
 		, vh(브라우저 세로 길이에 따라 크기 변동), vw(브라우저의 가로 길이에 따라 크기 변동)
 	box: magin, border(전체에서 박스까지의 여백), padding(box에서의 바깥쪽 여백)
  /* aqua: 값(value), 값 다음엔 세미콜론(;)*/
