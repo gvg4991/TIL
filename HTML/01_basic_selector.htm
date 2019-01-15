@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 전체 선택자 */
+        *{
+            color: red;
+        }
+        /* 태그 선택자 (h1에 적용) */
+        h1,p {
+            color: rosybrown;
+        }
+        /* 클래스 선택자 (클래스명이 블루인 클래스에 적용) */
+        .blue {
+            color: blue;
+        }
+        /* #아이디 선택자 */
+        #green {
+            color: green;
+        }
+        .pink {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p>red, 전체 선택자</p>
+    <h1>rosybrown, 태그 선택자</h1>
+    <h2 class="blue">blue, c.클래스 선택자</h2> 
+    <h3 id="green">green, #아이디 선택자</h3>
+    <!-- 클래스는 .class / 아이디는 #id -->
+    <h1 class="blue">h1 vs .blue ? class 승</h1>
+    <h1 id="green">h1 vs #green ? id 승</h1> 
+    <h1 id="green" class="blue">h1 vs #green vs .blue ? id 승</h1>
+    <!-- 전체 선택자 < 태그 < 클래스 < 아이디 -->
+
+    <p>낸 <span class="blue">파랑색</span>이고, 여는 <span class="pink">핑크색</span>일 수 있나?</p>
+</body>
+</html>

@@ -22,16 +22,21 @@
 # 최소 몇 번 양을 세었을 때 이전에 봤던 숫자들의 자릿수에서 0에서 9까지의 모든 숫자를 보게 되는지 출력한다.
 #  ( 민석이는 xN번 양을 세고 있다. ) 
 
-a=int(input())
-for b in range(a):
-    N=list(map(int,input())) #unput=1234 -> [1,2,3,4]
-    r=list(range(10)) #[0,1,2,...,9]
-    i=[]
-    c=0
-    while sorted(r)!=sorted(i):
-        for n in N:
-            if not n in i:
-                i.append(n)
-        N=2*N
-        c+=1
-    print(f'#{b+1} {c}')
+# a=int(input())
+# for b in range(a):
+#     d=input()
+#     N=list(map(int,d)) #unput=1234 -> [1,2,3,4]
+#     r=list(int(range(10))) #[0,1,2,...,9]
+#     i=[]
+#     c=0
+#     while sorted(r)!=sorted(i):
+#         for n in N:
+#             if not n in i:
+#                 i.append(n)
+#         d=2*d
+#         c+=1
+#     print(f'#{b+1} {c}')
+
+n=input()
+N=list(map(int,n))
+print(N)
