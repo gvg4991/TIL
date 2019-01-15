@@ -1,0 +1,14 @@
+div {
+    height: 200px;
+}
+
+.background-color {
+    background-color:  blue;
+}
+.background-image {
+    background-image: url(images/yo.jpg);
+    background-position: center center; /* 가로,세로 초점 이동 */
+    background-size: contain; /* cover */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

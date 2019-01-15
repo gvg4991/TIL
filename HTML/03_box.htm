@@ -37,9 +37,29 @@
             /* box-sizing: content-box;일때 글자적히는 컨탠츠 쪽의 크기가 100*100 */
             /* box-sizing: border-box;일때 여백을 포함한 크기가 100*100 */
         }
+        /* 1.block */
+        /* div, h1~h6, p, ol, ul, li, table, form */
+        /* 2.inline */
+        /* span, a, strong, em, img, input */
+        /* (주의) width, height, margin-top, margin-bottom 사용 불가 */
+        /* 3.inline-block */
+        /* inline + block 특징을 섞어서 가지고 있음 */
+        /* 4.none */
+        /* 화면에 보이지 않음(공간조차 존재하지 않음) */
+        .box2 {
+            display: inline; /* 기본적으로 블록(전체칸을 차지) */
+            border: 2px solid red;
+            background-color: gray;
+            visibility: hidden; /* hidden은 숨김, visibility: visible;이 기본값 */
+            opacity: 0.15; /* 투명도 조절하여 0으로하면 안보이게 할 수 있음 */
+        }
     </style>
 </head>
 <body>
+    <div class="box2">
+        이것은 박스2입니다.
+    </div>
+    박스2와 박스 사이입니다.
     <div class="box">
         이것은 박스입니다.
     </div>

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 복합 선택자 */
+/* 1. 자손 선택자 */
+/* section안의 모든 ul */
+section ul { /* 한칸 띄우면 '모든'을 칭함 */
+    margin: 10px 0;
+}
+
+/* 2. 자식 선택자 */
+/* > */
+/* 경로의 '~~형'만 설정 */
+section > ul > li {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 3. 형제 선택자 */
+/* + */
+/* a태그의 형제 요소 중 a 바로 뒤에 오는 ul에만 적용 */
+a+ul {
+    background: gold;
+}
+/* ~ */
+/* a태그의 형제 요소 중 a뒤에 오는 모든 ul */
+a~ul {
+    border: 1px solid darkgray; /* 테두리가 들어감 */
+}
+
+/* 속성 선택자 */
+/* class라는 속성을 가진 ul의 자손 중 모든 li */
+ul[class] li {
+    width:  24%;
+    height:  50px;
+    display: inline-block;
+}
+
+/* target 속성을 가지며. 그 값이 _self인 a */
+a[target="_self"] {
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+}
+
+/* 
+    1. [속성="값"] : alt="yo 사진" / [alt="yo 사진"]
+    2. [속성~="값"] : alt="yo 사진" / [alt~="yo"] 
+    3. [속성|="값"] : alt="yo-사진" / [alt|="yo"]
+    4. [속성^="값"] : alt="apple banana" / [alt^="app"]
+    5. [속성$="값"] : href="ssafy.com/istj" / [href$="istj"]
+    6. [속성*="값"] : alt="미세먼지존싫" / [alt*="세먼지"]
+*/

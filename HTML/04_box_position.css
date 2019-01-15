@@ -1,0 +1,38 @@
+/* position 속성 */
+/* 1. static(기본값) */
+.box-static {
+    background-color: gray;
+    border: 2px solid red;
+    width: 100px;
+    height: 100px;
+}
+
+/* 2.absolute 좌표를 찍어주면 자유롭게 움직임*/
+.box-absolute {
+    position: absolute;
+    background: green;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 50px;
+    z-index: 1; /* 0이 기본값, +일수록 위로 -일수록 밑으로 감 */
+}
+
+/* 3.relative 다른 박스와 조화*/
+.box-relative {
+    position: relative;
+    background: blue;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+/* fixed 스크롤을 움직여도 고정위치에서 따라 움직임*/
+.box-fixed {
+    position: fixed;
+    background: pink;
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    right: 50px
+}

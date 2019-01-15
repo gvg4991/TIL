@@ -1,0 +1,10 @@
+.font {
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 700; /* bold */
+    font-family: 'Times New Roman', Times, serif;
+    /* '구글폰트'에서 폰트를 가지고 올 수 있다. */
+    line-height: 1.2;  /* 1.5배수 */
+    letter-spacing: -2px;  /* 장평이 (+)넓어짐 (-)좁아짐 */
+    text-align: center;  /* 가운데 정렬 */
+}
