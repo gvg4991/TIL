@@ -5,6 +5,15 @@ zzu.li/sgmpy
 
 scratch--------------------------------------------------------------------------------------------------------------------
 
+
+VSCODE-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ㆍ전체 선택
+ctrl + d
+ctrl + alt + 방향키
+ㆍ들여쓰기 정리
+alt + shift + f
+
 typora---------------------------------------------------------------------------------------------------------------------
 
 ## :제목설정
@@ -158,8 +167,6 @@ def cube(num):   #()안에 input으로 넣는 변수이름을 꼭 넣어야됨!
 
 html------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ㆍalt + shift + f: 들여쓰기 정리
-
 ㆍchrome에서 확인하는 방법
 - http://html5test.com/: 브라우저 점수 확인 (chrome사용)
 - 사이트별 아웃라인 보기: 확장프로그램 - 햄버거 메뉴버튼 - chrome 웹스토어 열기 - web developer - information - view document outline 으로 확인
@@ -280,7 +287,7 @@ Bootstrap 사이트 이용-----------------------------------------------------------
 - .m-0: margin을 0으로 지정, .mx-0: margin의 가로축을 0으로 지정, .mt-1: margin-top을 0.25rem으로 지정 (m:마진(바깥쪽 여백), p:패딩(안쪽여백, 컨탠츠처럼 인식))
 - col-sm-숫자: 1(4px), 2(8px), 3(16px), 4(24px), 5(48px), auto
 
-ㆍbootstrap 사이트와 bootstrapcreative 사이트에서 속성 확인하기
+ㆍbootstrap 사이트와 bootstrapcreative 사이트에서 속성(components) 확인하기
 - colors: bg-...: background색, text-...: text색, alert-...: text배경색 등
 - 테두리: border border-색 rounded-모양(없거나, circle, pill)
 - display: d-block, d-inline, d-none, d-sm-none(화면크기에 따라 속성이 적용되고 안되고 설정할 수 있음)
@@ -292,6 +299,23 @@ Bootstrap 사이트 이용-----------------------------------------------------------
 - <div class="container">로 전체에 양쪽 여백을 설정
 - 12grid? 약수가 가장 많아서 2,3,4,6칸을 차지하는 그리드 형성 가능
 
+ㆍutilities
+- d-flex: 왼쪽부터 아이템을 정렬 (flex-row가 기본값), flex-column-reverse은 아래에서부터 아이템 정렬(reverse는 반대방향)
+            justify-content-between: 동일한 간격을 두고 배열
+- flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- Flexbox Froggy
+justify-content: (flex-start, flex-end, center, space-between, space-around)
+align-items: (flex-start, flex-end, center, baseline, stretch)
+flex-direction: (row, row-reverse, column, column-reverse)
+order: (..., -1, 0, 1, ...)
+align-self: (flex-start, flex-end, center, baseline, stretch)
+flex-wrap: (nowrap, wrap, wrap-reverse)
+flex-flow: (<flex-direction>, <flex-wrap>)
+align-content: (flex-start, flex-end, center, space-between, space-around, stretch)
+
+ㆍ반응형 웹 디자인
+- viewport: 창의 크기
+- 설정: width=device-width, initial-scale=1.0
 
 telegram---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
