@@ -121,6 +121,13 @@ C9------------------------------------------------------------------------------
 ㆍprintenv -> source ~/.bash_profile
 ㆍrequests.get (get은 주소창에 입력받음, post는 )
 
+telegram---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ㆍtoken: 784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA
+ㆍuser ID: 718060199
+ㆍ기능: https://core.telegram.org/bots/api#sendmessage - available methods - ...
+ㆍmaking requests: https://api.telegram.org/bot784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA/METHOD_NAME
+
 flask-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ㆍintro
@@ -317,14 +324,14 @@ align-content: (flex-start, flex-end, center, space-between, space-around, stret
 - viewport: 창의 크기
 - 설정: width=device-width, initial-scale=1.0
 
-telegram---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+json-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ㆍtoken: 784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA
-ㆍuser ID: 718060199
-ㆍ기능: https://core.telegram.org/bots/api#sendmessage - available methods - ...
-ㆍmaking requests: https://api.telegram.org/bot784700304:AAFl1zcLZDv4JRWjaTl-mAzReT8fJl8kMuA/METHOD_NAME
+ㆍrequests 요청
+- import requests -> requests.get('url')
 
-
+code ~/.bash_profile
+source ~/.bash_profile
+printenv KOBIS_KEY (환경변수를 프린트 해라)
 
 
 ```
