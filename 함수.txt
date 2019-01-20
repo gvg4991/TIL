@@ -1,5 +1,30 @@
 # Python 함수 정리
 
+- .kwlist
+
+-키워드의 리스트를 확인
+
+```python
+import keyword
+print(keyword.kwlist)
+```
+
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+
+- dir(__builtins__)
+
+  -내장함수의 목록을 확인
+
+
+
+- str()
+
+-string 값으로 변환
+
+
+
 
 
 ㆍdef 함수명(input):
@@ -32,6 +57,7 @@
 
 ㆍ.replace(a,b,2)
 - a를 b로 앞에서부터 2개 바꿈
+- 원본을 바꾸지는 못함, replace한 프린트에서만 적용
 
 ㆍmap(함수,input())
 - input을 내장함수, def 함수값에 넣음
@@ -62,8 +88,10 @@
 ㆍprint(f'{변수1},{변수2}')
 - print('{},{}'.format(변수1,변수2))과 동일
 - {}내에서 계산도 가능 ex) {a*2+2}
+- {}내에서 표시 형식이나 소수점 자리수도 지정 가능 ex) {pi:.3}, 소수 셋째자리에서 반올림
 
 ㆍprint(...[::-1])
+- 슬라이싱
 - 리스트나 문자열을 역순으로 출력!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ㆍ.count()
@@ -75,7 +103,7 @@
 - (몫(//), 나머지(%))로 결과값 나옴
 
 ㆍset(리스트)
-- ()의 리스트 값 중 중복값 제거
+- ()의 리스트 값 중 중복값 제거 후 set형식 반환 -> list(set(l)): 중복값 제거 후 다시 리스트 만들기
 - 중복값만 찾을 경우. set([x for x in a if a.count(x)>1])
 
 ㆍ.split("구분기준",몇등분)
@@ -104,17 +132,25 @@
 
 ㆍ.append()
 - 데이터에 ()값 추가
+- ()의 형식을 유지하면서 추가 ex) ()가 list일때, [1,2,3,[4]]
 
 ㆍ.extend()
 - 두 list를 합침, list에 list데이터 추가
+- list =+ [l]과 동일
+- [1,2,3].expend([4,5]) = [1,2,3]+=[4,5] -> [1,2,3,4,5]
+- ()가 문자일 땐, 문자 한글자씩 리스트 추가되어 합쳐짐
 
 ㆍ.update(*others)
+
+- 딕셔너리에 갑({key:value}값 추가)
+
 - 여러가지 값을 순차적으로 추가
 - 겹치는 값은 pass
 
-ㆍ.insert(위치,문자)
+ㆍ.insert(위치,x)
 - 정해진 위치에 '문자'를 추가
 - .insert(len(list)-1,''): list 마지막 앞자리에 ''추가
+- x의 형태를 유지한 상태로 들어감(리스트면 [1,2,[3]], int면 int로)
 
 ㆍdict.update({key:value})
 - 딕셔너리에 데이터 추가
@@ -152,6 +188,48 @@
 
 ㆍfilter(함수,input)
 -  input의 값이 함수에서 참인 값만 반환
+
+
+
+ㆍ.strip()
+
+- ()안의 값을 양쪽에서부터 ()의 값이 아닌게 나올 때 까지 제거
+- lstrip(): 왼쪽에서부터 제거, rstrip(): 오른쪽에서부터 제거
+
+
+
+ㆍ.find()
+
+- ()안의 값을 찾아 위치를 반환
+- ()안의 값이 없을 땐 -1을 반환
+
+
+
+ㆍ.index()
+
+- find와 동일한 기능을 하나 ()의 값이 없을 땐 Error
+
+
+
+ㆍ.capitalize()
+
+- 가장 앞글자만 대문자로 변환
+
+
+
+ㆍ.title()
+
+- 공백, 띄어쓰기, 어포스트로피 이 후 대문자로 변환
+
+
+
+ㆍ.swapcase()
+
+- 대문자 -> 소문자, 소문자 -> 대문자 변환
+
+
+
+
 
 
 히히히히히히히

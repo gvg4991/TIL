@@ -14,14 +14,7 @@ with open('movie.csv','r',newline='', encoding='utf8') as f:
             'X-Naver-Client-Secret': os.getenv('NAVER_SECRET')
         }
         res = requests.get(url,params={'query':row['movieNm']}, headers=headers)
-        # data = res.json()
-        # d_data = {}
-        # d_data['movieCd'] = row['movieCd']
-        # d_data['image'] = data['items'][0]['image']
-        # d_data['link'] = data['items'][0]['link']
-        # d_data['userRating'] = data['items'][0]['userRating']
-
-        # movie.append(d_data)        
+              
         data={
             'movieCd':row['movieCd'],
             'image':res.json()['items'][0]['image'],
@@ -35,3 +28,8 @@ with open('movie.csv','r',newline='', encoding='utf8') as f:
         writer.writeheader()
         for result in movie:
             writer.writerow(result) 
+
+            # image_url = result['image']
+            # image_file = requests.get(image_url)
+            # with open(result['movieCd'].jpg,'wb') as f:
+            #     f.write(image_file.content)
