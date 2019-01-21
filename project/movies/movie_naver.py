@@ -28,8 +28,3 @@ with open('movie.csv','r',newline='', encoding='utf8') as f:
         writer.writeheader()
         for result in movie:
             writer.writerow(result) 
-
-            # image_url = result['image']
-            # image_file = requests.get(image_url)
-            # with open(result['movieCd'].jpg,'wb') as f:
-            #     f.write(image_file.content)
