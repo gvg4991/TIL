@@ -138,6 +138,7 @@ C9------------------------------------------------------------------------------
 ㆍide.c9.io
 ㆍpyenv global 3.6.7로 이용 버전 설정
 ㆍ터미널 새로 설정: exec $SHELL
+ㆍ터미널 나가기: ctrl + d
 
 ㆍFALSK 설치
  - pip install flask
@@ -152,11 +153,12 @@ if __name__=='__main__':
 (위의 코드는 항상 마지막 줄에 입력!)
 
 ㆍ가상환경 만들기
-pyenv virtualenv 3.6.7 first-venv
-mkdir mysite
-cd mysite
-pyenv local first-venv
-pip install -U pip
+pyenv virtualenv 3.6.7 first-venv  (first대신 다른 가상환경 이름 설정 가능)
+mkdir mysite  (mysite 폴더 만들기)
+cd mysite  (mysite 폴더 들어가기)
+pyenv local first-venv  (first 대신 입력한 가상환경 이름 적용)
+pip install -U pip  (가상환경에서 pip 업로드)
+pip install flask Flask-SQLAlchemy Flask-Migrate (플라스크, sql, migrate 설치)
 
 ㆍhtml
 ! + tab
@@ -176,15 +178,19 @@ address TEXT
 - 테이블 조회
 .schema classmates를 통해 테이블을 조회할 수 있다.
 
-- 테이블 삭제
+- 테이블 삭제(DROP)
 DROP TABLE classmates;
 
-- 테이블에 행 추가
+- 테이블에 행 추가(INSERT)
 INSERT INTO classmates (column1, colume2, ...)
 VALUES (value1, value2, ...)
 or INSERT INTO classmates VALUES (id,name,age,address)처럼 생성한 데이터 순서대로 입력 가능
 
-- 테이블 데이터 확인
+- 테이블에 새로운 열 추가(ALTER)
+ALTER TABLE bands ADD COLUMN (column) INT;
+UPDATE로 데이터 추가
+
+- 테이블 데이터 확인(SELECT)
 SELECT * FROM classmates;  (*대신 특정 column 가능(id, name, age,...))
 .headers on
 
@@ -205,7 +211,7 @@ CREATE TABLE classmates(
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
 age INT NOT NULL,
-address TEXT NOT NULL
+address TEXT NOT NULL  (낫 널은 빈값이 있으면 안됨)
 );
 
 - users.csv 이용하기
@@ -230,6 +236,55 @@ SELECT COUNT(*) FROM users; (카운트)
 SELECT AVG(balance) FROM users WHERE age>=30; (조건에 맞는 데이터의 평균 밸런스)
 SELECT * FROM users ORDER BY age DESC LIMIT 10; (오름차순 나열 후 10명 뽑음)
 
+- flask db 설정 명령어
+flask db init
+flask db migrate
+flask db upgrade
+
+- 정리
+[Create]
+INSERT INTO users (username, email) VALUES ('gvg4991','14.73oo6o19@gmail.com')
+user=User(username='gvg4991',email='14.73oo6o19@gmail.com')
+db.session.add(user)
+db.session.commit()
+User.query.all()  (user의 id값을 가지고옴)
+
+[Read]
+SELECT * FROM users;
+users = User.query.all() #복수
+
+SELECT * FROM users WHERE username='gvg4991';
+users = User.query.filter_by(username='gvg4991').all()
+
+SELECT * FROM users WHERE username='gvg4991' LIMIT 1;
+user = User.query.filter_by(username='gvg4991').first()
+
+SELECT * FROM users WHERE id=2 LIMIT 1;
+user = User.query.get(2)
+primary key만 get으로 가져올 수 있음.
+
+SELECT * FROM users WHERE email LIKE '%water%';
+users = User.query.filter(User.email.like("%water%")).all()
+
+ORDER
+users = User.query.limit(1).all()
+
+OFFSET
+users = User.query.offset(2).all()
+
+ORDER + LIMIT + OFFSET
+users = User.query.order_by(User.username).limit(1).offset(2).all()
+
+[DELETE]
+DELETE FROM users WHERE id=1;
+user = User.query.get(1)  (제거시킬 데이터 번호를 입력: 1)
+db.session.delete(user)
+db.session.commit()
+
+[UPDATE]
+UPDATE users SET username='yo' WHERE id=2;
+user = username = 'yo'
+db.session.commit()
 
 telegram---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

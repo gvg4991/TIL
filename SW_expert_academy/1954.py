@@ -15,3 +15,5 @@
 a=int(input())
 for ai in range(a):
     b=input()
+
+    
