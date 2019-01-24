@@ -135,7 +135,7 @@ b=a[:] 아니면 b=list(a) #이렇게 복사해야 b를 바꿔도 a가 바뀌지 않음
 
 C9----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ㆍide.c9.io
+ㆍide.c9.io/gvg4991
 ㆍpyenv global 3.6.7로 이용 버전 설정
 ㆍ터미널 새로 설정: exec $SHELL
 ㆍ터미널 나가기: ctrl + d
@@ -152,13 +152,20 @@ if __name__=='__main__':
 	app.run(host=os.getenv('IP'),port=os.getenv('PORT'), debug=True)
 (위의 코드는 항상 마지막 줄에 입력!)
 
-ㆍ가상환경 만들기
+ㆍ파이썬 가상환경 만들기
 pyenv virtualenv 3.6.7 first-venv  (first대신 다른 가상환경 이름 설정 가능)
 mkdir mysite  (mysite 폴더 만들기)
 cd mysite  (mysite 폴더 들어가기)
 pyenv local first-venv  (first 대신 입력한 가상환경 이름 적용)
 pip install -U pip  (가상환경에서 pip 업로드)
 pip install flask Flask-SQLAlchemy Flask-Migrate (플라스크, sql, migrate 설치)
+pip install django (장고 설치) -> 장고 메모로 가기
+
+ㆍ가상환경 지우기
+pyenv uninstall (가상환경 이름)
+
+ㆍ가상환경 목록 확인
+pyenv versions
 
 ㆍhtml
 ! + tab
@@ -336,6 +343,34 @@ def cube(num):   #()안에 input으로 넣는 변수이름을 꼭 넣어야됨!
     cube=num**3 # == num*num*num
     return str(cube)
     return f'{num}의 세제곱은 {cube}입니다.'
+
+
+django----------------------------------------------------------------------------------------------------------------------------------------------
+
+- 웹을 간단하게 만들기위해 사용, 파이썬을 이용한 웹프레임워크 가능
+- view(중간 관리자, 모델에 요청을 보냄) -> model(요청을 찾아서 중간관리자에게 보냄) -> template(중간관리자가 템플릿으로 보냄으로써 응답)
+-역할별로 파일이 쪼개져 있음 (주로 models, views, urls, templates 사용)
+
+- 실행
+django-admin startproject intro .
+python manage.py runserver $IP:$PORT
+django폴더 > intro폴더 > intro폴더 > settings > 28번째 줄 ALLOWED_HOSTS에 ' '에 주소 붙여넣기
+
+- app실행: 어떠한 역할을 해줌
+python manage.py startapp pages
+apps.py: app의 정보를 가지고 있음
+settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 (pages.apps.PagesConfig) 추가
+urls.py에서 from pages import views 추가
+
+-과정
+views에서 url 정의 후 view에서 정의한 templates만듬
+python manage.py runserver $IP:$PORT
+
+뷰: def hello(request, name):
+    return render(request,'hello.html',{'name':name})
+유알엘(주소만 관리): urlpatterns = [
+    path('hello/<str:name>/', views.hello)
+템플릿: hello.html만들고 !+tab 입력 후 <p>에 hello,{{name}} 작성
 
 
 html------------------------------------------------------------------------------------------------------------------------------------------------------------------------
