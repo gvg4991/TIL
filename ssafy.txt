@@ -37,6 +37,8 @@ clear
 git---------------------------------------------------------------------------------------------------------------------------
 
 git file 확인하기
+git lab: https://lab.ssafy.com/01/gumi/gumi-01 (work관리)
+commit 주소: https://lab.ssafy.com/gvg4991/homeworkshop.git
 
 jupyter----------------------------------------------------------------------------------------------------------------------
 
@@ -170,7 +172,6 @@ pyenv versions
 ㆍhtml
 ! + tab
 
-
 ㆍSQL
 - 실행: cd flask - cd sql - sqlite3
 
@@ -190,11 +191,11 @@ DROP TABLE classmates;
 
 - 테이블에 행 추가(INSERT)
 INSERT INTO classmates (column1, colume2, ...)
-VALUES (value1, value2, ...)
+VALUES (value1, value2, ...);
 or INSERT INTO classmates VALUES (id,name,age,address)처럼 생성한 데이터 순서대로 입력 가능
 
 - 테이블에 새로운 열 추가(ALTER)
-ALTER TABLE bands ADD COLUMN (column) INT;
+ALTER TABLE classmates ADD COLUMN (column) INT;
 UPDATE로 데이터 추가
 
 - 테이블 데이터 확인(SELECT)
@@ -243,7 +244,7 @@ SELECT COUNT(*) FROM users; (카운트)
 SELECT AVG(balance) FROM users WHERE age>=30; (조건에 맞는 데이터의 평균 밸런스)
 SELECT * FROM users ORDER BY age DESC LIMIT 10; (오름차순 나열 후 10명 뽑음)
 
-- flask db 설정 명령어
+ㆍflask db 설정 명령어
 flask db init
 flask db migrate
 flask db upgrade
@@ -348,29 +349,42 @@ def cube(num):   #()안에 input으로 넣는 변수이름을 꼭 넣어야됨!
 django----------------------------------------------------------------------------------------------------------------------------------------------
 
 - 웹을 간단하게 만들기위해 사용, 파이썬을 이용한 웹프레임워크 가능
+- 실제로 외부인이 웹주소를 통해 접속 가능
 - view(중간 관리자, 모델에 요청을 보냄) -> model(요청을 찾아서 중간관리자에게 보냄) -> template(중간관리자가 템플릿으로 보냄으로써 응답)
 -역할별로 파일이 쪼개져 있음 (주로 models, views, urls, templates 사용)
 
 - 실행
-django-admin startproject intro .
-python manage.py runserver $IP:$PORT
-django폴더 > intro폴더 > intro폴더 > settings > 28번째 줄 ALLOWED_HOSTS에 ' '에 주소 붙여넣기
+django-admin startproject (intro) .    -( ()프로젝트 생성, .은 현재 폴더에 생성)
+django폴더 > (intro)폴더 > (intro)폴더 > settings > 28번째 줄 ALLOWED_HOSTS에 'playground-gvg4991.c9users.io' 주소 붙여넣기
+python manage.py runserver $IP:$PORT     -(실행)
+ctrl+c로 서버 종료
 
 - app실행: 어떠한 역할을 해줌
-python manage.py startapp pages
-apps.py: app의 정보를 가지고 있음
-settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 (pages.apps.PagesConfig) 추가
-urls.py에서 from pages import views 추가
+python manage.py startapp (pages)   -( (앱이름)을 실행 생성하여 실행), apps.py: app의 정보를 가지고 있음
+settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 ((pages).apps.PagesConfig) 추가    -()에 앱이름 넣기
+urls.py에서 from (pages) import views 추가
 
--과정
-views에서 url 정의 후 view에서 정의한 templates만듬
-python manage.py runserver $IP:$PORT
+python manage.py makemigrations
+python manage.py migrate
 
+- 장고전용 쉘 생성
+python manage.py shell
+from posts.models import Post
+post = Post(title='Hello', content='world!')	-포스트의 인스턴스 생성(대문자 Post는 class임)
+
+-과정: views에서 url 정의 후 view에서 정의한 templates만듬
 뷰: def hello(request, name):
     return render(request,'hello.html',{'name':name})
 유알엘(주소만 관리): urlpatterns = [
     path('hello/<str:name>/', views.hello)
 템플릿: hello.html만들고 !+tab 입력 후 <p>에 hello,{{name}} 작성
+python manage.py runserver $IP:$PORT
+
+-throw: 템플릿에 form문 태그 <form action="/catch" method="get"> 으로 메세지 던짐
+	views에 name=request.GET.get('name') 요청 및 {'name': name} 값 반환
+
+- admin.py: 관리자 페이지
+
 
 
 html------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -464,7 +478,7 @@ html----------------------------------------------------------------------------
 ㆍCSS
 - HTML로 뼈대를 만들고 CSS로 형태 완성 (html내 <style>)
 - CSS 독립적으로는 쓸 수 없고 HTML과 같이 있어야됨
-- Span style(스판 태그 내<span> 사용), Inline style(인라인 스타일), Embedding style(스타일 태그<style> 사용), Link style(.css파일 링크)
+- Span style(스판 태그<span>내 사용), Inline style(인라인 스타일), Embedding style(스타일 태그<style> 사용), Link style(.css파일 링크)
 - box: 컨탠츠(content, 글자가 실제로 적히는 곳) < 패딩(padding) < 볼더(border) < 말진(margin)
 
 - /* CSS 주석 */
@@ -492,13 +506,14 @@ Bootstrap 사이트 이용-----------------------------------------------------------
 
 ㆍ설정
 - html:5 후 css 코딩을 title아래에 붙여 넣기 -> js 코딩을 </body>바로 위에 붙여넣기
-- .m-0: margin을 0으로 지정, .mx-0: margin의 가로축을 0으로 지정, .mt-1: margin-top을 0.25rem으로 지정 (m:마진(바깥쪽 여백), p:패딩(안쪽여백, 컨탠츠처럼 인식))
+- .m-0: margin을 0으로 지정, .mx-0: margin의 가로축(x), 세로축(y)을 0으로 지정, .mt-1: margin-top을 0.25rem으로 지정 (m:마진(바깥쪽 여백), p:패딩(안쪽여백, 컨탠츠처럼 인식))
 - col-sm-숫자: 1(4px), 2(8px), 3(16px), 4(24px), 5(48px), auto
 
 ㆍbootstrap 사이트와 bootstrapcreative 사이트에서 속성(components) 확인하기
 - colors: bg-...: background색, text-...: text색, alert-...: text배경색 등
 - 테두리: border border-색 rounded-모양(없거나, circle, pill)
-- display: d-block, d-inline, d-none, d-sm-none(화면크기에 따라 속성이 적용되고 안되고 설정할 수 있음)
+- display: d-block, d-inline, d-none, d-sm-
+none(화면크기에 따라 속성이 적용되고 안되고 설정할 수 있음)
 - grid system(화면크기 별 속성 설정): sm, md, lg, xl
 - position: position-fixed fixed-top
 - font: text-center(정렬) font-weight-bold(굵게) font-italic(이탤릭체)

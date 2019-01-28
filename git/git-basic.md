@@ -66,3 +66,20 @@ git push
 # - 업데이트 정보 등록
 ```
 
+
+
+## GitHub 한번에 여러곳에 push
+
+```bash
+git remote add (origin) https://github.com/gvg4991/homeworkshop.git` 
+#()에 다른 이름 설정 가능
+
+git remote -v                                                                 `
+#git 설정 확인
+
+git push (설정 이름) master   
+#git push만 하면 origin값에만 push, (설정이름) master하면 설정이름에도 같이 push
+
+
+```
+
