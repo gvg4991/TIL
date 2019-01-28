@@ -361,9 +361,16 @@ ctrl+c로 서버 종료
 
 - app실행: 어떠한 역할을 해줌
 python manage.py startapp (pages)   -( (앱이름)을 실행 생성하여 실행), apps.py: app의 정보를 가지고 있음
-settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 ((pages).apps.PagesConfig) 추가    -()에 앱이름 넣기
+settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 ((pages).apps.(Pages)Config) 추가    -()에 앱이름 넣기
 urls.py에서 from (pages) import views 추가
 
+- models설정
+class Save(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+        
+    def __str__(self):
+        return self.title 
 python manage.py makemigrations
 python manage.py migrate
 
@@ -384,8 +391,10 @@ python manage.py runserver $IP:$PORT
 	views에 name=request.GET.get('name') 요청 및 {'name': name} 값 반환
 
 - admin.py: 관리자 페이지
+python manage.py createsuperuser
+주소 뒤에/admin
 
-
+워크샵은 save앱 Save클래스 saves인스턴스
 
 html------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
