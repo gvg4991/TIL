@@ -1,0 +1,30 @@
+mkdir mysite  (mysite 폴더 만들기)
+cd mysite  (mysite 폴더 들어가기)
+pyenv virtualenv 3.6.7 first-venv  (가상환경 설정, first대신 다른 가상환경 이름 설정 가능)
+pyenv local first-venv  (가상환경 활성화, first 대신 입력한 가상환경 이름 적용)
+
+pip install django (장고 설치)
+django-admin startproject (intro) .    -( ()프로젝트 생성, .은 현재 폴더에 생성)
+django폴더 > (intro)폴더 > (intro)폴더 > settings > 28번째 줄 ALLOWED_HOSTS에 'playground-gvg4991.c9users.io' 주소 붙여넣기
+
+python manage.py startapp (pages)   -( (앱이름)을 실행 생성하여 실행), apps.py: app의 정보를 가지고 있음
+settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 ((pages).apps.(Pages)Config) 추가
+urls.py에서 from (pages) import views 추가
+
+class Save(models.Model):	모델스 설정
+	title = models.CharField(max_length=100)
+
+	content = models.TextField()
+
+	birthday = models.DateFirld()
+	age = models.IntengerField()
+	def __str__(self):
+        
+		return self.title 
+
+python manage.py makemigrations	<-모델에 있는 클래스를 읽어 들임 (작성 내용을 바꿀때마다 새로해줘야됨)
+python manage.py migrate	<-실제 데이터베이스에 적용을 함
+
+admin.py -> from .models import Save -> admin.site.register(Save)		관리자 페이지 설정
+python manage.py createsuperuser	계정생성
+

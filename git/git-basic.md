@@ -78,7 +78,7 @@ git remote -v                                                                 `
 #git 설정 확인
 
 git push (설정 이름) master   
-#git push만 하면 origin값에만 push, (설정이름) master하면 설정이름에도 같이 push
+#git push만 하면 origin값에만 push, (설정이름) master하면 설정이름에 push
 
 
 ```

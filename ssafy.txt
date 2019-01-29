@@ -155,10 +155,10 @@ if __name__=='__main__':
 (위의 코드는 항상 마지막 줄에 입력!)
 
 ㆍ파이썬 가상환경 만들기
-pyenv virtualenv 3.6.7 first-venv  (first대신 다른 가상환경 이름 설정 가능)
+pyenv virtualenv 3.6.7 first-venv  (가상환경 설정, first대신 다른 가상환경 이름 설정 가능)
 mkdir mysite  (mysite 폴더 만들기)
 cd mysite  (mysite 폴더 들어가기)
-pyenv local first-venv  (first 대신 입력한 가상환경 이름 적용)
+pyenv local first-venv  (가상환경 활성화, first 대신 입력한 가상환경 이름 적용)
 pip install -U pip  (가상환경에서 pip 업로드)
 pip install flask Flask-SQLAlchemy Flask-Migrate (플라스크, sql, migrate 설치)
 pip install django (장고 설치) -> 장고 메모로 가기
@@ -359,18 +359,24 @@ django폴더 > (intro)폴더 > (intro)폴더 > settings > 28번째 줄 ALLOWED_HOSTS에 'p
 python manage.py runserver $IP:$PORT     -(실행)
 ctrl+c로 서버 종료
 
-- app실행: 어떠한 역할을 해줌
-python manage.py startapp (pages)   -( (앱이름)을 실행 생성하여 실행), apps.py: app의 정보를 가지고 있음
+- app실행: 어떠한 역할을 해줌, 앱이름은 일반적으로 복수
+python manage.py startapp (pages)   -( (앱이름)을 생성하여 실행), apps.py: app의 정보를 가지고 있음
 settings에서 107 (ko-kr), 109 (Asia/Seoul), 33마지막에 ((pages).apps.(Pages)Config) 추가    -()에 앱이름 넣기
 urls.py에서 from (pages) import views 추가
 
 - models설정
 class Save(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+    
+	title = models.CharField(max_length=100)
+    	
+	content = models.TextField()
         
-    def __str__(self):
-        return self.title 
+    
+	birthday = models.DateFirld()
+	age = models.IntengerField()
+	def __str__(self):
+        
+		return self.title 
 python manage.py makemigrations
 python manage.py migrate
 
@@ -381,7 +387,7 @@ post = Post(title='Hello', content='world!')	-포스트의 인스턴스 생성(대문자 Post
 
 -과정: views에서 url 정의 후 view에서 정의한 templates만듬
 뷰: def hello(request, name):
-    return render(request,'hello.html',{'name':name})
+    return render(request,'hello.html',{'name':name})	<-{'변수':'받아들이는 값'}
 유알엘(주소만 관리): urlpatterns = [
     path('hello/<str:name>/', views.hello)
 템플릿: hello.html만들고 !+tab 입력 후 <p>에 hello,{{name}} 작성
@@ -561,3 +567,4 @@ printenv KOBIS_KEY (환경변수를 프린트 해라)
 
 
 ```
+
