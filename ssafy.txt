@@ -375,15 +375,23 @@ class Save(models.Model):
 	birthday = models.DateFirld()
 	age = models.IntengerField()
 	def __str__(self):
-        
+        	<-object의 등록번호가 아닌 title로 보여주기
 		return self.title 
-python manage.py makemigrations
+
+python manage.py makemigrations	<-models를 등록하고 바꿀때마다 터미널에 작성하기
 python manage.py migrate
 
 - 장고전용 쉘 생성
 python manage.py shell
-from posts.models import Post
+from posts.models import Post, Comment
 post = Post(title='Hello', content='world!')	-포스트의 인스턴스 생성(대문자 Post는 class임)
+
+- comment class 생성
+class Comment(models.Model):
+
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.TextField()
+post.comment_set.all()
 
 -과정: views에서 url 정의 후 view에서 정의한 templates만듬
 뷰: def hello(request, name):
