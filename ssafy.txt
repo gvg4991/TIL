@@ -379,7 +379,8 @@ class Save(models.Model):
 		return self.title 
 
 python manage.py makemigrations	<-models를 등록하고 바꿀때마다 터미널에 작성하기
-python manage.py migrate
+python manage.py migrate		<-데이터베이스 변경함
+(db.sqlite3와 migrations안의 숫자로 이뤄진 파일들 삭제하면 데이터베이스가 초기화 시키고 다시 실행 할 수 있음)
 
 - 장고전용 쉘 생성
 python manage.py shell
@@ -415,6 +416,9 @@ python manage.py createsuperuser
 
 주소 입력
 주소~/posts/new: url을 posts의 urls.py에서 가지고옴
+
+
+
 
 html------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
