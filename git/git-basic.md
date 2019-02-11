@@ -64,6 +64,13 @@ host=github.com
 git push
 #로그인
 # - 업데이트 정보 등록
+
+# gitlab 재설정
+git credential reject
+protocol=https
+host=lab.ssafy.com
+#로그인
+git clone https://lab.ssafy.com/gvg4991/homeworkshop.git work
 ```
 
 

@@ -155,10 +155,10 @@ if __name__=='__main__':
 (위의 코드는 항상 마지막 줄에 입력!)
 
 ㆍ파이썬 가상환경 만들기
-pyenv virtualenv 3.6.7 first-venv  (가상환경 설정, first대신 다른 가상환경 이름 설정 가능)
+pyenv virtualenv 3.6.7 (first)-venv  (가상환경 설정, first대신 다른 가상환경 이름 설정 가능)
 mkdir mysite  (mysite 폴더 만들기)
 cd mysite  (mysite 폴더 들어가기)
-pyenv local first-venv  (가상환경 활성화, first 대신 입력한 가상환경 이름 적용)
+pyenv local (first)-venv  (가상환경 활성화, first 대신 입력한 가상환경 이름 적용)
 pip install -U pip  (가상환경에서 pip 업로드)
 pip install flask Flask-SQLAlchemy Flask-Migrate (플라스크, sql, migrate 설치)
 pip install django (장고 설치) -> 장고 메모로 가기
@@ -421,6 +421,7 @@ python manage.py createsuperuser
 d / rwx / r-x / r-x : d(폴더라는 의미, 파일일 경우 -로 표기), 소유자의 권한(read, write, 실행)
 
 템플릿 확장
+settings.py의 templates에 'DIRS': [os.path.join(BASE_DIR,'(templates를 추가한폴더명)','templates')], 추가
 app 밖의 폴더에서 templates폴더 생성 후 base.html 생성
     {% block container %}  <!--container는 다른 이름으로 지정 가능-->
 
