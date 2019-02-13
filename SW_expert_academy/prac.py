@@ -5,8 +5,11 @@
 
 a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 
-a.sort()
-print(a)
+# a.sort()
+# print(a)
 
-print(len(a))
-print(type(len(a)))
+# print(len(a))
+# print(type(len(a)))
+
+
+print("!".join(a))
