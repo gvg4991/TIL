@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48db5af4-4eaa-4f39-9115-55ecbb7cc2f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_03.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_04.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_05.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/day01_06.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SW_expert_academy/prac.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SW_expert_academy/prac.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01.py" beforeDir="false" afterPath="$PROJECT_DIR$/day01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day01_06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/day01_06.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+            <state relative-caret-position="1767">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -66,10 +62,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="685" />
-    <option name="y" value="72" />
-    <option name="width" value="1042" />
+    <option name="y" value="70" />
+    <option name="width" value="1044" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -78,23 +74,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
               <item name="algorithm" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,32 +161,42 @@
       <workItem from="1550108888003" duration="516000" />
       <workItem from="1550109418044" duration="754000" />
       <workItem from="1550110193091" duration="21675000" />
+      <workItem from="1550139086505" duration="347000" />
+      <workItem from="1550139440707" duration="1278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23597000" />
+    <option name="totallyTimeSpent" value="25222000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="685" y="72" width="1042" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14765784" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07919463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290993" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3290993" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3290993" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31639722" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.22836879" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -245,17 +251,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/day01.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1767">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day01_06.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>

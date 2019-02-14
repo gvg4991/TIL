@@ -130,15 +130,29 @@ cnt=[0]*(max(data06)+1)
 
 for i in data06:
     cnt[i]+=1
-print(cnt)
+# print(cnt)
 
-for cnti in range(len(cnt)):
-    if cnt[cnti]>=6:
-        cnt[cnti]-=6
-    elif cnt[cnti]>=3:
-        cnt[cnti]-=3
+for cnt_triple in range(len(cnt)):
+    if cnt[cnt_triple]>=6:
+        cnt[cnt_triple]-=6
+    elif cnt[cnt_triple]>=3:
+        cnt[cnt_triple]-=3
+# print(cnt)
 
-    if cnt[cnti]>=1 and cnt[cnti+1]>=1 and cnt[cnti+2]>=1:
+for cnt_run in range(len(cnt)-2):
+        if cnt[cnt_run]>=2 and cnt[cnt_run+1]>=2 and cnt[cnt_run+2]>=2:
+                cnt[cnt_run]-=2
+                cnt[cnt_run+1]-=2
+                cnt[cnt_run+2]-=2
+        elif cnt[cnt_run]>=1 and cnt[cnt_run+1]>=1 and cnt[cnt_run+2]>=1:
+                cnt[cnt_run]-=1
+                cnt[cnt_run+1]-=1
+                cnt[cnt_run+2]-=1
+# print(cnt)
 
-
+if sum(cnt) == 0:
+        print(True)
+else:
+        print(False)
+        
 
