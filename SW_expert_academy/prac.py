@@ -17,5 +17,13 @@ a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 # for i in range(5,2,-1):
 #     print(i)
 
-b=a.index(max(a))
-print(b)
+# b=a.index(max(a))
+# print(b)
+
+# d=max(3,9,5)
+# print(d)
+
+ds=[]
+for i in range(3):
+    ds += [list(map(int,input().split()))]
+print(ds)
