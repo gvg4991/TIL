@@ -37,7 +37,7 @@ print(sum)
 
 
 #-----------------------------------------------------------------------------------------------------------------------
-# 2진 계산
+# 부분합
 sys.stdin = open("day02_02.txt","r")
 data02 = list(map(int,input().split()))
 
@@ -54,6 +54,7 @@ for i in range(1<<len(data02)): # 부분합 전체 갯수
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+# 이진검색
 
 d = [1,2,3,4,5,6,7,8,9]
 num = 10
@@ -79,6 +80,7 @@ else:
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+#전체 검색
 
 d = [1,2,3,4,5,6,7,8,9]
 num = 3
@@ -94,6 +96,7 @@ print(result)
 
 
 #-----------------------------------------------------------------------------------------------------------------------
+# 달팽이 배열
 
 sys.stdin = open("day02_04.txt","r")
 data04 = [[0 for _ in range(5)] for _ in range(5)]
@@ -102,15 +105,36 @@ for i in range(5):
     data04[i] = list(map(int,input().split()))
 # print(data04)
 
-dy = [0,1,0,-1]
-dx = [1,0,-1,0]
-dir = 0
+# 오름차순 데이터 만들기
+data = []
+value = 0
+while value <100:
+    value = None
+    for y in range(5):
+        for x in range(5):
+            if value == None or value > data04[y][x]: # 최소값 찾기
+                value = data04[y][x]
+    if value < 100:
+        data += [value]
+print(data)
 
-location = data04[y+dy[dir]][x+dx[dir]]
-for y in range(5):
-    for x in range(5):
-        for dir in range(4):  # 4=len(dy)
-                    newY = y + dy[dir]
-                    newX = x + dx[dir]
-                    if IsSafe(newY, newX):
-                        sum += Mycalc(data01[y][x], data01[newY][newX])
+
+# dy = [0,1,0,-1]
+# dx = [1,0,-1,0]
+# dir = 0
+#
+# location = data04[y+dy[dir]][x+dx[dir]]
+#
+# new_y = y + dy[dir]
+# new_x = x + dx[dir]
+# if IsSafe(new_y, new_x):
+#     sum += Mycalc(data01[y][x], data01[new_y][new_x])
+
+
+# for y in range(5):
+#     for x in range(5):
+#         for dir in range(4):  # 4=len(dy)
+#                     newY = y + dy[dir]
+#                     newX = x + dx[dir]
+#                     if IsSafe(newY, newX):
+#                         sum += Mycalc(data01[y][x], data01[newY][newX])
