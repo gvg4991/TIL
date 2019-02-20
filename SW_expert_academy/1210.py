@@ -16,26 +16,48 @@
 # [출력]
 #  #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 도착하게 되는 출발점의 x좌표를 출력한다. 
 
+
+# def IsSafe(y,x): #데이터가 틀에서 벗어나지 않으면
+#     if x>=0 and x<100 and y>=0 and y<100:
+#         return True
+#     else:
+#         return False
+
+# def sadari(y,x):
+#     change = True
+#     for di in range(3):
+#         new_y = y + dy[di] # 99, 99, 98
+#         new_x = x + dx[di] # start-1, start+1, start
+#         if change and IsSafe(new_y, new_x) and  datas[new_y][new_x] == 1 : #지나간 자리 못가게하기! 왼쪽으로확정되면 위로가는건 확인안해도됨! 추가
+#             # now = datas[new_y][new_x] # 현재위치의 값
+#             now_y = new_y # 현재 위치의 y
+#             now_x = new_x # 현재 위치의 x
+#             change = False
+#             datas[new_y][new_x] = 2
+#     if now_y == 0:
+#         print(f'#{case} {now_x}')
+#         return
+#     sadari(now_y,now_x)
+
 # for i in range(10):
+#     case = input()
+#     datas = []
+#     for row in range(100):
+#         datas += [list(map(int,input().split()))]
 
-def IsSafe(y,x): #데이터가 틀에서 벗어나지 않으면
-    if x>=0 and x<100 and y>=0 and y<100:
-        return True
-    else:
-        return False
+#     finish_y = 99
+#     for x in range(100):
+#         if datas[finish_y][x] == 2:
+#             finish_x = x
+#     # datas[finish][start]는 도착지
 
-def sadari(y,x):
-    for di in range(3):
-        new_y = y + dy[di] # 99, 99, 98
-        new_x = x + dx[di] # start-1, start+1, start
-        if IsSafe(new_y, new_x) and datas[new_y][new_x] == 1: #지나간 자리 못가게하기! 왼쪽으로확정되면 위로가는건 확인안해도됨! 추가
-            # now = datas[new_y][new_x] # 현재위치의 값
-            now_y = new_y # 현재 위치의 y
-            now_x = new_x # 현재 위치의 x
-    if now_y == 0:
-        print(f'#{case} {now_x}')
-        return
-    sadari(now_y,now_x)
+#     dy = [0,0,-1]
+#     dx = [-1, 1, 0]
+
+#     sadari(finish_y, finish_x)
+
+
+#------------------------------------------------------------------------------------------------------------------------------------------
 
 for i in range(10):
     case = input()
@@ -51,5 +73,17 @@ for i in range(10):
 
     dy = [0,0,-1]
     dx = [-1, 1, 0]
+    now_y = 99
 
-    sadari(finish_y, finish_x)
+    while now_y != 0:
+        change = True
+        for di in range(3):
+            new_y = finish_y + dy[di] # 99, 99, 98
+            new_x = finish_x + dx[di] # start-1, start+1, start
+            if change and new_x>=0 and new_x<100 and new_y>=0 and new_y<100 and  datas[new_y][new_x] == 1 : 
+                now_y = new_y # 현재 위치의 y
+                now_x = new_x # 현재 위치의 x
+                change = False
+                datas[new_y][new_x] = 2
+    
+    print(f'#{case} {now_x}')
