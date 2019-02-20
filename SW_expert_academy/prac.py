@@ -23,7 +23,10 @@ a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 # d=max(3,9,5)
 # print(d)
 
-ds=[]
-for i in range(3):
-    ds += [list(map(int,input().split()))]
-print(ds)
+# ds=[]
+# for i in range(3):
+#     ds += [list(map(int,input().split()))]
+# print(ds)
+
+d=list(map(str,input()))
+print(d)
