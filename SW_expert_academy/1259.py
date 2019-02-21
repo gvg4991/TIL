@@ -33,21 +33,24 @@ for tc in range(test):
     #             ind += [[am_i,su_i]]
     # print(ind)
     
+#------------------------------------------------------------
 
-
-    nasa = []
-    for num in range(len(datas)):
-        if num % 2 == 0:
-            nasa += [[datas[num],datas[num+1]]]
+    # nasa = []
+    # for num in range(len(datas)):
+    #     if num % 2 == 0:
+    #         nasa += [[datas[num],datas[num+1]]]
     # print(nasa)
 
-    result = []
-    for am in nasa:
-        for su in nasa:
-            result += am[1]
-            if am[1] == su[0]:
-                result += su[0]
+    # result = []
+    # for am in nasa:
+    #     for su in nasa:
+    #         result += am[1]
+    #         if am[1] == su[0]:
+    #             result += su[0]
 
+#-------------------------------------------------------------
+    
+nut = [[0] * len(datas)/2+1 for i in range(len(datas)/2+1)]
 
         
 
