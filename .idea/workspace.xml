@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8df531-e31f-46b3-a570-977066f4ebf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/algorithm/day04.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/day04_01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MINHO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MINHO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1259.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1259.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/algorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/algorithm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/day03.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day03.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/4869.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/4869.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,16 +12,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MINHO$day03.coverage" NAME="day03 Coverage Results" MODIFIED="1550726817137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
     <SUITE FILE_PATH="coverage/MINHO$day02.coverage" NAME="day02 Coverage Results" MODIFIED="1550622519806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/MINHO$day03.coverage" NAME="day03 Coverage Results" MODIFIED="1550726817137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="10" />
+            <state relative-caret-position="95">
+              <caret line="122" column="6" lean-forward="true" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -37,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="133">
+              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -77,8 +69,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="262" />
-    <option name="y" value="44" />
+    <option name="x" value="-230" />
+    <option name="y" value="47" />
     <option name="width" value="1055" />
     <option name="height" value="1000" />
   </component>
@@ -196,16 +188,17 @@
       <workItem from="1550709865383" duration="13000" />
       <workItem from="1550710020842" duration="104000" />
       <workItem from="1550710302174" duration="7183000" />
+      <workItem from="1550752603111" duration="1748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46642000" />
+    <option name="totallyTimeSpent" value="48390000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="262" y="44" width="1055" height="1000" extended-state="0" />
+    <frame x="-184" y="38" width="844" height="800" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21105528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21683674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -292,20 +285,20 @@
     <entry file="file://$PROJECT_DIR$/algorithm/day03_01.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day04_01.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="122" column="6" lean-forward="true" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        <state relative-caret-position="133">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>

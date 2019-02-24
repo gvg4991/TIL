@@ -28,5 +28,9 @@ a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 #     ds += [list(map(int,input().split()))]
 # print(ds)
 
-d=list(map(str,input()))
-print(d)
+# d=list(map(str,input()))
+# print(d)
+
+g=13101
+data = list(map(int,input()))
+print(data)

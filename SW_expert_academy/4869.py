@@ -7,11 +7,23 @@
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
+result = 0
+
+def paper(size):
+    global result
+
+    if size == 10:
+        result = 1
+        return result
+    elif size == 20:
+        result = 3
+        return result
+    elif size >= 30:
+        result = paper(size-20)*2 + paper(size-10)
+        return result
+
 test = int(input())
 for tc in range(test):
     n = int(input())
-
-    # if n % 20:
-    #     result += 1
-    # else:
-    #     result
+    paper(n)
+    print(f'#{tc+1} {result}')
