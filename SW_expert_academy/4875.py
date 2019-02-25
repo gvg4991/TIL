@@ -64,3 +64,4 @@ for tc in range(test):
         print(f'#{tc+1} {1}')
     else:    
         print(f'#{tc+1} {0}')
+    
