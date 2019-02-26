@@ -3,34 +3,26 @@
 # while 문과 리스트 객체의 pop()을 이용해 80점 이상의 점수들의 총합을 구하시오.
 # 출력: 454
 
-a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
+# a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 
-# a.sort()
+# a.pop(1)
 # print(a)
 
-# print(len(a))
-# print(type(len(a)))
+c=[]
+for i in range(5):
+    c += [[0,1]]
 
+print(c)
 
-# print("!".join(a))
-
-# for i in range(5,2,-1):
-#     print(i)
-
-# b=a.index(max(a))
-# print(b)
-
-# d=max(3,9,5)
+# d=c.pop()
+# print(c)
 # print(d)
 
-# ds=[]
-# for i in range(3):
-#     ds += [list(map(int,input().split()))]
-# print(ds)
+p = [2,3]
+c[0] = p
+print(c)
 
-# d=list(map(str,input()))
-# print(d)
+print(c[0][1])
 
-g=13101
-data = list(map(int,input()))
-print(data)
+c[1][1]=c[1][1]*5
+print(c)
