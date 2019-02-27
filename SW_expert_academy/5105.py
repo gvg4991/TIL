@@ -23,25 +23,95 @@ def issafe(y,x):
     else:
         return True
 
-# test = int(input())
-mymap = []
-# for tc in range(test):
-case = int(input())
-for row in range(case):
-    mymap += [list(map(int,input()))]
-# print(mymap)
+test = int(input())
+for tc in range(test):
+    datas = []
+    case = int(input())
+    for row in range(case):
+        datas.append(list(map(int,input())))
 
-for y in range(case):
-    for x in range(case):
-        if mymap[y][x] == 2:
-            start_y = y
-            start_x = x
-        elif mymap[y][x] == 3:
-            end_y = y
-            end_x = x
+    start_y = start_x = None
+    for y in range(case):
+        for x in range(case):
+            if datas[y][x] == 2:
+                now_y = y
+                now_x = x
+                break
 
-dy = [-1, 0, 1, 0]
-dx = [0, 1, 0, -1]
-for d_i in range(4):
-    new_y = y+dy[d_i]
-    new_x = x+dx[d_i]
+    dy = [-1, 0, 1, 0]
+    dx = [0, 1, 0, -1]
+    visited = []
+    path_q = []
+    path_q.append((now_y,now_x))
+    result = 0
+    distance = [[0]*case for i in range(case)]
+
+    while path_q != []:
+        path = path_q.pop(0)
+        now_y = path[0]
+        now_x = path[1]
+        visited.append((now_y,now_x)) #간곳에 표기해주기!!!!!!!!!!!!!!
+
+        if datas[now_y][now_x] == 3:
+            result = 1
+            break
+
+        else:
+            for delta in range(4):
+                new_y = now_y + dy[delta]
+                new_x = now_x + dx[delta]
+
+                if issafe(new_y,new_x) and not (new_y,new_x) in visited and datas[new_y][new_x] != 1:
+                    y = new_y
+                    x = new_x
+                    path_q.append((y,x))
+                    distance[y][x] = distance[now_y][now_x] + 1
+    
+    if result == 1: 
+        print(f'#{tc+1} {distance[now_y][now_x]-1}')
+    else:
+        print(f'#{tc+1} {0}')
+
+
+
+
+
+
+
+    # dy = [-1, 0, 1, 0]
+    # dx = [0, 1, 0, -1]
+    # path = []
+    # visited = []
+    # result = 0
+    # now_d = -1
+    # distance = []
+    # # parent = []
+
+    # path += [[now_y,now_x]] #[4,3]
+    # visited += [[now_y,now_x]] #[4,3]
+    # now_d += now_d # 0
+    # distance += [now_d] # 0
+    # # parent.append(0)
+
+    # now = path.pop(0)
+    # now_y = now[y]
+    # now_x = now[x]
+
+    # while datas[now_y][now_x] != 3:
+
+    #     for delta in range(4): 
+    #         new_y = now_y + dy[delta]
+    #         new_x = now_x + dx[delta]
+    #         if issafe(new_y,new_x) and not [new_y,new_x] in visited and datas[new_y,new_x] != 1:
+    #             path += [[new_y,new_x]] #[4,2],[3,3] -> [3,3],[4,1]
+            
+    #     now = path.pop(0) #[4,2] -> [3,3]
+    #     now_y = now[y] # 4 -> 3
+    #     now_x = now[x] # 2 -> 3
+    #     visited += [[now_y,now_x]] #[4,3],[4,2] -> [4,3],[4,2],[3,3]
+    #     # now_d += 1 # 1
+    #     # distance += [now_d] # [0,1]
+
+
+
+

@@ -13,6 +13,7 @@
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 계산결과를 정수로 출력하거나 또는 ‘error’를 출력한다.
 
+
 def issafe(y,x):
     if x < 0 or x > case-1 or y < 0 or y > case-1:
         return False
@@ -21,23 +22,24 @@ def issafe(y,x):
 
 def miro(y,x):
     global result
-    for direct in range(4):
-        new_x = x+dx[direct]
-        new_y = y+dy[direct]
-        if issafe(new_y,new_x) and datas[new_y][new_x] == 0:
-            now_y = new_y
-            now_x = new_x
-            # datas[now_y,now_x] = 1
-        else:
-            return
-
-        if datas[now_y][now_x] == 3:
-            result = 1
-            return
-        else:
-            miro(now_y,now_x)
+    visited.append((y,x))
     
+    if datas[y][x] == 3:
+        result = 1
+        return
 
+    else:
+        for delta in range(4):
+            new_y = y+dy[delta]
+            new_x = x+dx[delta]
+
+            if issafe(new_y,new_x) and not (new_y,new_x) in visited and datas[new_y][new_x] != 1:
+                now_y = new_y
+                now_x = new_x
+
+                miro(now_y,now_x)
+                
+    
 
 test = int(input())
 for tc in range(test):
@@ -46,19 +48,21 @@ for tc in range(test):
     for row in range(case):
         datas += [list(map(int,input()))]
 
-    y = x = None
+    start_y = start_x = None
+    # end_y = end_x = None
     for row in range(case):
         for col in range(case):
             if datas[row][col] == 2:
-                y = row
-                x = col
+                start_y = row
+                start_x = col
                 break
 
     dy = [-1, 0, 1, 0]
     dx = [0, 1, 0, -1]
     result = 0
+    visited = []
 
-    miro(y,x)
+    miro(start_y,start_x)
 
     if result == 1:
         print(f'#{tc+1} {1}')

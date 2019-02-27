@@ -6,23 +6,29 @@
 # a = [85, 65, 77, 83, 75, 22, 98, 88, 38, 100]
 
 # a.pop(1)
-# print(a)
+# # print(a)
 
-c=[]
-for i in range(5):
-    c += [[0,1]]
+# c=[]
+# for i in range(5):
+#     c += [[0,1]]
 
-print(c)
+# print(c)
 
 # d=c.pop()
 # print(c)
 # print(d)
 
-p = [2,3]
-c[0] = p
-print(c)
+# p = [2,3]
+# c[0] = p
+# print(c)
 
-print(c[0][1])
+# print(c[0][1])
 
-c[1][1]=c[1][1]*5
-print(c)
+# c[1][1]=c[1][1]*5
+# print(c)
+
+a=[]
+b=[1,3]
+a.append([1,3])
+
+print(a)
