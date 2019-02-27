@@ -1,0 +1,15 @@
+h1 {
+    color: red;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.ssafy {
+    color: burlywood;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+}
