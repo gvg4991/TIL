@@ -27,8 +27,28 @@
 # c[1][1]=c[1][1]*5
 # print(c)
 
-a=[]
-b=[1,3]
-a.append([1,3])
+# a=[]
+# b=[1,3]
+# a.append([1,3])
 
+# print(a)
+
+
+# result = []
+# i = [2,3,4,5,1,2,3,4,1,2,3,1,2,1]
+# if not int(9) in i:
+#     print('yo')
+
+# w=[]
+# w.append((1,2))
+# print(w)
+# wi=w.pop(0)
+# q1=wi[0]
+# q2=wi[1]
+# print(q1)
+# print(q2)
+
+
+w = ((1,2),(10,20),(100,200))
+a=w[2][1]
 print(a)

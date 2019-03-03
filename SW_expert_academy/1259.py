@@ -13,10 +13,44 @@
 # 각 테스트 케이스 각각에 대한 답을 출력한다.
 # 각 줄은 ‘#x’로 시작하고 공백을 하나 둔 다음, 각 테스트 케이스에 주어진 수열로부터 가장 많이 연결하기 위한 원형 금속 막대의 수나사 굵기와 암나사 굵기를 순서대로 출력한다. 
 
+
+def screw(start):
+    result.append(sunasa[start])
+
+    if amnasa[start] in sunasa:
+        result.append(amnasa[start])
+        new = sunasa.index(amnasa[start])
+        screw(new)
+        return
+    else:
+        result.append(amnasa[start])
+        return
+    
+    new = sunasa.index(amnasa[start])
+    screw(new)
+    
 test = int(input())
 for tc in range(test):
     case = int(input())
     datas = list(map(int,input().split()))
+
+    sunasa = []
+    amnasa = []
+    for num in range(case):
+        sunasa.append(datas[2*num])
+        amnasa.append(datas[2*num+1])
+
+    begin = 0
+    for case_i in range(case):
+        if not sunasa[case_i] in amnasa:
+            begin = case_i
+
+    result = []
+    screw(begin)
+
+    ans = ' '.join(map(str,result))
+    print(f'#{tc+1} {ans}')
+
 
     # sunasa = []
     # amnasa = []
@@ -50,7 +84,7 @@ for tc in range(test):
 
 #-------------------------------------------------------------
     
-nut = [[0] * len(datas)/2+1 for i in range(len(datas)/2+1)]
+# nut = [[0] * len(datas)/2+1 for i in range(len(datas)/2+1)]
 
         
 

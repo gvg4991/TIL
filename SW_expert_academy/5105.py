@@ -50,7 +50,7 @@ for tc in range(test):
         path = path_q.pop(0)
         now_y = path[0]
         now_x = path[1]
-        visited.append((now_y,now_x)) #간곳에 표기해주기!!!!!!!!!!!!!!
+        visited.append((now_y,now_x))
 
         if datas[now_y][now_x] == 3:
             result = 1
@@ -71,6 +71,7 @@ for tc in range(test):
         print(f'#{tc+1} {distance[now_y][now_x]-1}')
     else:
         print(f'#{tc+1} {0}')
+
 
 
 

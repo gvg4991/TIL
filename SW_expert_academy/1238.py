@@ -30,3 +30,33 @@
 # [출력]
 #  #부호와 함께 테스트 케이스의 번호를 출력하고, 공백 문자 후 테스트 케이스에 대한 답을 출력한다. 
 
+
+
+for tc in range(10):
+    case, begin = map(int,input().split())
+    datas = list(map(int,input().split()))
+    mycontact = [[0]*(max(datas)+1) for i in range(max(datas)+1)]
+    for num in range(case//2):
+        mycontact[datas[2*num]][datas[2*num+1]] = 1
+
+    queue = []
+    queue.append(begin)
+    distance = [0] * (max(datas)+1)
+    visited = [0] * (max(datas)+1)
+
+    while queue != []:
+        start = queue.pop(0)
+        visited[start] = 1
+
+        for end in range(1,max(datas)+1):
+            if visited[end] == 0 and mycontact[start][end] == 1:
+                queue.append(end)
+                distance[end] = distance[start] + 1
+
+    result = []
+    max_d = max(distance)
+    for index_d in range(len(distance)):
+        if distance[index_d] == max_d:
+            result.append(index_d)
+
+    print(f'#{tc+1} {max(result)}')
