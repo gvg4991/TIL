@@ -49,6 +49,30 @@
 # print(q2)
 
 
-w = ((1,2),(10,20),(100,200))
-a=w[2][1]
-print(a)
+# w = ((1,2),(10,20),(100,200))
+# a=w[2][1]
+# print(a)
+
+# a=5
+# b=[1,3,5,7,9]
+# print('#{y},{x}'.format(x=a+2,y=b))
+
+# d={}
+# a=[1,2,3,4,1,3,5]
+# # a.zip() 안돼!!
+# for i in a:
+#     d[i]=0
+# # print(d)
+
+# k=[]
+# for find in d.keys():
+#     k.append(find)
+#     d[find] += 1
+# print(k)
+# print(d)
+
+# case, n = map(str,input().split())
+# print(case)
+# print(n)
+
+i = ['yo','wow','zzz']

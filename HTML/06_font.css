@@ -7,4 +7,10 @@
     line-height: 1.2;  /* 1.5배수 */
     letter-spacing: -2px;  /* 장평이 (+)넓어짐 (-)좁아짐 */
     text-align: center;  /* 가운데 정렬 */
+    border-bottom-color: blue; 
+}
+
+div {
+    border-bottom: 4px dotted blue; 
+    width: 200px;
 }

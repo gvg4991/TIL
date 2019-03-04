@@ -12,42 +12,38 @@
 
 test = int(input())
 for tc in range(test):
-    v,e = map(int,input().split())
-    mymap = [[0]*(v+1) for i in range(v+1)]
+    v, e = map(int, input().split())
+    mymap = [[0] * (v + 1) for i in range(v + 1)]
     for case in range(e):
-        start, end = map(int,input().split())
+        start, end = map(int, input().split())
         mymap[start][end] = 1
         mymap[end][start] = 1
-    s, g = map(int,input().split())
+    s, g = map(int, input().split())
 
     queue = []
-    queue.append(s) # [1]
-    distance = [0] * (v+1) # [-1,-1,-1,...]
-    visited = [0] * (v+1)
+    queue.append(s)# [1]
+    distance = [0] * (v + 1)  # [-1,-1,-1,...]
+    visited = [0] * (v + 1)
 
-    if s == g: # 1 == 6
-        result = distance[s] # 0
+    if s == g:  # 1 == 6
+        result = distance[s]  # 0
     else:
         while s != g and queue != []:
-            s = queue.pop(0) # 1 -> 3
+            s = queue.pop(0)  # 1 -> 3
             visited[s] = 1
-            result = 0
-            
-            if s == g: # 1 == 6
-                result = distance[s] # 0
+
+            if s == g:  # 1 == 6
+                result = distance[s]  # 0
                 break
-            
+
             else:
-                for path in range(1,v+1): # 3
-                    if visited[path] == 0 and distance[path] == 0 and mymap[s][path] > 0: # 3,4
+                for path in range(1, v + 1):  # 3
+                    if visited[path] == 0 and distance[path] == 0 and mymap[s][path] > 0:  # 3,4
                         visited[path] = 1
-                        queue.append(path) # [3,4]
+                        queue.append(path)  # [3,4]
                         distance[path] = distance[s] + 1
 
-    print(f'#{tc+1} {result}')
-
-            
-
+    print(result)
 
 # test = int(input())
 # for tc in range(test):
@@ -67,11 +63,11 @@ for tc in range(test):
 #     while s != g and queue != []:
 #         s = queue.pop(0) # 1 -> 3
 #         visited[s] = 1
-        
+
 #         if s == g: # 1 == 6
 #             result = distance[s] # 0
 #             break
-        
+
 #         else:
 #             for path in range(1,v+1): # 3
 #                 # if distance[path] == 0 and mymap[s][path] > 0: # 3,4

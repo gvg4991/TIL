@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block container %}
+    <h1>문자열 들어감</h1>
+    <p>title : {{post.title}}</p>
+    <p>content : {{post.content}}</p>
+    <a href="posts/list/">list</a>
+
+
+{% endblock %}
+
+
+
+
+<h1>Post Detail</h1>
+<img src="{{ post.image.url }}"></img>
+<!--뷰즈에서 입력된 post를 이용하여 데이터를 저장-->
+<h2>Title : {{ post.title }}</h2>
+<p>Content : {{ post.content }}</p>
+<a href="{% url 'posts:list' %}">list</a>
+<a href="{% url 'posts:delete' post.pk %}">Delete</a>
+<a href="{% url 'posts:edit' post.pk %}">Edit</a>
+<!--동적으로 들어오는 키 데이터를 삭제-->
