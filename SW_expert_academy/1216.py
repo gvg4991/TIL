@@ -49,40 +49,33 @@
 
 
 
-for test in range(1):
+for test in range(10):
     tc = int(input())
     datas = []
     for case in range(100):
         datas.append(list(input()))
 
-test = int(input())
-for tc in range(test):
-    n,m = map(int,input().split())
-    datas = []
-    for row in range(n):
-        datas.append(list(input()))
-    # print(datas)
-
     garo = []
     sero = []
     result = None
-    for line in range(n): #다른줄 확인
-        for point in range(n-m+1): #시작 점
-            for scale in range(m): #확인 범위
-                garo.append(datas[line][point + scale]) #가로로 데이터
-                sero.append(datas[point + scale][line]) #세로로 데이터
+    for m in range(1,100):
+        for line in range(100): #다른줄 확인
+            for point in range(100-m+1): #시작 점 91
+                for scale in range(m): #확인 범위 10
+                    garo.append(datas[line][point + scale]) #가로로 데이터
+                    sero.append(datas[point + scale][line]) #세로로 데이터
 
-            #회문 존재 확인
-            if garo == garo[::-1]:
-                result = garo
-                garo = []
-                break
-            elif sero == sero[::-1]:
-                result = sero
-                sero = []
-                break
-            else:
-                garo = []
-                sero = []
+                #회문 존재 확인
+                if garo == garo[::-1]:
+                    if result == None or len(result) < len(garo):
+                        result = garo
+                        garo = []
+                elif sero == sero[::-1]:
+                    if result == None or len(result) < len(sero):
+                        result = sero
+                        sero = []
+                else:
+                    garo = []
+                    sero = []
 
-    print('#{} {}'.format(tc+1, ''.join(map(str,result))))
+    print('#{} {}'.format(test+1, len(result)))

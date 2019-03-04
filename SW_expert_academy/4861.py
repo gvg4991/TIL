@@ -39,3 +39,4 @@ for tc in range(test):
                 sero = []
 
     print('#{} {}'.format(tc+1, ''.join(map(str,result))))
+    
