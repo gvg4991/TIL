@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8df531-e31f-46b3-a570-977066f4ebf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1231.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1233.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/5177.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/day13.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/day13_01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MINHO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MINHO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1216.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1216.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/day04_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day04_01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/서민호.md" beforeDir="false" afterPath="$PROJECT_DIR$/서민호.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1231.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1231.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1233.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1233.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/day13.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day13.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,53 +18,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MINHO$1233.coverage" NAME="1233 Coverage Results" MODIFIED="1551790096466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SW_expert_academy" />
     <SUITE FILE_PATH="coverage/MINHO$day02.coverage" NAME="day02 Coverage Results" MODIFIED="1550622519806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
+    <SUITE FILE_PATH="coverage/MINHO$day13.coverage" NAME="day13 Coverage Results" MODIFIED="1551790028571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
     <SUITE FILE_PATH="coverage/MINHO$day03.coverage" NAME="day03 Coverage Results" MODIFIED="1550726817137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
     <SUITE FILE_PATH="coverage/MINHO$day08.coverage" NAME="day08 Coverage Results" MODIFIED="1551107125480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/algorithm" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="2045327111">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="3" />
-          <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="9" />
-          <entry key="txt" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="2855" />
-          <entry key="txt" value="157" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="157" />
-          <entry key="Python" value="2855" />
-        </counts>
-      </usages-collector>
-    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithm/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="190">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -78,26 +43,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-              <folding>
-                <marker date="1551773664958" expanded="true" signature="1339:1547" ph="..." />
-                <marker date="1551773664958" expanded="true" signature="1550:1551" ph="..." />
-              </folding>
+            <state relative-caret-position="229">
+              <caret line="123" column="19" lean-forward="true" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/1233.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/1216.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="92" column="18" lean-forward="true" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+            <state relative-caret-position="299">
+              <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -105,11 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/5177.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <marker date="1551768984831" expanded="true" signature="753:939" ph="..." />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -117,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/1231.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state>
+              <caret selection-start-column="2" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -126,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4161">
-              <caret line="219" column="4" lean-forward="true" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
+            <state relative-caret-position="565">
+              <caret line="1535" column="12" lean-forward="true" selection-start-line="1535" selection-start-column="12" selection-end-line="1535" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -165,19 +127,19 @@
         <option value="$PROJECT_DIR$/algorithm/day04_01.txt" />
         <option value="$PROJECT_DIR$/algorithm/day13_01.txt" />
         <option value="$PROJECT_DIR$/algorithm/input.txt" />
-        <option value="$PROJECT_DIR$/SW_expert_academy/1216.py" />
-        <option value="$PROJECT_DIR$/SW_expert_academy/5177.py" />
-        <option value="$PROJECT_DIR$/algorithm/day13.py" />
-        <option value="$PROJECT_DIR$/SW_expert_academy/input.txt" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1231.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/input.txt" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/1216.py" />
+        <option value="$PROJECT_DIR$/algorithm/day13.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/5177.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1233.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="931" />
-    <option name="width" value="994" />
-    <option name="height" value="1047" />
+    <option name="x" value="930" />
+    <option name="width" value="995" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -232,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.day13">
+  <component name="RunManager" selected="Python.1233">
     <configuration name="1216" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,7 +207,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/1216.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="1233" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MINHO" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/1233.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -266,28 +251,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/5177.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="day11" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MINHO" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day11.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,6 +273,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day13.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -329,6 +295,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -339,19 +306,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.day11" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.day13" />
       <item itemvalue="Python.1216" />
       <item itemvalue="Python.5177" />
+      <item itemvalue="Python.1233" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1233" />
         <item itemvalue="Python.day13" />
         <item itemvalue="Python.5177" />
         <item itemvalue="Python.1216" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.day11" />
       </list>
     </recent_temporary>
   </component>
@@ -376,21 +343,22 @@
       <workItem from="1550710302174" duration="7183000" />
       <workItem from="1550752603111" duration="1748000" />
       <workItem from="1551092362314" duration="11482000" />
+      <workItem from="1551782176400" duration="7299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59872000" />
+    <option name="totallyTimeSpent" value="67171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="931" y="0" width="994" height="1047" extended-state="0" />
+    <frame x="744" y="0" width="796" height="838" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1495816" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21603261" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15241228" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28085107" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42888165" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -411,28 +379,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algorithm/test.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/algorithm/test.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SW_expert_academy/1216.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -551,63 +499,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day13_01.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        <state relative-caret-position="190">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day13_01.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4161">
-          <caret line="219" column="4" lean-forward="true" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/5177.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <marker date="1551768984831" expanded="true" signature="753:939" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/1231.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state>
+          <caret selection-start-column="2" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/1216.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="92" column="18" lean-forward="true" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+        <state relative-caret-position="299">
+          <caret line="74" column="27" lean-forward="true" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-          <folding>
-            <marker date="1551773664958" expanded="true" signature="1339:1547" ph="..." />
-            <marker date="1551773664958" expanded="true" signature="1550:1551" ph="..." />
-          </folding>
+        <state relative-caret-position="229">
+          <caret line="123" column="19" lean-forward="true" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/5177.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="1535" column="12" lean-forward="true" selection-start-line="1535" selection-start-column="12" selection-end-line="1535" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/1233.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

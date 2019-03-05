@@ -121,6 +121,12 @@ def postorder(value):
     ans.append(value)
     return
 
+def parents(value):
+    if result[value][3] != 0:
+        ans.append(result[value][3])
+        parents(result[value][3])
+    return
+
 
 datas = [1,2,1,3,2,4,3,5,3,6,4,7,5,8,5,9,6,10,6,11,7,12,11,13]
 
@@ -164,3 +170,9 @@ print(ans)
 ans = []
 postorder(answer)
 print(ans)
+ans = []
+
+parents(13)
+print(ans)
+
+# print(result[13][3])
