@@ -1,0 +1,211 @@
+suffix array
+lcp
+try
+
+1-1. 문자열 비교(brute)
+
+T = int(input())
+for time in range(T):
+    str1 = input()
+    str2 = input()
+
+    count =0
+    for i in range(len(str2)-len(str1)+1):
+        if str2[i:len(str1)+i] == str1:
+            count+=1
+    print('#{0} {1}'.format(time+1,count))
+
+
+
+1-2. 문자열 비교(KMP)
+
+T = int(input())
+for time in range(T):
+    str1 = list(input())
+    str2 = list(input())
+
+
+    PI = [0] * (len(str1))
+
+    PI[0] = -1
+    PI[1] = 0
+    i = 0
+    j = 1
+
+    while j != len(str1) - 1:
+        if str1[i] != str1[j]:
+            if i:
+                i = 0
+            else:
+                j += 1
+                PI[j] = 0
+
+        elif str1[i] == str1[j]:
+            if i:
+                PI[j + 1] = PI[j] + 1
+            else:
+                PI[j + 1] = 1
+            i += 1
+            j += 1
+    ans=0
+    K= 0
+    i = 0
+    PI_move = 0
+    while True:
+        if str2[i + K] == str1[K]:
+            K += 1
+        else:
+            PI_move = K - PI[K]
+            i += PI_move
+            k = 0
+
+        if K == len(str1):
+            ans=1
+            break
+        if i + len(str1) > len(str2):
+            ans=0
+            break
+
+
+
+2. 회문
+
+T = int(input())
+for time in range(T):
+    N,M = map(int,input().split())
+    data = []
+    for rows in range(N):
+        row = list(input())
+        data.append(row)
+
+    ans=[]
+    # horizontal
+    for y in range(N):
+        for i in range(N-M+1):
+            if data[y][i:M+i] == list(reversed(data[y][i:M+i])):
+                ans = data[y][i:M+i]
+                break
+
+    vertical =[]
+    for x in range(N):
+        for y in range(N-M+1):
+            for j in range(M):
+                vertical.append(data[y+j][x])
+            if vertical == list(reversed(vertical)):
+                ans = vertical
+                break
+            else:
+                vertical =[]
+        if vertical:
+            break
+
+    ans = ''.join(ans)
+    print('#{0} {1}'.format(time+1,ans))
+
+
+
+3. 글자 수
+
+T = int(input())
+for time in range(T):
+    str1 = input()
+    str2 = input()
+
+    dic = {}
+    for ele in str1:
+        dic[ele] = 0
+
+    for key in dic.keys():
+        for alpha in str2:
+            if key == alpha:
+                dic[key]+=1
+
+    max_num = 0
+    for value in dic.values():
+        if value > max_num:
+            max_num = value
+
+    print('#{0} {1}'.format(time+1,max_num))
+
+
+4. 회문2
+
+for time in range(10):
+    testcase = int(input())
+    data = []
+    for rows in range(100):
+        row = list(input())
+        data.append(row)
+
+    max_ans=0
+    for y in range(100):
+        for x in range(100):
+            for i in range(100,x,-1):
+                comp = data[y][x:i]
+                if comp == list(reversed(comp)):
+                    if len(comp) > max_ans:
+                        max_ans = len(comp)
+                        break
+
+    for y_idx in range(100):
+        for x_idx in range(100):
+            if y_idx > x_idx:
+                data[y_idx][x_idx], data[x_idx][y_idx] = data[x_idx][y_idx], data[y_idx][x_idx]
+
+    for y in range(100):
+        for x in range(100):
+            for i in range(100,x,-1):
+                comp = data[y][x:i]
+                if comp == list(reversed(comp)):
+                    if len(comp) > max_ans:
+                        max_ans = len(comp)
+                        break
+
+    print('#{0} {1}'.format(time+1,max_ans))
+
+
+
+
+5. 민석이의 과제
+
+T = int(input())
+for time in range(T):
+    N,K = map(int,input().split())
+    finish = list(map(str,input().split()))
+
+    all_class = [str(i) for i in range(1,N+1)]
+
+    ans=[]
+    for student in all_class:
+        if student not in finish:
+            ans.append(student)
+
+    ans = ' '.join(ans)
+    print('#{0} {1}'.format(time+1,ans))
+
+
+
+6. GNS
+
+dic1={
+"ZRO":0, "ONE":1, "TWO":2, "THR":3, "FOR":4, "FIV":5, "SIX":6, "SVN":7, "EGT":8, "NIN":9
+}
+dic2={
+0:"ZRO", 1:"ONE", 2:"TWO", 3:"THR", 4:"FOR", 5:"FIV", 6:"SIX", 7:"SVN", 8:"EGT", 9:"NIN"
+}
+
+T = int(input())
+for time in range(T):
+    testcase_num, testcase = map(str,input().split())
+    data = list(map(str,input().split()))
+
+    for i in range(len(data)):
+        data[i] = dic1[data[i]]
+
+    data = sorted(data)
+
+    for j in range(len(data)):
+        data[j] = dic2[data[j]]
+
+    data = ' '.join(data)
+    print(testcase_num,data)

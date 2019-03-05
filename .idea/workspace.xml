@@ -2,41 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8df531-e31f-46b3-a570-977066f4ebf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1216.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1221.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/4861.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/4864.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/4865.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/5431.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/day11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/problem_solving/Day 12/Karp Rabin &amp; Brute Force.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/problem_solving/Day 12/kmp.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/pra_project_urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_apps_urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_base.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_boot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_css.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_delete.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_detail.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_list.htm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/django/tc/prac_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MINHO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MINHO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1231.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1233.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_expert_academy/5177.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/day13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/day13_01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/06_font.css" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/06_font.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML/06_font.htm" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/06_font.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1238.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1238.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/5102.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/5102.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/prac.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/prac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/algorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/algorithm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1216.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1216.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithm/day04_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day04_01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/day08_01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day08_01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithm/day10.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day10.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/서민호.md" beforeDir="false" afterPath="$PROJECT_DIR$/서민호.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,29 +27,34 @@
     <session id="2045327111">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="3" />
+          <entry key="py" value="9" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="3" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="26" />
+          <entry key="py" value="2855" />
+          <entry key="txt" value="157" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="26" />
+          <entry key="PLAIN_TEXT" value="157" />
+          <entry key="Python" value="2855" />
         </counts>
       </usages-collector>
     </session>
@@ -84,78 +62,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="102" column="27" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day08.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="55" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day11.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day10.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day02.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2641">
-              <caret line="139" column="73" selection-start-line="139" selection-start-column="73" selection-end-line="139" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day08_01.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="851" selection-start-line="7" selection-start-column="851" selection-end-line="7" selection-end-column="851" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algorithm/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
+            <state relative-caret-position="114">
               <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/algorithm/day04_01.txt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="102" column="100" lean-forward="true" selection-start-line="102" selection-start-column="100" selection-end-line="102" selection-end-column="100" />
+            <state relative-caret-position="114">
+              <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+              <folding>
+                <marker date="1551773664958" expanded="true" signature="1339:1547" ph="..." />
+                <marker date="1551773664958" expanded="true" signature="1550:1551" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1233.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1216.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="92" column="18" lean-forward="true" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/5177.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-95">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <marker date="1551768984831" expanded="true" signature="753:939" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1231.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4161">
+              <caret line="219" column="4" lean-forward="true" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -191,21 +163,27 @@
         <option value="$PROJECT_DIR$/algorithm/day08_01.txt" />
         <option value="$PROJECT_DIR$/algorithm/test.py" />
         <option value="$PROJECT_DIR$/algorithm/day04_01.txt" />
+        <option value="$PROJECT_DIR$/algorithm/day13_01.txt" />
+        <option value="$PROJECT_DIR$/algorithm/input.txt" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/1216.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/5177.py" />
+        <option value="$PROJECT_DIR$/algorithm/day13.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/input.txt" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/1231.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/1233.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="486" />
-    <option name="y" value="38" />
-    <option name="width" value="1055" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="931" />
+    <option name="width" value="994" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,10 +196,16 @@
               <item name="MINHO" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MINHO" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MINHO" type="462c0819:PsiDirectoryNode" />
+              <item name="SW_expert_academy" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,6 +214,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\student\MINHO\SW_expert_academy" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -243,8 +232,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="day02" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.day13">
+    <configuration name="1216" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -252,12 +241,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day02.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/1216.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -266,7 +254,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="day03" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="5177" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -274,34 +262,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day03.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="day08" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MINHO" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day08.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/5177.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -323,6 +288,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day11.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="day13" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MINHO" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/day13.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -353,19 +339,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.day02" />
-      <item itemvalue="Python.day03" />
-      <item itemvalue="Python.day08" />
       <item itemvalue="Python.day11" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.day13" />
+      <item itemvalue="Python.1216" />
+      <item itemvalue="Python.5177" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.day13" />
+        <item itemvalue="Python.5177" />
+        <item itemvalue="Python.1216" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.day11" />
-        <item itemvalue="Python.day08" />
-        <item itemvalue="Python.day03" />
-        <item itemvalue="Python.day02" />
       </list>
     </recent_temporary>
   </component>
@@ -397,14 +383,14 @@
     <option name="totallyTimeSpent" value="59872000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="931" y="0" width="994" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13751318" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1495816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1606949" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.15241228" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42888165" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -441,7 +427,19 @@
           <line>25</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SW_expert_academy/1216.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -529,40 +527,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="893">
+          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day04_01.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day02.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2641">
+        <state relative-caret-position="833">
           <caret line="139" column="73" selection-start-line="139" selection-start-column="73" selection-end-line="139" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day08_01.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="851" selection-start-line="7" selection-start-column="851" selection-end-line="7" selection-end-column="851" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        <state relative-caret-position="209">
+          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
+        <state relative-caret-position="114">
           <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day04_01.txt">
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day13_01.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="102" column="100" lean-forward="true" selection-start-line="102" selection-start-column="100" selection-end-line="102" selection-end-column="100" />
+        <state relative-caret-position="4161">
+          <caret line="219" column="4" lean-forward="true" selection-start-line="219" selection-start-column="4" selection-end-line="219" selection-end-column="4" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/5177.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <marker date="1551768984831" expanded="true" signature="753:939" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1231.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1216.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="92" column="18" lean-forward="true" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+          <folding>
+            <marker date="1551773664958" expanded="true" signature="1339:1547" ph="..." />
+            <marker date="1551773664958" expanded="true" signature="1550:1551" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1233.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

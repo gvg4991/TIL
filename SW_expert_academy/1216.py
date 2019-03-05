@@ -45,11 +45,12 @@
 
 #     print('#{} {}'.format(tc, len(result)))
 
+import sys
+sys.stdin = open("input.txt")
 
 
 
-
-for test in range(10):
+for test in range(1):
     tc = int(input())
     datas = []
     for case in range(100):
@@ -58,24 +59,37 @@ for test in range(10):
     garo = []
     sero = []
     result = None
-    for m in range(1,100):
-        for line in range(100): #다른줄 확인
-            for point in range(100-m+1): #시작 점 91
-                for scale in range(m): #확인 범위 10
-                    garo.append(datas[line][point + scale]) #가로로 데이터
-                    sero.append(datas[point + scale][line]) #세로로 데이터
-
+    for m in range(1,100): # 2
+        for line in range(100): #다른줄 확인 0 1 2, ...
+            for point in range(100-m+1): #시작 점 99 98 97... , 98 97 96
+                for scale in range(m): #확인 범위 0, 1
+                    garo.append(datas[line][point + scale]) #가로로 데이터 0,99
+                    sero.append(datas[point + scale][line]) #세로로 데이터 99,0
                 #회문 존재 확인
                 if garo == garo[::-1]:
                     if result == None or len(result) < len(garo):
                         result = garo
-                        garo = []
+                    #     print(result, m, line, point)
+                    #     garo = []
+                    #     sero = []
+                    # else:
+                    #     garo = []
+                    #     sero = []
                 elif sero == sero[::-1]:
                     if result == None or len(result) < len(sero):
                         result = sero
-                        sero = []
-                else:
-                    garo = []
-                    sero = []
+                    #     print(result, m, line, point)
+                    #     garo = []
+                    #     sero = []
+                    # else:
+                    #     garo = []
+                    #     sero = []
+                # else:
+                #     garo = []
+                #     sero = []
+                garo = []
+                sero = []
 
     print('#{} {}'.format(test+1, len(result)))
+
+

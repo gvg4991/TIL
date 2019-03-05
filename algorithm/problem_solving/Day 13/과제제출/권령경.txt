@@ -1,0 +1,83 @@
+#KMP
+
+import sys
+
+sys.stdin = open("KMP.txt", "r")
+
+Pattern = list(input())
+Text = list(input())
+pi = [0] * (len(Text)+1)
+pi[0] = -1
+i = 0
+
+for c in range(len(Text)):
+    if i > len(Pattern) - 1:
+        i %= len(Pattern)
+    if Text[c] == Pattern[i]:
+        pi[c+1] = pi[c] + 1
+        i += 1
+    else:
+        i = pi[c]
+match = pi.count(len(Pattern))
+position = pi.index(len(Pattern)) - (len(Pattern) - 1)
+print(match)
+print(position)
+
+#È¸¹®
+
+import sys
+sys.stdin = open("round.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+    N, length = map(int, input().split())
+    char_list = [[0] * N for c in range(N)]
+    letter = []
+    found = False
+    for i in range(N):
+        char_list[i] = list(input())
+
+    for i in range(N):
+
+        if N > length:
+            for check in range(N - length + 1):
+                letter = []
+                for num in range(check, length + check):
+                    letter.append(char_list[i][num])
+                if letter == list(reversed(letter)):
+                    found = True
+                    break
+            if found:
+                break
+            else:
+                letter = []
+        else:
+            for check in range(N):
+                letter.append(char_list[i][check])
+            if letter == list(reversed(letter)):
+                break
+            letter = []
+    if not letter:
+        for i in range(N):
+            if N > length:
+                for check in range(N - length + 1):
+                    letter = []
+                    for num in range(check, length + check):
+                        letter.append(char_list[num][i])
+                    if letter == list(reversed(letter)):
+                        found = True
+                        break
+                if found:
+                    break
+                else:
+                    letter = []
+            else:
+                for i in range(N):
+                    for check in range(length):
+                        letter.append(char_list[check][i])
+                    if letter == list(reversed(letter)):
+                        found = True
+                        break
+                    letter = []
+    print("#%d"%(test_case), "".join(letter))
