@@ -75,4 +75,10 @@
 # print(case)
 # print(n)
 
-i = ['yo','wow','zzz']
+# x=14054
+# datas = list(map(int,str(x)))
+# print(datas)
+
+data = [0,0,0,0,0,1,1,1,1,1,2,2,2,2,2]
+for i in range(10):
+    print(data[0:i])
