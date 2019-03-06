@@ -24,7 +24,8 @@ for tc in range(test):
     result = []
     for i in range(case-1):
         for target in range(i+1,case):
-            result.append(datas[i]*datas[target])
+            if datas[i]*datas[target] % 10 != 0:
+                result.append(datas[i]*datas[target])
     # print(result)
     ans = []
     for value in result:

@@ -43,7 +43,7 @@ def child(i):
         result = l/r
     return
 
-for tc in range(2):
+for tc in range(10):
     case = int(input())
     datas = []
     result = 0
@@ -51,12 +51,11 @@ for tc in range(2):
         datas.append(list(input().split()))
     # print(datas)
     for data in datas:
-        for d in data:
-            if not d in ['+','-','*','/']:
-
-
+        for d in range(len(data)):
+            if not data[d] in ['+','-','*','/']:
+                data[d] = int(data[d])
+    # print(datas)
 
     child(1)
 
-    print('#{} {}'.format(tc+1, result))
-
+    print('#{} {}'.format(tc+1, int(result)))
