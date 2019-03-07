@@ -82,6 +82,13 @@
 # datas = list(map(int,str(x)))
 # print(datas)
 
-data = [0,0,0,0,0,1,1,1,1,1,2,2,2,2,2]
-for i in range(10):
-    print(data[0:i])
+# data = [0,0,0,0,0,1,1,1,1,1,2,2,2,2,2]
+# for i in range(10):
+#     print(data[0:i])
+
+# data = [[0,0,0],[1,1,1],[2,2,2]]
+# print(data[2][1])
+#
+# # data=[0,1,2,3]
+# # print(data[2])
+
