@@ -35,11 +35,11 @@ def sadari(y,x):
             change = False
             datas[new_y][new_x] = 2
     if now_y == 0:
-        print(f'#{case} {now_x}')
+        print('#{} {}'.format(case,now_x))
         return
     sadari(now_y,now_x)
 
-for i in range(10):
+for i in range(1):
     case = input()
     datas = []
     for row in range(100):
