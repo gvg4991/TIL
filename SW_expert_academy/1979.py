@@ -16,3 +16,39 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
 
+import sys
+sys.stdin = open("input.txt")
+
+
+test = int(input())
+for tc in range(test):
+    n,k = map(int,input().split())
+    datas = []
+    for case in range(n):
+        datas.append(list(map(int,input().split())))
+
+    count = 0
+    result = []
+    for y in range(n):
+        for x in range(n):
+            if datas[y][x] == 1:
+                count += 1
+            else:
+                result.append(count)
+                count = 0
+        result.append(count)
+        count = 0
+    # print(result)
+    for y in range(n):
+        for x in range(n):
+            if datas[x][y] == 1:
+                count += 1
+            else:
+                result.append(count)
+                count = 0
+        result.append(count)
+        count = 0
+    # print(result)
+
+    ans = result.count(k)
+    print('#{} {}'.format(tc+1,ans))
