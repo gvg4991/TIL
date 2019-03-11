@@ -1,0 +1,178 @@
+
+###########예산관리
+import sys
+sys.stdin=open("input.txt","r")
+
+# dfs
+
+target=int(input())
+num=int(input())
+data = list(map(int,input().split()))
+print(data)
+visited=[0] * num
+print(visited)
+result = []
+SUM=0
+def dfs(y,SUM):
+
+    if not visited[y]:
+        SUM = data[y]
+    visited[y] = True
+    for i in range(len(data)):
+        print(visited, y,i,SUM)
+        if not visited[i]:
+
+            newsum = SUM+ data[i]
+            print(newsum)
+            if newsum > target:
+                break
+            if SUM <=target:
+                visited[i] = True
+                result.append(newsum)
+                dfs(y+1,newsum)
+                visited[i]=False
+
+dfs(0,SUM)
+print(result, max(result)) # 50까지.
+
+#####################다이아몬드
+import sys
+sys.stdin=open("input.txt","r")
+
+# 샵은 문자열보다 1개많다.
+num=int(input())
+for j in range(num):
+    data=input()
+    n=len(data)
+    start=2
+    xx= n*4+1
+    yy=5
+    map = [['.']*xx for _ in range(5)]
+
+    for j in range(len(data)):
+        map[2][start] = data[j]
+        map[2][start+1] ='.'
+        map[2][start-1]='.'
+        map[2][start+2]='#'
+        map[2][start - 2] = '#'
+        map[0][start]= '#'
+        map[4][start]='#'
+        map[1][start+1]='#'
+        map[1][start-1]='#'
+        map[3][start+1]='#'
+        map[3][start-1]='#'
+        start+=4
+
+    for y in range(5):
+        for x in range(xx):
+            print(map[y][x], end='')
+        print()
+
+
+#####################농작물
+import sys
+sys.stdin=open("input.txt","r")
+
+num=int(input())
+for j in range(num):
+    num1=int(input())
+    data= [0]*(num1)
+    result=0
+    s_y=num1//2+1
+    start_x=num1//2+1 #3
+    start_x1=num1//2 #2
+
+
+    for i in range(num1):
+        data[i] = list(map(int,input()))
+    if len(data) == 1:
+        print("#{} {}".format(j + 1, data[0][0]))
+        continue
+    for y in range(num1):
+        if start_x > 0:
+            start_x -= 1
+            start_x1 += 1
+            result += sum(data[y][start_x:start_x1])
+            if start_x ==0:
+                start_x += 1
+                start_x1 -= 1
+                for y1 in range(s_y, num1):
+                    result += sum(data[y1][start_x:start_x1])
+                    start_x +=1
+                    start_x1 -=1
+                    if y1 == (num1-1):
+                        print("#{} {}" .format(j+1,result))
+                        break
+    # start_x 와 start_x1 을 슬라이싱으로 조절하면서 함.
+    # print(start_x) # 3
+    # print(data[0][2:3]) # 3번째 0
+    # print(data[1][1:4]) # 2째줄 3개
+    # print(data[2][0:5])
+    # print(data[3][1:4])
+    # print(data[4][2:3])
+    #갯수 = (가로x 세로 / 2) +1
+
+###############파스칼
+num=int(input())
+for j in range(num):
+    target=int(input())
+    h=target+1
+    data=[]
+    for x in range(1,h):
+        tmp=[]
+        tmp = [1] * x
+        data.append(tmp)
+    for i in range(2,h):
+        a=1
+        while a != (i-1):
+            if a != (i-1):
+                data[i-1][a] = data[i-2][a-1]+data[i-2][a]
+                a+=1
+    print("#%d" %(j+1))
+    for i in range(target):
+        for j in range(i + 1):
+            print(data[i][j], end=' ')
+        print()
+
+############### 정곤이 단조증가
+def my_math(y):
+    z=0
+    if (y// (N//(10**z))) * (N//(10*(10**z)))//(N//(10*(10**z))) > (y% (N//(10**z))) //(N//(10*(10**z))): # 최대 1억자리>천만자리 검사. 높다면 걍 폴스. 00이면 else로.
+        return False
+    else:
+        for z in range(1,9):
+            if (y % (N // (10 ** z))) // (N // (10 * (10 ** z))) <= (y% (N//(10**(z+1)))) //(N//(10*(10**(z+1)))): # 일억자리가 단조증가면 그아래 하나씩 첫나머지 검사.
+                continue
+            else:
+                return False
+        return True
+
+num1= int(input())
+for j in range(num1):
+    num1=int(input())
+    data=list(map(int,input().split()))
+    N= 10000000000
+    visited=[0]*num1
+    result=[]
+    my_max=0
+
+    for i in range(len(data)):
+        visited[i]=True
+
+        for x in range(len(data)):
+            if not visited[x]:
+                result.append(data[i] * data[x])
+
+
+
+    for i in range(len(result)):
+        y=result[i]
+        if my_math(y):
+            if my_max < result[i]:
+                my_max=result[i]
+
+            else: continue
+    if my_max:
+        print("#{} {}".format(j+1,my_max))
+    else:
+        print("#{} -1".format(j + 1))

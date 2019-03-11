@@ -1,0 +1,226 @@
+1. 예산관리
+
+def NotVisited(a):
+    if visited[a] == 0:
+        return True
+
+max_sofar = 0
+def GetSome(sofar):
+    global max_sofar
+    if sofar >= B:
+        return
+    if sofar > max_sofar:
+        max_sofar = sofar
+    for next in A:
+        if NotVisited(next):
+            visited[next]=True
+            GetSome(sofar+next)
+            visited[next]=False
+
+
+
+B = int(input())
+N = int(input())
+A = list(map(int,input().split()))
+visited = [0]*(max(A)+1)
+GetSome(0)
+print(max_sofar)
+
+
+
+2. 사칙연산
+
+ans=[]
+def inorder(T):
+    global ans
+    if T:
+        inorder(mymap[T][2])
+        inorder(mymap[T][3])
+        ans.append(mymap[T][1])
+
+for time in range(10):
+    N = int(input())
+
+    mymap = [[0 for _ in range(4)] for _ in range(N+1)]
+    for i in range(1,N+1):
+        node = list(input().split())
+        if len(node) > 3:
+            mymap[i][0] = int(node[0])
+            mymap[i][1] = node[1]
+            mymap[i][2] = int(node[2])
+            mymap[i][3] = int(node[3])
+        else:
+            mymap[i][0] = int(node[0])
+            mymap[i][1] = int(node[1])
+
+    inorder(1)
+
+    stack=[]
+    while True:
+        ele = ans.pop(0)
+        if ele == '+':
+            num1 =stack.pop()
+            num2 = stack.pop()
+            stack.append(num2 + num1)
+        elif ele == '-':
+            num1 = stack.pop()
+            num2 = stack.pop()
+            stack.append(num2 - num1)
+        elif ele == '*':
+            num1 = stack.pop()
+            num2 = stack.pop()
+            stack.append(num2 * num1)
+        elif ele == '/':
+            num1 = stack.pop()
+            num2 = stack.pop()
+            stack.append(int(num2 / num1))
+        else:
+            stack.append(ele)
+
+        if len(ans)==0:
+            res = stack[0]
+            break
+
+
+3.
+
+T = int(input())
+for time in range(T):
+    N = int(input())
+    data = []
+    ele =[]
+    for i in range(1,N+1):
+        if i == 1:
+            data.append([1])
+        elif i ==2:
+            data.append([1,1])
+        else:
+            for j in range(i):
+                if j==0 or j==i-1:
+                    ele.append(1)
+
+                else:
+                    ele.append(data[i-2][j-1] + data[i-2][j])
+            data.append(ele)
+            ele=[]
+    print('#{0}'.format(time+1))
+    for row in data:
+        row = list(map(str,row))
+        row = ' '.join(row)
+        print(row)
+
+
+
+4. 단조증가
+
+T = int(input())
+for time in range(T):
+    N = int(input())
+    data = list(map(int,input().split()))
+    permu = []
+
+    for ele1 in range(len(data)):
+        for ele2 in range(len(data)):
+            if ele1 != ele2:
+                mul = data[ele1]*data[ele2]
+                permu.append(mul)
+
+    max_num = 0
+    for ele in permu:
+        valid = True
+        if ele <=10:
+            continue
+        else:
+            now = ele
+            while now >=10:
+                num1 = now % 10
+                now = now // 10
+                num2 = now%10
+
+                if num1 < num2:
+                    valid = False
+                    break
+
+            if valid:
+                if ele > max_num:
+                    max_num = ele
+
+    if max_num ==0:
+        print('#{0} {1}'.format(time+1,-1))
+    else:
+        print('#{0} {1}'.format(time + 1, max_num))
+
+
+5. 다이아몬드
+
+T = int(input())
+for time in range(T):
+    N = input()
+    mid_len = 4*(len(N))+1
+    data=[]
+    row1=[]
+    row2=[]
+    row3=[]
+
+    for row in range(1,6):
+        if row==1 or row==5:
+            for i1 in range(mid_len):
+                if i1%4 == 2:
+                    row1.append('#')
+                else:
+                    row1.append('.')
+            data.append(row1)
+            row1=[]
+
+        elif row==2 or row==4:
+            for i2 in range(mid_len):
+                if i2%2==0:
+                    row2.append('.')
+                else:
+                    row2.append('#')
+            data.append(row2)
+            row2=[]
+
+        elif row ==3:
+            for i3 in range(mid_len):
+                if i3%4 == 2:
+                    row3.append(N[i3//4])
+                elif i3%4==0:
+                    row3.append('#')
+                else:
+                    row3.append('.')
+            data.append(row3)
+    for ele in data:
+        ele = ''.join(ele)
+        print(ele)
+
+
+
+6. 농작물 수확
+
+import math
+T=int(input())
+for time in range(T):
+    N=int(input())
+    l=[]
+    for line in range(N):
+        row=list(input())
+        row=list(map(int,row))
+        l.append(row)
+    
+    res=0
+    for i in range(N):
+        if i<math.ceil(N/2):
+            
+            a=l[i][N//2-i:N//2+i+1]
+            res+=sum(a)
+        else:
+            a=l[i][i-N//2:N-i+N//2]
+            res+=sum(a)
+    print('#{0} {1}'.format(time+1,res))
+
+
+
+
+
+    print('#{0} {1}'.format(time+1,res))

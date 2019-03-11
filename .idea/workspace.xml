@@ -2,13 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8df531-e31f-46b3-a570-977066f4ebf0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/1961.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SW_expert_academy/3143.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/insert_sort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/insert_sort.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/linked_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/merge_sort.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/merge_sort.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/요세푸스_linked.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/1517.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MINHO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MINHO.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SW_expert_academy/prac.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/prac.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/1번 대각선/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/1번 대각선/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/2번 섬/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/2번 섬/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/과제제출/김유림.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/과제제출/박재형.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/과제제출/양도혁.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/소방차.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/정곤이의 단조 증가하는 수.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/Day 14/조합.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/problem_solving/서민호.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/baekjoon/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baekjoon/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/서민호.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,67 +48,126 @@
     <SUITE FILE_PATH="coverage/MINHO$1211.coverage" NAME="1211 Coverage Results" MODIFIED="1551957206336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SW_expert_academy" />
     <SUITE FILE_PATH="coverage/MINHO$2001.coverage" NAME="2001 Coverage Results" MODIFIED="1551959819657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SW_expert_academy" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2045327111">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="7" />
+          <entry key="txt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="3204" />
+          <entry key="txt" value="26" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="26" />
+          <entry key="Python" value="3204" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" lean-forward="true" selection-end-line="2" />
+            <state relative-caret-position="57">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/콤비네이션.py">
+        <entry file="file://$PROJECT_DIR$/algorithm/insert_sort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1273">
-              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+            <state relative-caret-position="19">
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <folding>
+                <marker date="1552274024287" expanded="true" signature="20:208" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/4615.py">
+        <entry file="file://$PROJECT_DIR$/algorithm/merge_sort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+            <state relative-caret-position="400">
+              <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="13" />
+              <folding>
+                <marker date="1552274172571" expanded="true" signature="36:41" ph="..." />
+                <marker date="1552274172571" expanded="true" signature="274:279" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/6109.py">
+        <entry file="file://$PROJECT_DIR$/baekjoon/1517.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="29" />
+            <state relative-caret-position="342">
+              <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1961.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/algorithm/linked_list.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="29" />
+            <state relative-caret-position="152">
+              <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+              <folding>
+                <marker date="1552294553782" expanded="true" signature="11:16" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/3143.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
+        <entry file="file://$PROJECT_DIR$/algorithm/요세푸스_linked.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baekjoon/input.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm/merge_sort.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm/insert_sort.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -112,8 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/algorithm/day02_01.txt" />
-        <option value="$PROJECT_DIR$/algorithm/day02_02.txt" />
         <option value="$PROJECT_DIR$/algorithm/day02_04.txt" />
         <option value="$PROJECT_DIR$/algorithm/day02.py" />
         <option value="$PROJECT_DIR$/algorithm/day03_02.txt" />
@@ -138,7 +212,6 @@
         <option value="$PROJECT_DIR$/algorithm/day14_01.txt" />
         <option value="$PROJECT_DIR$/algorithm/day14.py" />
         <option value="$PROJECT_DIR$/algorithm/예산관리.py" />
-        <option value="$PROJECT_DIR$/baekjoon/input.txt" />
         <option value="$PROJECT_DIR$/SW_expert_academy/2805.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/2005.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1232.py" />
@@ -154,15 +227,22 @@
         <option value="$PROJECT_DIR$/algorithm/콤비네이션.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1979.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/6109.py" />
-        <option value="$PROJECT_DIR$/../test/3월_과목평가/문제2.py" />
+        <option value="$USER_HOME$/test/3월_과목평가/문제2.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1961.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/input.txt" />
         <option value="$PROJECT_DIR$/SW_expert_academy/3143.py" />
+        <option value="$PROJECT_DIR$/algorithm/insert_sort.txt" />
         <option value="$PROJECT_DIR$/SW_expert_academy/prac.py" />
+        <option value="$PROJECT_DIR$/algorithm/insert_sort.py" />
+        <option value="$PROJECT_DIR$/algorithm/merge_sort.py" />
+        <option value="$PROJECT_DIR$/baekjoon/1517.py" />
+        <option value="$PROJECT_DIR$/baekjoon/input.txt" />
+        <option value="$PROJECT_DIR$/algorithm/요세푸스_linked.py" />
+        <option value="$PROJECT_DIR$/algorithm/linked_list.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="850" />
     <option name="width" value="1080" />
     <option name="height" value="1050" />
@@ -188,11 +268,6 @@
               <item name="MINHO" type="b2602c69:ProjectViewProjectNode" />
               <item name="MINHO" type="462c0819:PsiDirectoryNode" />
               <item name="baekjoon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MINHO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MINHO" type="462c0819:PsiDirectoryNode" />
-              <item name="SW_expert_academy" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -225,8 +300,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.prac">
-    <configuration name="1961" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.linked_list">
+    <configuration name="1517" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -234,12 +309,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/baekjoon" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/1961.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baekjoon/1517.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -248,7 +322,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="문제2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="insert_sort" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,12 +330,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../test/3월_과목평가" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../test/3월_과목평가/문제2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/insert_sort.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,7 +343,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="3143" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="linked_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,12 +351,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/3143.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/linked_list.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -292,7 +364,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="6109" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="merge_sort" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -300,12 +372,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/6109.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/merge_sort.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -337,19 +408,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.6109" />
-      <item itemvalue="Python.문제2" />
-      <item itemvalue="Python.1961" />
       <item itemvalue="Python.prac" />
-      <item itemvalue="Python.3143" />
+      <item itemvalue="Python.merge_sort" />
+      <item itemvalue="Python.insert_sort" />
+      <item itemvalue="Python.1517" />
+      <item itemvalue="Python.linked_list" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.linked_list" />
+        <item itemvalue="Python.1517" />
+        <item itemvalue="Python.insert_sort" />
+        <item itemvalue="Python.merge_sort" />
         <item itemvalue="Python.prac" />
-        <item itemvalue="Python.3143" />
-        <item itemvalue="Python.1961" />
-        <item itemvalue="Python.문제2" />
-        <item itemvalue="Python.6109" />
       </list>
     </recent_temporary>
   </component>
@@ -388,15 +459,15 @@
     <option name="totallyTimeSpent" value="106180000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="680" y="0" width="864" height="840" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16542289" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09062171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3493635" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.35785007" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31921825" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3572204" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -415,6 +486,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -435,17 +509,50 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="ans" language="Python" />
-        <watch expression="point" />
-        <watch expression="voca" language="Python" />
-        <watch expression="queue" language="Python" />
-        <watch expression="target" language="Python" />
-        <watch expression="count" language="Python" />
+        <watch expression="head" language="Python" />
+        <watch expression="p" language="Python" />
+        <watch expression="empty" language="Python" />
+        <watch expression="newnode" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>empty</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>newnode</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>p</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>head</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>right</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>left</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>count</expression-string>
         <language-id>Python</language-id>
@@ -461,79 +568,9 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>voca</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>datas[y]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>datas</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>result</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ans</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/algorithm/day02_02.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day02_01.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day01.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="834">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day03_04.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day03_03.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day03_02.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day03_01.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -635,9 +672,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/baekjoon/input.txt" />
     <entry file="file://$PROJECT_DIR$/baekjoon/2636.py" />
-    <entry file="file://C:/Program Files/Python35/Lib/codecs.py" />
     <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2261">
@@ -732,13 +767,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../test/3월_과목평가/문제2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/test/3월_과목평가/문제2.py" />
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/1979.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -750,20 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/콤비네이션.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1273">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/4615.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -781,6 +796,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/3143.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/콤비네이션.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="827">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/4615.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -788,17 +824,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/3143.py">
+    <entry file="file://C:/Program Files/Python35/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state relative-caret-position="187">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-end-line="2" />
+        <state relative-caret-position="57">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/insert_sort.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/merge_sort.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/merge_sort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="13" />
+          <folding>
+            <marker date="1552274172571" expanded="true" signature="36:41" ph="..." />
+            <marker date="1552274172571" expanded="true" signature="274:279" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/1517.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/insert_sort.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding>
+            <marker date="1552274024287" expanded="true" signature="20:208" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/요세푸스_linked.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/linked_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="56" lean-forward="true" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <marker date="1552294553782" expanded="true" signature="11:16" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

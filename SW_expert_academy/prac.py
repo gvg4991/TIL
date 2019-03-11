@@ -95,20 +95,27 @@
 # data=[[1,2,3],[4,5,6],[7,8,9]]
 # print(map(list,zip(*data)))
 
+# #
+# l = [0,1,2,3,4,5,6,7,8,9,5,5]
+# m = 'abddddsssd'
+# # # print(l[::-2])
+# # m = [2,3,4,5]
 #
-l = [0,1,2,3,4,5,6,7,8,9,5,5]
-m = 'abddddsssd'
-# # print(l[::-2])
-# m = [2,3,4,5]
+# # l = 941217
+# # m = 412
+# # l=l.replace(m,'-')
+# # print(l)
+#
+# # l.remove(5)
+# i = set(l)
+# print(i)
+#
+# n=m.replace('d','z')
+# print(n)
 
-# l = 941217
-# m = 412
-# l=l.replace(m,'-')
-# print(l)
 
-# l.remove(5)
-i = set(l)
-print(i)
+l = [0,0,0,0,0,0]
+r = [1,2,3,4,5]
 
-n=m.replace('d','z')
-print(n)
+l[1:4] = r[0:2]
+print(l)

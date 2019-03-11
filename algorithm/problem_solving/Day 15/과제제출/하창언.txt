@@ -1,0 +1,239 @@
+1. 계산기
+import sys
+sys.stdin = open('input.txt','r')
+def maketree(inputline,nodemap):
+    nodemap[int(inputline[0])][0]=int(inputline[1]) if inputline[1].isdigit() else inputline[1]
+    for i in range(2,len(inputline)):
+        nodemap[int(inputline[0])][i-1]=int(inputline[i])
+def solve(nodemap,node):
+    if type(nodemap[node][0])==int:
+        return nodemap[node][0]
+    else:
+        if nodemap[node][0]=='-':
+            return solve(nodemap,nodemap[node][1])-solve(nodemap,nodemap[node][2])
+        elif nodemap[node][0] == '+':
+            return solve(nodemap, nodemap[node][1]) + solve(nodemap, nodemap[node][2])
+        elif nodemap[node][0] == '*':
+            return solve(nodemap, nodemap[node][1]) * solve(nodemap, nodemap[node][2])
+        elif nodemap[node][0] == '/':
+            return solve(nodemap, nodemap[node][1]) / solve(nodemap, nodemap[node][2])
+for case in range(10):
+    nodesize = int(input())
+    nodemap = [[0, 0, 0] for _ in range(nodesize + 1)]
+    for _ in range(nodesize):
+        inputline = input().split()
+        maketree(inputline,nodemap)
+    print('#{} {}'.format(case+1,int(solve(nodemap,1))))
+
+2. 파스칼 삼각형
+casesize = int(input())
+for case in range(casesize):
+    linesize = int(input())
+    result = []
+    for i in range(1,linesize+1):
+        tmp=[0]*i
+        for j in range(i):
+            if j==0:
+                tmp[j]=1
+            elif j==i-1:
+                tmp[j]=1
+            else:
+                tmp[j]=result[i-2][j-1]+result[i-2][j]
+        result.append(tmp)
+    print('#',case+1)
+    for i in result:
+        for j in i:
+            print(j,end=" ")
+        print()
+
+3. 트리의 합
+while True:
+    inputline = list(map(int,input().split()))
+    if inputline[0]==0:
+        break
+    level = []
+    idx = 1
+    for i in range(inputline[0]):
+        normal = 2*i+1
+        tmp=[]
+        count=0
+        while count<normal:
+            tmp.append(inputline[idx])
+            count+=1
+            idx+=1
+        level.append(tmp)
+
+    def solve(Wlevel):
+        for i in range(len(level)):
+            if i+Wlevel>inputline[0]:
+                return
+            else:
+                for j in range(len(level[i])):
+                    if not j%2:
+                        # print("j",j)
+                        trisum(Wlevel,1,i,j,level[i][j])
+    def trisum(Wlevel,nowlevel,levelfrom,inlevellocation,tmpsum):
+        # print(levelfrom,inlevellocation)
+        global result
+        if nowlevel>=Wlevel:
+            if tmpsum>=result:
+                # print("a")
+                result=tmpsum
+        else:
+            howmany = 2*nowlevel+1
+            # print('howmany',howmany)
+            for i in range(inlevellocation,inlevellocation+howmany):
+                tmpsum+=level[levelfrom+1][i]
+            # print("tmp",tmpsum)
+            trisum(Wlevel,nowlevel+1,levelfrom+1,inlevellocation,tmpsum)
+    result=max(inputline[1:])
+    for i in range(2,inputline[0]+1):
+        solve(i)
+    print(result)
+
+3.단조 증가
+def check(a,b):
+    global result
+    checknum = a*b
+    while True:
+        if checknum<10:
+            break
+        elif checknum%10>=(checknum//10)%10:
+            checknum=checknum//10
+        else:
+            return False
+    if a*b>result:
+        result = a*b
+casesize = int(input())
+for case in range(casesize):
+    result = -1
+    N = int(input())
+    caselist = list(map(int,input().split()))
+    for i in range(N):
+        for j in range(i+1,N):
+            check(caselist[i],caselist[j])
+    print('#{} {}'.format(case+1,result))
+
+4.예산 관리
+def shift(N,lst):
+    for i in range(1<<N):
+        tmp = []
+        for j in range(N):
+            if i & (1<<j):
+                tmp.append(lst[j])
+        yield tmp
+B=int(input())
+n = int(input())
+budgets = list(map(int,input().split()))
+result =0
+for i in shift(n,budgets):
+    tmp=sum(i)
+    if tmp<=B:
+        if tmp>result:
+            result = tmp
+            resultlst = i
+print(result)
+
+
+5. 숫자 꾸미기
+def draw(char):
+    lst = [[0]*(4*len(char)+1) for _ in range(5)]
+    for i in range(len(lst)):
+        if i == 0 or i == 4:
+            for j in range(len(lst[i])):
+                if j%4==2:
+                    lst[i][j]='#'
+                else:
+                    lst[i][j] = '.'
+        elif i==1 or i==3:
+            for j in range(len(lst[i])):
+                if j%2==1:
+                    lst[i][j]='#'
+                else:
+                    lst[i][j] = '.'
+        elif i==2:
+            for j in range(len(lst[i])):
+                if j%4==0:
+                    lst[i][j]='#'
+                elif j%4==2:
+                    lst[i][j] = char[j//4]
+                else:
+                    lst[i][j] = '.'
+    return lst
+casesize = int(input())
+for case in range(casesize):
+    char = input()
+    result = draw(char)
+    for i in result:
+        for j in i:
+            print(j,end="")
+        print()
+
+6. 농작물
+def draw(char):
+    lst = [[0]*(4*len(char)+1) for _ in range(5)]
+    for i in range(len(lst)):
+        if i == 0 or i == 4:
+            for j in range(len(lst[i])):
+                if j%4==2:
+                    lst[i][j]='#'
+                else:
+                    lst[i][j] = '.'
+        elif i==1 or i==3:
+            for j in range(len(lst[i])):
+                if j%2==1:
+                    lst[i][j]='#'
+                else:
+                    lst[i][j] = '.'
+        elif i==2:
+            for j in range(len(lst[i])):
+                if j%4==0:
+                    lst[i][j]='#'
+                elif j%4==2:
+                    lst[i][j] = char[j//4]
+                else:
+                    lst[i][j] = '.'
+    return lst
+casesize = int(input())
+for case in range(casesize):
+    char = input()
+    result = draw(char)
+    for i in result:
+        for j in i:
+            print(j,end="")
+        print()
+
+7. 조합
+combi = []
+tmp = [0,0]
+def combination(lst,howmany,result,start):
+    if result>=howmany:
+        combi.append(tmp[::])
+    else:
+        for i in range(start,len(lst)):
+            tmp[result]=lst[i]
+            combination(lst,howmany,result+1,i+1)
+
+combination([1,2,3,4],2,0,0)
+print(combi)
+
+8. 소방차
+p,f = map(int,input().split())
+pumps = list(map(int,input().split()))
+cars = list(map(int,input().split()))
+visited = [0]*p
+result = 100000000
+def solve(start,tmp):
+    global result
+    if start>=f:
+        if tmp <result:
+            result = tmp
+    else:
+        for i in range(p):
+            if visited[i]:
+                continue
+            visited[i]=1
+            solve(start+1,tmp+abs(cars[start]-pumps[i]))
+            visited[i]=0
+solve(0,0)
+print(result)

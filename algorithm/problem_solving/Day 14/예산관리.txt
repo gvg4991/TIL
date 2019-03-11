@@ -1,0 +1,19 @@
+import sys
+sys.stdin = open("input.txt", "r")
+
+def GetSome(now, sofar):
+    global ans, howmany
+    if sofar > money : return
+    if sofar > ans and now == 6:
+           ans = sofar
+           return
+    if now + 1 <=6:
+        GetSome(now+1, sofar)
+        GetSome(now+1, sofar+Budget[now])
+
+ans = 0
+money = int(input())
+howmany = int(input())
+Budget = list(map(int, input().split()))
+GetSome(0,0)
+print(ans)

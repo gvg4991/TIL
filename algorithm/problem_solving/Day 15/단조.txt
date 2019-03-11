@@ -1,0 +1,22 @@
+import sys
+sys.stdin = open("increasing_sum.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+    result = []
+    N = int(input())
+    num_list = list(map(int, input().split()))
+    for i in range(N):
+        for j in range(i+1, N, 1):
+            if num_list[i] * num_list[j] % 10 == 0:
+                break
+            pos_num = []
+            cand = num_list[i] * num_list[j]
+            while cand != 0:
+                pos_num.append(cand % 10)
+                cand //= 10
+            sorted_num = list(sorted(pos_num))
+            if list(reversed(pos_num)) == sorted_num:
+                result.append(num_list[i]*num_list[j])
+    print("#%d %d"%(test_case, max(result)))

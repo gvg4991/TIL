@@ -1,0 +1,117 @@
+# 파스칼의 삼각형
+
+import sys
+sys.stdin = open("pascal.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T):
+    N = int(input())
+    result = [[0]*N for i in range(N)]
+
+    for y in range(N):
+        for x in range(N):
+            if N == 1:
+                result[0][0] = 1
+                break
+            result[0][0] = 1
+            result[y][0] = 1
+            result[y][y] = 1
+            result[y][x] = result[y-1][x-1] + result[y-1][x]
+    print("#%d" % test_case)
+    for i in result:
+        for num in i:
+            if num != 0:
+                print(num, end = ' ')
+        print()
+
+
+# 다이아몬드
+
+import sys
+sys.stdin = open("diamond.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+    character = list(input())
+    result = [['.']*(len(character)*4+1) for i in range(5)]
+    for c in range(len(character)):
+        result[len(result)//2][len(result)//2+c*4] = character[c]
+        result[len(result)//2][c*4] = '#'
+    result[len(result) // 2][len(character)*4] = '#'
+    for y in range(len(result)):
+        for x in range(len(character)*4+1):
+            if result[y][x].isalpha():
+                result[y + 2][x] = '#'
+                result[y - 2][x] = '#'
+                result[y - 1][x-1] = '#'
+                result[y - 1][x + 1] = '#'
+                result[y + 1][x + 1] = '#'
+                result[y + 1][x - 1] = '#'
+
+    for i in result:
+        print("".join(i))
+
+#예산 관리
+
+import sys
+sys.stdin = open("sum_max.txt", "r")
+
+B = int(input())
+
+n = int(input())
+
+a_list = list(map(int,input().split()))
+
+visited = [0] * n
+bsum = []
+
+
+def backtrack(i, tsum):
+    if i >= n or tsum >= 40:
+        return
+    for num in range(n):
+        if visited[num]:
+            bsum.append(tsum)
+    visited[i] = 1
+    backtrack(i+1, a_list[i] + tsum)
+    visited[i] = 0
+    backtrack(i+1, tsum)
+
+
+backtrack(0, 0)
+print(max(bsum))
+
+# 이진 힙
+
+import sys
+sys.stdin = open("num_node.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+
+    N = int(input())
+    num_tree = [0] * (N+1)
+    num_node = list(map(int, input().split()))
+    parent_sum = 0
+
+    for i in range(1, len(num_node)+1):
+        num_tree[i] = num_node[i-1]
+        child = i
+        parent = child//2
+        while parent != 0:
+            if num_tree[child] < num_tree[parent]:
+                num_tree[parent], num_tree[child] = num_tree[child], num_tree[parent]
+
+                child = parent
+                parent //= 2
+            else:
+                break
+
+    while N != 0:
+        N //= 2
+        parent_sum += num_tree[N]
+
+    print("#%d %d" % (test_case, parent_sum))

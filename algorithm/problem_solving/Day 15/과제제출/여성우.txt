@@ -1,0 +1,241 @@
+1. 치즈
+Y, X = map(int, input().split())
+square = []
+now = 0
+for i in range(Y):
+    line = list(map(int, input().split()))
+    square.append(line)
+    now += line.count(1)
+dirY = [-1, 1, 0, 0]
+dirX = [0, 0, -1, 1]
+trying = 1
+stack_x = [0]
+stack_y = [0]
+change = 0
+pre = 0
+while now != 0:
+    while len(stack_x):
+        start_x = stack_x[-1]
+        start_y = stack_y[-1]
+        stack_x.pop()
+        stack_y.pop()
+        airtag = trying * (-1)
+        if square[start_y][start_x] == airtag:
+            continue
+        square[start_y][start_x] = airtag
+        contact = 0
+        for i in range(4):
+            new_x = start_x + dirX[i]
+            new_y = start_y + dirY[i]
+            if new_x >= 0 and new_x < X and new_y >= 0 and new_y < Y:
+                if square[new_y][new_x] == 0 or square[new_y][new_x] == airtag + 1:
+                    stack_x.append(new_x)
+                    stack_y.append(new_y)
+                elif square[new_y][new_x] == 1 or square[new_y][new_x] == 2 + trying - 1:
+                    square[new_y][new_x] = 1
+                    square[new_y][new_x] += 1 + trying
+                elif square[new_y][new_x] >= 2 + trying:
+                    square[new_y][new_x] = airtag
+                    change += 1
+    if len(stack_x) == 0:
+        pre = now
+        now -= change
+        change = 0
+        trying += 1
+        stack_x.append(0)
+        stack_y.append(0)
+print(trying-1)
+
+2. 예산관리
+def dfs(B, i):
+    global minnum
+    next_B = B - i
+    if next_B < 0:
+        if minnum > B:
+            minnum = B
+    else:
+        for j in range(n):
+            if visited[j] == 0:
+                visited[j] = 1
+                dfs(next_B, nlist[j])
+                visited[j] = 0
+
+
+B = 40
+n = 6
+nlist = [7, 13, 17, 19, 29, 31]
+visited = [0] * n
+minnum = B
+for i in range(n):
+    visited[i] = 1
+    dfs(B, nlist[i])
+    visited[i] = 0
+print(B - minnum)
+
+3. 사칙연산
+def numornot(i):
+    if i.isdigit():
+        return int(i)
+    else:
+        return i
+
+
+def dfs(i):
+    if Tree[i][0] in sig:
+        leftchild = Tree[i][1]
+        rightchild = Tree[i][2]
+        leftnum = Tree[leftchild][0]
+        rightnum = Tree[rightchild][0]
+        if Tree[leftchild][0] in sig:
+            leftnum = dfs(leftchild)
+        if Tree[rightchild][0] in sig:
+            rightnum = dfs(rightchild)
+        if sig.index(Tree[i][0]) == 0:
+            return leftnum + rightnum
+        elif sig.index(Tree[i][0]) == 1:
+            return leftnum - rightnum
+        elif sig.index(Tree[i][0]) == 2:
+            return leftnum * rightnum
+        else:
+            return leftnum // rightnum
+    else:
+        return Tree[i][0]
+
+
+
+for T in range(1, 11):
+    sig = ["+", "-", "*", "/"]
+    N = int(input())
+    Tree = [[0]*4 for i in range(N+1)]
+    for i in range(N):
+        node = list(map(numornot, input().split()))
+        me = node[0]
+        for j in range(1, len(node)):
+            Tree[me][j-1] = node[j]
+            if j > 1:
+                child = node[j]
+                Tree[child][3] = me
+    answer = dfs(1)
+    print('#{} {}'.format(T, answer))
+
+4. 파스칼
+for T in range(int(input())):
+    print('#{}'.format(T+1))
+    N = int(input())
+    pre_list = []
+    nowlist = []
+    i = 0
+    while i != N:
+        if i == 0:
+            print(1)
+            nowlist = [1]
+        elif i == 1:
+            print(1, 1)
+            nowlist = [1, 1]
+        else:
+            print(1, end=' ')
+            nowlist.append(1)
+            for j in range(i):
+                if j == i - 1:
+                    print(1)
+                    nowlist.append(1)
+                else:
+                    now = pre_list[j] + pre_list[j+1]
+                    print(now, end=' ')
+                    nowlist.append(now)
+        pre_list = nowlist[:]
+        nowlist = []
+        i += 1
+
+5. 농작물
+for T in range(int(input())):
+    N = int(input())
+    farm = [[int(i) for i in input()] for j in range(N)]
+    start_tag = [(N//2-i) for i in range(N//2+1)]
+    start_tag2 = start_tag[N//2-1::-1]
+    tag = start_tag + start_tag2
+    go1 = [2*i+1 for i in range(N//2+1)]
+    go2 = go1[N//2-1::-1]
+    go = go1 + go2
+    answer = 0
+    for i in range(N):
+        for j in range(tag[i], tag[i]+go[i]):
+            answer += farm[i][j]
+    print('#{} {}'.format(T+1, answer))
+
+6. 단조증가
+for T in range(int(input())):
+    N = int(input())
+    numlist = list(map(int, input().split()))
+    inclist = []
+    for i in range(len(numlist)):
+        for j in range(len(numlist)):
+            if i != j:
+                nownum = numlist[i] * numlist[j]
+                inc = True
+                num = nownum
+                while num != 0:
+                    num_end = num % 10
+                    num //= 10
+                    next_end = num % 10
+                    if next_end > num_end:
+                        inc = False
+                        break
+                if inc:
+                    inclist.append(nownum)
+    inclist.sort()
+    if inclist:
+        answer = inclist[-1]
+    else:
+        answer = -1
+    print('#{} {}'.format(T+1, answer))
+
+7. 다이아몬드
+for T in range(int(input())):
+    s = input()
+    N = len(s)
+    line = [['.', '.#..'], ['.', '#.#.'], ['#', '#'], ['.', '#.#.'], ['.', '.#..']]
+    l = [''] * 5
+    for i in range(N):
+        if i == 0:
+            for j in range(5):
+                l[j] += line[j][0]
+        for j in range(5):
+            if j != 2:
+                l[j] += line[j][1]
+            else:
+                l[j] += '.' + s[i] + '.' + line[j][1]
+    for i in range(5):
+        print(l[i])
+
+8. 조합
+def dfs(i, d):
+    global answer, choose
+    lci = i * 2
+    rci = i * 2 + 1
+    myin = False
+    if i % 2 == 0:
+        choose.append(numl[d-1])
+        myin = True
+        if len(choose) == r:
+            answer.append(choose[:])
+            choose.pop()
+            return
+    if r - len(choose) > num - d:
+        if myin:
+            choose.pop()
+        return
+    dfs(lci, d+1)
+    dfs(rci, d+1)
+    if myin:
+        choose.pop()
+
+
+num = 5
+numl = [1, 2, 3, 4, 5]
+r = 3
+Tree = [0, 0] + [1, 0] * ((2 ** num) - 1)
+choose = []
+answer = []
+dfs(1, 0)
+print(answer)
