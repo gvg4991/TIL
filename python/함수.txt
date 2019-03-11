@@ -58,7 +58,8 @@ print(keyword.kwlist)
 
 ㆍ.replace(a,b,2)
 - a를 b로 앞에서부터 2개 바꿈
-- 원본을 바꾸지는 못함, replace한 프린트에서만 적용
+- 2입력 안하면 모든 a를 b로 바꿈
+- 리스트x, 문자열 가능
 
 ㆍmap(함수,input())
 - input을 내장함수, def 함수값에 넣음
