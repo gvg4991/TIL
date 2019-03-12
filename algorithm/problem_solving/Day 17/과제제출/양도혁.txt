@@ -1,0 +1,294 @@
+#1 merge sort
+def merge_sort(m):
+	if len(m) == 1 :
+		return m
+	#divide
+	mid = len(m)// 2
+	left = merge_sort(m[:mid])
+	right = merge_sort(m[mid:])
+	#conquer
+	return merge(left,right)
+
+def merge(left,right) :
+	l = len(left)
+	r = len(right)
+	re = [-1]*(l+r)
+	i=j=k=0
+	while i < l and j < r:
+		if left[i] < right[j] :
+			re[k] = left[i]
+			i+=1
+			k+=1
+		else :
+			re[k] = right[j]
+			j+=1
+			k+=1
+	while i < l :
+		re[k] = left[i]
+		i+=1
+		k+=1
+	while j < r :
+		re[k] = right[j]
+		j+=1
+		k+=1
+	print(re)
+	return re
+
+Data = [38,27,43,3,9,8,10,1]
+n = 7
+print(merge_sort(Data))
+
+
+#2 insert sort
+
+Data = [1,9,3,6,7,0,4,9,5,0]
+Data = [69,10,30,2,16,8,31,22]
+for i in range(1,len(Data)) :
+	key = Data[i]
+	for j in range(i-1,-2,-1) :
+		if j == -1 :
+			break
+		if key < Data[j] :
+			Data[j+1] = Data[j]
+		else :
+			break
+	Data[j+1] = key
+print(Data)
+
+#3 우선순위큐
+class Node :
+	def __init__(self,data,link=None):
+		self.data = data
+		self.link = link
+
+node1 = Node(1)
+node2 = Node(2)
+node3 = Node(3)
+node4 = Node(4)
+node5 = Node(5)
+
+node1.link=node2
+node2.link=node3
+node3.link=node4
+node4.link=node5
+
+head = None
+def Enqueue(item) :
+	global head
+	newNode = Node(item)
+	if head == None :
+		head = newNode
+	else :
+		p = head
+		while p.link :
+			if p.link.data > item :
+				newNode.link = p.link
+				p.link = newNode
+				return
+			p = p.link
+		p.link = newNode
+
+
+Enqueue(1)
+Enqueue(5)
+Enqueue(2)
+Enqueue(4)
+Enqueue(3)
+
+p = head
+while p :
+	print(p.data)
+	p = p.link
+
+
+
+#4 josephus
+n=41
+class Node :
+	def __init__(self,data,link=None):
+		self.data = data
+		self.link = link
+head = None
+def Enqueue(item) :
+	global head
+	newNode = Node(item)
+	if head == None :
+		head = newNode
+	else :
+		p = head
+		while p.link :
+			if p.link == head:
+				break
+			p = p.link
+		newNode.link = head
+		p.link = newNode
+for i in range(1,42) :
+	Enqueue(i)
+
+# cnt = 0
+# p = head
+# while p :
+# 	if cnt > 90 :
+# 		break
+# 	print(p.data)
+# 	cnt += 1
+# 	p = p.link
+p = head
+cnt=0
+r=41
+while p :
+	if r <= 2 :
+		break
+	pre = p
+	cnt += 1
+	p = p.link
+	if cnt % 3 == 2 :
+		print(p.data)
+		r-=1
+		cnt +=1
+		if p == head:
+			head = p.link
+		pre.link = None
+		p = p.link
+		pre.link = p
+
+
+print()
+p = head
+while r > 0 :
+	r-=1
+	print(p.data)
+	p = p.link
+
+#5 버블소트
+def merge_sort(m):
+	global cnt
+	if len(m) == 1 :
+		return m
+	#divide
+	mid = len(m)// 2
+	left = merge_sort(m[:mid])
+	right = merge_sort(m[mid:])
+
+	#conquer
+	return merge(left,right)
+
+def merge(left,right) :
+	global cnt
+
+	l = len(left)
+	r = len(right)
+	re = [-1]*(l+r)
+
+	i = j = k = 0
+	while i < l and j < r:
+		# if not i == j :
+		# 	cnt += 1
+		if left[i] < right[j] :
+			re[k] = left[i]
+			cnt += j
+			i+=1
+			k+=1
+		else :
+			re[k] = right[j]
+			j += 1
+			k += 1
+	t = k
+	while i < l :
+		# cnt+=1
+		cnt += j
+		# 	print(j, cnt)
+		re[k] = left[i]
+		i+=1
+		k+=1
+		# if j == r-1 :
+		# 	cnt+=k
+	while j < r :
+		# cnt += 1
+		re[k] = right[j]
+		j+=1
+		k+=1
+	return re
+
+n = int(input())
+Data = list(map(int,input().split()))
+cnt = 0
+Data = merge_sort(Data)
+print(cnt)
+
+
+#6 달리기
+n = int(input())
+Data = []
+result = [[-1]*(2) for i in range(n)]
+rank = [-1]*n
+idx = [-1]*n
+ranking = [n]*n
+# ranking[0] = 1
+# cnt = 0
+
+for i in range(n) :
+	result[i][0] = int(input())
+	result[i][1] = i
+	ranking[i] = i
+
+# Data = [4,3,2,1,6]
+
+def merge_sort(m):
+	global cnt
+	if len(m) == 1 :
+		return m
+	#divide
+	mid = len(m)// 2
+	left = merge_sort(m[:mid])
+	right = merge_sort(m[mid:])
+
+	#conquer
+	return merge(left,right)
+
+def merge(left,right) :
+	global cnt
+
+	l = len(left)
+	r = len(right)
+	re = [[-1]*(2) for i in range(l+r)]
+
+	i = j = k = 0
+	while i < l and j < r:
+		# if not i == j :
+		# 	cnt += 1
+		if left[i][0] < right[j][0] :
+			re[k][0] = left[i][0]
+			re[k][1] = left[i][1]
+			i+=1
+			k+=1
+		else :
+			re[k][0] = right[j][0]
+			re[k][1] = right[j][1]
+			ranking[right[j][1]] -= i
+			j += 1
+			k += 1
+	t = k
+	while i < l :
+		# 	print(j, cnt)
+		re[k][0] = left[i][0]
+		re[k][1] = left[i][1]
+		# ranking[left[i][1]] -= j
+		i+=1
+		k+=1
+		# if j == r-1 :
+		# 	cnt+=k
+	while j < r :
+		# cnt += 1
+		re[k][0] = right[j][0]
+		re[k][1] = right[j][1]
+		ranking[right[j][1]] -= i
+		j+=1
+		k+=1
+	return re
+result = merge_sort(result)
+
+# print(result)
+for i in ranking :
+	print(i+1)
+# print(right)

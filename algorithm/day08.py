@@ -41,17 +41,17 @@ def find(start):
                 now = i
                 result += mymap[start][i]
                 find(now)
-                # result -= mymap[start][i]
+                result -= mymap[start][i]
                 visited[i] = 0
 
             else:
                 result += mymap[start][i]
                 if min_cost == None or min_cost > result:
                     min_cost = result
-                    result -= mymap[start][i]
+                    # result -= mymap[start][i]
                     return
 
-        elif i == n and mymap[start][i] == 0:
+        elif i == n and mymap[start][i] != 0:
             # result -= mymap[start][i]
             return
 

@@ -12,74 +12,130 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 1등의 번호를 출력한다.
 
 
-member = []
-result = None
+import sys
+sys.stdin = open("input.txt","r")
 
-def rsp(i,j):
-    global result
-    if datas[i] == 1:
-        if datas[j] == 1 or datas[j] == 3:
-            result = i
-        else:
-            result = j
-    elif datas[i] == 2:
-        if datas[j] == 2 or datas[j] == 1:
-            result = i
-        else:
-            result = j
-    elif datas[i] == 3:
-        if datas[j] == 3 or datas[j] == 2:
-            result = i
-        else:
-            result = j
+def team(s,e):
+    mid = (s+e)//2
+    if (e-s+1)//2 == 0:
+        return mid
+    left = team(s,mid)
+    right = team(mid+1,e)
+    battle(left,right)
     return result
 
-def team(i,j):
-    global member, result
-    if (i+j)//2 >= 2:
-        member = (i+j)//2
-        team(i,member) #result
-        result_i = result #result
-        team(member+1, j) #result
-        result_j = result #result
-
-        rsp(result_i,result_j) #result
-        # return
-
-    elif (i+j)//2 == 1:
-        if (i+j)%2 > 0: #[0,1],[2,3]
-            member = (i+j)//2
-            rsp(i,member) #result
-            result_i = result
-            rsp(member+1, j) #result
-            result_j = result
-
-            rsp(result_i,result_j) #result
-            return  
-
-        elif (i+j)%2 == 0: #[0,1],[2]
-            member = (i+j)//2
-            rsp(i,member)
-            result_i = result
-            # team(result_i, j)
-            # result_j = result
-
-            rsp(result_i,j)
-            return   
-
-    # else:
-    #     rsp(i,j) #result = i
-    #     return
+def battle(l,r):
+    global result
+    if datas[l] == 1:
+        if datas[r] == 1 or datas[r] == 3:
+            result = l
+        else:
+            result = r
+    elif datas[l] == 2:
+        if datas[r] == 2 or datas[r] == 1:
+            result = l
+        else:
+            result = r
+    elif datas[l] == 3:
+        if datas[r] == 3 or datas[r] == 2:
+            result = l
+        else:
+            result = r
+    return result
 
 
 test = int(input())
-datas = []
 for tc in range(test):
     case = int(input())
     datas = list(map(int,input().split()))
 
-    team(0,case-1)
-    print(f'#{tc+1} {result+1}')
+    team(0, case-1)
+    print('#{} {}'.format(tc+1, result+1))
+
+
+
+
+
+
+
+
+
+
+
+# member = []
+# result = None
+#
+# def rsp(i,j):
+#     global result
+#     if datas[i] == 1:
+#         if datas[j] == 1 or datas[j] == 3:
+#             result = i
+#         else:
+#             result = j
+#     elif datas[i] == 2:
+#         if datas[j] == 2 or datas[j] == 1:
+#             result = i
+#         else:
+#             result = j
+#     elif datas[i] == 3:
+#         if datas[j] == 3 or datas[j] == 2:
+#             result = i
+#         else:
+#             result = j
+#     return result
+#
+# def team(i,j):
+#     global member, result
+#     if (i+j)//2 >= 2:
+#         member = (i+j)//2
+#         team(i,member) #result
+#         result_i = result #result
+#         team(member+1, j) #result
+#         result_j = result #result
+#
+#         rsp(result_i,result_j) #result
+#         # return
+#
+#     elif (i+j)//2 == 1:
+#         if (i+j)%2 > 0: #[0,1],[2,3]
+#             member = (i+j)//2
+#             rsp(i,member) #result
+#             result_i = result
+#             rsp(member+1, j) #result
+#             result_j = result
+#
+#             rsp(result_i,result_j) #result
+#             return
+#
+#         elif (i+j)%2 == 0: #[0,1],[2]
+#             member = (i+j)//2
+#             rsp(i,member)
+#             result_i = result
+#             # team(result_i, j)
+#             # result_j = result
+#
+#             rsp(result_i,j)
+#             return
+#
+#     # else:
+#     #     rsp(i,j) #result = i
+#     #     return
+#
+#
+# test = int(input())
+# datas = []
+# for tc in range(test):
+#     case = int(input())
+#     datas = list(map(int,input().split()))
+#
+#     team(0,case-1)
+#     print('#{} {}'.format(tc+1,result+1))
+
+
+
+
+
+
 
 
 

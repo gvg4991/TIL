@@ -114,6 +114,47 @@ for tc in range(test):
     for case in range(n):
         datas.append(list(map(int,input().split())))
 
+    i = 0
+    check = []
+    result = []
+
     for line in range(n):
-        for point in range(n-2+1):
+        while i < n:
+            target = datas[line].pop(0)
+            i += 1
+            if target != 0:
+                check.append(target)
+
+            if len(check) == 2:
+                if check[0] == check[1]:
+                    result.append(check[0]+check[1])
+                    check = []
+                else:
+                    value = check.pop(0)
+                    result.append(value)
+
+        for yo in range(n-len(result)):
+            result.append(0)
+
+        print(result)
+
+
+
+
+
+
+
+            #
+            # if datas[line][i] == 0:
+            #     datas[line].pop(i)
+            # else:
+            #     check.append(datas[line][i])
+            #
+            # if len(check) == 2:
+            #     check
+
+    # for line in range(n):
+    #     for point in range(n-2+1):
+    #         if datas[line][point] == 0
+
 

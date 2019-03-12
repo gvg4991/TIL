@@ -1,0 +1,263 @@
+1. 삽입 정렬
+data = [69, 10, 30, 2, 16, 8, 31, 22]
+
+for i in range(1, len(data)):
+    for j in range(i, 0, -1):
+        if data[j-1] > data[j]:
+            data[j-1], data[j] = data[j], data[j-1]
+        else:
+            break
+
+print(data)
+
+2. 병합 정렬
+def merge(ls1, ls2):
+    total = len(ls1) + len(ls2)
+    result = [-1] * total
+    ri = 0
+    i = 0
+    j = 0
+    while i < len(ls1) and j < len(ls2):
+        if ls1[i] > ls2[j]:
+            result[ri] = ls2[j]
+            j += 1
+            ri += 1
+        else:
+            result[ri] = ls1[i]
+            i += 1
+            ri += 1
+    if i < len(ls1):
+        for r in range(i, len(ls1)):
+            result[ri] = ls1[r]
+            ri += 1
+    if j < len(ls2):
+        for r in range(j, len(ls2)):
+            result[ri] = ls2[r]
+            ri += 1
+    return result
+
+
+def divide(ls):
+    if len(ls) == 1:
+        return ls
+    else:
+        middle = len(ls) // 2
+        ls1 = divide(ls[:middle])
+        ls2 = divide(ls[middle:])
+        result = merge(ls1, ls2)
+        return result
+
+
+data = [69, 10, 30, 2, 16, 8, 31, 22]
+answer = divide(data)
+print(answer)
+
+3. 우선순위 큐
+class Node():
+    def __init__(self, data, node=None):
+        self.data = data
+        self.link = node
+
+
+class Linked:
+    head = None
+    num = 0
+
+    def addtolist(self, data):
+        node = Node(data)
+        if self.head == None:
+            self.head = node
+            self.num += 1
+
+        else:
+            did = False
+            now = self.head
+            for i in range(self.num):
+                if now.data < node.data:
+                    pre = now
+                    now = now.link
+                else:
+                    node.link, pre.link = pre.link, node
+                    self.num += 1
+                    did = True
+                    break
+            if not did:
+                node.link, pre.link = pre.link, node
+                self.num += 1
+
+    def printall(self):
+        now = self.head
+        for i in range(self.num):
+            print(now.data)
+            now = now.link
+
+
+linked = Linked()
+linked.addtolist(1)
+linked.addtolist(5)
+linked.addtolist(2)
+linked.addtolist(4)
+linked.addtolist(3)
+linked.printall()
+
+4. 요세푸스
+class Node():
+    def __init__(self, data, node=None):
+        self.data = data
+        self.link = node
+        self.prelink = node
+
+
+class Linked:
+    head = None
+    num = 0
+
+    def addtolist(self, data):
+        node = Node(data)
+        if self.head == None:
+            self.head = node
+            node.link = self.head
+            node.prelink = self.head
+            self.num += 1
+
+        else:
+            did = False
+            now = self.head
+            for i in range(self.num):
+                if now.data < node.data:
+                    now = now.link
+                else:
+                    pre = now.prelink
+                    node.link, pre.link = pre.link, node
+                    self.num += 1
+                    did = True
+                    break
+            if not did:
+                node.prelink = self.head.prelink
+                self.head.prelink.link = node
+                self.head.prelink = node
+                node.link = self.head
+                self.num += 1
+
+    def deletenode(self, node):
+        if node == self.head:
+            self.head = node.link
+        node.prelink.link, node.link.prelink = node.link, node.prelink
+        self.num -= 1
+
+    def printall(self):
+        now = self.head
+        for i in range(self.num):
+            print(now.data)
+            now = now.link
+
+
+linked = Linked()
+for i in range(1, 42):
+    linked.addtolist(i)
+now = linked.head.link.link
+while linked.num > 2:
+    linked.deletenode(now)
+    now = now.link.link.link
+now = linked.head
+for i in range(2):
+    print(now.data)
+    now = now.link
+
+5. 버블소트(백준)
+def merge(ls1, ls2):
+    global count
+    total = len(ls1) + len(ls2)
+    result = [-1] * total
+    ri = 0
+    i = 0
+    j = 0
+    while i < len(ls1) and j < len(ls2):
+        if ls1[i] > ls2[j]:
+            result[ri] = ls2[j]
+            j += 1
+            ri += 1
+            count += len(ls1) - i
+        else:
+            result[ri] = ls1[i]
+            i += 1
+            ri += 1
+    if i < len(ls1):
+        for r in range(i, len(ls1)):
+            result[ri] = ls1[r]
+            ri += 1
+    if j < len(ls2):
+        for r in range(j, len(ls2)):
+            result[ri] = ls2[r]
+            ri += 1
+    return result
+
+
+def divide(ls):
+    if len(ls) == 1:
+        return ls
+    else:
+        middle = len(ls) // 2
+        ls1 = divide(ls[:middle])
+        ls2 = divide(ls[middle:])
+        result = merge(ls1, ls2)
+        return result
+
+
+# data = [17, 38, 78, 54, 85, 82, 32, 68, 99, 62]
+N = int(input())
+data = list(map(int, input().split()))
+count = 0
+answer = divide(data)
+print(count)
+
+6. 달리기(백준)
+def merge(ls1, ls2, m):
+    global rank
+    total = len(ls1) + len(ls2)
+    result = [-1] * total
+    ri = 0
+    i = 0
+    j = 0
+    while i < len(ls1) and j < len(ls2):
+        if ls1[i] > ls2[j]:
+            result[ri] = ls2[j]
+            rank[ls2[j][1]] += i
+            j += 1
+            ri += 1
+        else:
+            result[ri] = ls1[i]
+            i += 1
+            ri += 1
+    if i < len(ls1):
+        for r in range(i, len(ls1)):
+            result[ri] = ls1[r]
+            ri += 1
+    if j < len(ls2):
+        for r in range(j, len(ls2)):
+            result[ri] = ls2[r]
+            rank[ls2[r][1]] += i
+            ri += 1
+    return result
+
+
+def divide(ls):
+    if len(ls) == 1:
+        return ls
+    else:
+        middle = len(ls) // 2
+        ls1 = divide(ls[:middle])
+        ls2 = divide(ls[middle:])
+        result = merge(ls1, ls2, middle)
+        return result
+
+
+N = int(input())
+runners = [[0, 0] for i in range(N)]
+for i in range(N):
+    runners[i][0] = int(input())
+    runners[i][1] = i
+rank = [0] * N
+divide(runners)
+for i in range(N):
+    print(i+1-rank[i])
