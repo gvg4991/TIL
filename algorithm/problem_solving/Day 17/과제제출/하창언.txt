@@ -1,0 +1,74 @@
+1. insertion_sort
+lst = [1,9,3,6,7,0,4,9,5,5]
+for i in range(1,len(lst)):
+    for j in range(0,i):
+        if lst[j]>lst[i]:
+            lst[i],lst[j] = lst[j],lst[i]
+print(lst)
+
+2. merge_sort + 버블소트 + josephus
+class Node:
+    def __init__(self,data,parent=None,link = None):
+        self.data = data
+        self.link = None
+        self.parent = None
+
+def Enqueue(innum):
+    global head
+    if head == None :
+        head = Node(innum)
+    else:
+        parent = None
+        p = head
+        while p.link:
+            parent=p
+            p=p.link
+        p.link,p.parent = Node(innum),parent
+
+def EnOqueue(innum):
+    global head
+    newnode = Node(innum)
+    if head == None :
+        head = newnode
+    else:
+        p = head
+
+
+        newnode.link = p.link
+        if p.link:
+            p.link.parent = newnode
+        p.link = newnode
+        newnode.parent = p
+    return newnode
+
+def kill(node):
+    node.link.parent = node.parent
+    node.parent.link = node.link
+    return node.parent
+
+head = None
+target = head
+
+#josephus problem 초기화
+for i in range(1,42):
+    tmp = EnOqueue(i)
+    if i == 41:
+        head.parent = tmp
+        tmp.link = head
+        
+#39번 반복
+start = head.parent
+for _ in range(39):
+    for i in range(3):
+        start = start.link
+    start = kill(start)
+
+#남은거 두개 출력
+print(start.data)
+print(start.link.data)
+
+while True:
+    if not target:
+        break
+    print(target.data)
+    target = target.link
