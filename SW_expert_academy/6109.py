@@ -114,11 +114,26 @@ for tc in range(test):
     for case in range(n):
         datas.append(list(map(int,input().split())))
 
-    i = 0
-    check = []
-    result = []
+    a = list(map(list,zip(*datas))) #위로
+    # print(a)
+    b = list(map(list,zip(*datas[::-1]))) #아래로
+    # print(b)
+    c = list(map(list,zip(*b[::-1])))[::-1] #오른쪽
+    # print(c)
+    if s == 'right':
+        datas = c
+    elif s == 'up':
+        datas = a
+    elif s == 'down':
+        datas = b
 
+    print('#{}'.format(tc+1))
+    ans = []
     for line in range(n):
+        i = 0
+        check = []
+        result = []
+
         while i < n:
             target = datas[line].pop(0)
             i += 1
@@ -133,28 +148,33 @@ for tc in range(test):
                     value = check.pop(0)
                     result.append(value)
 
+        for yo in check:
+            result.append(yo)
         for yo in range(n-len(result)):
             result.append(0)
 
-        print(result)
+        ans.append(result)
+        # print(ans)
+        #4 8 2 4 0
+        #8 2 8 0 0
+        #8 2 8 0 0
+        #4 4 8 0 0
+        #4 0 0 0 0
+        #16 2
+        #2 0
 
+    a = list(map(list,zip(*ans))) #위로
+    # print(a)
+    b = list(map(list,zip(*ans)))[::-1] #아래로
+    # print(b)
+    c = list(map(list,zip(*b))) #오른쪽
+    # print(c)
+    if s == 'right':
+        ans = c
+    elif s == 'up':
+        ans = a
+    elif s == 'down':
+        ans = b
 
-
-
-
-
-
-            #
-            # if datas[line][i] == 0:
-            #     datas[line].pop(i)
-            # else:
-            #     check.append(datas[line][i])
-            #
-            # if len(check) == 2:
-            #     check
-
-    # for line in range(n):
-    #     for point in range(n-2+1):
-    #         if datas[line][point] == 0
-
-
+    for yo in ans:
+        print(*yo)
