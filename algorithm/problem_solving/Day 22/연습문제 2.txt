@@ -1,0 +1,95 @@
+import time
+
+st = time.time()
+Data = '01D06079861D79F99F'
+
+# Data = Data * 100000
+
+Data = Data.replace('0', '0000')
+Data = Data.replace('1', '0001')
+Data = Data.replace('2', '0010')
+Data = Data.replace('3', '0011')
+Data = Data.replace('4', '0100')
+Data = Data.replace('5', '0101')
+Data = Data.replace('6', '0110')
+Data = Data.replace('7', '0111')
+Data = Data.replace('8', '1000')
+Data = Data.replace('9', '1001')
+Data = Data.replace('A', '1010')
+Data = Data.replace('B', '1011')
+Data = Data.replace('C', '1100')
+Data = Data.replace('D', '1101')
+Data = Data.replace('E', '1110')
+Data = Data.replace('F', '1111')
+print(Data)
+print(len(Data))
+t = 0
+for i in range(len(Data)):
+    t = t * 2 + int(Data[i])
+    if (i+1) % 7 == 0:
+        # print(t, end=' ')
+        t = 0
+
+print(time.time() - st)
+print()
+
+
+st = time.time()
+Data1 = '01D06079861D79F99F'
+# Data1 = Data1 * 100000
+
+# table = [[0, 0, 0, 0],
+#          [0, 0, 0, 1],
+#          [0, 0, 1, 0],
+#          [0, 0, 1, 1],
+#          [0, 1, 0, 0],
+#          [0, 1, 0, 1],
+#          [0, 1, 1, 0],
+#          [0, 1, 1, 1],
+#          [1, 0, 0, 0],
+#          [1, 0, 0, 1],
+#          [1, 0, 1, 0],
+#          [1, 0, 1, 1],
+#          [1, 1, 0, 0],
+#          [1, 1, 0, 1],
+#          [1, 1, 1, 0],
+#          [1, 1, 1, 1]]
+
+table = ['0000',
+         '0001',
+         '0010',
+         '0011',
+         '0100',
+         '0101',
+         '0110',
+         '0111',
+         '1000',
+         '1001',
+         '1010',
+         '1011',
+         '1100',
+         '1101',
+         '1110',
+         '1111']
+
+Data = ''
+
+t = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+for i in range(len(Data1)):
+    idx = t.index(Data1[i])
+    # if Data1[i] <= '9':
+    #     idx = ord(Data1[i]) - ord('0')
+    # else:
+    #     idx = ord(Data1[i]) - ord('A') + 10
+    Data = Data + table[idx]
+    # for j in range(4):
+    #     Data[i * 4 + j] = table[idx][j]
+print(Data)
+print(len(Data))
+t = 0
+for i in range(len(Data)):
+    t = t * 2 + int(Data[i])
+    if (i+1) % 7 == 0:
+        # print(t, end=' ')
+        t = 0
+print(time.time() - st)

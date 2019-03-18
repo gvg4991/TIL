@@ -120,7 +120,17 @@
 # l[1:4] = r[0:2]
 # print(l)
 
-j=0
-while j<=4:
-    j += 1
-print(j)
+# j=0
+# while j<=4:
+#     j += 1
+# print(j)
+
+# #int(str,n)
+# #문자열을 n진법으로 생각하고 10진수로 바꾸기
+# input = '1110'
+# print(int(input,2)) #14
+# print(int(input,4)) #84
+
+result = [0,1,2,3,4,5,6,7,8,9]
+start = 1
+print(''.join(map(str,result[start:start+7])))

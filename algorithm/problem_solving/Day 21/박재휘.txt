@@ -1,0 +1,21 @@
+data=list(map(int,input().split()))
+
+maxdis=-9999
+q=[]
+new=0
+q.append(data[0])
+def gsum(a):
+    global new
+    if a==len(data):
+        return
+    if q[a-1]+data[a]>=data[a]:
+        q.append(q[a-1]+data[a])
+
+    else:
+        q.append(data[a])
+        new=data.index(data[a])
+    gsum(a+1)
+gsum(1)
+
+print("구간 :", ' '.join(map(str,data[new:max(q)])))
+print("최대값 :", max(q))

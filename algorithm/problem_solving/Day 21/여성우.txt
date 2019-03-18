@@ -1,0 +1,50 @@
+1. 구간 최대합, 구간 출력
+l=list(map(int,input().split()))
+dp = [0] * len(l)
+dp[0] = l[0]
+maxsum = l[0]
+start = 0
+end = 0
+answer = [0, 0]
+for i in range(1, len(l)):
+    dp[i] = dp[i-1] + l[i]
+    end = i
+    if dp[i] < l[i]:
+        dp[i] = l[i]
+        start = i
+    if dp[i] > maxsum:
+        maxsum = dp[i]
+        answer = [start, end]
+print(maxsum)
+print(*l[answer[0]:answer[1]+1], sep=', ')
+
+2. 중복조합
+def dfs(i, d):
+    global answer, choose
+    lci = i * 2
+    rci = i * 2 + 1
+    myin = False
+    if Tree[i]:
+        choose.append(numl[d-1])
+        myin = True
+        if len(choose) == r:
+            answer.append(choose[:])
+            choose.pop()
+            return
+    if Tree[i]:
+        dfs(i, d)
+    if d < num:
+        dfs(lci, d+1)
+        dfs(rci, d+1)
+    if myin:
+        choose.pop()
+
+
+num = 3
+numl = [1, 2, 3]
+r = 2
+Tree = [0, 0] + [1, 0] * ((2 ** num) - 1)
+choose = []
+answer = []
+dfs(1, 0)
+print(answer)

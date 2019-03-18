@@ -1,0 +1,45 @@
+import sys
+sys.stdin = open("input.txt")
+CRYPT =[[[[[[-1]*2 for i in range(2)] for j in range(2)]  for k in range(2)]  for l in range(2)]  for m in range(2)]
+CRYPT[0][0][1][1][0][1] = 0
+CRYPT[0][1][0][0][1][1] = 1
+CRYPT[1][1][1][0][1][1] = 2
+CRYPT[1][1][0][0][0][1] = 3
+CRYPT[1][0][0][0][1][1] = 4
+CRYPT[1][1][0][1][1][1] = 5
+CRYPT[0][0][1][0][1][1] = 6
+CRYPT[1][1][1][1][0][1] = 7
+CRYPT[0][1][1][0][0][1] = 8
+CRYPT[1][0][1][1][1][1] = 9
+
+Data = input()
+Binary = []
+howmany = len(Data)
+for now in range(howmany):
+	if 'A'<=Data[now] <='F' :
+		n = ord(Data[now])-ord('A') + 10
+	else:
+		n = ord(Data[now]) - 48
+	for i in range(3,-1,-1):
+		Binary.append(1) if(n&(1 << i)) else Binary.append(0)  #0F97A3
+
+sp = len(Binary)-1
+while Binary[sp] == 0 : 	sp-=1
+ans=[]
+while CRYPT[Binary[sp-5]][Binary[sp-4]][Binary[sp-3]][Binary[sp-2]][Binary[sp-1]][Binary[sp]]!=-1 and sp-6 > 0 :
+	ans.append(CRYPT[Binary[sp-5]][Binary[sp-4]][Binary[sp-3]][Binary[sp-2]][Binary[sp-1]][Binary[sp]])
+	sp-=6
+
+
+while ans:
+	print(ans.pop())
+
+
+
+
+
+
+
+
+
+

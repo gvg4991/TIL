@@ -1,0 +1,62 @@
+#구간합 최대합
+
+datas = [5,1,-4,2,-1,-5,-2,8,-3,6]
+
+result = [0]*len(datas)
+ans = []
+cnt = 0
+target = 0
+for i in datas:
+    if target >= 0:
+        target += i
+        result[cnt] = target
+        ans.append(i)
+    else:
+        result[cnt] = i
+        target = i
+        ans = [i]
+    cnt += 1
+print(result)
+print(max(result))
+print(ans)
+
+
+rangesum = [0]*len(datas)
+usedata = [0]*len(datas)
+for now in range(len(datas)):
+    rangesum[now] = max(rangesum[now-1]+datas[now],datas[now])
+    if rangesum[now] == rangesum[now-1]+datas[now]:
+        usedata[now] = 1
+    else:
+        usedata = [0]*len(datas)
+        usedata[now] = 1
+print(rangesum)
+print(max(rangesum))
+print(usedata)
+
+
+
+
+#-----------------------------------------------------------------------------------------------
+
+#중복조합
+
+cnt = 0
+def combination(n, r, i, d):
+
+    global cnt
+    if r == 0:
+        print(d)
+        cnt+=1
+        return
+    if i==n:
+        return
+
+    combination(n, r-1, i, d+[data[i]]) #들어갔을때 (똑같은 수 한번 더 들어갈 수 있음)
+    combination(n, r, i+1, d) #안들어갔을때
+
+nn=5
+rr=3
+data = [1,2,3,4,5]
+combination(nn, rr, 0, [])
+print(cnt)
