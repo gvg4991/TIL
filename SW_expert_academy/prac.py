@@ -131,6 +131,14 @@
 # print(int(input,2)) #14
 # print(int(input,4)) #84
 
-result = [0,1,2,3,4,5,6,7,8,9]
-start = 1
-print(''.join(map(str,result[start:start+7])))
+
+# result = [0,1,2,3,4,5,6,7,8,9]
+# start = 1
+# print(''.join(map(str,result[start:start+7])))
+
+# a = 'asd'
+# print(a[1])
+
+
+# k = '000000001DB176C588D26EC000'
+# print(int(k,16))
