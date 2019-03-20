@@ -64,6 +64,9 @@
 
 import sys
 sys.stdin = open("input.txt")
+
+
+
 check = ['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
 n,m = map(int,input().split())
 datas = []

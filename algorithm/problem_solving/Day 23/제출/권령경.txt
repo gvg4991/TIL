@@ -1,0 +1,167 @@
+#이진수2
+import sys
+sys.stdin = open("decimal_point.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+    result = ''
+    N = float(input())
+
+    while N != 0 and len(result) <= 12:
+
+        N *= 2
+        if N >= 1:
+            result += '1'
+            N -= 1
+        else:
+            result += '0'
+    if len(result) >= 13:
+        result = 'overflow'
+    print("#%d %s" %(test_case, result))
+
+#이진수
+import sys
+sys.stdin = open("hexa_binary.txt", "r")
+
+T = int(input())
+digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+for test_case in range(1, 1+T):
+    num_list = []
+    N, hexa_digit = input().split()
+    result = []
+    for n in range(len(hexa_digit)):
+        if hexa_digit[n] not in digit:
+            num_list.append(ord(hexa_digit[n]) - 55)
+        else:
+            num_list.append(int(hexa_digit[n]))
+
+    for i in range(int(N)):
+        j = 3
+        four_bit = [0, 0, 0, 0]
+        while num_list[i] != 0:
+            four_bit[j] = num_list[i] % 2
+            num_list[i] //= 2
+            j -= 1
+        result.extend(four_bit)
+
+    print("#%d" % test_case, end=' ')
+    for x in result:
+        print(x, end='')
+    print()
+
+
+#정식이의 은행업무
+
+import sys
+sys.stdin = open("revision.txt", "r")
+
+T = int(input())
+
+for test_case in range(1, T+1):
+    binary = input()
+    ternary = input()
+    result = []
+    binary_t = list(binary)
+    ternary_t = list(ternary)
+    answer = 0
+    for i in range(len(binary)):
+        binary_sum = 0
+        if binary_t[i] == '1':
+            binary_t[i] = '0'
+            n = 0
+            while len(binary_t) - n - 1 >= 0:
+                binary_sum += int(binary_t[len(binary_t) - n - 1]) * 2 ** n
+                n += 1
+            result.append(binary_sum)
+            binary_t = list(binary)
+        else:
+            binary_t[i] = '1'
+            n = 0
+            while len(binary_t) - n - 1 >= 0:
+                binary_sum += int(binary_t[len(binary_t) - n - 1]) * 2 ** n
+                n += 1
+            result.append(binary_sum)
+            binary_t = list(binary)
+
+    for j in range(len(ternary)):
+        ternary_sum = 0
+        if ternary_t[j] == '2':
+            ternary_t[j] = '1'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+
+        elif ternary_t[j] == '1':
+            ternary_t[j] = '2'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+
+        else:
+            ternary_t[j] = '1'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+
+    for t in range(len(ternary)):
+        ternary_sum = 0
+        if ternary_t[t] == '2':
+            ternary_t[t] = '0'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+
+        elif ternary_t[t] == '1':
+            ternary_t[t] = '0'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+
+        else:
+            ternary_t[t] = '2'
+            n = 0
+            while len(ternary_t) - n - 1 >= 0:
+                ternary_sum += int(ternary_t[len(ternary_t) - n - 1]) * 3 ** n
+                n += 1
+            if ternary_sum in result:
+                answer = ternary_sum
+                break
+            result.append(ternary_sum)
+            ternary_t = list(ternary)
+            check = False
+
+    print("#%d %d" %(test_case, answer))
+
+#암호코드 스캔

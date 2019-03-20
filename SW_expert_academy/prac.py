@@ -142,3 +142,8 @@
 
 # k = '000000001DB176C588D26EC000'
 # print(int(k,16))
+
+input = 1256666
+yo = list(map(str,input))
+datas = list(map(int,yo))
+print(datas)

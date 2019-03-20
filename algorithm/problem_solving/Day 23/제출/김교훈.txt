@@ -1,0 +1,350 @@
+[이진수]
+TC=int(input())
+for tc in range(1,TC+1):
+    aaaaaa = list(input().split())
+    data_input = aaaaaa[1]
+    
+    data=[]
+    
+    for i in data_input:
+        if(i.isdigit()):
+            this=''
+            A=int(i)
+            while(1):
+                this=str(A%2)+this
+                A=A//2
+                if(A==0):
+                    break
+            while(len(this)!=4):
+                this='0'+this
+            data.insert(0,this)
+        else:
+            if i=='A':
+                data.insert(0,'1010')
+            elif i=='B':
+                data.insert(0,'1011')
+            elif i=='C':
+                data.insert(0,'1100')
+            elif i=='D':
+                data.insert(0,'1101')
+            elif i=='E':
+                data.insert(0,'1110')
+            else:
+                data.insert(0,'1111')
+    #
+    # print(data)
+    
+    conv_data = ''
+    for i in data:
+        conv_data= i+conv_data
+    print("#{} {}".format(tc,conv_data))
+
+
+[이진수2]
+TC=int(input())
+for tc in range(1,TC+1):
+    A=float(input())
+
+    ans=''
+    comp=A
+    while(1):
+        A=A*2
+        this=str(A)
+        ans=ans+this[0]
+        if (A>1):
+            A=A-1
+
+        if A==1:
+            break
+        elif A ==comp:
+            break
+        elif len(ans)>14:
+            break
+    if(len(ans)>=13):
+        print("#{} overflow".format(tc))
+    else:
+        print("#{} {}".format(tc,ans))
+
+
+[정식이]
+
+TC=int(input())
+for tc in range(1,TC+1):
+    two_jin = list(input())
+    sam_jin = list(input())
+
+    def two_to_sip():
+        global two_jin
+        result = 0
+        j=len(two_jin)-1
+        for i in range(0,len(two_jin)):
+            this = int(two_jin[i])*(1<<j)
+            result= result+this
+            j=j-1
+        return result
+
+    def sam_to_sip():
+        global sam_jin
+        result = 0
+        j = len(sam_jin) - 1
+        for i in range(0, len(sam_jin)):
+            this = int(sam_jin[i]) * (3**j)
+            result = result + this
+            j = j - 1
+        return result
+
+    answer=0
+    def find_ans():
+        global answer
+
+        for i in range(0,len(two_jin)): ## 업다운
+            if two_jin[i] == "0":
+                two_jin[i] = "1"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]!="0":
+                        sam_jin[j] = str(int(sam_jin[j])-1)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) + 1)
+                two_jin[i] = "0"
+
+
+        for i in range(0,len(two_jin)):## 다운 업
+            if two_jin[i] == "1":
+                two_jin[i] = "0"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]!="2":
+                        sam_jin[j] = str(int(sam_jin[j])+1)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) - 1)
+                two_jin[i] = "1"
+
+        for i in range(0,len(two_jin)):## 업업
+            if two_jin[i] == "0":
+                two_jin[i] = "1"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]!="2":
+                        sam_jin[j] = str(int(sam_jin[j])+1)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) -1)
+                two_jin[i] = "0"
+
+        for i in range(0,len(two_jin)):## 다운 다운
+            if two_jin[i] == "1":
+                two_jin[i] = "0"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]!="0":
+                        sam_jin[j] = str(int(sam_jin[j])-1)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) + 1)
+                two_jin[i] = "1"
+
+
+        for i in range(0,len(two_jin)): ## 업다운 ver 2
+            if two_jin[i] == "0":
+                two_jin[i] = "1"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]=="2":
+                        sam_jin[j] = str(int(sam_jin[j])-2)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) + 2)
+                two_jin[i] = "0"
+                
+        for i in range(0,len(two_jin)):## 다운 업 ver 2
+            if two_jin[i] == "1":
+                two_jin[i] = "0"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]=="0":
+                        sam_jin[j] = str(int(sam_jin[j])+2)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) - 2)
+                two_jin[i] = "1"
+                
+        for i in range(0,len(two_jin)):## 업업 ver 2
+            if two_jin[i] == "0":
+                two_jin[i] = "1"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]=="0":
+                        sam_jin[j] = str(int(sam_jin[j])+2)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) -2)
+                two_jin[i] = "0"
+                
+        for i in range(0,len(two_jin)):## 다운 다운
+            if two_jin[i] == "1":
+                two_jin[i] = "0"
+                for j in range(0,len(sam_jin)):
+                    if sam_jin[j]=="2":
+                        sam_jin[j] = str(int(sam_jin[j])-2)
+                        if(two_to_sip()==sam_to_sip()):
+                            answer=two_to_sip()
+                            return
+                        else:
+                            sam_jin[j] = str(int(sam_jin[j]) + 2)
+                two_jin[i] = "1"
+
+    find_ans()
+    print("#{} {}".format(tc,answer))
+
+[암호코드 스캔] ( 16진수 코드 추출 에러, TC 성공 6개까지)
+TC=int(input())
+def To_Ejin(X):
+    data_input = X
+    data = []
+    for i in data_input:
+        if (i.isdigit()):
+            this = ''
+            A = int(i)
+            while (1):
+                this = str(A % 2) + this
+                A = A // 2
+                if (A == 0):
+                    break
+            while (len(this) != 4):
+                this = '0' + this
+            data.insert(0, this)
+        else:
+            if i == 'A':
+                data.insert(0, '1010')
+            elif i == 'B':
+                data.insert(0, '1011')
+            elif i == 'C':
+                data.insert(0, '1100')
+            elif i == 'D':
+                data.insert(0, '1101')
+            elif i == 'E':
+                data.insert(0, '1110')
+            else:
+                data.insert(0, '1111')
+    conv_data = ''
+    for i in data:
+        conv_data = i + conv_data
+    return conv_data
+
+for tc in range(1,TC+1):
+    data_input = list(map(int,input().split()))
+    N=data_input[0]
+    password_set=[['0','0','0','1','1','0','1'],
+              ['0','0','1','1','0','0','1'],
+              ['0','0','1','0','0','1','1'],
+              ['0','1','1','1','1','0','1'],
+              ['0','1','0','0','0','1','1'],
+              ['0','1','1','0','0','0','1'],
+              ['0','1','0','1','1','1','1'],
+              ['0','1','1','1','0','1','1'],
+              ['0','1','1','0','1','1','1'],
+              ['0','0','0','1','0','1','1']]
+
+    answer_set=[]
+    code_set=[]
+    for q in range(0,N):
+        inin=input()
+        inin_data=[]
+        x=0
+        while(x<len(inin)):
+            if inin[x]!='0':
+                while(1):
+                    if (inin[x] == '0'):
+                        if(x!=len(inin)-1):
+                            if (inin[x + 1] == '0'):
+                                code_set.append(inin_data)
+                                break
+                        else:
+                            code_set.append(inin_data)
+                            break
+                    inin_data.append(inin[x])
+                    x=x+1
+            else:
+                x=x+1
+
+    # for xc in code_set:
+    #     print(xc)
+
+    for this_code in code_set:
+        conv_data=To_Ejin(this_code)
+        conv_data=list(conv_data)
+
+        while(1):
+            if conv_data[len(conv_data)-1]=='0':
+                conv_data.pop()
+                conv_data.insert(0,'0')
+            else:
+                break
+
+        new_data=conv_data
+        product=len(new_data)//56
+
+        password=[]
+        for zxc in range(0,10):
+            this_line = []
+            for kk in range(0,len(password_set[0])):
+                for tt in range(0,product):
+                    this_line.append(password_set[zxc][kk])
+            password.append(this_line)
+
+        i = 0
+        answer = []
+
+        # for xxc in password:
+        #     print(xxc)
+        # print(new_data)
+
+
+        while(1):
+            A = 0
+            hubo = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            for k in range(0,len(password)):
+                j=i
+                for z in range(0,len(password[0])):
+                    if(new_data[j] != password[k][z]):
+                        hubo[k]=0
+                    j = j + 1
+            for t in range(0,len(hubo)):
+                if hubo[t]==1:
+                    A=1
+                    answer.append(t)
+            if A==0:
+                i=i+1
+            else:
+                i=i+7*product
+            if(len(new_data)-1-i<7*product-1):
+                break
+        answer_set.append(answer)
+    # print(answer_set)
+    final_answer={}
+    final_answer.update({0:1})
+    for i in range(0,len(answer_set)):
+        if len(answer_set[i])!=0:
+            this= 3*(int(answer_set[i][0]) + int(answer_set[i][2]) + int(answer_set[i][4])+int(answer_set[i][6])) + int(answer_set[i][1])+int(answer_set[i][3])+int(answer_set[i][5]) + int(answer_set[i][7])
+            if this%10 == 0:
+                OK = int(answer_set[i][0])+int(answer_set[i][1])+int(answer_set[i][2])+int(answer_set[i][3])+int(answer_set[i][4])+int(answer_set[i][5])+int(answer_set[i][6])+int(answer_set[i][7])
+                final_answer.update({int(OK):1})
+            else:
+                final_answer.update({0:1})
+        else:
+            final_answer.update({0:1})
+    num=0
+    ans=0
+    for f in final_answer.keys():
+        ans=ans+f
+    print("#{} {}".format(tc,ans))
