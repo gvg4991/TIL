@@ -1,0 +1,136 @@
+#1 selection sort
+item = [5,1,2,3]
+
+def rec_selection(s,e) :
+	if s == e :
+		return
+	m = s
+	for i in range(s+1,e):
+		if item[i] < item[m] :
+			m = i
+	item[s],item[m] = item[m],item[s]
+
+	rec_selection(s+1,e)
+
+rec_selection(0,4)
+print(item)
+
+#2 babygin
+item = [1,0,1,1,2,3]
+def baby() :
+	for i in range(6) :
+		for j in range(6) :
+			if i != j:
+				for k in range(6) :
+					if j != k and i != k:
+						for q in range(6) :
+							if k != q and i != q and j != q:
+								for r in range(6) :
+									if q != r and i != r and j != r and q != r and k != r:
+										for t in range(6) :
+											if r != t and i != t and j != t and q != t and k != t:
+												if item[i] == item[j] == item[k] and item[q] == item[r] == item[t]:
+													return 1
+												if item[q] == item[r] == item[t] and item[q] + 2 == item[r] + 1 == item[t] :
+													return 1
+												if item[i] +2 == item[j]+1 == item[k] and item[q] == item[r] == item[t]:
+													return 1
+												if item[i] +2 == item[j]+1 == item[k] and item[q] + 2 == item[r] + 1 == item[t] :
+													return 1
+	return 0
+
+
+
+print(baby())
+
+
+#3 조합 중복조합
+item = [1,2,3]
+#조합
+for i in range(3) :
+	for j in range(i+1,3) :
+		print(item[i],item[j])
+#중복조합
+for i in range(3) :
+	for j in range(i,3) :
+		print(item[i],item[j])
+
+
+#4 순열 중복순열
+item = [1,2,3]
+#중복순열
+result = [0,0,0]
+visited = [0]*3
+def dfs(pos) :
+	if pos >= 3 :
+		print(result)
+		return
+	for i in range(3) :
+		if not visited[i] :
+			visited[i] = 1
+			result[pos] = item[i]
+			dfs(pos+1)
+			visited[i] = 0
+			result[pos] = -1
+dfs(0)
+
+# 순열
+result = [0,0]
+def dfs(pos) :
+	if pos >= 2 :
+		if result[0] != result[1] :
+			print(result)
+		return
+	for i in range(pos,3) :
+		result[pos] = item[i]
+		dfs(pos+1)
+		result[pos] = -1
+dfs(0)
+
+
+#5 연습문제 3
+#부분집합 합
+item = [-1,3,-9,6,7,-6,1,5,4,-2]
+temp = []
+def dfs(pos) :
+	if len(temp) > 0 and sum(temp) == 0 :
+		print(temp)
+		return
+	if pos >= 10 :
+		return
+
+	temp.append(item[pos])
+	dfs(pos+1)
+	temp.pop()
+	dfs(pos + 1)
+dfs(0)
+
+
+#6 동철이
+
+def dfs(pos,item) :
+	global my_max
+	# print(item,my_max)
+	if item <= my_max :
+		return
+	if pos >= n :
+
+		if item > my_max :
+			print(data)
+			my_max = item
+			# print(my_max)
+		return
+	for i in range(n) :
+		if data[i] == 0 :
+			data[i] = 1
+			dfs(pos+1,item*(ma[i][pos]/100))
+			data[i] = 0
+for tc in range(int(input())) :
+	n = int(input())
+	ma = []
+	for i in range(n) :
+		ma.append(list(map(int,input().split())))
+	data = [0]*n
+	my_max = 0
+	dfs(0,1)
+	print("#%d %0.6f" % (tc + 1, round(my_max*100, 6)))
