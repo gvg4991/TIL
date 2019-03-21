@@ -22,10 +22,32 @@ sys.stdin = open('input.txt')
 
 
 
-# def min_sum(start,end):
-#     if not False in visited:
-#         return
-#     for n in range(case):
-#         if visited[end] == False:
-#             result += datas[start][end]
+def min_sum(now):
+    global result
+    visited[now] = True
+    if not False in visited:
+        result += datas[now][0]
+        ans.append(result)
+        result -= datas[now][0]
+        return
+    for next in range(n):
+        if visited[next] == False:
+            result += datas[now][next]
+            min_sum(next)
+            result -= datas[now][next]
+            visited[next] = False
 
+
+test = int(input())
+for tc in range(test):
+    n = int(input())
+    datas = []
+    for case in range(n):
+        datas.append(list(map(int,input().split())))
+
+    visited = [False]*n
+    result = 0
+    ans = []
+
+    min_sum(0)
+    print('#{} {}'.format(tc+1,min(ans)))

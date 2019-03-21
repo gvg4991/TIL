@@ -24,9 +24,19 @@ for tc in range(test):
         start[case],end[case] = map(int,input().split())
         # datas.append(list(map(int,input().split())))
 
-    target = min(end)
-    idx = end.index(target)
-    e = end.pop(idx)
-    s = start.pop(idx)
-    for check in start:
-        start.index(check) #스타트의 인덱스를 리스트에 넣어서 엔드보다 작은것들은 다 지우기!
+    result = 0
+    bye = []
+    while start != []:
+        target = min(end)
+        idx = end.index(target)
+        e = end.pop(idx)
+        s = start.pop(idx)
+        result += 1
+        if start != []:
+            for check in start[::-1]:
+                if check < target:
+                    idx = start.index(check) #스타트의 인덱스를 리스트에 넣어서 엔드보다 작은것들은 다 지우기!
+                    start.pop(idx)
+                    end.pop(idx)
+
+    print('#{} {}'.format(tc+1,result))
