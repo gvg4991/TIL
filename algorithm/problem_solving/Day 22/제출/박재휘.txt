@@ -1,0 +1,195 @@
+######### 2진 암호코드
+num=int(input())
+for j in range(num):
+    s,g=list(map(int,input().split()))
+    data=''
+    visited=[0]*s*g
+    a=[]
+    b=[]
+    c=[]
+    flag=1
+    result=[]
+    target=['0001101','0011001','0010011','0111101','0100011','0110001','0101111','0111011','0110111','0001011']
+    for i in range(s):
+        data+=input()
+
+    for i in range(s*g-1,-1,-1):
+        if data[i]=='1'and not visited[i]:
+            for x in range(i,i-56,-1):
+                if not visited[x]:
+                    a.append(data[x])
+                    visited[x]=True
+
+    a.reverse()
+    a="".join(a)
+    o=0
+    while True:
+        b.append(a[o:o+7])
+        o += 7
+        if o >= len(a):
+            break
+    o=0
+
+    for i in range(len(b)):
+        if b[i] in target:
+            result.append(target.index(b[i]))
+    while True:
+        c.append(result[o:o+8])
+        o += 8
+        if o >= len(b):
+            break
+    result=0
+    for i in range(len(c)):
+        if ((c[i][0]+c[i][2]+c[i][4]+c[i][6])*3+(c[i][1]+c[i][3]+c[i][5])+c[i][7])%10==0 and ((c[i][0]+c[i][2]+c[i][4]+c[i][6])*3+(c[i][1]+c[i][3]+c[i][5])+c[i][7])!=0:
+            result=sum(c[i])
+        else:
+            print("#{} 0".format(j+1))
+            flag=0
+            break
+    if flag !=0:
+        print("#{} {}".format(j+1,result))
+
+
+############## 10진출력 연습문제1
+data=input()
+n=7
+a=[]
+b=[]
+count=0
+print(data)
+
+for i in data[::-1]:
+    if i=='1' and count==0:
+        a.append(1)
+    if i=='1' and count>0:
+        a.append(2**count)
+    count += 1
+    if count==n:
+        count=0
+        b.append(sum(a))
+        a=[]
+
+b.reverse()
+print(b)
+
+############# 16진수 연습문제2 (풀다가 모르고 10진으로 풀어버림....)
+data=input()
+r_data=[]
+print(data)
+intt=0
+for i in data:
+    temp=0
+    temp_list=[]
+    if i=='A' or i=='B'or i=='C'or i=='D'or i=='E'or i=='F':
+        if i=='A':
+            i='1010'
+        if i=='B':
+            i='1011'
+        if i=='C':
+            i='1100'
+        if i=='D':
+            i='1011'
+        if i=='E':
+            i='1110'
+        if i=='F':
+            i='1111'
+    elif int(i)>1:
+        intt=int(i)
+        while intt!=1:
+            temp_list += str(intt%2)
+            intt=intt//2
+        temp_list += str(intt)
+        temp_list.reverse()
+        r_data.append("".join(temp_list))
+        continue
+    r_data.append(i)
+
+count=7
+print(r_data)
+r_data="".join(r_data)
+print(r_data)
+a=[]
+n=7
+b=[]
+
+for i in range(len(r_data)):
+    if len(r_data[i:])<7:
+        count = len(r_data[i:])
+        for j in range(len(r_data[i:])):
+            if r_data[j] == '1' and count > 1:
+                a.append(2 ** (count - 1))
+            count -= 1
+            if count == 1:
+                b.append(sum(a))
+                a = []
+            break
+
+    if r_data[i]=='1' and count>1:
+        a.append(2**(count-1))
+    count -= 1
+    if count==1:
+        count=7
+        b.append(sum(a))
+        a=[]
+print(b)
+
+
+### 암호비트 연습문제3
+
+data=input()
+# print(data)
+
+intt=0
+r_data=[]
+patt={'001101':0, '010011':1, '111011':2, '110001':3, '100011':4, '110111':5, '001011':6,'111101':7, '011001':8, '101111':9}
+# print(patt)
+for i in data:
+    if ord(i)>=65 and ord(i)<=70:
+        if i=='A':
+            i = '1010'
+        if i=='B':
+            i = '1011'
+        if i=='C':
+            i = '1100'
+        if i=='D':
+            i = '1011'
+        if i=='E':
+            i = '1110'
+        if i=='F':
+            i = '1111'
+    if int(i)>=0 and int(i)<=9:
+        temp_list=[]
+        if int(i)==0:
+            i='0000'
+            r_data.append(i)
+            continue
+        if int(i)==1:
+            i='0001'
+            r_data.append(i)
+            continue
+        elif int(i) > 1:
+            intt = int(i)
+            while intt != 1:
+                temp_list += str(intt % 2)
+                intt = intt // 2
+            temp_list += str(intt)
+            if len(temp_list)==2:
+                temp_list.append('0')
+                temp_list.append('0')
+            if len(temp_list)==3:
+                temp_list.append('0')
+
+            temp_list.reverse()
+            r_data.append("".join(temp_list))
+            continue
+    r_data.append(i)
+# print(r_data)
+r_data=''.join(r_data)
+print(r_data)
+for i in range(len(r_data[0:-5])):
+    for key,val in patt.items():
+        if r_data[i:i+6] in key:
+            print(val,end=" ")
+
+
+

@@ -1,0 +1,233 @@
+
+[연습문제 1]
+data_input = list(map(int,''.join(input().split())))
+this=0
+j=6
+answer=[]
+for i in range(0,len(data_input)):
+    if data_input[i]==1:
+        this=this+(1<<j)
+    j=j-1
+    if j==-1:
+        j=6
+        answer.append(this)
+        this=0
+print(*answer)
+
+
+[연습문제 2]
+import sys
+sys.stdin=open("input.txt","r")
+
+data_input = input()
+
+data=[]
+
+for i in data_input:
+    if(i.isdigit()):
+        this=''
+        A=int(i)
+        while(1):
+            this=str(A%2)+this
+            A=A//2
+            if(A==0):
+                break
+        while(len(this)!=4):
+            this='0'+this
+        data.insert(0,this)
+    else:
+        if i=='A':
+            data.insert(0,'1010')
+        elif i=='B':
+            data.insert(0,'1011')
+        elif i=='C':
+            data.insert(0,'1100')
+        elif i=='D':
+            data.insert(0,'1101')
+        elif i=='E':
+            data.insert(0,'1110')
+        else:
+            data.insert(0,'1111')
+#
+# print(data)
+
+conv_data = ''
+for i in data:
+    conv_data= i+conv_data
+print(conv_data)
+
+this=0
+j=6
+answer=[]
+rest=0
+k=0
+for i in range(0,len(conv_data)):
+    if conv_data[i]=='1':
+        this=this+(1<<j)
+    j=j-1
+    if j==-1:
+        j=6
+        answer.append(this)
+        this=0
+        if len(conv_data)-1-i<7:
+            rest=len(conv_data)-1-i
+            k=i+1
+            break
+this=0
+if k!=0:
+    j = rest - 1
+    for i in range(k,len(conv_data)):
+        if conv_data[i]=='1':
+            this=this+(1<<j)
+        j=j-1
+if this!=0:
+    answer.append(this)
+
+print(*answer)
+
+
+[연습문제 3]
+import sys
+sys.stdin=open("input.txt","r")
+
+data_input = input()
+
+data=[]
+
+for i in data_input:
+    if(i.isdigit()):
+        this=''
+        A=int(i)
+        while(1):
+            this=str(A%2)+this
+            A=A//2
+            if(A==0):
+                break
+        while(len(this)!=4):
+            this='0'+this
+        data.insert(0,this)
+    else:
+        if i=='A':
+            data.insert(0,'1010')
+        elif i=='B':
+            data.insert(0,'1011')
+        elif i=='C':
+            data.insert(0,'1100')
+        elif i=='D':
+            data.insert(0,'1101')
+        elif i=='E':
+            data.insert(0,'1110')
+        else:
+            data.insert(0,'1111')
+conv_data = ''
+for i in data:
+    conv_data= i+conv_data
+
+password=[['0','0','1','1','0','1'],
+          ['0','1','0','0','1','1'],
+          ['1','1','1','0','1','1'],
+          ['1','1','0','0','0','1'],
+          ['1','0','0','0','1','1'],
+          ['1','1','0','1','1','1'],
+          ['0','0','1','0','1','1'],
+          ['1','1','1','1','0','1'],
+          ['0','1','1','0','0','1'],
+          ['1','0','1','1','1','1']]
+
+i=0
+answer=[]
+while(1):
+    A=0
+    hubo = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    for k in range(0,len(password)):
+        j=i
+        for z in range(0,6):
+            if(conv_data[j] != password[k][z]):
+                hubo[k]=0
+            j = j + 1
+    for t in range(0,len(hubo)):
+        if hubo[t]==1:
+            A=1
+            answer.append(t)
+    if A==0:
+        i=i+1
+    else:
+        i=i+6
+    if(len(conv_data)-1-i<5):
+        break
+print(*answer)
+
+[단순이진암호]
+TC=int(input())
+for tc in range(1,TC+1):
+    data_input = list(map(int,input().split()))
+    N=data_input[0]
+    password=[['0','0','0','1','1','0','1'],
+              ['0','0','1','1','0','0','1'],
+              ['0','0','1','0','0','1','1'],
+              ['0','1','1','1','1','0','1'],
+              ['0','1','0','0','0','1','1'],
+              ['0','1','1','0','0','0','1'],
+              ['0','1','0','1','1','1','1'],
+              ['0','1','1','1','0','1','1'],
+              ['0','1','1','0','1','1','1'],
+              ['0','0','0','1','0','1','1']]
+
+    answer_set=[]
+    for q in range(0,N):
+        conv_data=input()
+        i=0
+        answer=[]
+        maxx=0
+        for x in range(0,len(conv_data)):
+            if conv_data[x]=='1':
+                maxx=x
+        new_data =''
+        for _ in range(maxx-55,maxx+1):
+            new_data=new_data+conv_data[_]
+        while(1):
+            A = 0
+            hubo = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+            for k in range(0,len(password)):
+                j=i
+                for z in range(0,7):
+                    if(new_data[j] != password[k][z]):
+                        hubo[k]=0
+                    j = j + 1
+            for t in range(0,len(hubo)):
+                if hubo[t]==1:
+                    A=1
+                    answer.append(t)
+            if A==0:
+                i=i+1
+            else:
+                i=i+7
+            if(len(new_data)-1-i<6):
+                break
+        answer_set.append(answer)
+    # print(answer_set)
+    final_answer=[]
+    for i in range(0,len(answer_set)):
+        if len(answer_set[i])!=0:
+            this= 3*(int(answer_set[i][0]) + int(answer_set[i][2]) + int(answer_set[i][4])+int(answer_set[i][6])) + int(answer_set[i][1])+int(answer_set[i][3])+int(answer_set[i][5]) + int(answer_set[i][7])
+            if this%10 == 0:
+                OK = int(answer_set[i][0])+int(answer_set[i][1])+int(answer_set[i][2])+int(answer_set[i][3])+int(answer_set[i][4])+int(answer_set[i][5])+int(answer_set[i][6])+int(answer_set[i][7])
+                final_answer.append(OK)
+            else:
+                final_answer.append(0)
+        else:
+            final_answer.append(0)
+
+    num=0
+    ans=0
+    for i in range(0,len(final_answer)):
+        if(final_answer[i]!=0):
+            num=num+1
+            if(num==5):
+                print("#{} {}".format(tc,final_answer[i]))
+                ans=1
+                break
+        else:
+            num=0
+    if(ans==0):
+        print("#{} {}".format(tc,0))

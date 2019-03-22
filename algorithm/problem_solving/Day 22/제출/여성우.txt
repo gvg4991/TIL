@@ -1,0 +1,126 @@
+1. 연습문제1
+import sys
+sys.stdin = open('input.txt', 'r')
+
+t = 6
+num = 0
+answer = []
+for i in input():
+    if i != ' ':
+        if i == '1':
+            num += 1 << t
+        t -= 1
+        if t < 0:
+            answer.append(num)
+            num = 0
+            t = 6
+print(*answer, sep=', ')
+
+2. 연습문제2
+import sys
+sys.stdin = open('input.txt', 'r')
+
+ls = input()
+dic = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+bits = []
+bi = 0
+for i in ls:
+    now = i
+    if now.isdigit():
+        now = int(now)
+    else:
+        now = dic[now]
+    for j in range(3, -1, -1):
+        if now >= (1 << j):
+            bits.append('1')
+            now -= 1 << j
+            bi += 1
+        else:
+            bits.append('0')
+            bi += 1
+        if bi == 7:
+            bits.append(' ')
+            bi = 0
+t = 6
+num = 0
+answer = []
+for i in bits:
+    if i != ' ':
+        if i == '1':
+            num += 1 << t
+        t -= 1
+        if t < 0:
+            answer.append(num)
+            num = 0
+            t = 6
+if t != 6:
+    num >>= 7 - t
+    answer.append(num)
+print(*answer, sep=', ')
+
+3. 연습문제3
+import sys
+sys.stdin = open('input.txt', 'r')
+
+pattern = ['001101', '010011', '111011', '110001', '100011', '110111', '001011', '111101', '011001', '101111']
+ls = input()
+dic = {'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15}
+bits = []
+bi = 0
+for i in ls:
+    now = i
+    if now.isdigit():
+        now = int(now)
+    else:
+        now = dic[now]
+    for j in range(3, -1, -1):
+        if now >= (1 << j):
+            bits.append('1')
+            now -= 1 << j
+        else:
+            bits.append('0')
+head = 0
+answer = []
+while head <= len(bits) - 6:
+    this = ''.join(bits[head:head+6])
+    if this in pattern:
+        answer.append(pattern.index(this))
+        head += 6
+    else:
+        head += 1
+print(*answer, sep=', ')
+
+4. 단순2진암호
+for T in range(int(input())):
+    passcord = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011']
+    N, M = map(int, input().split())
+    arr = []
+    for _ in range(N):
+        arr.append(input())
+    found = False
+    for j in range(M-1, -1, -1):
+        for i in range(N):
+            if arr[i][j] == '1':
+                found = True
+                first_y = i
+                first_x = j
+                break
+        if found:
+            break
+    cord = [0] * 8
+    idx = 7
+    while idx >= 0:
+        now = arr[first_y][first_x-6:first_x+1]
+        cord[idx] = passcord.index(now)
+        first_x -= 7
+        idx -= 1
+    check = 0
+    for i in range(8):
+        if i % 2:
+            check += cord[i]
+        else:
+            check += cord[i] * 3
+    if check % 10:
+        print('#%d 0'%(T+1))
+    else:
+        print('#{} {}'.format(T+1, sum(cord)))

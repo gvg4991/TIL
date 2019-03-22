@@ -1,0 +1,98 @@
+1. 연습문제 1
+caseinput = input()
+for i in range(0,len(caseinput)-6):
+    idx = 0
+    result = 0
+    for j in range(6+i,i-1,-1):
+        if caseinput[j]=='1':
+            result += 2**idx
+        idx+=1
+    print(result)
+
+2. 연습문제 2
+def makebin(letter,s):
+    tmp = [0,0,0,0]
+    if ord(letter)>64:
+        letter = ord(letter)-55
+    else:
+        letter = ord(letter) - 48
+    for i in range(3,-1,-1):
+        if 1<<(3-i) & letter:
+            tmp[i]=1
+    s=s+tmp
+    return s
+
+def printbyten(lst):
+    result = 0
+    for i in range(len(lst)):
+        result *= 2
+        result += lst[i]
+        if i % 7 == 6:
+            print(result)
+            result = 0
+    if i % 7 != 0:
+        print(result)
+        
+caseinput = input()
+lst = []
+for i in caseinput:
+    lst = makebin(i,lst)
+printbyten(lst)
+
+3. 연습문제 3
+def makebin(letter,s):
+    tmp = ['0','0','0','0']
+    if ord(letter)>64:
+        letter = ord(letter)-55
+    else:
+        letter = ord(letter) - 48
+    for i in range(3,-1,-1):
+        if 1<<(3-i) & letter:
+            tmp[i]='1'
+    s=s+tmp
+    return s
+caseinput = input()
+s = []
+for i in caseinput:
+    s=makebin(i,s)
+password =['001101','010011','111011','110001','100011','110111','001011','111101','011001','101111']
+i=0
+while True:
+    if i>len(s)-6:
+        break
+    tmp = ''.join(s[i:i+6])
+    for j in range(len(password)):
+        if tmp == password[j]:
+            print(j)
+            i+=5
+    i+=1
+
+4. 단순암호
+import sys
+sys.stdin = open('input.txt','r')
+def solve(lst,row):
+    bias = [13,25,19,61,35,49,47,59,55,11]
+    result = []
+    # print(row)
+    for _ in range(8):
+        # print(lst[row-6:row+1],int(lst[row-6:row+1],2),bias.index(int(lst[row-6:row+1],2)))
+        result.append(bias.index(int(lst[row-6:row+1],2)))
+        row-=7
+        # print(row)
+    return result
+for case in range(int(input())):
+    N,M = map(int,input().split())
+    casemap = [input() for _ in range(N)]
+    flag = False
+    for col in range(N):
+        if flag:
+            break
+        for row in range(M-1,-1,-1):
+            if casemap[col][row]=='1':
+                result = solve(casemap[col],row)[::-1]
+                if not ((result[0]+result[2]+result[4]+result[6])*3+result[1]+result[3]+result[5]+result[7])%10:
+                    print("#",case+1," ",sum(result),sep="")
+                else:
+                    print("#", case + 1, " ","0",sep="")
+                flag = True
+                break
