@@ -28,7 +28,9 @@
 
 
 import sys
+import time
 sys.stdin = open('input.txt')
+start_vect=time.time()
 
 
 def issafe(y,x):
@@ -47,15 +49,15 @@ def lego(y,x):
     for delta in range(4):
         new_y = y + dy[delta]
         new_x = x + dx[delta]
-        if issafe(new_y,new_x) and visited[new_y][new_x]==0 and result + datas[new_y][new_x] < ans and distance[new_y][new_x] > result + datas[new_y][new_x]:
-            now_y = new_y
-            now_x = new_x
-            result += datas[now_y][now_x]
-            distance[now_y][now_x] = distance[y][x]+datas[now_y][now_x]
-            lego(now_y,now_x)
-            result -= datas[now_y][now_x]
-            visited[now_y][now_x] = 0
-    return
+        if issafe(new_y,new_x) and not visited[new_y][new_x] and result + datas[new_y][new_x] < distance[new_y][new_x] and result + datas[new_y][new_x] < ans:
+            # now_y = new_y
+            # now_x = new_x
+            result += datas[new_y][new_x]
+            # distance[now_y][now_x] = distance[y][x]+datas[now_y][now_x] #잡았다 요놈!
+            distance[new_y][new_x] = result #새로운 위치의 값을 증가 시켜서 새로운 distance에 넣기(result, distance 순서 중요)
+            lego(new_y,new_x)
+            result -= datas[new_y][new_x]
+            visited[new_y][new_x] = 0
 
 
 test = int(input())
@@ -66,15 +68,124 @@ for tc in range(test):
         datas[case] = list(map(int,input()))
     # print(datas)
 
+
     dy = [0,1,0,-1] #우하좌상
     dx = [1,0,-1,0] #하우상좌
+    # dy = [1, 0, -1, 0] # 하 우 상 좌
+    # dx = [0, 1, 0, -1]
     visited = [[0]*n for _ in range(n)]
     distance = [[99999]*n for _ in range(n)]
     result = 0
-    ans = 99999
+    ans = 987654321
 
 
     lego(0,0)
     print('#{} {}'.format(tc+1,ans))
+print("training Runtime: %0.2f Minutes"%((time.time() - start_vect)/60))
 
 
+
+
+
+
+
+
+# #민수형수정
+# import sys
+# sys.stdin = open('input.txt', 'r')
+#
+# # 복구작업
+# # dy = [1, 0, -1, 0] # 하 우 상 좌
+# # dx = [0, 1, 0, -1]
+#
+# def IsSafe(y, x):
+#     if 0<=y<N and 0<=x<N:return True
+#     else: return False
+#
+# def GetSome(y, x):
+#     global Min, t
+#     visited[y][x] = 1
+#     #visited[y][x] = True
+#     if y == N-1 and x == N-1 and Min > t:
+#         Min = t
+#         return
+#
+#     # if t >= Min: return
+#
+#
+#     for dir in range(4):
+#         ny = y + dy[dir]
+#         nx = x + dx[dir]
+#         if IsSafe(ny, nx) and not visited[ny][nx] and t+myMap[ny][nx] < dist[ny][nx] and t+myMap[ny][nx] < Min:
+#             # visited[ny][nx] = 1
+#             dist[ny][nx] = t + myMap[ny][nx] #dist, t 넣은 순서도 중요!
+#             t += myMap[ny][nx]
+#             GetSome(ny, nx)
+#             visited[ny][nx] = 0
+#             t -= myMap[ny][nx]
+#
+#
+# test = int(input())
+# for tc in range(test):
+#     N = int(input())
+#     myMap = [[0]*N for _ in range(N)]
+#     for case in range(N):
+#         myMap[case] = list(map(int,input()))
+#
+#     # dy = [1, 0, -1, 0]  # 하 우 상 좌
+#     # dx = [0, 1, 0, -1]
+#     dy = [0,1,0,-1] #우하좌상
+#     dx = [1,0,-1,0]
+#     visited = [[0]*N for _ in range(N)]
+#     dist = [[999999]*N for _ in range(N)]
+#     Min = 999999
+#     t = 0
+#
+#     GetSome(0, 0)
+#     print('#{} {}'.format(tc+1, Min)
+
+
+# # 민수형
+# import sys
+# import time
+# sys.stdin = open('input.txt')
+# start_vect=time.time()
+#
+# # 복구작업
+# dy = [1, 0, -1, 0] # 하 우 좌 상
+# dx = [0, 1, 0, -1]
+#
+# def IsSafe(y, x):
+#     if 0<=y<N and 0<=x<N and not visited[y][x]:return True
+#     else: return False
+#
+# def GetSome(y, x, t):
+#     global Min
+#     #visited[y][x] = True
+#     if y == N-1 and x == N-1:
+#         if t < Min: Min = t
+#         return
+#
+#     if t >= Min: return
+#
+#
+#     for dir in range(4):
+#         if IsSafe(y+dy[dir], x+dx[dir]):
+#             ny = y + dy[dir]
+#             nx = x + dx[dir]
+#             if dist[ny][nx] and t+myMap[ny][nx] >= dist[ny][nx]: continue
+#             visited[ny][nx] = 1
+#             dist[ny][nx] = t + myMap[ny][nx]
+#             GetSome(ny, nx, t+myMap[ny][nx])
+#             visited[ny][nx] = 0
+#
+# for tc in range(1, int(input())+1):
+#     N = int(input())
+#     myMap = [[int(x) for x in input()] for _ in range(N)]
+#     visited = [[0]*N for _ in range(N)]
+#     dist = [[0]*N for _ in range(N)]
+#     Min = 987654321
+#     cnt = 0
+#     GetSome(0, 0, 0)
+#     print('#%d %d' %(tc, Min))
+# print("training Runtime: %0.2f Minutes"%((time.time() - start_vect)/60))

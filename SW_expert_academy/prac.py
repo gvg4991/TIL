@@ -132,12 +132,12 @@
 # print(int(input,4)) #84
 
 
-result = [0,1,2,3,4,5,6,7,8,9]
-start = 0
-# print(''.join(map(str,result[start:start+7])))
-a=''.join(map(str,result[start:start+7]))
-print(a)
-print(type(a))
+# result = [0,1,2,3,4,5,6,7,8,9]
+# start = 0
+# # print(''.join(map(str,result[start:start+7])))
+# a=''.join(map(str,result[start:start+7]))
+# print(a)
+# print(type(a))
 
 # a = 'asd'
 # print(a[1])
@@ -154,3 +154,10 @@ print(type(a))
 # result = [0,1,3,5,7,9]
 # a=str(map(str, result))
 # print(a)
+
+# datas = [[' ']*9 for _ in range(10)]
+datas = [0]*9
+for i in range(-4,5):
+    # datas[4+i][4-(4-abs(i)):4+(4-abs(i))]='*'
+    datas[4-(4-abs(i)):4+(4-abs(i))]='*'*(4-abs(i)+1)
+    print(datas)

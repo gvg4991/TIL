@@ -27,11 +27,11 @@ import sys
 sys.stdin = open("input.txt")
 
 
-
+#먼저 지나가 경로보다 작은경우만
 def lego(now):
     global result, ans
-    visited[now] = True
-    if not False in visited[2:node]:
+    visited[now] = 1
+    if not 0 in visited[2:node]:
         result += abs(start[now]-start[1])+abs(end[now]-end[1])
         if ans > result:
             ans = result
@@ -39,13 +39,12 @@ def lego(now):
         return
 
     for next in range(2,node):
-        if not visited[next]:
-            result += abs(start[now]-start[next])+abs(end[now]-end[next])
-            if result > ans:
-                pass
+        if not visited[next] and result + abs(start[now]-start[next])+abs(end[now]-end[next]) < distance[next] and result + abs(start[now]-start[next])+abs(end[now]-end[next]) < ans:
+            result += abs(start[now] - start[next]) + abs(end[now] - end[next])
+            distance[next] = result
             lego(next)
             result -= abs(start[now]-start[next])+abs(end[now]-end[next])
-            visited[next] = False
+            visited[next] = 0
 
 
 test = int(input())
@@ -63,12 +62,106 @@ for tc in range(test):
         end[way] = datas[2*way+1]
 
     total = 0
-    visited = [False]*node
+    visited = [0]*node
+    distance = [99999]*node
     result = 0
     ans = 99999
 
     lego(0)
     print('#{} {}'.format(tc+1,ans))
+
+
+
+
+
+# #결과값보다 작은경우만
+# def lego(now):
+#     global result, ans
+#     visited[now] = 1
+#     if not 0 in visited[2:node]:
+#         result += abs(start[now]-start[1])+abs(end[now]-end[1])
+#         if ans > result:
+#             ans = result
+#         result -= abs(start[now] - start[1]) + abs(end[now] - end[1])
+#         return
+#
+#     for next in range(2,node):
+#         if not visited[next] and result + abs(start[now]-start[next])+abs(end[now]-end[next]) < ans:
+#             result += abs(start[now] - start[next]) + abs(end[now] - end[next])
+#             lego(next)
+#             result -= abs(start[now]-start[next])+abs(end[now]-end[next])
+#             visited[next] = 0
+#
+#
+# test = int(input())
+# for tc in range(test):
+#     case = int(input())
+#     datas = list(map(int,input().split()))
+#
+#     #좌표
+#     node = len(datas) // 2
+#     start = [0]*node
+#     end = [0]*node
+#     # mymap = [[0]*node for _ in range(node)]
+#     for way in range(node):
+#         start[way] = datas[2*way]
+#         end[way] = datas[2*way+1]
+#
+#     total = 0
+#     visited = [0]*node
+#     result = 0
+#     ans = 99999
+#
+#     lego(0)
+#     print('#{} {}'.format(tc+1,ans))
+
+
+
+
+
+
+##완탐
+# def lego(now):
+#     global result, ans
+#     visited[now] = True
+#     if not False in visited[2:node]:
+#         result += abs(start[now]-start[1])+abs(end[now]-end[1])
+#         if ans > result:
+#             ans = result
+#         result -= abs(start[now] - start[1]) + abs(end[now] - end[1])
+#         return
+#
+#     for next in range(2,node):
+#         if not visited[next]:
+#             result += abs(start[now]-start[next])+abs(end[now]-end[next])
+#             if result > ans:
+#                 pass
+#             lego(next)
+#             result -= abs(start[now]-start[next])+abs(end[now]-end[next])
+#             visited[next] = False
+#
+#
+# test = int(input())
+# for tc in range(test):
+#     case = int(input())
+#     datas = list(map(int,input().split()))
+#
+#     #좌표
+#     node = len(datas) // 2
+#     start = [0]*node
+#     end = [0]*node
+#     # mymap = [[0]*node for _ in range(node)]
+#     for way in range(node):
+#         start[way] = datas[2*way]
+#         end[way] = datas[2*way+1]
+#
+#     total = 0
+#     visited = [False]*node
+#     result = 0
+#     ans = 99999
+#
+#     lego(0)
+#     print('#{} {}'.format(tc+1,ans))
 
 
 
