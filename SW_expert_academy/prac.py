@@ -155,9 +155,18 @@
 # a=str(map(str, result))
 # print(a)
 
-# datas = [[' ']*9 for _ in range(10)]
-datas = [0]*9
-for i in range(-4,5):
-    # datas[4+i][4-(4-abs(i)):4+(4-abs(i))]='*'
-    datas[4-(4-abs(i)):4+(4-abs(i))]='*'*(4-abs(i)+1)
-    print(datas)
+# # datas = [[' ']*9 for _ in range(10)]
+# datas = [0]*9
+# for i in range(-4,5):
+#     # datas[4+i][4-(4-abs(i)):4+(4-abs(i))]='*'
+#     datas[4-(4-abs(i)):4+(4-abs(i))]='*'*(4-abs(i)+1)
+#     print(datas)
+
+
+#안되는거임!!
+datas = [[0,0,0,0,5],[1,1,1,1,5],[2,2,2,2,5],[3,3,3,3,5]]
+data = datas[1][2:4]
+print(data)
+
+# a=3
+# print(int(a**(1/2)))

@@ -1,0 +1,185 @@
+1. 최소합
+def safe(y, x):
+    return y < N and x < N
+
+
+def dfs(y, x):
+    global minsum, nowsum
+    nowsum += data[y][x]
+    if y == N - 1 and x == N - 1:
+        if minsum > nowsum:
+            minsum = nowsum
+    if nowsum < minsum:
+        for i in range(2):
+            newy = y + dirY[i]
+            newx = x + dirX[i]
+            if safe(newy, newx):
+                d = data[newy][newx]
+                dfs(newy, newx)
+    nowsum -= data[y][x]
+
+
+for T in range(int(input())):
+    N = int(input())
+    data = []
+    for i in range(N):
+        data.append(list(map(int, input().split())))
+    dirY = [0, 1]
+    dirX = [1, 0]
+    minsum = 9 * N ** 2
+    nowsum = 0
+    dfs(0, 0)
+    print(minsum)
+
+2. 전자 카트
+def allsearch(n):
+    global minsum, subset, visited
+    if n == N - 1:
+        subset.append(0)
+        thissum = 0
+        for i in range(N+1):
+            start = subset[i]
+            if i == N:
+                end = subset[0]
+            else:
+                end = subset[i+1]
+            thissum += e[start][end]
+        if thissum < minsum:
+            minsum = thissum
+        subset.pop()
+    else:
+        for i in range(1, N):
+            if visited[i] == 0:
+                subset.append(i)
+                visited[i] = 1
+                allsearch(n+1)
+                subset.pop()
+                visited[i] = 0
+
+
+for T in range(int(input())):
+    N = int(input())
+    e = []
+    minsum = 0
+    for _ in range(N):
+        e.append(list(map(int, input().split())))
+        minsum += max(e[_])
+    subset = [0]
+    visited = [0] * N
+    allsearch(0)
+    print('#{} {}'.format(T+1, minsum))
+
+3. 화물 운반
+for T in range(int(input())):
+    N, M = map(int, input().split())
+    w = list(map(int, input().split()))
+    t = list(map(int, input().split()))
+    w.sort()
+    t.sort()
+    maxsum = 0
+    for i in range(M):
+        j = 0
+        while j < N:
+            if j == N - 1 and t[i] >= w[j]:
+                maxsum += w[j]
+                del w[j]
+                N -= 1
+                j = 0
+                break
+            if t[i] < w[j]:
+                if j:
+                    maxsum += w[j-1]
+                    del w[j-1]
+                    j = 0
+                    N -= 1
+                break
+            else:
+                j += 1
+    print('#{} {}'.format(T+1, maxsum))
+
+4. 화물 도크
+for T in range(int(input())):
+    N = int(input())
+    schedule = []
+    for _ in range(N):
+        start, end = map(int, input().split())
+        schedule.append([end, start])
+    schedule.sort()
+    cnt = 1
+    t = 0
+    for i in range(1, N):
+        if schedule[i][1] >= schedule[t][0]:
+            cnt += 1
+            t = i
+    print('#{} {}'.format(T+1, cnt))
+
+5. 베이비진
+for T in range(int(input())):
+    allcard = list(map(int, input().split()))
+    acard = [allcard[_] for _ in range(0, 12, 2)]
+    bcard = [allcard[_] for _ in range(1, 12, 2)]
+    acount = [0] * 10
+    bcount = [0] * 10
+    a = 0
+    aflag = False
+    for i in acard:
+        acount[i] += 1
+        if acount[i] == 3:
+            break
+        for j in range(8):
+            if acount[j] and acount[j+1] and acount[j+2]:
+                aflag = True
+                break
+        if aflag:
+            break
+        a += 1
+    b = 0
+    bflag = False
+    for i in bcard:
+        bcount[i] += 1
+        if bcount[i] == 3:
+            break
+        for j in range(8):
+            if bcount[j] and bcount[j+1] and bcount[j+2]:
+                bflag = True
+                break
+        if bflag:
+            break
+        b += 1
+    answer = 0
+    if a == b == 6:
+        answer = 0
+    elif a <= b:
+        answer = 1
+    elif b < a:
+        answer = 2
+    print('#{} {}'.format(T+1, answer))
+
+6. 최적 경로
+def dfs(n, d):
+    global minway, nowway, visited, sub
+    if d == N:
+        nowway += abs(cust[n * 2] - cust[2]) + abs(cust[n * 2 + 1] - cust[3])
+        if nowway < minway:
+            minway = nowway
+        nowway -= abs(cust[n * 2] - cust[2]) + abs(cust[n * 2 + 1] - cust[3])
+        return
+    for i in range(2, N+2):
+        if visited[i] == 0:
+            nowway += abs(cust[n*2] - cust[i*2]) + abs(cust[n*2+1] - cust[i*2+1])
+            if nowway < minway:
+                visited[i] = 1
+                dfs(i, d+1)
+                visited[i] = 0
+            nowway -= abs(cust[n*2] - cust[i*2]) + abs(cust[n*2+1] - cust[i*2+1])
+
+
+for T in range(int(input())):
+    N = int(input())
+    cust = list(map(int, input().split()))
+    minway = 0x7fffffff
+    visited = [0] * (N + 2)
+    visited[0] = visited[1] = 1
+    nowway = 0
+    dfs(0, 0)
+    print('#{} {}'.format(T+1, minway))

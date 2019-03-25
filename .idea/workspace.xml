@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb8df531-e31f-46b3-a570-977066f4ebf0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/algorithm/분할정복.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm/퀵솔트.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/1654.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/1780.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/2263.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MINHO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MINHO.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1247.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1247.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/1249.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/1249.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SW_expert_academy/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_expert_academy/prac.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_expert_academy/prac.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/day13.py" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/day13.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithm/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baekjoon/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/baekjoon/input.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,13 +48,50 @@
     <SUITE FILE_PATH="coverage/MINHO$1211.coverage" NAME="1211 Coverage Results" MODIFIED="1551957206336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SW_expert_academy" />
     <SUITE FILE_PATH="coverage/MINHO$2001.coverage" NAME="2001 Coverage Results" MODIFIED="1551959819657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SW_expert_academy" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2045327111">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="png" value="1" />
+          <entry key="py" value="8" />
+          <entry key="txt" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Image" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="2579" />
+          <entry key="txt" value="17" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="Python" value="2579" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
+        <entry file="file://$PROJECT_DIR$/baekjoon/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="171">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -56,45 +99,72 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1064">
-              <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+            <state relative-caret-position="175">
+              <caret line="151" column="14" lean-forward="true" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1249.py">
+        <entry file="file://$PROJECT_DIR$/baekjoon/1780.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="51" column="120" selection-start-line="51" selection-start-column="120" selection-end-line="51" selection-end-column="120" />
-              <folding>
-                <element signature="e#1160#1170#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="84" column="12" lean-forward="true" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baekjoon/2263.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/baekjoon/1654.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SW_expert_academy/1247.py">
+        <entry file="file://$PROJECT_DIR$/algorithm/분할정복.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+            <state relative-caret-position="152">
+              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+              <folding>
+                <marker date="1553484233037" expanded="true" signature="26:31" ph="..." />
+                <marker date="1553484233037" expanded="true" signature="239:244" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
+        <entry file="file://$PROJECT_DIR$/algorithm/퀵솔트.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2812">
-              <caret line="148" column="15" selection-start-line="148" selection-start-column="15" selection-end-line="148" selection-end-column="15" />
+            <state relative-caret-position="247">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+              <folding>
+                <marker date="1553494565216" expanded="true" signature="64:69" ph="..." />
+                <marker date="1553494565216" expanded="true" signature="184:189" ph="..." />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -118,12 +188,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/baekjoon/2609.py" />
-        <option value="$PROJECT_DIR$/algorithm/최대공약수_최소공배수.py" />
-        <option value="$PROJECT_DIR$/baekjoon/1929.py" />
-        <option value="$PROJECT_DIR$/algorithm/준혁이여친.py" />
-        <option value="$PROJECT_DIR$/algorithm/segment_tree.txt" />
-        <option value="$PROJECT_DIR$/SW_expert_academy/6109.py" />
         <option value="$PROJECT_DIR$/algorithm/segment_tree.py" />
         <option value="$PROJECT_DIR$/baekjoon/2042.py" />
         <option value="$PROJECT_DIR$/baekjoon/2565.py" />
@@ -145,13 +209,11 @@
         <option value="$PROJECT_DIR$/algorithm/5186.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/5186.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/4366.py" />
-        <option value="$PROJECT_DIR$/baekjoon/input.txt" />
         <option value="$PROJECT_DIR$/baekjoon/1783.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1242.py" />
         <option value="$PROJECT_DIR$/algorithm/반복.py" />
         <option value="$PROJECT_DIR$/algorithm/selection_sort.py" />
         <option value="$PROJECT_DIR$/algorithm/베이비진.py" />
-        <option value="$PROJECT_DIR$/algorithm/input.txt" />
         <option value="$PROJECT_DIR$/algorithm/베이비진_순열.py" />
         <option value="$PROJECT_DIR$/algorithm/중복조합_for.py" />
         <option value="$PROJECT_DIR$/algorithm/조합_for.py" />
@@ -159,7 +221,6 @@
         <option value="$PROJECT_DIR$/algorithm/중복순열_백트래킹.py" />
         <option value="$PROJECT_DIR$/algorithm/중복조합.py" />
         <option value="$PROJECT_DIR$/algorithm/부분집합의합_백트래킹.py" />
-        <option value="$PROJECT_DIR$/SW_expert_academy/prac.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/5188.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/5201.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/5202.py" />
@@ -169,14 +230,22 @@
         <option value="$PROJECT_DIR$/SW_expert_academy/1249.py" />
         <option value="$PROJECT_DIR$/SW_expert_academy/input.txt" />
         <option value="$PROJECT_DIR$/SW_expert_academy/1247.py" />
+        <option value="$PROJECT_DIR$/baekjoon/input.txt" />
+        <option value="$PROJECT_DIR$/algorithm/분할정복.py" />
+        <option value="$PROJECT_DIR$/algorithm/input.txt" />
+        <option value="$PROJECT_DIR$/algorithm/퀵솔트.py" />
+        <option value="$PROJECT_DIR$/baekjoon/2263.py" />
+        <option value="$PROJECT_DIR$/algorithm/day13.py" />
+        <option value="$PROJECT_DIR$/baekjoon/1654.py" />
+        <option value="$PROJECT_DIR$/SW_expert_academy/prac.py" />
+        <option value="$PROJECT_DIR$/baekjoon/1780.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="555" />
-    <option name="y" value="5" />
-    <option name="width" value="1370" />
-    <option name="height" value="1050" />
+    <option name="x" value="876" />
+    <option name="width" value="1052" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -236,7 +305,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.1247">
+  <component name="RunManager" selected="Python.1780">
+    <configuration name="분할정복" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MINHO" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/분할정복.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="1247" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,7 +349,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="1249" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="1780" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,12 +357,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/baekjoon" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/1249.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baekjoon/1780.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -281,7 +370,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="5189" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="퀵솔트" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,12 +378,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/5189.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm/퀵솔트.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -303,7 +391,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="5202" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="prac" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MINHO" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -315,30 +403,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/5202.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="5203" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MINHO" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_expert_academy" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/5203.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_expert_academy/prac.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,19 +413,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.5202" />
-      <item itemvalue="Python.5203" />
-      <item itemvalue="Python.5189" />
-      <item itemvalue="Python.1249" />
       <item itemvalue="Python.1247" />
+      <item itemvalue="Python.1780" />
+      <item itemvalue="Python.prac" />
+      <item itemvalue="Python.분할정복" />
+      <item itemvalue="Python.퀵솔트" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1780" />
+        <item itemvalue="Python.prac" />
         <item itemvalue="Python.1247" />
-        <item itemvalue="Python.1249" />
-        <item itemvalue="Python.5189" />
-        <item itemvalue="Python.5203" />
-        <item itemvalue="Python.5202" />
+        <item itemvalue="Python.퀵솔트" />
+        <item itemvalue="Python.분할정복" />
       </list>
     </recent_temporary>
   </component>
@@ -413,16 +478,15 @@
     <option name="totallyTimeSpent" value="139520000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="444" y="4" width="1096" height="840" extended-state="0" />
-    <editor active="true" />
+    <frame x="876" y="0" width="1052" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14285715" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20414202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29278642" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.36807817" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29495615" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39583334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -442,6 +506,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -454,6 +521,11 @@
           <url>file://$PROJECT_DIR$/algorithm/insert_sort.py</url>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/baekjoon/1780.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -465,108 +537,71 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="visited" language="Python" />
-        <watch expression="issafe(new_y,new_x)" language="Python" />
-        <watch expression="visited[new_y][new_x]" language="Python" />
-        <watch expression="new_y" language="Python" />
-        <watch expression="new_x" language="Python" />
-        <watch expression="result" language="Python" />
-        <watch expression="result+datas[new_y][new_x]" language="Python" />
-        <watch expression="ans" language="Python" />
+        <watch expression="datas[y+row][x:x+s]" language="Python" />
+        <watch expression="target" language="Python" />
+        <watch expression="check" language="Python" />
+        <watch expression="scale" language="Python" />
+        <watch expression="ans_1" language="Python" />
+        <watch expression="ans0" language="Python" />
+        <watch expression="ans1" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>new_x</expression-string>
+        <expression-string>ans1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>new_y</expression-string>
+        <expression-string>ans0</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>result+datas[new_y][new_x]</expression-string>
+        <expression-string>ans_1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>visited[new_y][new_x]</expression-string>
+        <expression-string>scale</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>issafe(new_y,new_x)</expression-string>
+        <expression-string>check</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ans</expression-string>
+        <expression-string>datas[y+row][x:x+s]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>result</expression-string>
+        <expression-string>target</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>visited</expression-string>
+        <expression-string>s</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>remove</expression-string>
+        <expression-string>p</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>end</expression-string>
+        <expression-string>a[j]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../AppData/Local/Programs/Python/Python37/Lib/codecs.py" />
-    <entry file="file://$PROJECT_DIR$/algorithm/line_4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/line_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="21" lean-forward="true" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/실수.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/비트연산.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1240.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1729">
-          <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/line_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -593,13 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/baekjoon/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -650,13 +678,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/콤비네이션.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/중복조합_for.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -790,17 +811,6 @@
         <state relative-caret-position="-65" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2915" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day11.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day10.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day09.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1900">
@@ -808,22 +818,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
+    <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1247.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        <state relative-caret-position="152">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algorithm/day03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2812">
+        <state relative-caret-position="2119">
           <caret line="148" column="15" selection-start-line="148" selection-start-column="15" selection-end-line="148" selection-end-column="15" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/algorithm/day04.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/input.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -834,18 +844,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SW_expert_academy/1249.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="51" column="120" selection-start-line="51" selection-start-column="120" selection-end-line="51" selection-end-column="120" />
+        <state relative-caret-position="-133">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
             <element signature="e#1160#1170#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SW_expert_academy/1247.py">
+    <entry file="file://$PROJECT_DIR$/algorithm/input.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="49" column="19" lean-forward="true" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day10.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-310">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day11.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/퀵솔트.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <marker date="1553494565216" expanded="true" signature="64:69" ph="..." />
+            <marker date="1553494565216" expanded="true" signature="184:189" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SW_expert_academy/prac.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="151" column="14" lean-forward="true" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/1780.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="84" column="12" lean-forward="true" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/224BCA455892B84528.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/1654.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/day13.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="120" column="21" lean-forward="true" selection-start-line="120" selection-start-column="21" selection-end-line="120" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/baekjoon/2263.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm/분할정복.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <marker date="1553484233037" expanded="true" signature="26:31" ph="..." />
+            <marker date="1553484233037" expanded="true" signature="239:244" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
