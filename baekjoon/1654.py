@@ -12,3 +12,24 @@
 # 첫째 줄에 N개를 만들 수 있는 랜선의 최대 길이를 센티미터 단위의 정수로 출력한다.
 
 
+
+import sys
+sys.stdin = open('input.txt')
+
+
+k,n = map(int,input().split())
+datas = [0]*k
+for i in range(k):
+    datas[i] = int(input())
+# print(datas)
+avg = sum(datas)//n
+result = 0
+for i in range(avg,0,-1):
+    cnt = 0
+    for data in datas:
+        cnt += data//i
+    if cnt == n:
+        result = i
+        print(result)
+        break
+
