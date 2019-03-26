@@ -1,0 +1,146 @@
+[종이 개수]
+N=int(input())
+
+paper_ans={}
+paper_ans.update({-1:0})
+paper_ans.update({0:0})
+paper_ans.update({1:0})
+paper_map = []
+
+for i in range(0,N):
+    line = list(map(int,input().split()))
+    paper_map.append(line)
+
+def Paper(now_y,now_x,m):
+    if m>3:
+        # print(now_y, now_x)
+        start=paper_map[now_y][now_x]
+        # print(start)
+        for y in range(now_y,now_y+m):
+            for x in range(now_x,now_x+m):
+                # print(paper_map[y][x])
+                if start != paper_map[y][x]: ## 이 맵에서 틀림
+                    # print("OK")
+                    for next_y in range(now_y,now_y+m,3): ## 3x3으로 분할
+                        for next_x in range(now_x,now_x+m,3):
+                            Paper(next_y,next_x,3)
+                    return
+                ## 무사히 통과했다면
+        paper_ans[start]=paper_ans[start]+1
+        return
+    elif m==3: ## 3X3 행렬
+        # print(now_y, now_x)
+        start = paper_map[now_y][now_x]
+        for y in range(now_y,now_y+m):
+            for x in range(now_x,now_x+m):
+                if start != paper_map[y][x]: ## 이 맵에서 틀림
+                    # print("3x3 oK : {} {}".format(y,x))
+                    for next_y in range(now_y,now_y+m,1): ## 3x3으로 분할
+                        for next_x in range(now_x,now_x+m,1):
+                            Paper(next_y,next_x,1)
+                    return
+        paper_ans[start]=paper_ans[start]+1
+        return
+
+    elif m==1:
+        # print(now_y,now_x)
+        start = paper_map[now_y][now_x]
+        paper_ans[start] = paper_ans[start] + 1
+        return
+
+Paper(0,0,N)
+for d in range(-1,2):
+    print(paper_ans[d])
+
+# print(paper_map)
+
+
+[퀵소트]
+def quick(A,L,R):
+    if L>=R:
+        return
+    p=A[L]
+    i=L
+    j=R
+
+    while i<j:
+        while A[i] <= p:
+            i=i+1
+            if i>=R:
+                break
+        while A[j] >= p:
+            j=j-1
+            if j<=L:
+                break
+        if i<=j :
+            A[i], A[j] = A[j], A[i]
+
+    A[L], A[j] = A[j], A[L]
+    quick(A,L,j-1)
+    quick(A,j+1,R)
+    return j
+
+A=list(map(int,input().split()))
+print(A)
+quick(A,0,len(A)-1)
+print(A)
+
+[멱]
+def power1(a,b):
+    if b==0:
+        return 1
+    elif b==1:
+        return 0
+    else:
+        return a*power1(a,b-1)
+def power2(a,b):
+    if b==0:
+        return 1
+    elif b==1:
+        return a
+    else:
+        temp=power2(a,b//2)
+        return temp*temp
+    
+def Power3(a,b):
+    ans = 1
+    while b > 0:
+        if b % 2 == 1:
+            ans *= a
+        a = a*a
+        b =b//2
+    return ans
+
+[랜선 자르기]
+DATA = list(map(int, input().split()))
+K = DATA[0]
+N = DATA[1]
+
+k = [0] * K
+
+for i in range(0, K):
+    k[i] = int(input())
+
+max_length = 0
+
+start_length = 1
+end_length = max(k)
+
+mid_length  = (start_length+end_length)//2
+
+while (start_length<=end_length):
+    semi_N = 0
+    for i in range(0, K):
+        semi_N = semi_N + k[i] // mid_length
+    if N>semi_N: ## 너무 큰 mid값
+        end_length=mid_length-1
+        mid_length = (start_length+end_length)//2
+    elif N<=semi_N: ## 너무 짝은 mid 값
+        # if semi_N==N:
+        #     if mid_length>max_length:
+        #         max_length=mid_length
+        start_length = mid_length+1
+        mid_length = (start_length + end_length) // 2
+
+
+print(end_length)

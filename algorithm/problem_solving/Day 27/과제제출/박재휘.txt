@@ -1,0 +1,99 @@
+import sys
+-------------------종이자르기. 하는중
+sys.stdin=open("input.txt","r")
+
+num1=int(input())
+data=[list(map(int,input().split())) for _ in range(num1)]
+count0 =0
+count1 =0
+count2 =0
+for i in range(len(data[0])):
+    print(data[i])
+
+def find(a,b,size): #a=0 x=3
+    global count0, count1,count2
+    for y in range(size): #0 1 2
+        for x in range(size): # 0 1 2
+            if data[a][b] != data[a+y][x+b]:
+                return False
+    if data[a][b]==0:
+        count0 +=1
+    elif data[a][b]==1:
+        count1 +=1
+    elif data[a][b]==-1:
+        count2 +=1
+
+def divi(a,b,size):
+    global count0,count1,count2
+    temp = size//3
+    if size==3:
+        for y in range(3):
+            for x in range(3):
+                if data[a+y][b+x]==0:
+                    count0 +=1
+                    return
+                elif data[a+y][b+x]==1:
+                    count1 += 1
+                    return
+                elif data[a + y][b + x] == -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                1:
+                    count2 += 1
+                    return
+    for y in range(size):
+        for x in range(size):
+            if data[a][b] != data[a+y][b+x]:
+                for r in range(temp):
+                    for t in range(temp):
+                        find(0*r*3,0*t*3,temp)
+                        if not find(0*r*3,0*t*3,temp):
+                            divi(0*r*3,0*t*3,temp)
+
+divi(0,0,num1)
+print(count0)
+
+##############퀵솟
+
+import sys
+sys.stdin=open("quick.txt","r")
+
+def quick(a,l,r):
+    if l < r:
+        part(a,l,r)
+        quick(a,l,j-1)
+        quick(a,s+1,r)
+
+def part(a,l,r):
+    p=a[l]
+    i=l
+    j=r
+
+    while i <= j:
+
+        while a[i] <= p:
+            i +=1
+            if i== len(a):
+                i= i-1
+                break
+        while a[j] >= p:
+            j -=1
+            if j== -1:
+                j= j+1
+                break
+
+        if i < j :
+            a[i], a[j] = a[j], a[i]
+    a[l], a[j]= a[j], a[l]
+    return j
+    # part(a[:j],l,a.index(a[j-1]))
+
+num=int(input())
+for j in range(num):
+    data=list(map(int,input().split()))
+    print(data)
+    r=data[-1]
+    l=0
+    quick(data[:],0,len(data)-1)
+    part(data[:],0,len(data)-1)
+    print(data)
+    # print(a)
+############## 트리순회
+못함

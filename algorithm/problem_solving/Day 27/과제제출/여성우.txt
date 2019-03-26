@@ -1,0 +1,155 @@
+1. 종이 자르기
+def countpaper(y, x, n):
+    global nums
+    if n == 1:
+        nums[paper[y][x]+1] += 1
+        return
+    tag = n // 3
+    for i in range(y, y+n, tag):
+        for j in range(x, x+n, tag):
+            line = paper[i][j:j+tag]
+            onepaper = False
+            if line.count(line[0]) == tag:
+                onepaper = True
+                for k in range(i+1, i+tag):
+                    nline = paper[k][j:j+tag]
+                    if line != nline:
+                        onepaper = False
+                        break
+            if onepaper:
+                nums[line[0]+1] += 1
+            else:
+                countpaper(i, j, tag)
+
+
+N = int(input())
+paper = []
+for i in range(N):
+    paper.append(list(map(int, input().split())))
+nums = [0, 0, 0]
+l = paper[0]
+one = False
+if l.count(l[0]) == N:
+    one = True
+    for i in range(1, N):
+        nl = paper[i]
+        if l != nl:
+            one = False
+            break
+if one:
+    nums[l[0]+1] += 1
+else:
+    countpaper(0, 0, N)
+print(*nums, sep='\n')
+
+2. 거듭제곱
+def power1(a, b):
+    if b == 0:
+        return 1
+    elif b == 1:
+        return a
+    else:
+        return a * power1(a, b-1)
+
+
+def power2(a, b):
+    if b == 0:
+        return 1
+    elif b == 1:
+        return a
+    elif b & 1:
+        return a * power2(a, b-1)
+    else:
+        temp = power2(a, b//2)
+        return temp * temp
+
+
+def power3(a, b):
+    ans = 1
+    while b > 0:
+        if b & 1:
+            ans *= a
+        a = a * a
+        b >>= 1
+    return ans
+
+
+a = 3
+b = 4
+print(power3(a, b))
+
+3. 퀵솔트
+def partition(ls, p, r):
+    pivot = ls[r]
+    i = p - 1
+    for j in range(p, r):
+        if ls[j] <= pivot:
+            i += 1
+            ls[i], ls[j] = ls[j], ls[i]
+    ls[i+1], ls[r] = ls[r], ls[i+1]
+    return i + 1
+
+
+def quicksort(ls, l, r):
+    if l < r:
+        s = partition(ls, l, r)
+        quicksort(ls, l, s-1)
+        quicksort(ls, s+1, r)
+
+
+a1 = [11, 45, 23, 81, 28, 34]
+quicksort(a1, 0, len(a1)-1)
+a2 = [11, 45, 22, 81, 23, 34, 99, 22, 17, 8]
+quicksort(a2, 0, len(a2)-1)
+a3 = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+quicksort(a3, 0, len(a3)-1)
+print(a1, a2, a3, sep='\n')
+
+4. 트리 순회
+from collections import deque
+
+
+N = int(input())
+inorder = list(map(int, input().split()))
+tree = [0] * (N + 1)
+for i in range(N):
+    tree[inorder[i]] = i
+postorder = list(map(int, input().split()))
+queuelist = deque([(0, N-1, 0, N-1)])
+while queuelist:
+    for _ in range(len(queuelist)):
+        s1, e1, s2, e2 = queuelist.popleft()
+        if s1 == e1:
+            print(inorder[s1], end=' ')
+        else:
+            root = postorder[e2]
+            print(root, end=' ')
+            idx = tree[root]
+            l1 = idx - s1
+            if idx != e1:
+                queuelist.appendleft((idx+1, e1, s2+l1, e2-1))
+            if idx != s1:
+                queuelist.appendleft((s1, idx-1, s2, s2+l1-1))
+
+5. 랜선 자르기
+K, N = map(int, input().split())
+lan = [int(input()) for _ in range(K)]
+lan.sort()
+rs = 1
+re = lan[K-1]
+while re - rs > 1:
+    tag = (rs + re) // 2
+    can = 0
+    for i in range(K):
+        can += lan[i] // tag
+    if can < N:
+        re = tag
+    else:
+        rs = tag
+can = 0
+for i in range(K):
+    can += lan[i] // re
+if can >= N:
+    print(re)
+else:
+    print(rs)

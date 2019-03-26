@@ -12,7 +12,8 @@ def power2(a,b): #O(log n)
 def power3(a,b): #O(log n)
     ans = 1
     while b>0:
-        if b&1: ans *= a #b가 홀수이면
+        if b&1:
+            ans *= a #b가 홀수이면
         a = a*a
         b //= 2
     return ans
