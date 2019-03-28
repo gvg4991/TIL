@@ -8,17 +8,21 @@
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 답을 출력한다.
 
 
-import sys
-sys.stdin = open("input.txt")
-
+# import sys
+# sys.stdin = open("input.txt")
+# import collections
+# q=collections.deque([0])
+# q.popleft()
 
 for tc in range(int(input())):
     target,goal = map(int,input().split())
     #10000007
-    q = [target]*1000000
+    # q = [target]*1000000
+    q = [target]
     push = 1
     pull = 0
-    cnt = [0]*1000000
+    # cnt = [0]*1000000
+    cnt = [0]
     cnt_i = -1
     ans = 0
 
@@ -27,17 +31,21 @@ for tc in range(int(input())):
         cnt_i += 1
         for calc in calculation:
             if target+calc == goal:
-                q[push] = target+calc
-                target = q[push]
-                cnt[push] = cnt[cnt_i] + 1
-                ans = cnt[push]
+                # q[push] = target+calc
+                # target = q[push]
+                # cnt[push] = cnt[cnt_i] + 1
+                # ans = cnt[push]
+                target = target+calc
+                ans = cnt[cnt_i]+1
                 break
-            if target+calc in q or target+calc <= 0 or target+calc > 1000000:
+            if  (target+calc in q) or target+calc <= 0 or target+calc > 1000000:
                 continue
             else:
-                q[push] = target+calc
-                cnt[push] = cnt[cnt_i] + 1
-                push += 1
+                # q[push] = target+calc
+                # cnt[push] = cnt[cnt_i] + 1
+                # push += 1
+                q.append(target+calc)
+                cnt.append(cnt[cnt_i]+1)
         if ans == 0:
             pull += 1
             target = q[pull]
