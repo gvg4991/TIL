@@ -1,0 +1,83 @@
+1. dijkstra
+name = ['a', 'b', 'c', 'd', 'e', 'f']
+myMap = [[987654321]*6 for _ in range(6)]
+prev = [0]*6
+T = set()
+N = int(input())
+for i in range(N):
+	start, end, cost = input().split()
+	s = name.index(start)
+	e = name.index(end)
+	myMap[s][e] = int(cost)
+	prev[e] = -1 # 미정
+	T.add(e)
+T = list(T)
+T.sort()
+S = 0 # 시작 점
+dist = myMap[S]
+dist[S] = 0
+T.remove(S)
+print(dist)
+
+while len(T):
+	Min = 987654321
+	v = 0
+	for i in range(len(T)):
+		if dist[T[i]] < Min:
+			Min = dist[T[i]]
+			v = T[i]
+
+	T.remove(v)
+
+	for j in T:
+		if myMap[v][j]!=987654321:
+			dist[j] = min(dist[j], dist[v]+myMap[v][j])
+print(dist)
+
+2. 웜 바이러스 (집합)
+def make_set(x):
+	P[x] = x
+
+def find_set(x):
+	if P[x] == x: return x
+	else: return find_set(P[x])
+def union(x, y):
+	P[find_set(y)] = find_set(x)
+
+N = int(input())
+E = int(input())
+P = [0]*(N+1) 
+for i in range(1, N+1):
+	make_set(i)
+
+for j in range(E):
+	x, y = map(int, input().split())
+	union(x, y)
+
+cnt = 0
+for k in range(N+1):
+	if find_set(1) == find_set(k):
+		cnt+=1
+print(cnt-1)
+
+3. 바이러스 _ floyd
+N = int(input())
+M = int(input())
+myMap = [[0]*(N+1) for _ in range(N+1)]
+
+for i in range(M):
+	start, stop = map(int, input().split())
+	myMap[start][stop] =  myMap[stop][start] = 1
+
+
+for via in range(N+1):
+	for start in range(N+1):
+		for stop in range(N+1):
+			if myMap[start][via] and myMap[via][stop]:
+				myMap[start][stop] = 1
+cnt = 0
+for k in range(N+1):
+	if myMap[1][k]:
+		cnt+=1
+
+print(cnt-1)

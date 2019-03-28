@@ -1,0 +1,99 @@
+#1 보급로 다익스트라
+def issafe(x,y) :
+	return x >= 0 and x < n and y >= 0 and y < n and v[y][x] == 0
+
+for tc in range(int(input())):
+    n = int(input())
+    m = []
+    min_v = 987654321
+    v = [[0]*n for i in range(n)]
+    c = [[min_v] * n for i in range(n)]
+    for i in range(n) :
+        m.append(list(map(int,list(input()))))
+
+    dx = [0,-1,0,1]
+    dy = [-1,0,1,0]
+    Q = [(0,0)]
+    c[0][0] = 0
+    while Q :
+        x,y = Q.pop(0)
+        for i in range(4) :
+            nx = x + dx[i]
+            ny = y + dy[i]
+            if issafe(nx,ny) :
+                if (c[ny][nx] > c[y][x] + m[ny][nx]) :
+                    Q.append((nx,ny))
+                    c[ny][nx] = c[y][x] + m[ny][nx]
+
+    print("#%d %d"%(tc+1,c[n-1][n-1]))
+
+#2 백준 2606 disjoint
+n = int(input())
+gset = [i for i in range(n)]
+k = int(input())
+def find_parent(x) :
+    if gset[x] != x :
+        gset[x] = find_parent(gset[x])
+    return gset[x]
+def union(a,b) :
+    gset[find_parent(b)] = find_parent(a)
+
+for i in range(k) :
+    a,b = map(int,input().split())
+    union(a-1,b-1)
+cnt = 0
+for i in range(n) :
+    gset[i] = find_parent(i)
+for i in range(1,n):
+    if gset[0] == gset[i] :
+        cnt+=1
+print(cnt)
+
+#3 백준 2606 플루어드
+n = int(input())
+gset = [[0]*n for i in range(n)]
+k = int(input())
+
+for i in range(k) :
+    a,b = map(int,input().split())
+    gset[a-1][b-1] = 1
+    gset[b - 1][a - 1] = 1
+for k in range(n) :
+    for i in range(n) :
+        for j in range(n) :
+            gset[j][i] = gset[j][i] or (gset[k][i] and gset[j][k])
+print(gset[0].count(1)-1)
+
+#4 다익스트라
+MAXVALUE = 987654321
+
+my_map = [[MAXVALUE]*6 for i in range(6)]
+
+k,n = map(int,input().split())
+for i in range(n) :
+    to,fr,dis = map(int,input().split())
+    my_map[to][fr] = dis
+distance = my_map[0][:]
+parent = [0]*6
+def checkmin():
+    item =MAXVALUE
+    idx = -1
+    for i in range(len(distance)) :
+        if distance[i] < item and not i in idx_list:
+            item = distance[i]
+            idx = i
+    return idx
+
+idx_list = [0]
+while len(idx_list) < len(distance) :
+    t = checkmin()
+    idx_list.append(t)
+    for i in range(len(distance)) :
+        if not i in idx_list :
+            # distance[i] = min(distance[i] , my_map[t][i] + distance[t])
+            if my_map[t][i] + distance[t] < distance[i] :
+                parent[i] = t
+                distance[i] = my_map[t][i] + distance[t]
+
+print(distance)
+print(parent)

@@ -34,10 +34,7 @@ start_vect=time.time()
 
 
 def issafe(y,x):
-    if 0<=y<n and 0<=x<n:
-        return True
-    else:
-        return False
+    return 0<=y<n and 0<=x<n
 
 
 def lego(y,x):

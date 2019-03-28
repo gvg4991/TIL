@@ -172,5 +172,13 @@
 # print(int(a**(1/2)))
 
 
-for i in range(10,5,-1):
-    print(i)
+# for i in range(10,5,-1):
+#     print(i)
+
+# yo = [1,2,3,4,5,6,7,8,9]
+# y = [2,3,4]
+# if y[0:2] in yo:
+#     print(1)
+# else:
+#     print(0)
+

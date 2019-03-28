@@ -126,6 +126,7 @@ print(int(input,4)) #84
 
 ㆍ리스트.sort()
 - 원본 list를 변형시키고, 오름차순
+- datas.sort(key=lambda x: x[2]): 2차원 리스트를 인덱스2 기준으로 오름차순
 
 ㆍ리스트.reverse()
 - 반대로 뒤집는다. 정렬시키는 것x
