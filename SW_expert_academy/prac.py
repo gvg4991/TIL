@@ -182,6 +182,11 @@
 # else:
 #     print(0)
 
+#
+# i=[1,2,3,4,5]
+# print(i)
 
-i=[1,2,3,4,5]
-print(i)
+
+a = 15688
+b = list(map(int,str(a)))
+print(b)
