@@ -42,69 +42,29 @@ sys.stdin = open('input.txt')
 def issafe(row,col):
     return 0<=row<sero and 0<=col<garo
 
-def up(row,col,t):
-    global cnt
-    # row -= 1
+def up(row,col):
     if issafe(row-1,col) and not visited[row-1][col] and mymap[row-1][col] in u:
-        cnt += 1
-        # visited[row - 1][col] = 1
-        find(row-1,col,t-1)
+        q.append((row-1,col))
+        visited[row-1][col] = 1
+        time[row-1][col] = time[row][col]+1
 
-def right(row,col,t):
-    global cnt
-    # col += 1
+def right(row,col):
     if issafe(row,col+1) and not visited[row][col+1] and mymap[row][col+1] in r:
-        cnt += 1
-        # visited[row][col + 1] = 1
-        find(row, col+1,t-1)
+        q.append((row,col+1))
+        visited[row][col+1] = 1
+        time[row][col+1] = time[row][col]+1
 
-def down(row,col,t):
-    global cnt
-    # row += 1
+def down(row,col):
     if issafe(row+1,col) and not visited[row+1][col] and mymap[row+1][col] in d:
-        cnt += 1
-        # visited[row + 1][col] = 1
-        find(row+1, col,t-1)
+        q.append((row+1,col))
+        visited[row+1][col] = 1
+        time[row+1][col] = time[row][col]+1
 
-def left(row,col,t):
-    global cnt
-    # col -= 1
+def left(row,col):
     if issafe(row,col-1) and not visited[row][col-1] and mymap[row][col-1] in l:
-        cnt += 1
-        # visited[row][col - 1] = 1
-        find(row, col-1,t-1)
-
-def find(row,col,t):
-    global cnt, ans
-    if t == 0:
-        ans = cnt
-        return
-    # t -= 1
-    visited[row][col] = 1
-    now = mymap[row][col]
-    if now == 1:
-        up(row, col,t)
-        right(row, col,t)
-        down(row, col,t)
-        left(row, col,t)
-    elif now == 2:
-        up(row, col,t)
-        down(row, col,t)
-    elif now == 3:
-        right(row, col,t)
-        left(row, col,t)
-    elif now == 4:
-        up(row, col,t)
-        right(row, col,t)
-    elif now == 5:
-        right(row, col,t)
-        down(row, col,t)
-    elif now == 6:
-        down(row, col,t)
-        left(row, col,t)
-    elif now == 7:
-        up(row, col,t)
-        left(row, col,t)
+        q.append((row,col-1))
+        visited[row][col-1] = 1
+        time[row][col-1] = time[row][col]+1
 
 
 for tc in range(int(input())):
@@ -118,52 +78,139 @@ for tc in range(int(input())):
     d = [1,2,4,7]
     l = [1,3,4,5]
     visited = [[0]*garo for _ in range(sero)]
+    visited[row][col] = 1
+    time = [[1]*garo for _ in range(sero)]
 
-    cnt = 1
-    ans = 0
-    find(row,col,t-1)
-    print(ans)
+    q = []
+    q.append((row,col))
+    cnt = 0
+    y = row
+    x = col
+    while q != []:
+        # for i in time:
+        #     print(i)
+        # print('-'*20)
+        # print(cnt)
+        y,x = q.pop(0)
+        if time[y][x] == t+1:
+            break
+        cnt += 1
+        now = mymap[y][x]
+        if now == 1:
+            up(y,x)
+            right(y, x)
+            down(y, x)
+            left(y, x)
+        elif now == 2:
+            up(y, x)
+            down(y, x)
+        elif now == 3:
+            right(y, x)
+            left(y, x)
+        elif now == 4:
+            up(y, x)
+            right(y, x)
+        elif now == 5:
+            right(y, x)
+            down(y, x)
+        elif now == 6:
+            down(y, x)
+            left(y, x)
+        elif now == 7:
+            up(y, x)
+            left(y, x)
+    print('#{} {}'.format(tc+1,cnt))
 
 
 
-    # if delta == 1:
-    #     find = [up,right,down,left]
-    # elif delta == 2:
-    #     find = [up,[0],down,[0]]
-    # elif delta == 3:
-    #     find = [[0],right,[0],left]
-    # elif delta == 4:
-    #     find = [up,right,[0],[0]]
-    # elif delta == 5:
-    #     find = [[0],right,down,[0]]
-    # elif delta == 6:
-    #     find = [[0],[0],down,left]
-    # elif delta == 7:
-    #     find = [up,[0],[0],left]
 
-    # while t != 0:
-    #     t -= 1
-    #     now = mymap[row][col]
-    #     if now == 1:
-    #         up(row,col)
-    #         right(row,col)
-    #         down(row,col)
-    #         left(row,col)
-    #     elif now == 2:
-    #         up(row,col)
-    #         down(row,col)
-    #     elif now == 3:
-    #         right(row,col)
-    #         left(row,col)
-    #     elif now == 4:
-    #         up(row,col)
-    #         right(row,col)
-    #     elif now == 5:
-    #         right(row,col)
-    #         down(row,col)
-    #     elif now == 6:
-    #         down(row,col)
-    #         left(row,col)
-    #     elif now == 7:
-    #         up(row,col)
-    #         left(row,col)
+
+
+
+
+
+# def issafe(row,col):
+#     return 0<=row<sero and 0<=col<garo
+#
+# def up(row,col,t):
+#     global cnt
+#     # row -= 1
+#     if issafe(row-1,col) and not visited[row-1][col] and mymap[row-1][col] in u:
+#         cnt += 1
+#         # visited[row - 1][col] = 1
+#         find(row-1,col,t-1)
+#
+# def right(row,col,t):
+#     global cnt
+#     # col += 1
+#     if issafe(row,col+1) and not visited[row][col+1] and mymap[row][col+1] in r:
+#         cnt += 1
+#         # visited[row][col + 1] = 1
+#         find(row, col+1,t-1)
+#
+# def down(row,col,t):
+#     global cnt
+#     # row += 1
+#     if issafe(row+1,col) and not visited[row+1][col] and mymap[row+1][col] in d:
+#         cnt += 1
+#         # visited[row + 1][col] = 1
+#         find(row+1, col,t-1)
+#
+# def left(row,col,t):
+#     global cnt
+#     # col -= 1
+#     if issafe(row,col-1) and not visited[row][col-1] and mymap[row][col-1] in l:
+#         cnt += 1
+#         # visited[row][col - 1] = 1
+#         find(row, col-1,t-1)
+#
+# def find(row,col,t):
+#     global cnt, ans
+#     if t == 0:
+#         ans = cnt
+#         return
+#     # t -= 1
+#     visited[row][col] = 1
+#     now = mymap[row][col]
+#     if now == 1:
+#         up(row, col,t)
+#         right(row, col,t)
+#         down(row, col,t)
+#         left(row, col,t)
+#     elif now == 2:
+#         up(row, col,t)
+#         down(row, col,t)
+#     elif now == 3:
+#         right(row, col,t)
+#         left(row, col,t)
+#     elif now == 4:
+#         up(row, col,t)
+#         right(row, col,t)
+#     elif now == 5:
+#         right(row, col,t)
+#         down(row, col,t)
+#     elif now == 6:
+#         down(row, col,t)
+#         left(row, col,t)
+#     elif now == 7:
+#         up(row, col,t)
+#         left(row, col,t)
+#
+#
+# for tc in range(int(input())):
+#     sero,garo,row,col,t = map(int,input().split())
+#     mymap = [[0]*garo for _ in range(sero)]
+#     for r in range(sero):
+#         mymap[r] = list(map(int,input().split()))
+#
+#     u = [1,2,5,6]
+#     r = [1,3,6,7]
+#     d = [1,2,4,7]
+#     l = [1,3,4,5]
+#     visited = [[0]*garo for _ in range(sero)]
+#
+#     cnt = 1
+#     ans = 0
+#     find(row,col,t-1)
+#     print(ans)
+
