@@ -1,5 +1,6 @@
-import sys
+import sys, time
 sys.stdin = open('input.txt')
+stime = time.time()
 
 
 def eating(used):
@@ -38,3 +39,4 @@ for tc in range(int(input())):
     eating(used)
     # ans = min(result)
     print('#{} {}'.format(tc+1,ans))
+    print(time.time()-stime)

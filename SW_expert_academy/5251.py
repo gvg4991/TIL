@@ -11,9 +11,48 @@
 # [출력]
 # 각 줄마다 "#T" (T는 테스트 케이스 번호)를 출력한 뒤, 테스트 케이스에 대한 답을 출력한다.
 
+
+import sys
+sys.stdin = open('input.txt')
+import collections
+
+
 for tc in range(int(input())):
-    last_idx, way = map(int,input().split())
-    datas = [[0]*3 for _ in range(way)]
+    last_idx, way = map(int, input().split())
+    mymap = [[0]*(last_idx+1) for _ in range(last_idx+1)]
     for row in range(way):
-        datas[row] = list(map(int,input().split()))
-        
+        start,end,dist = map(int,input().split())
+        mymap[start][end] = dist
+    # print(mymap)
+
+    now = 0
+    q = collections.deque()
+    q.append(now)
+    # begin = collections.deque()
+    # visited = [0]*(last_idx+1)
+    # for i in range(last_idx+1):
+    #     if mymap[now][i]:
+    #         q.append(i)
+            # begin.append(now)
+    distance = [987654321]*(last_idx+1)
+    distance[now] = 0
+
+    while q:
+        # visited[now] = 1
+        # print(q)
+        now = q.popleft()
+        for next in range(last_idx+1):
+            if mymap[now][next]>0 and mymap[now][next]+distance[now]<distance[next]: #not visited[next] and
+                q.append(next)
+                distance[next] = mymap[now][next] + distance[now]
+
+    print('#{} {}'.format(tc+1,distance[last_idx]))
+
+
+
+    # #다익스트라는 모든점을 최단경로로 가는 알고리즘! 즉, 이 문제에 적용할 수 없다.
+    # node = [i for i in range(1,last_idx+1)]
+    # # print(node)
+    # begin = 0
+    # distance = mymap[begin]
+

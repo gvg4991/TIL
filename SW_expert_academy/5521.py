@@ -64,23 +64,64 @@ sys.stdin = open('input.txt')
 
 
 # 시간터짐
-# result = [1]
-# friend = []
-# cnt = 0
-# for tc in range(int(input())):
-#     n,m = map(int,input().split())
-#     friend = [(0,0)]*m
-#     for bf in range(m):
-#         fri = list(map(int,input().split()))
-#         friend[bf] = fri
-#         if 1 in fri:
-#             result.extend(fri)
-#     result = list(set(result))
-#     # print(result)
-#     # print(friend)
-#     for i in result:
-#         for fri in friend:
-#             if i in fri:
-#                 cnt += 1
-#                 friend.remove(fri)
-#     print('#{} {}'.format(tc+1,cnt))
+result = [1]
+friend = []
+cnt = 0
+for tc in range(int(input())):
+    n,m = map(int,input().split())
+    friend = [(0,0)]*m
+    for bf in range(m):
+        fri = list(map(int,input().split()))
+        friend[bf] = fri
+        if 1 in fri:
+            result.extend(fri)
+    result = list(set(result))
+    # print(result)
+    # print(friend)
+    for i in result:
+        for fri in friend:
+            if i in fri:
+                cnt += 1
+                friend.remove(fri)
+    print('#{} {}'.format(tc+1,cnt))
+
+
+
+
+
+
+
+# #지현이 코딩
+# def BFS():
+#     Queue.append(1)
+#     visited[1] = True
+#     while Queue:
+#         start = Queue.pop(0)
+#         for next in range(1, N + 1):
+#             if MyMap[start][next] and not visited[next]:
+#                 Queue.append(next)
+#                 visited[next] = True
+#                 distance[next] = distance[start] + 1
+#
+#
+# TC = int(input())
+# for tc in range(1, TC + 1):
+#     print("#%d" % tc, end=' ')
+#     N, M = map(int, input().split())
+#     MyMap = [[0] * (N + 1) for _ in range(N + 1)]
+#     visited = [0] * (N + 1)
+#     distance = [0] * (N + 1)
+#
+#     for i in range(M):
+#         start, end = map(int, input().split())
+#         MyMap[start][end] = 1
+#         MyMap[end][start] = 1
+#
+#     Queue = []
+#     BFS()
+#     cnt = 0
+#     for i in range(2, N + 1):
+#         if 0 < distance[i] and distance[i] <= 2:
+#             cnt += 1
+#
+#     print(cnt)

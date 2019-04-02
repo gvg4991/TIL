@@ -22,14 +22,38 @@ import sys
 sys.stdin = open('input.txt')
 
 
+def work(i):
+    global result, ans
+    if i == n:
+        if ans < result:
+            ans = result
+            return
+
+    if result < ans:
+        return
+
+    for choice in range(n):
+        if not used[choice] and datas[i][choice]:
+            used[choice] = 1
+            result *= (datas[i][choice]*0.01)
+            work(i+1)
+            result /= (datas[i][choice]*0.01)
+            used[choice] = 0
+
+
 for tc in range(int(input())):
     n = int(input())
     datas = [[0]*n for _ in range(n)]
     for row in range(n):
         datas[row] = list(map(int,input().split()))
-    
-    used = []
-    idx = 0
-    while len(used) != n:
-        for i in range(n):
-            
+    # print(datas)
+
+    used = [0]*n
+    result = 1
+    ans = 0
+    percent = [[0]*n for _ in range(n)]
+    work(0)
+    ans = round(ans*100,6)
+    print('#{} '.format(tc+1), end='')
+    print('%.6f' %ans)
+

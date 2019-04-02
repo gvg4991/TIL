@@ -28,14 +28,42 @@ import sys
 sys.stdin = open('input.txt')
 
 
+# def test(l,r,t):
+#     global cnt
+#     cnt = 0
+#     for i in range(k):
+#         target = datas[i]
+#         cnt += t//target #시간동안 통과할 수 있는 총 사람 수
+#     if cnt == n:
+#         result.append(t)
+#         return
+#     elif cnt > n:
+#         r = t
+#         t = (l+r)//2
+#         test(l,r,t)
+#     elif cnt < n:
+#         l = t
+#         t = (l+r)//2
+#         test(l,r,t)
+
+
+# 느려느려!
 def test(l,r,t):
-    global cnt
+    global cnt, result
     cnt = 0
     for i in range(k):
         target = datas[i]
         cnt += t//target #시간동안 통과할 수 있는 총 사람 수
     if cnt == n:
-        result.append(t)
+        while cnt == n:
+            if result>t:
+                result = t
+            # result.append(t)
+            cnt = 0
+            t -= 1
+            for i in range(k):
+                target = datas[i]
+                cnt += t//target #시간동안 통과할 수 있는 총 사람 수
         return
     elif cnt > n:
         r = t
@@ -57,7 +85,12 @@ r = max(datas)*n
 l = min(datas)
 t = max(datas)*n
 cnt = 0
-result = []
+result = 987654321
 
-test(l,r,t)
+if n == 0:
+    result = 0
+elif n == 1:
+    result = l
+else:
+    test(l,r,t)
 print(result)
