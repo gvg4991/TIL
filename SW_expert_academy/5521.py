@@ -95,127 +95,27 @@ for tc in range(int(input())):
     invite = [0]*(n+1)
     best = [0]*(n+1)
 
-    for i in range(m):
+    for relation in range(m):
         i, you = map(int,input().split())
         friend[i][you] = friend[you][i] = 1
     # print(friend)
 
-    q = [1]
     now = 1
-    invite[1] = 1
-    cnt = 0
-    while q and best[now]<3:
+    q = [now]
+    invite[now] = 1
+    cnt = -1
+    while q and max(best)<3: #최대누적 bfs횟수가 3보다 작을때까지만
         now = q.pop(0)
         cnt += 1
+        # print(best)
         for next in range(1,n+1):
-            if friend[now][next] and not invite[next]:
+            if friend[now][next] and not invite[next] and best[now]+1 <= 2:
+                best[next] = best[now] + 1
+                # if best[next] <= 2:
                 q.append(next)
                 invite[next] = 1
-                best[next] = best[now] + 1
-    # cnt = 0
-    # for i in range(2, n+1):
-    #     if 0 < best[i] and best[i] <= 2:
-    #         cnt += 1
 
     print('#{} {}'.format(tc+1,cnt))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# #현수형 코딩
-# def BFS():
-#     Q.append(1)
-#     visited[1] = True
-#     while Q:
-#         start = Q.pop(0)
-#         for next in range(1, v+1):
-#             if MyMap[start][next] and not visited[next]:
-#                 Q.append(next)
-#                 visited[next] = True
-#                 distance[next] = distance[start] + 1
-#
-#
-# TC = int(input())
-# for tc in range(1, TC+1):
-#     v, e = map(int, input().split())
-#     MyMap = [[0]*(v+1) for _ in range(v+1)]
-#     visited = [0]*(v+1)
-#     distance = [0]*(v+1)
-#
-#     for i in range(e):
-#         start, end = map(int, input().split())
-#         MyMap[start][end] = 1
-#         MyMap[end][start] = 1
-#
-#     Q = []
-#     BFS()
-#
-#     cnt = 0
-#     for i in range(2, len(distance)):
-#         if 0< distance[i] <= 2:
-#             cnt += 1
-#
-#     print('#%d %d'%(tc, cnt))
-
-
-
-
-
-
-# #지현이 코딩
-# def BFS():
-#     Queue.append(1)
-#     visited[1] = True
-#     while Queue:
-#         start = Queue.pop(0)
-#         for next in range(1, N + 1):
-#             if MyMap[start][next] and not visited[next]:
-#                 Queue.append(next)
-#                 visited[next] = True
-#                 distance[next] = distance[start] + 1
-#
-#
-# TC = int(input())
-# for tc in range(1, TC + 1):
-#     print("#%d" % tc, end=' ')
-#     N, M = map(int, input().split())
-#     MyMap = [[0] * (N + 1) for _ in range(N + 1)]
-#     visited = [0] * (N + 1)
-#     distance = [0] * (N + 1)
-#
-#     for i in range(M):
-#         start, end = map(int, input().split())
-#         MyMap[start][end] = 1
-#         MyMap[end][start] = 1
-#
-#     Queue = []
-#     BFS()
-#     cnt = 0
-#     for i in range(2, N + 1):
-#         if 0 < distance[i] and distance[i] <= 2:
-#             cnt += 1
-#
-#     print(cnt)

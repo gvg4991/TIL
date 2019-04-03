@@ -22,14 +22,45 @@ datas = [0]*k
 for i in range(k):
     datas[i] = int(input())
 # print(datas)
-avg = sum(datas)//n
-result = 0
-for i in range(avg,0,-1):
+
+r = max(datas)
+l = 0
+# mid = (r+l)//2
+
+while l <= r:
     cnt = 0
-    for data in datas:
-        cnt += data//i
-    if cnt == n:
-        result = i
-        print(result)
-        break
+    mid = (r+l)//2
+    for item in datas:
+        cnt += item//mid
+    if cnt >= n:
+        l = mid+1
+    elif cnt < n:
+        r = mid-1
+print(r)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# avg = sum(datas)//n
+# result = 0
+# for i in range(avg,0,-1):
+#     cnt = 0
+#     for data in datas:
+#         cnt += data//i
+#     if cnt == n:
+#         result = i
+#         print(result)
+#         break
 
