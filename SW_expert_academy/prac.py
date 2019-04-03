@@ -187,6 +187,14 @@
 # print(i)
 
 
-a = 15688
-b = list(map(int,str(a)))
-print(b)
+# #인트형 데이터 리스트화
+# a = 15688
+# b = list(map(int,str(a)))
+# print(b)
+
+datas = '123456789'
+# target = datas[::-1].index(7)
+# print(target)
+# a= datas.count(1)
+# datas[0],datas[1] = datas[1],datas[0]
+print(datas[0])

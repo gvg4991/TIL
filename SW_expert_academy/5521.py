@@ -63,28 +63,122 @@ sys.stdin = open('input.txt')
 
 
 
-# 시간터짐
-result = [1]
-friend = []
-cnt = 0
+# # 시간터짐
+# result = [1]
+# friend = []
+# cnt = 0
+# for tc in range(int(input())):
+#     n,m = map(int,input().split())
+#     friend = [(0,0)]*m
+#     for bf in range(m):
+#         fri = list(map(int,input().split()))
+#         friend[bf] = fri
+#         if 1 in fri:
+#             result.extend(fri)
+#     result = list(set(result))
+#     # print(result)
+#     # print(friend)
+#     for i in result:
+#         for fri in friend:
+#             if i in fri:
+#                 cnt += 1
+#                 friend.remove(fri)
+#     print('#{} {}'.format(tc+1,cnt))
+
+
+
+
+#bfs 코딩
 for tc in range(int(input())):
-    n,m = map(int,input().split())
-    friend = [(0,0)]*m
-    for bf in range(m):
-        fri = list(map(int,input().split()))
-        friend[bf] = fri
-        if 1 in fri:
-            result.extend(fri)
-    result = list(set(result))
-    # print(result)
+    n,m = map(int, input().split())
+    friend = [[0]*(n+1) for _ in range(n+1)]
+    invite = [0]*(n+1)
+    best = [0]*(n+1)
+
+    for i in range(m):
+        i, you = map(int,input().split())
+        friend[i][you] = friend[you][i] = 1
     # print(friend)
-    for i in result:
-        for fri in friend:
-            if i in fri:
-                cnt += 1
-                friend.remove(fri)
+
+    q = [1]
+    now = 1
+    invite[1] = 1
+    cnt = 0
+    while q and best[now]<3:
+        now = q.pop(0)
+        cnt += 1
+        for next in range(1,n+1):
+            if friend[now][next] and not invite[next]:
+                q.append(next)
+                invite[next] = 1
+                best[next] = best[now] + 1
+    # cnt = 0
+    # for i in range(2, n+1):
+    #     if 0 < best[i] and best[i] <= 2:
+    #         cnt += 1
+
     print('#{} {}'.format(tc+1,cnt))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #현수형 코딩
+# def BFS():
+#     Q.append(1)
+#     visited[1] = True
+#     while Q:
+#         start = Q.pop(0)
+#         for next in range(1, v+1):
+#             if MyMap[start][next] and not visited[next]:
+#                 Q.append(next)
+#                 visited[next] = True
+#                 distance[next] = distance[start] + 1
+#
+#
+# TC = int(input())
+# for tc in range(1, TC+1):
+#     v, e = map(int, input().split())
+#     MyMap = [[0]*(v+1) for _ in range(v+1)]
+#     visited = [0]*(v+1)
+#     distance = [0]*(v+1)
+#
+#     for i in range(e):
+#         start, end = map(int, input().split())
+#         MyMap[start][end] = 1
+#         MyMap[end][start] = 1
+#
+#     Q = []
+#     BFS()
+#
+#     cnt = 0
+#     for i in range(2, len(distance)):
+#         if 0< distance[i] <= 2:
+#             cnt += 1
+#
+#     print('#%d %d'%(tc, cnt))
 
 
 
