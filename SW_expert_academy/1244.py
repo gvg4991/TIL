@@ -30,6 +30,7 @@ for tc in range(int(input())):
     datas = list(map(int,str(data)))
     # for c in range(cnt):
     change = 1
+    wait = []
 
     if len(datas) == 2:
         if cnt%2:
@@ -51,6 +52,15 @@ for tc in range(int(input())):
             else:
                 target = datas[::-1].index(max(datas[idx:len(datas)])) #len(datas)-1-target
                 datas[idx],datas[len(datas)-1-target] = datas[len(datas)-1-target],datas[idx]
+                # if len(wait) == 0:
+                #     wait = [datas[len(datas)-1-target]]
+                # elif idx>0 and datas[idx] == datas[idx-1]:
+                #     wait.append(datas[len(datas)-1-target]) #datas[len(datas)-1-target+1] 그전의 데이터
+                # elif len(wait) > 1:
+                #     wait = sorted(wait)
+                #     datas[len(datas)-1-target:len(datas)-1-target+len(wait)-1] = wait
+                # else:
+                #     wait = [datas[len(datas)-1-target]]
                 if idx>0 and datas[idx] == datas[idx-1] and datas[len(datas)-1-target] < datas[len(datas)-1-target+1]:
                     datas[len(datas)-1-target], datas[len(datas)-1-target+1] = datas[len(datas)-1-target+1], datas[len(datas)-1-target]
                 idx += 1

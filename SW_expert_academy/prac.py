@@ -92,8 +92,8 @@
 # # data=[0,1,2,3]
 # # print(data[2])
 
-# data=[[1,2,3],[4,5,6],[7,8,9]]
-# print(map(list,zip(*data)))
+data=[[1,2,3],[4,5,6],[7,8,9]]
+print(list(map(list,zip(*data))))
 
 # #
 # l = [0,1,2,3,4,5,6,7,8,9,5,5]
@@ -192,9 +192,16 @@
 # b = list(map(int,str(a)))
 # print(b)
 
-datas = '123456789'
-# target = datas[::-1].index(7)
-# print(target)
-# a= datas.count(1)
-# datas[0],datas[1] = datas[1],datas[0]
-print(datas[0])
+# datas = '123456789'
+# # target = datas[::-1].index(7)
+# # print(target)
+# # a= datas.count(1)
+# # datas[0],datas[1] = datas[1],datas[0]
+# print(datas[0])
+
+
+# datas = [[1,1,1],[2,2,2],[3,3,3]]
+# print(list(map(list,zip(*datas))))
+
+a,b = divmod(-2,3)
+print(a,b)
