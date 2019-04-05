@@ -62,8 +62,8 @@ sys.stdin = open('input.txt')
 
 
 
-#
-#
+
+
 # import itertools
 #
 #

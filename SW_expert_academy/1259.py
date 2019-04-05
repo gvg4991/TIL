@@ -14,6 +14,9 @@
 # 각 줄은 ‘#x’로 시작하고 공백을 하나 둔 다음, 각 테스트 케이스에 주어진 수열로부터 가장 많이 연결하기 위한 원형 금속 막대의 수나사 굵기와 암나사 굵기를 순서대로 출력한다. 
 
 
+import sys
+sys.stdin = open('input.txt')
+
 def screw(start):
     result.append(sunasa[start])
 

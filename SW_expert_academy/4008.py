@@ -131,7 +131,50 @@ for tc in range(int(input())):
 
 
 
-
+# def getsome(depth):
+#     global result, l
+#     if depth == cnt-1:
+#         if not l in ans:
+#             ans.append(l)
+#         return
+#     for i in range(cnt-1):
+#         if not used[i]:
+#             used[i] = 1
+#             # calculation[depth] = sem[i]
+#             if sem[i] == '+':
+#                 result = l+num[i+1]
+#             elif sem[i] == '-':
+#                 result = l-num[i+1]
+#             elif sem[i] == '*':
+#                 result = l*num[i+1]
+#             elif sem[i] == '/':
+#                 result = l//num[i+1]
+#             l = result
+#             getsome(depth+1)
+#             used[i] = 0
+#
+#
+# for tc in range(int(input())):
+#     cnt = int(input())
+#     calc = list(map(int,input().split()))
+#     sem = []
+#     for c in range(4):
+#         if c == 0:
+#             sem.extend(['+']*calc[c])
+#         elif c == 1:
+#             sem.extend(['-']*calc[c])
+#         elif c == 2:
+#             sem.extend(['*']*calc[c])
+#         elif c == 3:
+#             sem.extend(['/']*calc[c])
+#     used = [0]*(cnt-1)
+#     num = list(map(int,input().split()))
+#     l = num[0]
+#     result = 0
+#     ans = []
+#
+#     getsome(0)
+#     print('#{} {}'.format(tc+1,max(ans)-min(ans)))
 
 
 
