@@ -62,9 +62,12 @@ def lego(y,x,d):
             lego(y+1,x,'down')
             lego(y+1,x+1,'cross')
         # elif
-        if allow[0]:
+        elif allow[0] and allow[1]:
             lego(y,x+1,'right')
-        if allow[1]:
+            lego(y+1,x,'down')
+        elif allow[0]:
+            lego(y,x+1,'right')
+        elif allow[1]:
             lego(y+1,x,'down')
 
 
@@ -84,3 +87,35 @@ allow = [0,0,0]
 lego(0,1,drt)
 print(cnt)
 
+
+
+
+
+
+
+
+# N = int(input())
+# grid = [list(map(int,input().split())) for i in range(N)]
+# print(grid)
+#
+# direction = { 0 : [(0,1), (1,1)], 1 :[(0,1), (1,1),(1,0)], 2: [(1,0), (1,1)]}  # 가로 대각선 세로
+#
+# def pipe(y,x,dir):
+#     global cnt
+#     if y==N-1 and x==N-1:
+#         cnt += 1
+#         return
+#
+#     else:
+#         for i in range(len(direction[dir])):
+#             Ny = y + direction[dir][i][0]   # y 좌표ㅣㅣ
+#             Nx = x + direction[dir][i][1]    # x 좌표
+#             if i!=1 and 0<=Ny<N and 0<=Nx<N  and grid[Ny][Nx]==0:
+#                 pipe(Ny,Nx,i)
+#             elif i==1 and 0<=Ny<N and 0<=Nx<N and grid[Ny][Nx]==0 and grid[Ny][Nx-1]==0 and grid[Ny-1][Nx]==0:
+#                 pipe(Ny,Nx,i)
+#
+# cnt = 0
+# pipe(0,1,0)    # y, x, dir
+#
+# print (cnt)

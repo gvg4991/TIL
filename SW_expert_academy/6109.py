@@ -178,3 +178,81 @@ for tc in range(test):
 
     for yo in ans:
         print(*yo)
+
+
+
+
+
+
+
+
+
+
+## 지현이 코딩
+# def Game():
+#     for y in range(N):
+#         arr=[]
+#         lst=[]
+#         for x in range(N):
+#             if Data[y][x]!=0:
+#                 lst.append(Data[y][x])
+#
+#
+#         for i in range(len(lst)-1):
+#             if lst[i]==lst[i+1]:
+#                 lst[i]*=2
+#                 lst[i+1]=0
+#
+#         for i in range(len(lst)):
+#             if lst[i]!=0:
+#                 arr.append(lst[i])
+#
+#
+#         arr+=[0]*(N-len(arr))
+#         Mymap.append(arr)
+#
+#
+#
+#
+# TC=int(input())
+# for tc in range(1,TC+1):
+#     print("#%d"%tc)
+#     N,S=input().split()
+#     N=int(N)
+#     Data=[0]*N
+#     for n in range(N):
+#         Data[n]=list(map(int,input().split()))
+#
+#     if N==1:
+#         print(Data)
+#         break
+#
+#     if S=='right':
+#         for y in range(N):
+#             Data[y]=Data[y][::-1]
+#
+#     if S=='up':
+#         Data=list(map(list,zip(*Data)))
+#
+#     if S=='down':
+#         Data=list(map(list,zip(*Data)))
+#         for y in range(N):
+#             Data[y]=Data[y][::-1]
+#     Mymap = []
+#     Game()
+#     if S == 'right':
+#         for y in range(N):
+#             Mymap[y] = Mymap[y][::-1]
+#
+#     if S == 'up':
+#         Mymap = list(map(list, zip(*Mymap)))
+#
+#     if S == 'down':
+#         for y in range(N):
+#             Mymap[y] = Mymap[y][::-1]
+#         Mymap = list(map(list, zip(*Mymap)))
+#
+#     for y in range(N):
+#         for x in range(N):
+#             print(Mymap[y][x],end=' ')
+#         print()
