@@ -49,3 +49,65 @@ ex) GET /movies/2/update (x) - GET 부적합
      PUT /movies/2 (o)
 ex) GET /movies/2/edit - 수정 페이지 보여줌
      POST /movies/2/edit - 수정 작업을 수행함
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+image 업로드
+$ pip install pillow
+create.py에 <form action="" method='post' enctype="multipart/form-data">
+$ pip install pilkit django-imagekit
+
+settings에 추가
+
+#Media
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'media') #미디어폴더에서 사진 가지고오기
+
+models.py에
+from imagekit.models import ProcessedImageField
+
+from imagekit.processors import ResizeToFill
+
+
+class Post(models.Model):
+
+    content = models.TextField()
+
+    image = ProcessedImageField(
+
+        upload_to = 'posts/imags', #저장위치
+
+        processors = [ResizeToFill(600,600)], #처리할 작업 목록
+
+        format='JPEG', #저장 포맷
+
+        options={'quality':90}, #옵션
+        )
+
+list.html에   
+{% if post.image %}
+  
+<img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image }}">
+  
+{% endif %}
+  
+
+메인urls.py
+from django.conf.urls.static import static
+
+from django.conf import settings
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('posts/', include('posts.urls')),
+]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
