@@ -39,28 +39,28 @@ def combination(n,r,i,c):
 def issafe(y,x):
     return 0<=y<sero and 0<=x<garo
 
-def kill(y,x,k):
+def kill(y,x,k): #지금은 k가 문제의 원인, 그리고 dist도 이용하기
     global now_d, next_d
     if target[y-1][x]:
         result.append((y-1,x))
         return
-    # distance[now_d] = 1
-    # q.append((y-1,x))
-    # while q!=[] and k==0:
-    #     val = q.popleft()
-    #     y,x = val[0],val[1]
-    #     for delta in range(3):
-    #         new_y = y+dy[delta]
-    #         new_x = x+dx[delta]
-    #         if issafe(new_y,new_x) and not visited[new_y][new_x]:
-    #             if target[new_y][new_x]:
-    #                 q.append((new_y,new_x))
-    #                 k = 1
-    #                 break
-    #             visited[new_y][new_x] = 1
-    #             next_d += 1
-    #             distance[next_d] = distance[now_d] + 1
-    #     now_d += 1
+    distance[now_d] = 1
+    q.append((y-1,x))
+    while q!=[] and k==0:
+        val = q.popleft()
+        y,x = val[0],val[1]
+        for delta in range(3):
+            new_y = y+dy[delta]
+            new_x = x+dx[delta]
+            if issafe(new_y,new_x) and not visited[new_y][new_x]:
+                if target[new_y][new_x]:
+                    q.append((new_y,new_x))
+                    k = 1
+                    break
+                visited[new_y][new_x] = 1
+                next_d += 1
+                distance[next_d] = distance[now_d] + 1
+        now_d += 1
 
 
 
@@ -88,6 +88,7 @@ q = collections.deque()
 result = []
 ans = 0
 
+
 for loca_x in comb:
     target = copy.deepcopy(datas)
     result = []
@@ -97,10 +98,11 @@ for loca_x in comb:
             distance = [0] * 100
             now_d = next_d = 0
             q = collections.deque()
-            kill(loca_y,loca_x[killer],0)
+            kill(loca_y,loca_x[killer],dist)
         result = list(set(result))
         for ty,tx in result:
             target[ty][tx] = 0
+        # print(target)
     if ans < len(result):
         ans = len(result)
 print(ans)
