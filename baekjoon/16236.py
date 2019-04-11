@@ -30,23 +30,6 @@ sys.stdin = open('input.txt')
 def issafe(y,x):
     return 0<=y<n and 0<=x<n
 
-# def find(y,x,t):
-#     if datas[y][x] < t:
-#         size[datas[y][x]] -= 1
-#         size_cnt[datas[y][x]] += 1
-#         if size_cnt[t] == t:
-#             t += 1
-#         find(y,x,t)
-#
-#     while q!=[]
-#     y,x = q.pop(0)
-#     for delta in range(4):
-#         new_y = y + dy[delta]
-#         new_x = x + dx[delta]
-#         if issafe(new_y,new_x) and not visited[new_y][new_x] and datas[new_y][new_x]<=t:
-#             visited[new_y][new_x] = visited[y][x]+1
-#             q.append((new_y,new_x))
-
 
 datas = []
 size = [0,0,0,0,0,0,0]
@@ -62,6 +45,7 @@ for row in range(n):
             start_y,start_x = row,col
     datas.append(r)
 t=2
+d=0
 # print(datas)
 # print(one,two,three,four,five,six)
 # print(start_y,start_x)
@@ -72,15 +56,37 @@ visited = [[0]*n for _ in range(n)]
 # distance = [[0]*n for _ in range(n)]
 result = []
 ans = 0
+eat_y = eat_x = -1
 
-q = [(start_y,start_x,t)]
+q = [(start_y,start_x,t,d)]
+datas[start_y][start_x]=0
 while sum(size[1:t])!=0: #q != [] and
-    y,x,t = q.pop(0)
-    if 0 < datas[y][x] < t:
+    y,x,t,d = q.pop(0)
+    eat_y = eat_x = -1
+    if 0 < datas[y][x] < t: #먹을 수 있을때
+        dist = d
+        eat_y = y
+        eat_x = x
+        while q != []:
+            y,x,t,d = q.pop(0)
+            if d == dist and 0 < datas[y][x] < t:
+                if eat_y > y:
+                    eat_y = y
+                    eat_x = x
+                elif eat_y == y:
+                    if eat_x > x:
+                        eat_y = y
+                        eat_x = x
+            elif d != dist:
+                break
+        if eat_y != -1 and eat_x != -1:
+            y = eat_y
+            x = eat_x
+        #바꿀꺼야!
         size[datas[y][x]] -= 1
         size_cnt[datas[y][x]] += 1
         datas[y][x] = 0
-        if size_cnt[t] == t:
+        if sum(size_cnt[1:t]) == sum(i for i in range(2,t+1)):
             t += 1
         ans += visited[y][x]
         visited = [[0]*n for _ in range(n)]
@@ -92,7 +98,7 @@ while sum(size[1:t])!=0: #q != [] and
         if issafe(new_y, new_x) and not visited[new_y][new_x] and datas[new_y][new_x] <= t:
             visited[new_y][new_x] = visited[y][x] + 1
             # distance[new_y][new_x] = distance[y][x] + 1
-            q.append((new_y, new_x,t))
+            q.append((new_y, new_x,t,visited[new_y][new_x]))
 print(ans)
 
 
