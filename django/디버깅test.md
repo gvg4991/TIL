@@ -139,8 +139,8 @@ no such column: movies_score.movie_id
 
 models.py의 class 중 컨텐츠 하나를 입력 안할 때
 
-1.  default = '123' 값을 넣어주거나 blank = True 입력
-2. 그냥 무시하고 마이그레이트 안함
+1.  '', 빈글자 넣음
+2. 그냥 무시하고 마이그레이트 안함 -> models.py에서 default = '123' 값을 넣어주거나 blank = True 입력
 
 ```python
 class Post(models.Model):
