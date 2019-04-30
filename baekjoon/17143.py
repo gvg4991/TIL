@@ -54,6 +54,14 @@ for fish in range(mari):
 sea.sort(key=lambda t:t[4])
 # print(sea)
 
+for fish in sea:
+    move = fish[2]
+    while move != 0:
+        if fish[3] == 1:
+            pass
+        #1이면 돌아가기 머 이런것들
+
+
 # for fish in sea:
 #     if fish[3] == 1:
 #         if issafe(fish[0]-fish[2],fish[1]):
