@@ -1,0 +1,237 @@
+JS위치 : head, body 둘다 가능
+<script> 태그 안에 작성
+주석 //: 한줄
+   /* */: 여러줄
+
+nodejs 설치
+bash 터미널에 node로 실행
+나갈땐 .exit
+node 파일명.js로 파일 실행
+
+작성
+<script>
+        // 한줄 주석.
+        /* 여러줄
+            주석. */
+
+        // documents.write는 html문서를 작성한다
+        alert('yo JS!') //출력(브라우저 조작)
+        document.write('<h1>I say yo</h1>') //h1태그로 출력(문서 조작)
+
+        let word1 = 'warrup' //재할당 가능
+        document.write(word1)
+
+        // const : 재할당 불가능
+        const word2 = 'warrup' //두줄로 나눠서 쓸 수 없음
+        document.write(word2)
+
+        //word = 'wassup'
+        //document.write(word)
+
+        const firstName = 'Seo'
+        const lastName = 'Minho'
+        const fullName = firstName + lastName
+        document.write('<h1>'+fullName+'!!'+'</h1>')
+        document.write(`<h1>${fullName}!!</h1>`)
+
+        // console에 출력
+        console.log(`Console: ${fullName}`)
+
+        // 사용자 입력 받기
+        // python : user_name (snake_case)
+        // JS : userName (CamelCase)
+        const userName = prompt('Hello, Who are you?')
+        let message = '' //`<h1>Wassup ${userName}</h1>`
+
+        // if문
+        if (userName === 'admin'){
+            message = '<h1>This is secret Admin page</h1>'   
+        } else if (userName === 'admino') {
+            message = '<h1>yo</h1>'
+        } else {
+            message = `<h1>Wassup ${userName}</h1>`
+        }
+
+        // == vs ===
+        // == : 값만 비교 (ex. 0 == "0"은 True)
+        // === : 값 & 타입 비교 (ex. 0 === "0"은 False)
+
+        document.write(message)
+
+        // 삼항 연산자 (조건 ? True : False)
+        const number = 10
+        number === 10 ? document.write('number === 10') : document.write('number !== 10')
+
+        // 세미콜론 테스트
+        const a = 1
+        const b = 2
+        const c = a + b
+        (a+b).toString() //a+b를 문자열로 변환시킴
+        //const c = a + b(a+b).toString() //세미콜론이 없으면 b를 함수로 인식
+
+    </script>
+
+
+a++ : 값 출력후 더하기
+++a : 더한 후 값 출력
+
+
+
+
+#----------------------------------------------------------------------------------------------
+
+//반복-while
+let i = 0
+while (i<10){
+    console.log(i)
+    i++ //탈출조건
+}
+
+//반복-for
+for (let j=0; j<10; j++) { 
+    console.log(j)
+}
+
+//반복-for of
+for (let number of [1,2,3,4,5]){ //const로도 선언 가능
+    console.log(number)
+}
+
+// array (배열)
+const number = [1,2,3,4]
+
+console.log(numbers[0])
+console.log(numbers[-1])
+
+/* > const me ={
+    ... name: 'admino',
+    ... 'phone number': '010123456',
+    ... appleProducts:{
+    ..... ipad: true,
+    ..... iphone: 'X'
+    ..... }
+    ... } */
+
+// JSON - javascript object notation(JS 객체 표기법)
+JSON.stringify() //object -> JSON string
+JSON.parse() //JSON string -> object
+
+/* > const jsonData = JSON.stringify(me)
+undefined
+> jsonData
+'{"name":"admino","phone number":"010123456","appleProducts":{"ipad":true,"iphone":"X"}}'
+> typeof jsonData
+'string'
+> const parseData = JSON.parse(jsonData
+... )
+undefined
+> parseData
+{ name: 'admino',
+  'phone number': '010123456',
+  appleProducts: { ipad: true, iphone: 'X' } }
+> typeof parseData
+'object' */
+
+
+//함수
+// 방법1
+function add(num1, num2){
+    return num1+num2 //리턴을 꼭 명시해야됨
+}
+console.log('add:'+add(1,2))
+
+// 방법2
+const sub = function(num1,num2){
+    return num1-num2
+}
+console.log('sub:'+sub(5,3))
+
+typeof add
+typeof sub
+
+// Arrow Function
+// 기존 방법
+/*const mul = function(num1,num2){
+    return num1*num2
+}*/
+// Arrow
+const mul = (num1,num2) => {
+    return num1*num2
+}
+
+let square = (num) => {
+    return num**2
+}
+
+// return 문 단 한줄이면 {} & return 생략가능
+square = (num) => num **2 
+
+// ()안의 인자가 하나뿐이면 ()도 생략 가능. 0개일때는 생략 불가능
+square = num => num**2
+let noArgs = () => 'No args'
+
+// object를 return한다면? 괄호가 없으면 {}를 함수의 {}로 인식하기때문에 ()가 필요!
+let returnObject = () => ({key:'value'})
+
+// 함수의 기본 인자
+const sayHello = (name='noName') => `hi ${name}`
+
+sayHello('jhon')
+sayHello()
+
+// 익명함수(이름이 존재하지 않는 함수)
+function (num) {return num**3} //세제곱
+(num) => {return num*0.5} //제곱근
+
+// 익명 함수 즉시 호출(변수에다 바로 함수 호출하기)
+(function (num) {return num**3})(3) //3의 세제곱
+
+
+
+#-----------------------------------------------------------------------------------------
+컨테이너
+
+> const me ={
+... name: 'admino',
+... 'phone number': '010123456',
+... appleProducts:{
+..... ipad: true,
+..... iphone: 'X'
+..... }
+... }
+undefined
+> me
+{ name: 'admino',
+  'phone number': '010123456',
+  appleProducts: { ipad: true, iphone: 'X' } }
+> me['name']
+'admino'
+> me['phone number']
+'010123456'
+> me.name
+'admino'
+> me.appleProducts
+{ ipad: true, iphone: 'X' }
+> me.appleProducts.ipone
+undefined
+> me.appleProducts.iphone
+'X'
+
+
+
+> const jsonData = JSON.stringify(me)
+undefined
+> jsonData
+'{"name":"admino","phone number":"010123456","appleProducts":{"ipad":true,"iphone":"X"}}'
+> typeof jsonData
+'string'
+> const parseData = JSON.parse(jsonData
+... )
+undefined
+> parseData
+{ name: 'admino',
+  'phone number': '010123456',
+  appleProducts: { ipad: true, iphone: 'X' } }
+> typeof parseData
+'object'
+>

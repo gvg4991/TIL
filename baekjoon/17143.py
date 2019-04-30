@@ -43,22 +43,23 @@ def issafe(y,x):
 
 
 sea = []
-garo, sero, mari = map(int,input().split())
+sero, garo, mari = map(int,input().split())
 for fish in range(mari):
     y,x,s,d,size = map(int,input().split())
     if d == 1 or d == 2:
-        s = s%(2*sero)
+        s = s%(2*(sero-1))
     elif d == 3 or d == 4:
-        s = s%(2*garo)
+        s = s%(2*(garo-1))
     sea.append([y,x,s,d,size])
 sea.sort(key=lambda t:t[4])
 # print(sea)
 
-for fish in sea:
-    if fish[3] == 1:
-        if issafe(fish[0]-fish[2],fish[1]):
-            fish[0] = fish[0]-fish[2]
-        else:
-            pass
+# for fish in sea:
+#     if fish[3] == 1:
+#         if issafe(fish[0]-fish[2],fish[1]):
+#             fish[0] = fish[0]-fish[2]
+#         else:
+#             (fish[2] - fish[0] +1)
+#             pass
           #방향을 바꾸게 될 경우
 

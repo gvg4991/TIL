@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- JS 위치 1 -->
+</head>
+<body>
+
+    <!-- JS 위치 2 -->
+    <script>
+        // 한줄 주석.
+        /* 여러줄
+            주석. */
+
+        // documents.write는 html문서를 작성한다
+        alert('yo JS!') //출력(브라우저 조작)
+        document.write('<h1>I say yo</h1>') //h1태그로 출력(문서 조작)
+
+        let word1 = 'warrup' //재할당 가능
+        document.write(word1)
+
+        // const : 재할당 불가능
+        const word2 = 'warrup' //두줄로 나눠서 쓸 수 없음
+        document.write(word2)
+
+        //word = 'wassup'
+        //document.write(word)
+
+        const firstName = 'Seo'
+        const lastName = 'Minho'
+        const fullName = firstName + lastName
+        document.write('<h1>'+fullName+'!!'+'</h1>')
+        document.write(`<h1>${fullName}!!</h1>`)
+
+        // console에 출력
+        console.log(`Console: ${fullName}`)
+
+        // 사용자 입력 받기
+        // python : user_name (snake_case)
+        // JS : userName (CamelCase)
+        const userName = prompt('Hello, Who are you?')
+        let message = '' //`<h1>Wassup ${userName}</h1>`
+
+        // if문
+        if (userName === 'admin'){
+            message = '<h1>This is secret Admin page</h1>'   
+        } else if (userName === 'admino') {
+            message = '<h1>yo</h1>'
+        } else {
+            message = `<h1>Wassup ${userName}</h1>`
+        }
+
+        // == vs ===
+        // == : 값만 비교 (ex. 0 == "0"은 True)
+        // === : 값 & 타입 비교 (ex. 0 === "0"은 False)
+
+        document.write(message)
+
+        // 삼항 연산자 (조건 ? True : False)
+        const number = 10
+        number === 10 ? document.write('number === 10') : document.write('number !== 10')
+
+        // 세미콜론 테스트
+        const a = 1
+        const b = 2
+        const c = a + b
+        (a+b).toString() //a+b를 문자열로 변환시킴
+        //const c = a + b(a+b).toString() //세미콜론이 없으면 b를 함수로 인식
+
+    </script>
+</body>
+</html>
