@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="dog">멍멍!</button>
+    </div>
+    <script>
+        const button = document.querySelector('#dog')
+
+        button.addEventListener('click',function(event){
+            // api 요청을 보낸다
+            axios.get('https://dog.ceo/api/breeds/image/random ') // promise(약속), 응답시간이 오래걸림.. javascript는 기다리지 않고 밑에줄 진행
+                .then(function (response) { //응답이 들어오면 실행시킬 함수를 정의함
+                    // handle success
+                    console.log(response);
+                    return response.data.message
+                })
+                // 아래의 url에 respinse.data.message값이 들어감
+                .then(function(url){ //위의 return값이 이곳으로 들어옴(위의 응답이 언제끝날지 모를 때 작성함)
+                    const imgTag = document.createElement('img')
+                    imgTag.src = url;
+                    document.querySelector('body').append(imgTag)
+                })
+                .catch(function (error) { //응답이 잘못들어오면 이 함수가 실행됨
+                    // handle error
+                    console.log(error);
+                })
+            // console.log('끝?') //이거먼저 찍히고 위의 .get응답이 찍힘 (why? .get응답이 오래걸려서)
+        })
+    </script>
+</body>
+</html>

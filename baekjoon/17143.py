@@ -38,10 +38,26 @@ import sys
 sys.stdin = open('input.txt')
 
 
-def issafe(y,x):
-    return 0<y<=sero and 0<x<=garo
+# def issafe(y,x):
+#     return 0<y<=sero and 0<x<=garo
+
+# def kill(y,x,l):
+#     global result,ans
+#     die = 0
+#     killed = sero+1
+#     for fish_idx in sea:
+#         if sea[fish_idx][1] == l:
+#             result.append(fish_idx)
+#     if len(result) != 0:
+#         for idx in range(result):
+#             if sea[idx][0] < killed:
+#                 killed = sea[idx][0]
+#                 die = idx
+#     ans += sea[die][4]
+#     sea[die] = [0,0,0,0,0]
 
 
+#물고기 지정
 sea = []
 sero, garo, mari = map(int,input().split())
 for fish in range(mari):
@@ -54,12 +70,71 @@ for fish in range(mari):
 sea.sort(key=lambda t:t[4])
 # print(sea)
 
-for fish in sea:
-    move = fish[2]
-    while move != 0:
-        if fish[3] == 1:
-            pass
-        #1이면 돌아가기 머 이런것들
+#고기잡이
+location = 0
+ans = 0
+while mari != 0 and location <= garo:
+    # 사냥
+    result = []
+    location += 1
+    killed = sero+1
+    for fish_idx in range(len(sea)):
+        if sea[fish_idx][1] == location:
+            result.append(fish_idx)
+    if len(result) != 0:
+        for idx in result:
+            if sea[idx][0] < killed:
+                killed = sea[idx][0]
+                die = idx
+    ans += sea[die][4]
+    sea[die] = [0,0,0,0,0]
+
+    # 물고기 이동
+    for fish in range(len(sea)):
+        move = sea[fish][2]
+        while move != 0:
+            move -= 1
+            # sero
+            if sea[fish][3] == 1:
+                sea[fish][0] -= 1
+                if sea[fish][0] == 1:
+                    sea[fish][3] = 2
+            elif sea[fish][3] == 2:
+                sea[fish][0] += 1
+                if sea[fish][0] == sero:
+                    sea[fish][3] = 1
+            # garo
+            elif sea[fish][3] == 3:
+                sea[fish][1] += 1
+                if sea[fish][1] == garo:
+                    sea[fish][3] = 4
+            elif sea[fish][3] == 4:
+                sea[fish][1] -= 1
+                if sea[fish][1] == 1:
+                    sea[fish][3] = 3
+
+    # 겹침
+    
+
+print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # for fish in sea:
