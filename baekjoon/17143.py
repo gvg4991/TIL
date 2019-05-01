@@ -114,7 +114,7 @@ while mari != 0 and location <= garo:
                     sea[fish][3] = 3
 
     # 겹침
-    
+
 
 print(ans)
 
