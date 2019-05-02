@@ -7,6 +7,38 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>0</h1>
+    <button id="chacnge-btn">Click it</button>
+    <script>
+        // #change-btn을button 상수에할당한다.
+        const button = document.querySelector('#change-btn')
+        // h1 태그를header 상수에할당한다.
+        const header = document.querySelector('h1')
+        // clickCount변수를0으로초기화한다.
+        let clickCount = 0
+        // button에'click' eventListner를추가한다. 클릭이일어나면,
+        button.addEventListener('click',function(event){
+        // clickCount가1씩올라간다.
+        clickCount += 1
+        // header안의내용을clickCount로바꾼다.
+        header.innerText = `${clickCount}` 
+        })  
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
     <div>
         <button id="change-btn">Click it</button>
     </div>
@@ -25,4 +57,4 @@
         })    
     </script>
 </body>
-</html>
+</html> -->

@@ -37,26 +37,6 @@
 import sys
 sys.stdin = open('input.txt')
 
-
-# def issafe(y,x):
-#     return 0<y<=sero and 0<x<=garo
-
-# def kill(y,x,l):
-#     global result,ans
-#     die = 0
-#     killed = sero+1
-#     for fish_idx in sea:
-#         if sea[fish_idx][1] == l:
-#             result.append(fish_idx)
-#     if len(result) != 0:
-#         for idx in range(result):
-#             if sea[idx][0] < killed:
-#                 killed = sea[idx][0]
-#                 die = idx
-#     ans += sea[die][4]
-#     sea[die] = [0,0,0,0,0]
-
-
 #물고기 지정
 sea = []
 sero, garo, mari = map(int,input().split())
@@ -114,35 +94,11 @@ while mari != 0 and location <= garo:
                     sea[fish][3] = 3
 
     # 겹침
-
+    now = []
+    for fish in range(len(sea)-1,-1):
+        if not (sea[fish][0],sea[fish][1]) in now:
+            now.append((sea[fish][0],sea[fish][1]))
+        else:
+            sea[fish] = [0,0,0,0,0]
 
 print(ans)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# for fish in sea:
-#     if fish[3] == 1:
-#         if issafe(fish[0]-fish[2],fish[1]):
-#             fish[0] = fish[0]-fish[2]
-#         else:
-#             (fish[2] - fish[0] +1)
-#             pass
-          #방향을 바꾸게 될 경우
-
