@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- MVC(MTV)
+M - model(models.py)
+V - view(template.html)
+C - controller(views.py)
+MVVM
+M - model
+V - view(html)
+VM - view-model(Vue) -->
+
+<!-- -django에서
+#조건
+{%if post.is_public%}
+    {{post}}
+{%endif%}
+#반복
+{%for post in posts%}
+    {{post}}
+{%endfor%}
+-Vue Directive(디렉티브)
+#조건
+<p v-if="post.isPublic">
+    {{post}}
+</p>
+#반복
+<ul>
+    <li v-for="post in posts">
+        {{post}}
+    </li>
+</ul> -->
+
+<body>
+    <div id="app">
+        {{ message }} - {{count}} <!-- 아래 스크립트의 뷰와 연결됨 -->
+        <p v-if="checked">checked는 true</p>
+        <p v-if="count>5">count는 5 초과</p>
+        <li v-for="post in posts">
+            {{post}}
+        </li>
+        <li v-for="info in student">
+            {{info}} <!--벨류값-->
+        </li>
+        <li v-for="info in Object.keys(student)">
+            {{info}}은 {{student[info]}} <!--키값, 벨류값-->
+        </li>
+    </div>
+
+    <script>
+        const app = new Vue({ //vue 인스턴스 만들기
+            el: '#app', //엘리먼트 약자(div 아이디랑 연결시킴) (어디에)
+            data: { //(무엇을)
+                message: 'yo, Vue!',
+                count: 0,
+                checked: true,
+                posts: ['첫 게시물','두번째 게시물','세번째!'],
+                student: {
+                    name: 'mino',
+                    univ: 'kit'
+                },
+            },
+            methods: { //(어떻게)
+                plus: function(){ //function익명함수
+                    this.count++ //vue인스턴스의 count값을 1추가 시킴
+                }
+            }
+        })
+    </script>
+</body>
+</html>
