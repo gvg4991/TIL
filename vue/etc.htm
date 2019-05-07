@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-text({{ }}) & v-html -->
+        <div v-html='header'>
+
+        </div>
+        <!-- v-if, v-show 차이 -->
+        <h1 v-if="visible">v-if</h1>
+        <h1 v-show="visible">v-show</h1> <!--if는 false일때 완전 사라지고 show는 숨겨짐-->
+        <!-- app.$el & app.$data-->
+        <!-- '@': v-on의 약자, ':': v-bind의 약자-->
+    </div>
+
+    <script>
+    const app=new Vue({
+        el: '#app',
+        data:{
+            header: '<h1>제목입니다.</h1>',
+            visible: true,
+            $apple: true, //$data.$apple로 불러와야됨
+        }
+    })
+    </script>
+
+</body>
+</html>

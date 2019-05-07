@@ -6,39 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
+        <select v-model='status'>
+            <option value="all">전체</option>
+            <option value="active">할일</option>
+            <option value="completed">완료</option>
+        </select>
         <ul>
-            <li v-for= "todo in todos" v-if='!todo.completed' v-on:click="check(todo)"> <!-- if조건의 '!'는 반대-->
+            <!-- v-for와 v-bind:key는 함께 사용 권장 -->
+            <li v-for= "todo in todosByStatus" v-bind:key="todo.id"> <!--v-if='!todo.completed' v-on:click="check(todo)">--> <!-- if조건의 '!'는 반대-->
                 <!-- for의 우선순위가 높음 -->
                 <!-- and조건은 조건뒤에 &&, or조건은 조건뒤에 || -->
                 <!-- v-on은 트리거(click..)를 주면 값을 실행 -->
-                {{ todo.content }}
+                <input type="checkbox" v-model="todo.completed"> <!--todo의 completed와 동기화함-->
+                <!-- <span v-bind:class="todo.completed ? 'completed':''">{{ todo.content }}</span> (JS 삼항연산자) ?앞은 조건, 뒤에는 true일때:flase일때 -->
+                <span v-bind:class="{completed: todo.completed}">{{ todo.content }}</span> <!-- 콤마로 여러개 조건을 넣을 수 있음 -->
             </li>
             <!-- 엘스이프의 경우, <li v-else-if="true"></li> -->
-            <li v-else v-on:click="check(todo)"><완료!></li>
+            <!-- <li v-else v-on:click="check(todo)"><완료!></li> -->
             <!-- v-on -->
+            <div v-bind:style="{color:newTodo, fontSize:'30px'}"> <!--newTodo에 적힌 색으로 글자색깔이 바뀜-->
+                <span>Red Text, 30px</span>
+            </div>
+            <div>{{reverseNewTodo}}</div>
         </ul>
+        <div>
+            <input type="text" v-model="newTodo" v-on:keyup.enter="addTodo"> <!--script의 뉴투두와 연결, 엔터키를 눌렀을때 addTodo함수 실행-->
+            <button v-on:click="addTodo">+</button>
+        </div>
+        <footer>
+            <button v-on:click="clearCompleted">CLEAR</button>
+        </footer>
     </div>
 
     <script>
         const app = new Vue({
             el: '#app',
             data: {
+                status: 'all', //all이라는 임의의값을 줌(every등 상관없)
+                newTodo: '',
                 todos:[{
+                    id: 1,
                     content: '점심 메뉴 고민하기',
                     completed: true,
                 },
                 {
+                    id: 2,
                     content: '사다리 타기',
                     completed: false,
                 },
                 {
+                    id: 3,
                     content: '약속의 2시, 낮잠자기',
                     completed: false,
                 },
                 {
+                    id: 4,
                     content: '야자하기',
                     completed: false,
                 },
@@ -48,11 +79,57 @@
                 //'야자하기',
                 ]
             },
-            methods: {
+            methods: { //함수정의
                 check: function(todo){
                     todo.completed = !todo.completed
+                },
+                addTodo: function(){
+                    this.todos.push({
+                        id: Date.now(), //현재 시간을 id값으로 지정하여 고유값을 줌
+                        content: this.newTodo,
+                        completed: false,
+                    }) //오프젝트 형식의 데이터를 추가
+                    this.newTodo = ''
+                },
+                // .filter 사용하여 완료된 항목 지우기 -> 완료 못한 항목들로 다시 배열하기
+                clearCompleted: function(){
+                    const notCompletedTodos = this.todos.filter((todo)=>{ // 완료되지 않은 todos배열의 todo를 notCom변수에 넣음
+                        return !todo.completed
+                    }) // [{ ... }.{ ... }]
+                    this.todos = notCompletedTodos
+                },
+                // todosByStatus: function(){
+                //     if (this.status === 'active'){ //현재 status에 active라는 값이 들어있다면
+                //         return this.todos.filter((todo)=>{
+                //             return !todo.completed
+                //         })
+                //     }
+                //     if (this.status === 'completed'){
+                //         return this.todos.filter((todo)=>{
+                //             return todo.completed
+                //         })
+                //     }
+                //     return this.todos
+                // }
+            },
+            computed: {
+                reverseNewTodo: function(){
+                    return this.newTodo.split('').reverse().join('')
                 }
-            }
+                todosByStatus: function(){
+                    if (this.status === 'active'){ //현재 status에 active라는 값이 들어있다면
+                        return this.todos.filter((todo)=>{
+                            return !todo.completed
+                        })
+                    }
+                    if (this.status === 'completed'){
+                        return this.todos.filter((todo)=>{
+                            return todo.completed
+                        })
+                    }
+                    return this.todos
+                }
+            },
         })
     </script>
 </body>

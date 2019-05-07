@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- <div id='app'>
+        <button v-on:click="plus">+1</button>
+        <div>
+            Counter: {{num}}
+        </div>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data: {
+                num:0
+            },
+            methods:{
+                plus: function(){
+                    this.num++
+                }
+            }
+        })
+    </script> -->
+
+
+
+    <div id='app'>
+            <button v-on:click="num++">+1</button> <!--변수를 바로 조정 가능-->
+            <div>
+                Counter: {{num}}
+            </div>
+        </div>
+
+        <script>
+            const app = new Vue({
+                el:'#app',
+                data: {
+                    num:0
+                },
+            })
+        </script>
+</body>
+</html>
