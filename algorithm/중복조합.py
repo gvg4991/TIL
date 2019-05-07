@@ -24,7 +24,6 @@
 
 cnt = 0
 def combination(n, r, i, d):
-
     global cnt
     if r == 0:
         print(d)

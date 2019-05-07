@@ -66,8 +66,8 @@ while mari != 0 and location <= garo:
             if sea[idx][0] < killed:
                 killed = sea[idx][0]
                 die = idx
-    ans += sea[die][4]
-    sea[die] = [0,0,0,0,0]
+        ans += sea[die][4]
+        sea[die] = [0,0,0,0,0]
 
     # 물고기 이동
     for fish in range(len(sea)):
@@ -76,31 +76,58 @@ while mari != 0 and location <= garo:
             move -= 1
             # sero
             if sea[fish][3] == 1:
-                sea[fish][0] -= 1
                 if sea[fish][0] == 1:
                     sea[fish][3] = 2
+                    sea[fish][0] += 1
+                else:
+                    sea[fish][0] -= 1
             elif sea[fish][3] == 2:
-                sea[fish][0] += 1
                 if sea[fish][0] == sero:
                     sea[fish][3] = 1
+                    sea[fish][0] -= 1
+                else:
+                    sea[fish][0] += 1
             # garo
             elif sea[fish][3] == 3:
-                sea[fish][1] += 1
                 if sea[fish][1] == garo:
                     sea[fish][3] = 4
+                    sea[fish][1] -= 1
+                else:
+                    sea[fish][1] += 1
             elif sea[fish][3] == 4:
-                sea[fish][1] -= 1
                 if sea[fish][1] == 1:
                     sea[fish][3] = 3
+                    sea[fish][1] += 1
+                else:
+                    sea[fish][1] -= 1
+
+
+            # # sero
+            # if sea[fish][3] == 1:
+            #     sea[fish][0] -= 1
+            #     if sea[fish][0] == 1:
+            #         sea[fish][3] = 2
+            # elif sea[fish][3] == 2:
+            #     sea[fish][0] += 1
+            #     if sea[fish][0] == sero:
+            #         sea[fish][3] = 1
+            # # garo
+            # elif sea[fish][3] == 3:
+            #     sea[fish][1] += 1
+            #     if sea[fish][1] == garo:
+            #         sea[fish][3] = 4
+            # elif sea[fish][3] == 4:
+            #     sea[fish][1] -= 1
+            #     if sea[fish][1] == 1:
+            #         sea[fish][3] = 3
 
     # 겹침
     now = []
-    for fish in range(len(sea)-1,-1):
+    for fish in range(len(sea)-1,-1,-1):
         if not (sea[fish][0],sea[fish][1]) in now:
             now.append((sea[fish][0],sea[fish][1]))
         else:
             sea[fish] = [0,0,0,0,0]
-
 print(ans)
 
 # 2 2 4

@@ -57,7 +57,6 @@ def peojida(y,x):
 
 
 
-
 # 공기 위치
 sero, garo, sigan = map(int,input().split())
 datas = [[0]*garo for _ in range(sero)]
@@ -68,25 +67,87 @@ for row in range(sero):
 		cleaner.append((row,0))
 # print(datas)
 
-# 확산
+
+#데이터 정의
+# 먼지 이동 좌표
+wi = []
+wi_y,wi_x = cleaner[0]
+for wi_r in range(1,garo-1):
+	wi.append((wi_y,wi_r))
+for wi_u in range(wi_y,-1,-1):
+	wi.append((wi_u,garo-1))
+for wi_l in range(garo-1-1,0,-1):
+	wi.append((0,wi_l))
+for wi_d in range(wi_y):
+	wi.append((wi_d,0))
+# print(wi)
+arae = []
+arae_y, arae_x = cleaner[1]
+for arae_r in range(1,garo-1):
+	arae.append((arae_y,arae_r))
+for arae_d in range(arae_y,sero):
+	arae.append((arae_d,garo-1))
+for arae_l in range(garo-1-1,0,-1):
+	arae.append((sero-1,arae_l))
+for arae_u in range(sero-1,arae_y,-1):
+	arae.append((arae_u,0))
+# print(arae)
+# 먼지 확산 변화량
 dy = [-1,0,1,0]
 dx = [0,1,0,-1]
-peojim = copy.deepcopy(datas)
-# peojim = [[0]*garo for _ in range(sero)]
-for y in range(sero):
-	for x in range(garo):
-		if datas[y][x] and not (y,x) in cleaner:
-			peojida(y,x)
-# print(datas)
-# print(peojim)
-datas = copy.deepcopy(peojim)
-
-#이동
-wi_y,wi_x = cleaner[0]
 
 
+for t in range(sigan):
+	# 확산
+	# dy = [-1,0,1,0]
+	# dx = [0,1,0,-1]
+	peojim = copy.deepcopy(datas)
+	# peojim = [[0]*garo for _ in range(sero)]
+	for y in range(sero):
+		for x in range(garo):
+			if datas[y][x] and not (y,x) in cleaner:
+				peojida(y,x)
+	# print(datas)
+	# print(peojim)
+	datas = copy.deepcopy(peojim)
+	# print(datas)
 
+	#이동
+	# wi = []
+	# wi_y,wi_x = cleaner[0]
+	# for wi_r in range(1,garo-1):
+	# 	wi.append((wi_y,wi_r))
+	# for wi_u in range(wi_y,-1,-1):
+	# 	wi.append((wi_u,garo-1))
+	# for wi_l in range(garo-1-1,0,-1):
+	# 	wi.append((0,wi_l))
+	# for wi_d in range(wi_y):
+	# 	wi.append((wi_d,0))
+	# # print(wi)
+	# arae = []
+	# arae_y, arae_x = cleaner[1]
+	# for arae_r in range(1,garo-1):
+	# 	arae.append((arae_y,arae_r))
+	# for arae_d in range(arae_y,sero):
+	# 	arae.append((arae_d,garo-1))
+	# for arae_l in range(garo-1-1,0,-1):
+	# 	arae.append((sero-1,arae_l))
+	# for arae_u in range(sero-1,arae_y,-1):
+	# 	arae.append((arae_u,0))
+	# # print(arae)
+	for wi_next in range(len(wi)-1,0,-1):
+		datas[wi[wi_next][0]][wi[wi_next][1]] = datas[wi[wi_next-1][0]][wi[wi_next-1][1]]
+		datas[wi[wi_next-1][0]][wi[wi_next-1][1]] = 0
+	for arae_next in range(len(arae)-1,0,-1):
+		datas[arae[arae_next][0]][arae[arae_next][1]] = datas[arae[arae_next-1][0]][arae[arae_next-1][1]]
+		datas[arae[arae_next-1][0]][arae[arae_next-1][1]] = 0
+	# print(datas)
 
+#남은 미세먼지 합
+ans = 0
+for dust in range(sero):
+	ans += sum(datas[dust])
+print(ans+2)
 
 
 # 7 8 1
@@ -97,3 +158,70 @@ wi_y,wi_x = cleaner[0]
 # 0 0 0 0 0 10 43 0
 # 0 0 5 0 15 0 0 0
 # 0 0 40 0 0 0 20 0
+
+
+
+
+# import copy
+#
+# def issafe(y,x):
+# 	return 0<=y<sero and 0<=x<garo
+#
+# def peojida(y,x):
+# 	for delta in range(4):
+# 		new_y = y+dy[delta]
+# 		new_x = x+dx[delta]
+# 		if issafe(new_y,new_x) and not (new_y,new_x) in cleaner:
+# 			peojim[new_y][new_x] += datas[y][x]//5
+# 			peojim[y][x] -= datas[y][x]//5
+#
+# sero, garo, sigan = map(int,input().split())
+# datas = [[0]*garo for _ in range(sero)]
+# cleaner = []
+# for row in range(sero):
+# 	datas[row] = list(map(int,input().split()))
+# 	if -1 in datas[row]:
+# 		cleaner.append((row,0))
+# wi = []
+# wi_y,wi_x = cleaner[0]
+# for wi_r in range(1,garo-1):
+# 	wi.append((wi_y,wi_r))
+# for wi_u in range(wi_y,-1,-1):
+# 	wi.append((wi_u,garo-1))
+# for wi_l in range(garo-1-1,0,-1):
+# 	wi.append((0,wi_l))
+# for wi_d in range(wi_y):
+# 	wi.append((wi_d,0))
+# arae = []
+# arae_y, arae_x = cleaner[1]
+# for arae_r in range(1,garo-1):
+# 	arae.append((arae_y,arae_r))
+# for arae_d in range(arae_y,sero):
+# 	arae.append((arae_d,garo-1))
+# for arae_l in range(garo-1-1,0,-1):
+# 	arae.append((sero-1,arae_l))
+# for arae_u in range(sero-1,arae_y,-1):
+# 	arae.append((arae_u,0))
+# dy = [-1,0,1,0]
+# dx = [0,1,0,-1]
+#
+#
+# for t in range(sigan):
+# 	peojim = copy.deepcopy(datas)
+# 	for y in range(sero):
+# 		for x in range(garo):
+# 			if datas[y][x] and not (y,x) in cleaner:
+# 				peojida(y,x)
+# 	datas = copy.deepcopy(peojim)
+#
+# 	for wi_next in range(len(wi)-1,0,-1):
+# 		datas[wi[wi_next][0]][wi[wi_next][1]] = datas[wi[wi_next-1][0]][wi[wi_next-1][1]]
+# 		datas[wi[wi_next-1][0]][wi[wi_next-1][1]] = 0
+# 	for arae_next in range(len(arae)-1,0,-1):
+# 		datas[arae[arae_next][0]][arae[arae_next][1]] = datas[arae[arae_next-1][0]][arae[arae_next-1][1]]
+# 		datas[arae[arae_next-1][0]][arae[arae_next-1][1]] = 0
+#
+# ans = 0
+# for dust in range(sero):
+# 	ans += sum(datas[dust])
+# print(ans+2)
