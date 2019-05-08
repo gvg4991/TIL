@@ -202,6 +202,28 @@ print(list(map(list,zip(*data))))
 
 # datas = [[1,1,1],[2,2,2],[3,3,3]]
 # print(list(map(list,zip(*datas))))
+#
+# a,b = divmod(-2,3)
+# print(a,b)
 
-a,b = divmod(-2,3)
-print(a,b)
+# datas = [2,1,1,3,5,10,88,88,89,77,50]
+# d = list(set(datas))
+# print(d)
+# print(datas)
+#
+# datas = [[1,10],[3,2],[8,8],[9,8],[50,8],[15,8]]
+# datas.sort(key=lambda t:t[1])
+# print(datas)
+
+# datas = [1,2,3,4,5]
+# supply = [6]*3
+# result = datas + supply
+# print(result)
+
+datas = [[1,2,3],[5,5,5],[7,8,9]]
+# print(datas)
+datas=list(map(list,zip(*datas)))
+print(datas)
+datas = list(map(list,zip(*datas)))
+print(datas)
+
