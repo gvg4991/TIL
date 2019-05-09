@@ -117,6 +117,7 @@ for begin in comb: #좌표 세개 들어있는 리스트
                 end = False
                 break
         if end == True:
+            target = result[y][x]
             break
 
     # peojida(y,x)
@@ -129,6 +130,10 @@ for begin in comb: #좌표 세개 들어있는 리스트
                 result[new_y][new_x] = result[y][x]+1
                 # mountain = result[new_y][new_x]
     # print(result)
+
+    # if end == True and ans>target:
+    #     ans = target
+
     target = 0
     change = True
     for row in result:

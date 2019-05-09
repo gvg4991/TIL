@@ -42,7 +42,7 @@ for row in range(n):
             size[val] += 1
         else:
             col = r.index(val)
-            start_y,start_x = row,col
+            start_y,start_x = row,col #애기상어 위치
     datas.append(r)
 t=2
 d=0

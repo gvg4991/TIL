@@ -31,7 +31,7 @@ sys.stdin = open('input.txt')
 
 def col_change(d):
     global datas
-    size = len(datas[0])
+    size = 0
     for row in range(len(datas)):
         # for val in datas[row]:
         values = sorted(list(set(datas[row])))
@@ -70,7 +70,10 @@ for row in range(3):
 # print(datas)
 
 ans = 0
-while datas[yy-1][xx-1]!=rr and ans<=100:
+while ans<=100:
+    if len(datas)>yy-1 and len(datas[0])>xx-1 and datas[yy-1][xx-1]==rr:
+        break
+
     if len(datas)>=len(datas[0]):
         col_change(datas)
     elif len(datas)<len(datas[0]):

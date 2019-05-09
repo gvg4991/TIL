@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="music in musics">
+                <div>
+                    {{ music.artist_name }} - {{ music.title }}
+                </div>
+                <ul>
+                    <li v-for="comment in music.comment_set">
+                        {{comment.content}} <button @click="deleteComment(music,comment)">-</button>
+                    </li>
+                </ul>
+                <div>
+                    <input type="text" v-model="music.newComment">
+                    <button @click="addComment(music)">+</button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        const app =new Vue({
+            el: '#app',
+            data: {
+                // newComment: '', 오브젝트들이 공통적으로 가지는 데이터
+                musics:[],
+            },
+            methods: {
+                getMusics: function(){
+                    axios.get('http://playground-gvg4991.c9users.io/api/v1/musics/')
+                        .then((response)=>{
+                            return response.data
+                        })
+                        .then((musics)=>{
+                            this.musics = musics.map((music)=>{
+                                return { ...music,newComment:'' } //각 뮤직 오브젝트에 뉴코멘트 추가
+                            })
+                        })
+                        .catch((error)=>{
+                            console.log(error)
+                        })
+                },
+                addComment:function(music){
+                    axios.post(`http://playground-gvg4991.c9users.io/api/v1/musics/${music.id}/comments/`,{content:music.newComment})
+                        .then((response)=>{
+                            return response.data
+                        })
+                        .then((comment)=>{
+                            music.comment_set.push(comment)
+                            music.newComment = ''
+                        })
+                        .catch((error)=>{
+                            console.log(error)
+                        })
+                },
+                deleteComment: function(music, comment){
+                    axios.delete(`http://playground-gvg4991.c9users.io/api/v1/musics/${music.id}/comments/${comment.id}/`)
+                        .then((response)=>{
+                            music.comment_set = music.comment_set.filter((c)=>{ //원래 c대신 comment가 오나 밖의 변수와 충돌을 막기위해 c라고 넣음
+                                return c.id !== comment.id //c.id를 뺀 값만 재할당됨
+                            })
+                        })
+                        .catch((error)=>{
+                            console.log(error)
+                        })
+                },
+            },
+            mounted: function(){
+                this.getMusics()
+            },
+        })
+    </script>
+</body>
+</html>
