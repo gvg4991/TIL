@@ -613,3 +613,12 @@ from rest_framework_swagger.views import get_swagger_view
 - urlpatters = 
     path('docs/', get_swagger_view(title='API Docs')),
 
+
+
+
+bash web----------------------------------------------------------------------------------------------
+가상환경 생성 	python -m venv api-venv
+가상환경 적용 	source api-venv/Scripts/activate
+장고설치 		pip install django
+프로젝트 생성 	django-admin startproject api .
+파이썬 실행 	python manage.py runserver

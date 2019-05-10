@@ -115,7 +115,7 @@
             computed: {
                 reverseNewTodo: function(){
                     return this.newTodo.split('').reverse().join('')
-                }
+                },
                 todosByStatus: function(){
                     if (this.status === 'active'){ //현재 status에 active라는 값이 들어있다면
                         return this.todos.filter((todo)=>{
