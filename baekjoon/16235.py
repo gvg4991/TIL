@@ -52,21 +52,26 @@ datas = [[5]*s for _ in range(s)] #양분량
 supply = [[0]*s for _ in range(s)] #추가되는 양분 크기
 for row in range(s):
     supply[row] = list(map(int,input().split()))
-trees = [[[0] for i in range(s)] for _ in range(s)] #나무나이(아마 필요없을수도! why? 같은 위치에 여러 나무가 존재)
+trees = [[[] for i in range(s)] for _ in range(s)] #나무나이(아마 필요없을수도! why? 같은 위치에 여러 나무가 존재)
 # tree_datas = [] # 나무들 정보(x,y,나이)
 for cnt in range(c):
     y,x,a = map(int,input().split())
     trees[y-1][x-1].append(a)
+    trees[y-1][x-1].sort()
 # print(trees)
 
 for sero in range(s):
     for garo in range(s):
+        death = False
         for idx in range(len(trees[sero][garo])):
-            if trees[sero][garo][idx] <= datas[sero][garo]:
+            if death == False and trees[sero][garo][idx] <= datas[sero][garo]:
                 datas[sero][garo] -= trees[sero][garo][idx]
                 trees[sero][garo][idx] += 1
             else:
-                pass
+                death = True
+                datas[sero][garo] += trees[sero][garo][idx]//2
+
+
 
 
 
@@ -136,3 +141,169 @@ for sero in range(s):
 # #             datas[ty][tx] -= ta #나이만큼 양분 먹기
 # #             trees[ti][2] += 1 #나이 1 증가
 # #         else:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+# import collections
+# N,M,K = list(map(int,input().split()))
+#
+# charge_data_map=[]
+# for n in range(N):
+#     line = list(map(int,input().split()))
+#     charge_data_map.append(line)
+#
+# namu_map=[]
+# for n in range(N):
+#     line = [0]*N
+#     namu_map.append(line)
+# for y in range(N):
+#     for x in range(N):
+#         namu_map[y][x]=collections.deque()
+#
+# namu_fuel_map=[]
+# for n in range(N):
+#     line = [5]*N
+#     namu_fuel_map.append(line)
+#
+# dead_namu_map=[]
+# for n in range(N):
+#     line = [0]*N
+#     dead_namu_map.append(line)
+# ##초기 나무심기
+# for m in range(M):
+#     line=list(map(int,input().split()))
+#     namu_map[line[0]-1][line[1]-1].appendleft(line[2])
+#
+# def spring_act():
+#     global N
+#     ##나무가 자기 나이만큼 양분 먹고, 나이 1 증가, 나이 어린순으로 양분 먹기, 나이만큼 양분 못먹으면 뒤짐
+#
+#     for y in range(0,N):
+#         for x in range(0,N):
+#             if namu_map[y][x]: ## 나무가 있는 칸이라면
+#                 temp=collections.deque()
+#                 while(namu_map[y][x]):
+#                     if namu_fuel_map[y][x] - namu_map[y][x][0] >=0: ## 지금 나무가 더 성장할 수 있으면
+#                         namu_fuel_map[y][x] = namu_fuel_map[y][x] - namu_map[y][x][0] ## 토지 연료 깎아내리고
+#                         next=namu_map[y][x].popleft()
+#                         temp.append(next+1)
+#                     else: ## 이놈 양분 줬을때 연료가 0보다 떨어지는 경우
+#                         break
+#                 dead_namu_map[y][x]=namu_map[y][x] ## 양분 후보로 넣어주기
+#                 namu_map[y][x]=temp ## 나무 상황 갱신
+#     return
+#
+# def summer_act(): ##뒤진 나무는 양분으로 추가
+#     global N
+#
+#     for y in range(N):
+#         for x in range(N):
+#             if dead_namu_map[y][x]!=0:
+#                 while(dead_namu_map[y][x]):
+#                     now=dead_namu_map[y][x].pop()
+#                     namu_fuel_map[y][x]=namu_fuel_map[y][x]+now//2
+#                 dead_namu_map[y][x]=0
+#     return
+#
+# def is_safe(Y,X):
+#     global N
+#     if -1<Y<N and -1<X<N:
+#         return True
+#     else:
+#         return False
+#
+# dy=[-1,-1,0,1,1,1,0,-1]
+# dx=[0,1,1,1,0,-1,-1,-1]
+# def fall_act(): ## 5의 배수 8방향 번식
+#     global N
+#
+#     for y in range(N):
+#         for x in range(N): ## 전 셀 돌기
+#             for i in range(len(namu_map[y][x])):## 이 셀에서, deque 전부 확인해서 5의 배수 확인
+#                 if namu_map[y][x][i]!=0 and namu_map[y][x][i]%5==0: ## 5의 배수라면 번식 ㄱㄱ
+#                     for dir in range(0,8): ## 8 방향 번식 시작
+#                         if is_safe(y+dy[dir],x+dx[dir]):
+#                             namu_map[y+dy[dir]][x+dx[dir]].appendleft(1)
+#     return
+#
+# def winter_act(): ## 초기 셋팅 만큼 연료충전
+#     global N
+#
+#     for y in range(N):
+#         for x in range(N):
+#             namu_fuel_map[y][x] = namu_fuel_map[y][x]+charge_data_map[y][x]
+#     return
+#
+# t=0
+# while(1): ## 1년
+#
+#     if t==K:
+#         break
+#     spring_act()
+#     summer_act()
+#     fall_act()
+#     winter_act()
+#
+#     t = t + 1
+#
+# tree_num=0
+# for y in range(N):
+#     for x in range(N):
+#         tree_num=tree_num+len(namu_map[y][x])
+#
+# print(tree_num)
