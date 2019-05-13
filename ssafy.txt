@@ -601,6 +601,13 @@ API key) 6e8f4bef2e9994dc29c97677ed06ba8d
 pip install djangorestframework
 settings에 'rest_framework', 추가
 
+- url설정: https://developers.themoviedb.org/3/collections/get-collection-details
+
+- 목록
+https://api.themoviedb.org/3/movie/top_rated?api_key=c293e8112b1d1424d58087d2b5ba8cc6&language=ko-kr
+https://api.themoviedb.org/3/movie/278?api_key=c293e8112b1d1424d58087d2b5ba8cc6&language=ko-kr
+ex) https://developers.themoviedb.org/3/movies/get-popular-movies
+
 postman------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 - movie_id : 쇼생크 278
 - post방식에선 body도 작성
