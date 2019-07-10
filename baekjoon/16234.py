@@ -38,9 +38,20 @@
 import sys
 sys.stdin = open('input.txt')
 
+
+def line(y,x):
+    # ...
+    return
+
+
 size,so,dae = map(int,input().split())
 datas = list([0]*size)
 for row in range(size):
     datas[row] = list(map(int,input().split()))
 # print(datas)
+
+for sero in range(size):
+    for garo in range(size):
+        line(sero,garo)
+
 
