@@ -46,30 +46,103 @@
 
 import sys
 sys.stdin = open('input.txt')
+import copy
 
-s,c,t = map(int,input().split())
-datas = [[5]*s for _ in range(s)] #양분량
-supply = [[0]*s for _ in range(s)] #추가되는 양분 크기
-for row in range(s):
+size, tree, year = map(int,input().split())
+yangboon = [[5]*size for _ in range(size)]
+supply = [[0] for _ in range(size)]
+for row in range(size):
     supply[row] = list(map(int,input().split()))
-trees = [[[] for i in range(s)] for _ in range(s)] #나무나이(아마 필요없을수도! why? 같은 위치에 여러 나무가 존재)
-# tree_datas = [] # 나무들 정보(x,y,나이)
-for cnt in range(c):
-    y,x,a = map(int,input().split())
-    trees[y-1][x-1].append(a)
-    trees[y-1][x-1].sort()
-# print(trees)
+datas = [[[] for ___ in range(size)] for __ in range(size) for _ in range(size)]
+# print(datas)
+for cnt in range(tree):
+    y,x,age = map(int,input().split())
+    datas[y-1][x-1].append(age)
+# print(datas)
 
-for sero in range(s):
-    for garo in range(s):
-        death = False
-        for idx in range(len(trees[sero][garo])):
-            if death == False and trees[sero][garo][idx] <= datas[sero][garo]:
-                datas[sero][garo] -= trees[sero][garo][idx]
-                trees[sero][garo][idx] += 1
-            else:
-                death = True
-                datas[sero][garo] += trees[sero][garo][idx]//2
+dy = [-1,-1,0,1,1,1,0,-1]
+dx = [0,1,1,1,0,-1,-1,-1]
+while year != 0:
+    dtree = [[0]*size for _ in range(size)]
+    #봄
+    for sero in range(size):
+        for garo in range(size):
+            die = 0
+            target = []
+            beonsik = 0
+            if datas[sero][garo]:
+                for namu in range(len(datas[sero][garo])):
+                    if yangboon[sero][garo] >= datas[sero][garo][namu]: #양분이 나무 나이보다 많을 경우
+                        yangboon[sero][garo] -= datas[sero][garo][namu] #양문을 먹고
+                        target.append(datas[sero][garo][namu] + 1) #나이 한살 먹음
+                        if (datas[sero][garo][namu] + 1)%5 == 0:
+                            beonsik += 1
+                    else:
+                        die += datas[sero][garo][namu]//2 #나이의 반만큼 양분을 남김
+                datas[sero][garo] = copy.copy(target) #죽은 나무 제거(살아있는 나무만 남김)
+    #여름
+                yangboon[sero][garo] += die #죽은 나무들의 양분을 땅에 공급
+    #가을
+                if beonsik:
+                    for b in range(beonsik):
+                        for delta in range(8):
+                            if 0 <= (sero+dy[delta]) < size and 0 <= (garo+dx[delta]) < size:
+                                dtree[sero+dy[delta]][garo+dx[delta]] += 1
+    #겨울
+            yangboon[sero][garo] += supply[sero][garo] #땅에 양분 공급
+
+    #가을 번식
+    for sero in range(size):
+        for garo in range(size):
+            if dtree[sero][garo]:
+                for t in range(dtree[sero][garo]):
+                    datas[sero][garo].append(1)
+                datas[sero][garo] = sorted(datas[sero][garo])
+    year -= 1
+    # print(datas)
+
+ans = 0
+for sero in range(size):
+    for garo in range(size):
+        ans += len(datas[sero][garo])
+print(ans)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# s,c,t = map(int,input().split())
+# datas = [[5]*s for _ in range(s)] #양분량
+# supply = [[0]*s for _ in range(s)] #추가되는 양분 크기
+# for row in range(s):
+#     supply[row] = list(map(int,input().split()))
+# trees = [[[] for i in range(s)] for _ in range(s)] #나무나이(아마 필요없을수도! why? 같은 위치에 여러 나무가 존재)
+# # tree_datas = [] # 나무들 정보(x,y,나이)
+# for cnt in range(c):
+#     y,x,a = map(int,input().split())
+#     trees[y-1][x-1].append(a)
+#     trees[y-1][x-1].sort()
+# # print(trees)
+#
+# for sero in range(s):
+#     for garo in range(s):
+#         death = False
+#         for idx in range(len(trees[sero][garo])):
+#             if death == False and trees[sero][garo][idx] <= datas[sero][garo]:
+#                 datas[sero][garo] -= trees[sero][garo][idx]
+#                 trees[sero][garo][idx] += 1
+#             else:
+#                 death = True
+#                 datas[sero][garo] += trees[sero][garo][idx]//2
 
 
 

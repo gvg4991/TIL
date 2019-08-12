@@ -220,10 +220,10 @@ print(list(map(list,zip(*data))))
 # result = datas + supply
 # print(result)
 
-datas = [[1,2,3],[5,5,5],[7,8,9]]
+# datas = [[1,2,3],[5,5,5],[7,8,9]]
+# # print(datas)
+# datas=list(map(list,zip(*datas)))
 # print(datas)
-datas=list(map(list,zip(*datas)))
-print(datas)
-datas = list(map(list,zip(*datas)))
-print(datas)
+# datas = list(map(list,zip(*datas)))
+# print(datas)
 

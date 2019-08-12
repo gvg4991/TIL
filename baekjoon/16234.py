@@ -37,10 +37,20 @@
 
 import sys
 sys.stdin = open('input.txt')
+import collections
+q = collections.deque()
 
 
-def line(y,x):
-    # ...
+def issafe(y,x):
+    return 0<=y<size and 0<=x<size
+
+def move(y,x):
+    for delta in range(4):
+        new_y = y+dy[delta]
+        new_x = x+dx[delta]
+        if issafe(new_y,new_x) and not visited[new_y][new_x] and so <= abs(datas[new_y][new_x]-datas[y][x]) <= dae:
+            q.append((new_y,new_x))
+            visited[new_y][new_x] = 1
     return
 
 
@@ -50,8 +60,37 @@ for row in range(size):
     datas[row] = list(map(int,input().split()))
 # print(datas)
 
-for sero in range(size):
-    for garo in range(size):
-        line(sero,garo)
-
-
+dy = [0, 1, 0, -1]
+dx = [1, 0, -1, 0]
+ans = 0
+change = True
+while ans<=2000 and change:
+    visited = [[0]*size for _ in range(size)]
+    change = False
+    for y in range(size):
+        for x in range(size):
+            if not visited[y][x]:
+                q.append((y,x))
+                visited[y][x]=1
+                target = []
+                result = 0
+                cnt = 0
+                while q:
+                    # print(q)
+                    yy,xx = q.popleft()
+                    result += datas[yy][xx]
+                    cnt += 1
+                    target.append((yy,xx))
+                    move(yy,xx)
+                for ty,tx in target:
+                    datas[ty][tx] = result//cnt
+                if cnt > 1:
+                    change = True
+    if change:
+        ans += 1
+        # print(ans)
+    # print(ans)
+# print(result)
+# print(cnt)
+# print(datas)
+print(ans)
