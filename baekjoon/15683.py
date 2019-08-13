@@ -103,40 +103,48 @@ def issafe(y,x):
     return 0<=x<garo and 0<=y<sero
 
 def right(y,x):
+    global result
     if not issafe(y,x) or datas[y][x] == 6:
         return
     if not visited[y][x]:
         visited[y][x] = 1
+        result += 1
         right(y,x+1)
     else:
         right(y,x+1)
 
 def left(y,x):
+    global result
     if not issafe(y,x) or datas[y][x] == 6:
         return
     if not visited[y][x]:
         visited[y][x] = 1
-        right(y,x-1)
+        result += 1
+        left(y,x-1)
     else:
-        right(y,x-1)
+        left(y,x-1)
 
 def up(y,x):
+    global result
     if not issafe(y,x) or datas[y][x] == 6:
         return
     if not visited[y][x]:
         visited[y][x] = 1
-        right(y-1,x)
+        result += 1
+        up(y-1,x)
     else:
-        right(y-1,x+1)
+        up(y-1,x)
 
 def down(y,x):
+    global result
     if not issafe(y,x) or datas[y][x] == 6:
         return
     if not visited[y][x]:
         visited[y][x] = 1
-        right(y+1,x)
+        result += 1
+        down(y+1,x)
     else:
-        right(y+1,x)
+        down(y+1,x)
 
 def watch(y,x,c,n,visited,result):
     global ans
@@ -147,70 +155,70 @@ def watch(y,x,c,n,visited,result):
     already = copy.copy(visited)
     if c == 1:
         right(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         left(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         up(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
     elif c == 2:
         right(y,x)
         left(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         up(y,x)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
     elif c == 3:
         right(y,x)
         up(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         right(y,x)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         left(y,x)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         left(y,x)
         up(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
     elif c == 4:
         left(y,x)
         up(y,x)
         right(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         up(y,x)
         right(y,x)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         right(y,x)
         down(y,x)
         left(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
         down(y,x)
         left(y,x)
         up(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
         visited = copy.copy(already)
     elif c == 5:
         up(y,x)
         right(y,x)
         left(y,x)
         down(y,x)
-        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,result)
+        watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
 
 
 
@@ -226,7 +234,7 @@ cctv = []
 six = []
 visited = [[0]*garo for _ in range(sero)]
 result = 0
-ans = 987654321
+ans = garo*sero
 for row in range(sero):
     datas[row] = list(map(int,input().split()))
     for col in range(garo):

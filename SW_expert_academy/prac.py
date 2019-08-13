@@ -227,3 +227,14 @@ print(list(map(list,zip(*data))))
 # datas = list(map(list,zip(*datas)))
 # print(datas)
 
+def check(x,n):
+    if n == 10:
+        return
+    if x:
+        print('전반부{}'.format(result))
+        result[x] = 1
+        check(x+1,n+1)
+    print('후반부{}'.format(result))
+
+result = [0]*11
+check(1,0)
