@@ -146,79 +146,194 @@ def down(y,x):
     else:
         down(y+1,x)
 
-def watch(y,x,c,n,visited,result):
-    global ans
-    if n == len(cctv):
-        if ans > (garo*sero-result):
-            ans = garo*sero-result
-            return
-    already = copy.copy(visited)
+def watch(y,x,c,n,visited,target):
+    global ans, result
+
+    already = copy.deepcopy(visited)
+    # target = result
+    print(visited)
+    if n == (len(cctv)-1): #마지막 CCTV면
+        if c == 1:
+            right(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            left(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            up(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+        elif c == 2:
+            right(y,x)
+            left(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            up(y,x)
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+        elif c == 3:
+            right(y,x)
+            up(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            right(y,x)
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            left(y,x)
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            left(y,x)
+            up(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+        elif c == 4:
+            left(y,x)
+            up(y,x)
+            right(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            up(y,x)
+            right(y,x)
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            right(y,x)
+            down(y,x)
+            left(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+            down(y,x)
+            left(y,x)
+            up(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+        elif c == 5:
+            up(y,x)
+            right(y,x)
+            left(y,x)
+            down(y,x)
+            if ans > (garo*sero-result):
+                ans = garo*sero-result
+            visited = copy.deepcopy(already)
+            result = target
+        return
+
     if c == 1:
         right(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         left(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         up(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
     elif c == 2:
         right(y,x)
         left(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         up(y,x)
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
     elif c == 3:
         right(y,x)
         up(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         right(y,x)
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         left(y,x)
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         left(y,x)
         up(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
     elif c == 4:
         left(y,x)
         up(y,x)
         right(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         up(y,x)
         right(y,x)
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         right(y,x)
         down(y,x)
         left(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
         down(y,x)
         left(y,x)
         up(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
-        visited = copy.copy(already)
+        visited = copy.deepcopy(already)
+        result = target
     elif c == 5:
         up(y,x)
         right(y,x)
         left(y,x)
         down(y,x)
         watch(cctv[n+1][0],cctv[n+1][1],cctv[n+1][2],n+1,visited,result)
+        visited = copy.deepcopy(already)
+        result = target
 
 
 
@@ -267,8 +382,12 @@ for row in range(sero):
             six.append((row,col))
             visited[row][col] = 1
             result += 1
+# print(datas)
 # print(cctv)
+# print(visited)
+# print(result)
 
-if not len(cctv):
+# print(cctv[0][0])
+if len(cctv):
     watch(cctv[0][0],cctv[0][1],cctv[0][2],0,visited,result)
 print(ans)
