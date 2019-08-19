@@ -227,3 +227,42 @@ print(list(map(list,zip(*data))))
 # datas = list(map(list,zip(*datas)))
 # print(datas)
 
+# def check(x,n):
+#     if n == 10:
+#         return
+#     if x:
+#         print('전반부{}'.format(result))
+#         result[x] = 1
+#         check(x+1,n+1)
+#     print('후반부{}'.format(x))
+
+import copy
+
+# def check(x,n,result):
+#     res = copy.copy(result)
+#     if n == 10:
+#         return
+#     if x:
+#         print('전반부{}'.format(result))
+#         result[x] = 1
+#         check(x+1,n+1,result)
+#         # result[x] -= 1
+#         result = copy.copy(res)
+#     print('후반부{}'.format(result))
+def check(x,n):
+    global result
+    res = copy.copy(result)
+    if n == 10:
+        return
+    if x:
+        print('전반부{}'.format(result))
+        # result[x] = 1
+        result.append(1)
+        check(x+1,n+1)
+        # result[x] -= 1
+        result = copy.copy(res)
+    print('후반부{}'.format(result))
+
+# result = [0]*11
+result = []
+check(1,0)
