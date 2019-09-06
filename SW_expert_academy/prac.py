@@ -92,8 +92,13 @@
 # # data=[0,1,2,3]
 # # print(data[2])
 
+# data=[[1,2,3],[4,5,6],[7,8,9]]
+# list(map(list,zip(*data)))
+# print(data)
+
 data=[[1,2,3],[4,5,6],[7,8,9]]
-print(list(map(list,zip(*data))))
+data = list(map(list,zip(*data)))
+print(data)
 
 # #
 # l = [0,1,2,3,4,5,6,7,8,9,5,5]
@@ -249,20 +254,37 @@ import copy
 #         # result[x] -= 1
 #         result = copy.copy(res)
 #     print('후반부{}'.format(result))
-def check(x,n):
-    global result
-    res = copy.copy(result)
-    if n == 10:
-        return
-    if x:
-        print('전반부{}'.format(result))
-        # result[x] = 1
-        result.append(1)
-        check(x+1,n+1)
-        # result[x] -= 1
-        result = copy.copy(res)
-    print('후반부{}'.format(result))
+# def check(x,n):
+#     global result
+#     res = copy.copy(result)
+#     if n == 10:
+#         return
+#     if x:
+#         print('전반부{}'.format(result))
+#         # result[x] = 1
+#         result.append(1)
+#         check(x+1,n+1)
+#         # result[x] -= 1
+#         result = copy.copy(res)
+#     print('후반부{}'.format(result))
+#
+# # result = [0]*11
+# result = []
+# check(1,0)
 
-# result = [0]*11
-result = []
-check(1,0)
+
+# input = str(10101111)
+# a = [input[0],input[1],input[2],input[3],input[4],input[5],input[6],input[7]]
+# print(a)
+
+# a = [[0,0,0],[1,1,1],[2,2,2]]
+# b = len(a[2][0:2])
+# c = sum(a[1][0:3])
+# print(b)
+# print(c)
+
+a = [1,2,3,4,5,6,7]
+a.remove(1)
+a.remove(2)
+print(a)
+
