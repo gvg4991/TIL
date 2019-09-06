@@ -40,67 +40,95 @@
 # 2 2
 # 1 1
 
+# # input
+# 10
+# 5 10
+# 5 9
+# 5 8
+# 5 7
+# 5 6
+# 5 10
+# 5 9
+# 5 8
+# 1 100
+# 5 6
+# # output
+# 110
 
 
 import sys
 sys.stdin = open('input.txt')
 
+
+def work(now,result):
+    global ans
+    s,d,p = datas[now]
+    if s+d == case:
+        result += p
+        if result > ans:
+            ans = result
+        return
+    elif s+d > case:
+        if result > ans:
+            ans = result
+        return
+    for next in range(s+d,case):
+        work(next,result+p)
+
+
 case = int(input())
 datas = []
 for tc in range(case):
     day,pay = map(int,input().split())
-    if tc + day <= case:
-        datas.append([tc,day,pay])
-# print(datas)
+    # if tc + day <= case:
+    #     datas.append([tc,day,pay])
+    datas.append([tc,day,pay])
 
-# datas = sorted(datas, key=lambda t: (t[0]+t[1],t[0]))
-
-target = [0]*(case)
-result = [0]*(case+1)
-for i in range(len(datas)-1,-1,-1):
-    # print(datas[i])
-    s,d,p = datas[i]
-    if d == 1:
-        target[s] = p
-        # result[s] = sum(target[s:s+d])
-    else:
-        if sum(target[s+1:s+d]) < p:
-            for change in range(s+1,s+d):
-                target[change] = 0
-            target[s] = p
-            # result[s] = target[s] + result[s+d]
-        # else:
-        #     result[s] = sum(target[s:s+d])
-    result[s] = target[s] + result[s+d]
-print(target)
-print(result)
-# print(sum(target))
-print(max(result))
+result = 0
+ans = 0
+for i in range(case):
+    work(i,result)
+print(ans)
 
 
 
 
 
+
+
+# case = int(input())
+# datas = []
+# for tc in range(case):
+#     day,pay = map(int,input().split())
+#     # if tc + day <= case:
+#     #     datas.append([tc,day,pay])
+#     datas.append([tc,day,pay])
+#
 # target = [0]*(case)
-# result = [0]*(case)
+# result = [0]*(case+1)
 # for i in range(len(datas)-1,-1,-1):
 #     # print(datas[i])
 #     s,d,p = datas[i]
 #     if d == 1:
 #         target[s] = p
-#         # result[s] = sum(target[s:s+d])
-#     else:
+#         result[s] = target[s] + result[s+d]
+#     elif s + d <= case:
 #         if sum(target[s+1:s+d]) < p:
 #             for change in range(s+1,s+d):
 #                 target[change] = 0
 #             target[s] = p
-#         #     result[s] = sum(target[s:s+d])
-#         # else:
-#         #     result[s] = sum(target[s:s+d])
-#     result[s] = sum(target)
-# print(target)
-# print(result)
-# # print(sum(target))
+#             result[s] = target[s] + result[s+d]
+#         else:
+#             result[s] = max(result[s:s+d])
+#     # result[s] = sum(target)
+#     else:
+#         result[s] = max(result)
+#
+#
+#     # result[s] = target[s] + result[s+d]
+# # print(target)
+# # print(result)
+# print(max(result))
 
 
 
