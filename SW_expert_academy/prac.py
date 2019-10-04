@@ -283,8 +283,19 @@ import copy
 # print(b)
 # print(c)
 
-a = [1,2,3,4,5,6,7]
-a.remove(1)
-a.remove(2)
-print(a)
+# a = [1,2,3,4,5,6,7]
+# a.remove(1)
+# a.remove(2)
+# print(a)
 
+
+e = {}
+for i in range(10):
+    e[i] = 1
+print(e)
+# k,v = e.items()
+for k,v in e.items():
+    print(k)
+# b = []
+# b = e[1]
+# print(b)
