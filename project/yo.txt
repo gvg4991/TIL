@@ -1,0 +1,32 @@
+CE
+git add .
+git commit -m "CE"
+git push origin CE
+
+git checkout develop
+git merge CE
+npm install 
+
+
+
+git checkout master
+git branch -d developer
+
+git branch -D developer 
+------------------------------------
+
+git clone https://lab.ssafy.com/hgkang9/webmobile-sub2.git
+git checkout new_develop
+git branch [new_각자이름]
+git checkout [new_각자이름]
+
+git add .
+git commit -m "190711 | 각자이름 | new"
+git push origin [new_각자이름]
+
+***내용 바뀌면 (new_각자이름에서)
+git status
+git add .
+git status
+git commit -m "190711 | 각자이름 | new"
+git push origin [new_각자이름]
