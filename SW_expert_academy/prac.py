@@ -289,13 +289,16 @@ import copy
 # print(a)
 
 
-e = {}
-for i in range(10):
-    e[i] = 1
-print(e)
-# k,v = e.items()
-for k,v in e.items():
-    print(k)
-# b = []
-# b = e[1]
-# print(b)
+# e = {}
+# for i in range(10):
+#     e[i] = 1
+# print(e)
+# # k,v = e.items()
+# for k,v in e.items():
+#     print(k)
+# # b = []
+# # b = e[1]
+# # print(b)
+
+p = []
+print(sum(p))
