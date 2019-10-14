@@ -32,8 +32,6 @@
 import itertools
 
 def solution(baseball):
-    answer = 0
-
     num = [1,2,3,4,5,6,7,8,9]
     datas = list(itertools.permutations(num,3))
 
@@ -41,11 +39,26 @@ def solution(baseball):
         string = str(game[0])
         target, s, b = (int(string[0]),int(string[1]),int(string[2])),game[1],game[2]
 
+        for data_idx in range(len(datas)):
+            s_cnt = 0
+            b_cnt = 0
+            for d_idx in range(3):
+                for t_idx in range(3):
+                    if datas[data_idx][d_idx] == target[t_idx]:
+                        if d_idx == t_idx:
+                            s_cnt += 1
+                        else:
+                            b_cnt += 1
+            if s_cnt != s or b_cnt != b:
+                datas[data_idx] = 0
 
+        datas = list(set(datas))
+        if 0 in datas:
+            datas.remove(0)
+    print(len(datas))
 
-
-    return answer
-
+    return len(datas)
 
 baseball = [[123, 1, 1], [356, 1, 0], [327, 2, 0], [489, 0, 1]]
 solution(baseball)
+
