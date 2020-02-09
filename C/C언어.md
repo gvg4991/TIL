@@ -425,3 +425,402 @@ do{
 
 #### 조건문
 
+```c
+#include <stdio.h>
+int main(void){
+    int num;
+    printf("숫자 입력");
+    scanf("%d",&num);
+    
+    // if문
+    if(num>0)
+        printf("양수");
+    else if(num<0)
+        printf("음수");
+    else
+        printf("0");
+    
+    
+	// switch~case 문
+    switch(num){
+        case 1:
+           	printf("1");
+            break
+        case 0:
+            printf("0");
+            break
+        case -1:
+            printf("-1");
+            break
+        default:
+            printf("-1,0,1만 있습니다.")
+    }
+    
+    return 0;
+}
+```
+
+
+
+
+
+#### 함수
+
+- 특정 작업을 수행하는 코드의 집합
+
+- 표준 라이브러리 함수, 사용자 정의 라이브러리 함수
+
+- '출력형태 함수이름(입력형태) {함수 기능}'의 형식
+
+  ```c
+  #include <stdio.h>
+  int sum(int x, int y){ //x,y를 입력받아 sum함수를 수행하고 int형으로 출력
+      int result;
+      result = x + y;
+      return result; //출력형태가 있으므로 return 필수
+  }
+  
+  int main(void){ //입력값 없음, void작성 안해도 됨
+      int answer = 0;
+      answer = sum(3,4);
+      printf("%d \n",answer);
+      
+      return 0; //출력형태가 있으므로 return 필수
+  }
+  
+  void print(int x){ //출력값 없음
+      int a = x;
+      printf("%d",a);
+      //return; 작성 안해도 됨
+  }
+  
+  void output(void){ //입,출력값 없음
+      printf("Hello World!");
+  }
+  ```
+
+- 함수 적용 방법
+
+  - 함수 정의(기능) - 함수 호출
+
+  - 함수 선언 - 함수 호출 - 함수 정의(기능)
+
+    ```c
+    int sum(int x,int y); //위에서 함수 선언
+    
+    int main(void){
+        int result = 0;
+        result = sum(3,4);
+    	printf("%d",result);
+        return 0;
+    }
+    
+    int sum(int x,int y){
+        int answer = 0;
+        answer = x+y;
+        return answer;
+    }
+    ```
+
+- 변수의 종류
+
+  ```c
+  test.c
+  int externnum = 60;
+  ```
+
+  ```c
+  #include <stdio.h>
+  int globalnum; //전역변수 선언, 초기화 하지 않아도 0 설정
+  extern int externnum; //외부변수 선언, 외부 함수도 선언 및 호출 가능(외부 함수 선언은 extern 생략 가능, 외부에서 함수 다 만들 수 있음)
+  void grow(void); //grow함수 선언
+  
+  int main(void){
+      int localnum = 0 //지역변수 선언
+      printf("global %d, local %d",globalnum,localnum);
+      //global 0, local 0
+      grow();
+      printf("global %d, local %d",globalnum,localnum);
+      //global 60, local 0
+      printf("static %d",staticnum);
+      //static 60
+      printf("external %d",externnum);
+      //external 60
+      return 0;
+  }
+  
+  void grow(void){
+      int localnum = 60;
+      static int staticnum = 60;
+      globalnum=60;
+  }
+  ```
+
+  - 지역변수: 함수{} 내부에서 사용, 매개변수(입력변수)로 사용
+  - 전역변수: {} 위부에서 선언, 프로그램이 종료할 때 메모리 사라짐
+  - **정적변수**: 자료형 앞에 static 붙임, {}내에서 선언 (지역+전역), 초기화를 한번만 해줌(처음 선언해줄때만!), 프로그램 종료 시 소멸, 외부변수로 접근 불가
+  - 외부변수: 자료형 앞에 extern 붙임, 외부 파일의 전역 변수를 참조
+  - 레지스터 변수: 자료형 앞에 resister 붙임, CPU 내부의 레지스터에 변수를 할당, 처리속도 fast
+
+- 재귀 함수
+
+  - 함수 내에서 자기 자신을 호출 하는 함수
+  - static으로 선언하면 초기화 반복 막음
+
+
+
+
+
+#### 1차원 배열
+
+- 배열: 같은 자료형을 가진 연속된 메모리 공간, 많은 양 데이터 처리 시 유용
+
+  ```c
+  int array_name[10]; //자료형 배열이름[배열길이];
+  
+  int array1[3] = {1,2,3}; //{1,2,3}
+  int array2[] = {1,2,3}; //{1,2,3}, 배열길이가 없으면 선언만큼 생김
+  int array3[3] = {1}; //{1,0,0}, 선언하면서 바로 값 넣으면 0으로 채워짐
+  
+  int array4[3];
+  array4 = {1,2,3}; //에러 발생
+  array4[0] = 1;
+  array4[1] = 2;
+  array4[2] = 3;
+  
+  int a = 3;
+  int array5[a]; //에러 발생, 배열 선언 시 길이는 변수로 들어가면 안됨, 선언 후 데이터를 다룰 때는 가능
+  ```
+
+- 주소와 값 참조
+
+  - 배열의 주소: &배열요소의위치 ex) &array[2], array배열의 3번째 값 주소
+  - 배열 이름의 주소는 배열의 시작 주소, &array == &array[0]
+  - 배열 요소의 개별 주소는 배열의 시작 주소를 기준으로 차이가 남, &array[1] == array+1, &array[2] == array+2
+  - '별'연산자: 메모리 공간에 저장된 값을 참조 ex)*&array[2] = 배열의 3번째 값,  *&array[2] == array[2]
+
+  ```c
+  int array[3] = {1,2,3};
+  
+  printf("%x %x %x \n", array+0, array+1, array+2);
+  // array값들의 주소를 출력
+  printf("%d %d %d \n", *(array+0), *(array+1), *(array+2));
+  // array값들을 출력, array[n] == *(array+n) == *&array[n]★★★
+  printf("%d %d \n", *(array+0), *array);
+  // *array+3 != *(array+3)
+  
+  return 0;
+  
+  // 값참조는 array에 정확한 위치값을 선정하거나 주소앞에 *붙이기!
+  ```
+
+  
+
+
+
+#### 다차원 배열
+
+```c
+//2차원 배열
+int array_name[2][4]; //2행4열
+//ㅁㅁㅁㅁ
+//ㅁㅁㅁㅁ
+
+int array[0][0] = 1;
+int array[0][1] = 2;
+...
+
+int array[2][4] = {0,1,2,3,4,5,6,7}; //행단위로 채움
+int array[2][4] = {0,1,2,3}; //나머지는 0으로 채움
+int array[2][4] = {{0,1,2},{4}} //행단위 초기화
+//0 1 2 0
+//4 0 0 0
+
+int array_name[][] = {1,2,3,4} //에러
+int array_name[2][] = {1,2,3,4} //에러
+int array_name[][2] = {1,2,3,4,5,6} //정상, 열의 길이는 반드시 설정
+//1 2
+//3 4
+//5 6
+
+//3차원 배열
+int array_name[3][3][3] = {{1,2,3,4,5,6,7,8,9},{},{}}
+```
+
+- 2차원 배열의 주소와 값의 참조
+
+```c
+int array[2][2] = {10,20,30,40};
+
+/*
+주소 참조
+&array[행][열] == array[행]+열 == *(array+행)+열
+
+&array[0][0] == array[0] == *(array+0) == *array
+&array[1][0] == array[1] == *(array+1)
+array[n]은 n번째 열의 첫번째 주소를 의미
+*/
+
+/*
+값 참조(주소 앞에 *붙이기)
+*&array[행][열] == *(array[행]+열) == *(*(array+행)+열) == array[행][열]
+*/
+```
+
+
+
+
+
+#### 포인터
+
+- 특징
+
+  - 화살표, 변수, 주소저장 3가지 기억하기!
+
+  - 주소를 저장하는 변수로 C언어 장점 중 하나
+
+  - 메모리 주소를 참조해서 다양한 자료형 변수에 접근, 조작 가능
+
+- 포인터 변수 선언
+
+  - int* pointer=NULL;
+  - 자료형* 포인터변수이름 = NULL포인터설정 ;
+  - 선택한 자료형 주소를 저장하는 포인터 변수
+  - 모든 포인터 변수는 4바이트!!!!
+
+  ```c
+  char c="A";
+  char* cp=NuLL;
+  cp=&c; //c의 주소 저장
+  //같은 표현: char* cp=&c; 바로 선언
+  
+  printf("%x %c %c \n", &c, c, *&c); //c주소 A A
+  printf("%x %x %x \n", &cp, cp, *&cp); //cp메모리주소 c주소 c주소
+  /*
+  &cp는 포인터변수를 저장하는 메모리 주소
+  cp는 포인터변수가 저장하고 있는 값의 주소 == &c == *&cp
+  */
+  
+  printf("%c \n",c); //직접 접근, c값
+  printf("%c \n",*cp); //간접 접근, *c의주소 == c값
+  // c == *&c == *cp
+  ```
+
+  ```c
+  #include <stdio.h>
+  int main(){
+      int a=0, b=0, c=0;
+      int* ip=NULL;
+      
+      ip=&a; //pointer에 a주소 저장
+      *ip = 10; //ip값의 값(a값에 간접 접근)
+      printf("%d %d %d %d",a,b,c,*ip);
+      // 10 0 0 10
+      
+      ip=&b; //pointer에 b주소로 변경
+      *ip = 20; //ip값의 값(b값에 간접 접근)
+      printf("%d %d %d %d",a,b,c,*ip);
+      // 10 20 0 20
+      
+      ip=&c; //pointer에 c주소로 변경
+      *ip = 30; //ip값의 값(c값에 간접 접근)
+      printf("%d %d %d %d",a,b,c,*ip);
+      // 10 20 30 30
+      
+      return 0; 
+  }
+  ```
+
+- 잘못된 포인터 사용
+
+  ```c
+  // 포인터변수에 주소를 저장하지 않음
+  int* ip=NULL;
+  *ip=10000;
+  
+  //포인터 변수에 이상한 주소 저장
+  int* ip=123456789;
+  *ip=1020;
+  ```
+
+
+
+
+
+#### 다차원 포인터
+
+```c
+int* p1=NULL; //1차원 포인터변수
+int** p2=NULL; //2차원 포인터변수 (2차원 주소리스트)
+int*** p3=NULL; //3차원 포인터변수 (3차원 주소리스트)
+/*
+파이썬에선
+[[[0,0],[0,1],[0,2]],
+ [[1,0],[1,1],[1,2]],
+ [[2,0],[2,1],[2,2]]]
+이런 느낌..
+*/
+
+/* 
+동일한 의미를 가지는 표현
+- pointer3 == &pointer2
+- *pointer3 == pointer2 == &pointer1
+- **pointer3 == *pointer2 == pointer1 == &num1
+- ***pointer3 == **pointer2 == *pointer1 == num1 == 4(데이터값)
+*/
+```
+
+- 동일한 주소를 참조하는 값을 변경하면 참조값들 모두 바뀜
+
+
+
+
+
+#### 주소의 가감산
+
+- 포인터 주소는 4바이트 간격으로 가감
+- 자료형 주소는 자료형 별 바이트 간격으로 가감(char: 1byte, int: 4byte, ...)
+
+```c
+int array[3] = {1,2,3};
+int* ip=NULL;
+int** ipp=NULL;
+ip=array;
+ipp=&ip;
+
+/*
+1 == array[0] == *(ip+0) == *(*ipp+0)
+2 == array[1] == *(ip+1) == *(*ipp+1)
+3 == array[2] == *(ip+2) == *(*ipp+2)
+*/
+```
+
+
+
+
+
+#### 함수 포인터
+
+```c
+void add(double num1, double num2); //포인팅 대상 함수
+void (*pointer) (int, int); //함수 포인터 선언
+pointer = add; //함수 포인터에 함수 시작 주소 저장
+/* void (*add) (int,int); 한줄로 가능하나 pointer변수명으로 여러 조건 처리하기 위해 쩌렇게 하면 좋아! */
+pointer(3.1,5.1); //함수 포인터를 이용한 함수 호출
+
+//예시
+int x,z;
+char c;
+void (*pointer) (int,int);
+scanf("%d %c %d",&x, &c, &x);
+
+if(c=='+')
+    pointer=add;
+else if(c=='-')
+    pointer=subtract;
+
+pointer(x,z);
+```
+
+- 일반적인 함수 호출보다 빠른 처리 속도
+- 컴파일러, 인터프리터, 게임프로그래밍 등 시스템 프로그래밍 분야에 이용
