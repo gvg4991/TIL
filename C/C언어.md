@@ -824,3 +824,14 @@ pointer(x,z);
 
 - 일반적인 함수 호출보다 빠른 처리 속도
 - 컴파일러, 인터프리터, 게임프로그래밍 등 시스템 프로그래밍 분야에 이용
+
+
+
+
+
+#### 포인터와 1차원 배열
+
+- 포인터의 주소: pointer+i == &pointer[i]
+- 포인터 값(array의 주소): *(pointer+i) == *&pointer[i] == pointer[i]
+- array의 주소: array+i == &array[0]
+- array의 값: *(array+i) == *&array[i] == array[i]
