@@ -1,0 +1,6 @@
+[0303/193836.295:ERROR:process_reader_win.cc(123)] NtOpenThread: {액세스 거부} 프로세스가 개체에 액세스를 요구했지만 액세스 권한이 없습니다. (0xc0000022)
+[0303/193836.300:ERROR:exception_snapshot_win.cc(98)] thread ID 18024 not found in process
+[0303/193836.418:ERROR:process_info.cc(329)] VirtualQueryEx: 액세스가 거부되었습니다. (0x5)
+[0303/193836.432:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0303/193836.433:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0303/193836.433:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: 기존 프로세스에 액세스하려고 했습니다. (0xc000010a)
