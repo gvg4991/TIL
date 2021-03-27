@@ -26,7 +26,7 @@ for tc in range(test):
         for target in range(i+1,case):
             if datas[i]*datas[target] % 10 != 0:
                 result.append(datas[i]*datas[target])
-    # print(result)
+    #print(result)
     ans = []
     for value in result:
         s = ' '.join(str(value))
