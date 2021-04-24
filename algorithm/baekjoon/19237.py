@@ -93,29 +93,28 @@ def ready():
     for row in range(size):
         for col in range(size):
             if shark_map[row][col]:
-                shark_num = shark_map[row][col] - 1
-                shark_smell[shark_num][0] = [row,col]
+                shark_idx = shark_map[row][col] - 1
+                shark_smell[shark_idx][smell-1] = [row,col] # shark_smell 마지막에 현재 좌표 넣기
 
 
 def search():
     global next_y,next_x,next_dt
-    for shark_num in living_shark:
-        if shark_num:
-            shark_idx = shark_num-1
-            now_y,now_x = shark_smell[shark_idx][0]
+    for shark_idx in range(mari):
+        if shark_move[shark_idx]:
+            now_y,now_x = shark_smell[shark_idx][smell-1]
             now_dt = shark_dt[shark_idx]-1
             next_dt_list = shark_next_dt[shark_idx][now_dt]
             next_dt_flag = 0
-            for dt in next_dt_list:
-                target_dt = dt-1
-                target_y = now_y + dy[target_dt]
-                target_x = now_x + dx[target_dt]
+            for target_dt in next_dt_list:
+                dt = target_dt-1
+                target_y = now_y + dy[dt]
+                target_x = now_x + dx[dt]
                 if issafe(target_y,target_x):
                     if not shark_map[target_y][target_x]: # 우선순위 방향에 흔적이 없으면
                         next_y,next_x,next_dt = target_y,target_x,target_dt
                         next_dt_flag = 1
                         break
-                    if not next_dt_flag and shark_map[target_y][target_x] == shark_idx: # 우선순위 방향에 흔적이 자신이면
+                    elif not next_dt_flag and shark_map[target_y][target_x] == shark_idx+1: # 우선순위 방향에 흔적이 자신이면
                         next_y,next_x,next_dt = target_y,target_x,target_dt
                         next_dt_flag = 2
             shark_move[shark_idx] = [next_y,next_x,next_dt]
@@ -126,51 +125,57 @@ def move():
     result += 1
     for shark_idx in range(mari):
         # shark_map에서 냄새가 없어지는 좌표에 있는 상어 == 냄새가 없어지는 상어라면 제거
-        if shark_smell[shark_idx][smell-1]:
-            remove_y,remove_x = shark_smell[shark_idx][smell-1]
-            if shark_map[remove_y][remove_x] == shark_idx+1: #shark_map의 상어번호는 1부터라서 1더해줌
+        if shark_smell[shark_idx][0]:
+            remove_y,remove_x = shark_smell[shark_idx][0]
+            if not [remove_y,remove_x] in shark_smell[shark_idx][1::]: #shark_map의 상어번호는 1부터라서 1더해줌
                 shark_map[remove_y][remove_x] = 0
         # shark_smell에서 냄새를 한컬럼씩 이동
-        for smell_num in range(smell-1,0,-1):
-            shark_smell[shark_idx][smell_num] = shark_smell[shark_idx][smell_num-1]
+        for smell_num in range(smell-1):
+            shark_smell[shark_idx][smell_num] = shark_smell[shark_idx][smell_num+1]
+        shark_smell[shark_idx][smell-1] = 0
 
         # 새로 이동한 상어 입력 및 상어냄새 생성
-    for shark_num in living_shark:
-        if shark_num:
-            shark_idx = shark_num-1
+    for shark_idx in range(mari):
+        if shark_move[shark_idx]:
             new_shark_y, new_shark_x, new_shark_dt = shark_move[shark_idx][0], shark_move[shark_idx][1], shark_move[shark_idx][2]
-            if not shark_map[new_shark_y][new_shark_x] or shark_map[new_shark_y][new_shark_x] == shark_idx+1:
+            if not shark_map[new_shark_y][new_shark_x] or shark_map[new_shark_y][new_shark_x] == shark_idx+1: # shark_cmp에 없거나 자신이면
                 shark_map[new_shark_y][new_shark_x] = shark_idx+1
-                shark_smell[shark_idx][0] = [new_shark_y,new_shark_x]
-                shark_dt[shark_idx] = new_shark_dt+1
+                shark_smell[shark_idx][smell-1] = [new_shark_y,new_shark_x]
+                shark_dt[shark_idx] = new_shark_dt
             else:
-                living_shark[shark_idx] = 0
-                shark_smell[shark_idx][0] = 0
+                shark_smell[shark_idx][smell-1] = 0
                 shark_dt[shark_idx] = 0
+                shark_move[shark_idx] = 0
+                living_shark[shark_idx] = 0
 
 
 
 size,mari,smell = map(int,input().split())
-shark_map = [list(map(int,input().split())) for shark in range(size)] # 상어 위치 지도
-shark_dt = list(map(int,input().split())) # 상어 현재 방향
+shark_map = [list(map(int,input().split())) for shark in range(size)] # 상어 위치 지도, 1부터 시작
+shark_dt = list(map(int,input().split())) # 상어 현재 방향, 1부터 시작
 shark_next_dt = [[list(map(int,input().split())) for dt in range(4)] for shark in range(mari)] # 방향 1,2,3,4 = 위,아래,왼쪽,오른쪽
+# for snd in shark_next_dt:
+#     print(snd)
 dy = [-1,1,0,0]
 dx = [0,0,-1,1]
-living_shark = [shark+1 for shark in range(mari)] # 살이있는 상어
 shark_smell = [[0]*smell for shark in range(mari)] # 상어 별 냄새 좌표
 shark_move = [[0,0,0] for shark in range(mari)] # 상어 별 움직이는 좌표 및 방향
-flag = 1
+living_shark = [shark+1 for shark in range(mari)] # 살이있는 상어
+flag = 0
 result = 0
 ans = -1
 
 
 ready()
-while flag:
-    if sum(living_shark) == 1 and result > 1000:
-        flag = 0
+while not flag:
     search()
     move()
+    if sum(living_shark) == 1:
+        flag = 1
+    elif result >= 1000:
+        ans = -1
+        flag = 2
 
-if result <= 1000:
+if flag == 1:
     ans = result
 print(ans)

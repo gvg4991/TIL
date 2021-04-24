@@ -1,10 +1,77 @@
 
-a = [1,4,6,5,5]
-for aa in a:
-    if aa==4:
-        a.remove(4)
-    print(aa)
-print(a)
+
+#
+# a = [1,2,2,5,3]
+# b = '!'.join(map(str,a)) #list,str에서 str로만 가능
+# # 1!2!2!3!5
+# c = b.replace('2','1') # str만 가능
+# # 1!1!1!3!5
+# d = a.count(2)
+# # 2
+# for i in range(a.count(2)): # 카운트한 값 모두 제거
+#     print(a)
+#     a.remove(2)
+# # [1, 3, 5]
+# e = list(set(a))
+# # [1,2,3,5]
+# aa=[[9,1],[1,5],[0,3]]
+# aa.sort(key=lambda x: x[1]) #2차원 리스트를 인덱스2 기준으로 오름차순
+# # [[9, 1], [0, 3], [1, 5]]
+# a.reverse()
+# # [3, 5, 2, 2, 1]
+# a.insert(3,3)
+# # [1, 2, 2, 3, 5, 3]
+# g = list(enumerate(a))
+# # [(0, 1), (1, 2), (2, 2), (3, 3), (4, 5), (5, 3)]
+# a.remove(3) #값이 없으면 에러
+# # [1, 2, 2, 5]
+# h = a.index(3) #값이 없으면 에러
+# # 4
+
+
+
+
+
+
+# def combi1(c,idx):
+#     if c == K:
+#         print(result)
+#         return
+#
+#     for i in range(idx,N):
+#         result[c] = i
+#         combi1(c+1,i+1)
+#
+# N = 5
+# K = 3
+# data = [1,2,3,4,5]
+# result = [0]*K
+# combi1(0,0)
+
+
+
+
+# shark_move = [[0,0,0] for shark in range(5)]
+# print(shark_move)
+#
+# living_shark = [shark+1 for shark in range(5)]
+# print(living_shark)
+#
+#
+# a = [1,2,3,4,5,6]
+# print(a[2::])
+
+# a = [0,0,0]
+# if a:
+#     print(a)
+
+#
+# a = [1,4,6,5,5]
+# for aa in a:
+#     if aa==4:
+#         a.remove(4)
+#     print(aa)
+# print(a)
 
 
 # for i in range(0):
@@ -23,10 +90,12 @@ print(a)
 
 # for i in range(3):
 #     a[0+3-1-i][1] = a[0][1+i]
-# print(a)
-# print(list(zip(*a)))
-# print(a[::-1])
-# print(list(zip(*a[::-1])))
+
+a = [[1,2,3],[9,8,7],[4,5,6]]
+print(a)
+print(list(zip(*a)))
+print(a[::-1])
+print(list(zip(*a[::-1])))
 
 # a[0][0],a[0][1],a[1][0],a[1][1] = a[1][0], a[0][0], a[1][1], a[0][1]
 # print(a)

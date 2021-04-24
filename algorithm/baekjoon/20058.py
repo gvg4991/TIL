@@ -38,7 +38,7 @@
 
 
 
-import sys
+import sys, collections
 sys.stdin = open('input.txt')
 
 
@@ -81,25 +81,28 @@ for tc in case:
                 water.append([row,col])
     if water:
         for y,x in water:
-            datas[y][x] -= 1
+            datas[y][x] -= 1\
 
 
-
+# BFS
 def ice(y,x):
     global total_ice, group
-    if issafe(y,x) and not visited[y][x] and datas[y][x]:
-        total_ice += datas[y][x]
-        visited[y][x] = 1
+    target_ice = collections.deque([[y,x]])
+    while target_ice:
+        [target_y,target_x] = target_ice.popleft()
+        total_ice += datas[target_y][target_x]
+        visited[target_y][target_x] = 1
         ice_group[group] += 1
         for dt in range(4):
-            next_y, next_x = y+dy[dt], x+dx[dt]
-            ice(next_y,next_x)
-
+            next_y, next_x = target_y+dy[dt], target_x+dx[dt]
+            if issafe(next_y,next_x) and not visited[next_y][next_x] and datas[next_y][next_x]:
+                target_ice.append([next_y,next_x])
+                visited[next_y][next_x] = 1
 
 
 visited = [[0]*(2**size) for _ in range(2**size)]
 total_ice = 0
-ice_group = [0]*(2**size)
+ice_group = [0]*((2**size)**2)
 group = 0
 for y in range(2**size):
     for x in range(2**size):
@@ -111,6 +114,35 @@ for y in range(2**size):
 
 print(total_ice)
 print(max(ice_group))
+
+
+
+# # DFS
+# def ice(y,x):
+#     global total_ice, group
+#     if issafe(y,x) and not visited[y][x] and datas[y][x]:
+#         total_ice += datas[y][x]
+#         visited[y][x] = 1
+#         ice_group[group] += 1
+#         for dt in range(4):
+#             next_y, next_x = y+dy[dt], x+dx[dt]
+#             ice(next_y,next_x)
+#
+#
+# visited = [[0]*(2**size) for _ in range(2**size)]
+# total_ice = 0
+# ice_group = [0]*(2**size)
+# group = 0
+# for y in range(2**size):
+#     for x in range(2**size):
+#         if not datas[y][x]:
+#             visited[y][x] = 1
+#         elif not visited[y][x]:
+#             ice(y,x)
+#             group += 1
+#
+# print(total_ice)
+# print(max(ice_group))
 
 
 
