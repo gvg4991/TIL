@@ -60,13 +60,19 @@ def move():
             if datas[tc][0]+s*dy[d] >= size:
                 datas[tc][0] = (datas[tc][0]+s*dy[d])%size
             elif datas[tc][0]+s*dy[d] < 0:
-                datas[tc][0] = size - (-1*(datas[tc][0]+s*dy[d]))%size
+                if (-1*(datas[tc][0]+s*dy[d]))%size:
+                    datas[tc][0] = size - (-1*(datas[tc][0]+s*dy[d]))%size
+                else:
+                    datas[tc][0] = datas[tc][0]
             else:
                 datas[tc][0] += s*dy[d]
             if datas[tc][1]+s*dx[d] >= size:
                 datas[tc][1] = (datas[tc][1]+s*dx[d])%size
             elif datas[tc][1]+s*dx[d] < 0:
-                datas[tc][1] = size - (-1*(datas[tc][1]+s*dx[d]))%size
+                if (-1*(datas[tc][1]+s*dx[d]))%size:
+                    datas[tc][1] = size - (-1*(datas[tc][1]+s*dx[d]))%size
+                else:
+                    datas[tc][1] = datas[tc][1]
             else:
                 datas[tc][1] += s*dx[d]
             fire[datas[tc][0]][datas[tc][1]] += [tc] #list(idx) map
@@ -128,31 +134,32 @@ def check():
 
 size,case,test = map(int,input().split())
 datas = list([0] for _ in range(case))
-for tc in range(case):
-    y,x,m,speed,dt = map(int,input().split())
-    datas[tc] = [y-1,x-1,m,speed,dt] #[y,x,m,speed,dt]
+if case > 0:
+    for tc in range(case):
+        y,x,m,speed,dt = map(int,input().split())
+        datas[tc] = [y-1,x-1,m,speed,dt] #[y,x,m,speed,dt]
 
-dy = [-1,-1,0,1,1,1,0,-1]
-dx = [0,1,1,1,0,-1,-1,-1]
-# fire = list([[] for __ in range(size)] for _ in range(size))
-# mass = list([0]*size for _ in range(size))
-# speed = list([0]*size for _ in range(size))
-# target = []
+    dy = [-1,-1,0,1,1,1,0,-1]
+    dx = [0,1,1,1,0,-1,-1,-1]
+    # fire = list([[] for __ in range(size)] for _ in range(size))
+    # mass = list([0]*size for _ in range(size))
+    # speed = list([0]*size for _ in range(size))
+    # target = []
 
 
-while test:
-    fire = list([[] for __ in range(size)] for _ in range(size))
-    mass = list([0]*size for _ in range(size))
-    speed = list([0]*size for _ in range(size))
-    target = []
-    move()
-    if target:
-        check()
-    test -= 1
+    while test:
+        fire = list([[] for __ in range(size)] for _ in range(size))
+        mass = list([0]*size for _ in range(size))
+        speed = list([0]*size for _ in range(size))
+        target = []
+        move()
+        if target:
+            check()
+        test -= 1
 
-ans = 0
-for d in datas:
-    if d:
-        ans += d[2]
-print(ans)
+    ans = 0
+    for d in datas:
+        if d:
+            ans += d[2]
+    print(ans)
 

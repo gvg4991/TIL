@@ -164,7 +164,7 @@
   = BCNF : Boyce Codd Normal Form, 모든 결정자가 후보키 집합에 속해야 함. 
   [자세한 내용은 이 페이지를 참고]
 
-   * Anomaly 
+   * Anomaly (이상)
      - Insert Anomaly : 삽입시 원하지 않은 데이터가 추가되는 현상 
      - Update Anomaly : 삭제시 원하지 않은 데이터가 함께 삭제되는 현상
      - Delete Anomaly : 갱신시 일부 튜플의 정보만 갱신되는 현상
